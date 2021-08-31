@@ -8,7 +8,7 @@ const Loginpage = () => {
 
   const cancelTokenSource = axios.CancelToken.source();
   const loginUserAPI = () => {
-    const response = loginAdmin('bilalTest123@mailinator.com', '12345', cancelTokenSource.token);
+    const response = loginAdmin('awais@mailinator.com', '12345', cancelTokenSource.token);
     console.log(response, 'response');
     if (response.success == true) {
     } else {
