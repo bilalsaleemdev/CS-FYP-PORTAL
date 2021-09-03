@@ -1,4 +1,4 @@
-/**
+\/**
  * Signin Firebase
  */
 
@@ -17,7 +17,7 @@
             {/* Page Wrapper */}
             <div className="page-wrapper">
               <Helmet>
-                  <title>User Dashboard - HRMS Admin Template</title>
+                  <title> Dashboard - HRMS Admin Template</title>
                   <meta name="description" content="Login page"/>					
               </Helmet>
               {/* Page Content */}

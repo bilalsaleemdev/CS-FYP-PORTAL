@@ -4,7 +4,7 @@
 /* eslint-disable */
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import Admindashboard from './admindashboard';
+import Admindashboard from './Manager/admindashboard';
 import Employeedashboard from './employeedashboard';
 
 const DashboardRoute = ({ match }) => (

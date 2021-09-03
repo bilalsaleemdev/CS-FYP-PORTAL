@@ -1,6 +1,7 @@
 import axios, { Cancel, CancelToken } from "axios";
 import { processRequest } from '../Network.js';
 import 'regenerator-runtime/runtime'
+import { type } from "jquery";
 //setting token in axios headers to prevent request failure
 // if (localStorage.getItem('user-token')) axios.defaults.headers = { 'x-auth-token': localStorage.getItem('user-token') };
 
@@ -45,3 +46,33 @@ export const loginAdmin = async (email, password, cancelToken) => {
         return {error:error};
     }
 };
+
+export const Registration = async (name, email, type, password, cancelToken) => {    
+    const url = 'users';
+    const data = {'name': name, 'email': email, 'type':type,'password': password, 'status':0};
+    const request = { type: 'POST', urlString: url, params: data };
+    console.log('awais data', data)
+    try {
+         const response = await processRequest(request, cancelToken);
+         console.log('awais api response ', response) 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+
+
+export const ManagerProfileCreate = async (user_id, first_name,last_name, dob,gender,address,country, cancelToken) => {    
+    const url = `users-profile`;
+    const data = { 'user_id': user_id , 'first_name':first_name,'last_name':last_name, 'dob':dob ,'gender':gender,'address':address, 'country':country};
+    const request = { type: 'POST', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+

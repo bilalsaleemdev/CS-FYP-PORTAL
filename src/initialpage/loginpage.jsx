@@ -3,14 +3,27 @@ import { Applogo } from '../Entryfile/imagepath.jsx'
 import { loginAdmin } from '../api/network/customer/EmployeeApi';
 import axios, { CancelTokenSource } from "axios";
 import { Config } from "../../Config";
+import { Helmet } from "react-helmet";
 
 const Loginpage = () => {
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const cancelTokenSource = axios.CancelToken.source();
+
+
+
   const loginUserAPI = () => {
-    const response = loginAdmin('awais@mailinator.com', '12345', cancelTokenSource.token);
-    console.log(response, 'response');
-    if (response.success == true) {
+    const response = loginAdmin(email, password, cancelTokenSource.token);
+    
+    console.log(response.success, 'response');
+
+    if (response) {
+      const awais = response.PromiseResult;
+      
+
+      console.log('  data miral ', awais)
     } else {
       console.log('Failed Response', response);
     }
@@ -29,7 +42,7 @@ const Loginpage = () => {
           <div className="container">
             {/* Account Logo */}
             <div className="account-logo">
-              <a href="/purple/app/main/dashboard"><img src={Applogo} alt="Dreamguy's Technologies" /></a>
+              <a href="/purple/login"><img src={Applogo} alt="Dreamguy's Technologies" /></a>
             </div>
             {/* /Account Logo */}
             <div className="account-box">
@@ -40,7 +53,7 @@ const Loginpage = () => {
                 <form action="/purple/app/main/dashboard">
                   <div className="form-group">
                     <label>Email Address</label>
-                    <input className="form-control" type="text" />
+                    <input className="form-control" type="text" onChange={(e) => setEmail(e.target.value)} value={email}/>
                   </div>
                   <div className="form-group">
                     <div className="row">
@@ -53,7 +66,7 @@ const Loginpage = () => {
                         </a>
                       </div> */}
                     </div>
-                    <input className="form-control" type="password" />
+                    <input className="form-control" type="password" onChange={(e) => setPassword(e.target.value)} value={password}/>
                   </div>
                   {/* <div className="form-group text-center">
                     <a className="btn btn-primary account-btn"

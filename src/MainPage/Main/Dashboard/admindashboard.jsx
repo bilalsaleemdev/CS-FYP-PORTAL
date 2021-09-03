@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import { Helmet } from "react-helmet";
 import { withRouter } from 'react-router-dom';
-import {User,Avatar_19,Avatar_07,Avatar_06,Avatar_14} from '../../../Entryfile/imagepath.jsx'
+import {User,Avatar_19,Avatar_07,Avatar_06,Avatar_14} from '../../../Entryfile/imagepath'
 
 import {BarChart,Bar, Cell,ResponsiveContainer,
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
