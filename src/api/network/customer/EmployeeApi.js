@@ -75,4 +75,16 @@ export const ManagerProfileCreate = async (user_id, first_name,last_name, dob,ge
     }
 };
 
+export const getUserProfileAPI = async (userId, cancelToken) => {    
+    const url = `users-profile/${userId}`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+
 

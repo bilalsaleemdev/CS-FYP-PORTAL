@@ -14,16 +14,11 @@ const Loginpage = () => {
 
 
 
-  const loginUserAPI = () => {
-    const response = loginAdmin(email, password, cancelTokenSource.token);
-    
-    console.log(response.success, 'response');
-
-    if (response) {
-      const awais = response.PromiseResult;
-      
-
-      console.log('  data miral ', awais)
+  const loginUserAPI = async() => {
+    const response = await loginAdmin(email, password, cancelTokenSource.token);
+    if (response.success == true) {
+      // const awais = response.PromiseResult;    
+      console.log('  data miral ', response)
     } else {
       console.log('Failed Response', response);
     }
@@ -53,7 +48,7 @@ const Loginpage = () => {
                 <form action="/purple/app/main/dashboard">
                   <div className="form-group">
                     <label>Email Address</label>
-                    <input className="form-control" type="text" onChange={(e) => setEmail(e.target.value)} value={email}/>
+                    <input className="form-control" type="emial" onChange={(e) => setEmail(e.target.value)} value={email}/>
                   </div>
                   <div className="form-group">
                     <div className="row">

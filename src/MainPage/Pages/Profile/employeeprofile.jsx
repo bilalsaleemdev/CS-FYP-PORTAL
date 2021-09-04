@@ -11,7 +11,7 @@ import {
   Avatar_10,
   Avatar_16,
 } from "../../../Entryfile/imagepath";
-import { ManagerProfileCreate } from '../../../api/network/customer/EmployeeApi';
+import { ManagerProfileCreate, getUserProfileAPI } from '../../../api/network/customer/EmployeeApi';
 
 const EmployeeProfile = () => {
 
@@ -27,7 +27,7 @@ const EmployeeProfile = () => {
   const CancelTokenSource = axios.CancelToken.source();
   useEffect(() => {
     ManagerProfileCreateApi();
-    
+    getUserProfile(151);
     
   }, [])
 
@@ -35,7 +35,17 @@ const EmployeeProfile = () => {
 
     const response = ManagerProfileCreate(user_id, first_name ,last_name , dob,gender,address,country, CancelTokenSource.token);
 
+  }
 
+  const getUserProfile = async(userId) => {
+
+    const response = await getUserProfileAPI(userId, CancelTokenSource.token);
+    if (response.success == true) {
+      // const awais = response.PromiseResult;    
+      console.log('  data miral ', response)
+    } else {
+      console.log('Failed Response', response);
+    }
   }
 
 
