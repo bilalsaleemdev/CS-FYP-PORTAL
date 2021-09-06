@@ -1,32 +1,88 @@
-import React, { useEffect, useState } from 'react';
-import { Applogo } from '../Entryfile/imagepath.jsx'
-import { loginAdmin } from '../api/network/customer/EmployeeApi';
+import React, { useEffect, useState } from "react";
+import Snackbar from '@material-ui/core/Snackbar';
+import Slide from '@material-ui/core/Slide';
+
+import { Redirect, Route } from "react-router";
+import { Applogo } from "../Entryfile/imagepath.jsx";
+import { loginAdmin } from "../api/network/customer/EmployeeApi";
 import axios, { CancelTokenSource } from "axios";
 import { Config } from "../../Config";
 import { Helmet } from "react-helmet";
+import CeoDashboard from "../MainPage/Main/Dashboard/Ceo/ceodashboard.jsx";
+import { useHistory } from "react-router-dom";
 
 const Loginpage = () => {
+  const[wrongPassword, setWeongPassword] = useState(false);
+  const [transition, setTransition] = useState(undefined);
+  const history = useHistory();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const cancelTokenSource = axios.CancelToken.source();
+  console.log("Failed Response", wrongPassword);
 
 
+  function TransitionLeft(props) {
+    return <Slide {...props} direction="left" />;
+  }
+  const loginUserAPI = async () => {
+    setTransition(() => TransitionLeft);
 
-  const loginUserAPI = async() => {
     const response = await loginAdmin(email, password, cancelTokenSource.token);
     if (response.success == true) {
-      // const awais = response.PromiseResult;    
-      console.log('  data miral ', response)
+      // const awais = response.PromiseResult;
+      const { data } = response;
+      const { type } = data;
+      const {id} = data;
+
+      switch(type) {
+        case 'ceo':
+          localStorage.setItem("EmployeeType", type);
+          localStorage.setItem("isLogin", true);
+          localStorage.setItem("user_id", id);
+          history.push("/app/main/dashboard/ceo");
+          break;
+        case 'manager':
+          localStorage.setItem("EmployeeType", type);
+          localStorage.setItem("isLogin", true);
+          localStorage.setItem("user_id", id);
+          history.push("/app/main/dashboard/manager");
+
+          break;
+        case 'employee':
+          localStorage.setItem("EmployeeType", type);
+          localStorage.setItem("isLogin", true);
+          localStorage.setItem("user_id", id);
+          history.push("/app/main/dashboard/employee");
+          break;
+        default:
+          history.push("/");
+      }
+
+     
+      console.log("  data awaiss ", data);
     } else {
-      console.log('Failed Response', response);
+      setWeongPassword(true);
+      console.log("Failed Response", wrongPassword);
     }
-  }
+  };
+
+
+  const handleClose = () => {
+    setWeongPassword(false);
+  };
+
 
   return (
-
     <React.Fragment>
+    {wrongPassword && <Snackbar
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={transition}
+        message="Wrog Email or Password"
+        key={transition ? transition.name : ''}
+      />}
       <div className="main-wrapper">
         {/* <Helmet>
                <title>Login - HRMS Admin Template</title>
@@ -37,7 +93,9 @@ const Loginpage = () => {
           <div className="container">
             {/* Account Logo */}
             <div className="account-logo">
-              <a href="/purple/login"><img src={Applogo} alt="Dreamguy's Technologies" /></a>
+              <a href="/purple/login">
+                <img src={Applogo} alt="Dreamguy's Technologies" />
+              </a>
             </div>
             {/* /Account Logo */}
             <div className="account-box">
@@ -45,10 +103,18 @@ const Loginpage = () => {
                 <h3 className="account-title">Login</h3>
                 <p className="account-subtitle">Access to our dashboard</p>
                 {/* Account Form */}
-                <form action="/purple/app/main/dashboard">
+                <form>
                   <div className="form-group">
-                    <label>Email Address</label>
-                    <input className="form-control" type="emial" onChange={(e) => setEmail(e.target.value)} value={email}/>
+                    <label for="email" >Email Address</label>
+                    <input
+                      placeholder="EMAIL"
+                      type="email" 
+                      id="email" 
+                      name="email"
+                      className="form-control"
+                      onChange={(e) => setEmail(e.target.value)}
+                      value={email}
+                    />
                   </div>
                   <div className="form-group">
                     <div className="row">
@@ -61,7 +127,14 @@ const Loginpage = () => {
                         </a>
                       </div> */}
                     </div>
-                    <input className="form-control" type="password" onChange={(e) => setPassword(e.target.value)} value={password}/>
+                    <input
+                      className="form-control"
+                      placeholder="PASSWORD"
+                      type="password"
+                      
+                      onChange={(e) => setPassword(e.target.value)}
+                      value={password}
+                    />
                   </div>
                   {/* <div className="form-group text-center">
                     <a className="btn btn-primary account-btn"
@@ -71,12 +144,19 @@ const Loginpage = () => {
                     >                                      
                       Login</a>
                   </div> */}
-                  <div className="btn btn-primary account-btn"
-                    onClick={() => loginUserAPI()}>
+                  <div
+                    className="btn btn-primary account-btn"
+                    onClick={() => loginUserAPI()}
+                    type="submit"
+                   
+                  >
                     Login
                   </div>
                   <div className="account-footer">
-                    <p>Don't have an account yet? <a href="/purple/register">Register</a></p>
+                    <p>
+                      Don't have an account yet?{" "}
+                      <a href="/purple/register">Register</a>
+                    </p>
                   </div>
                 </form>
                 {/* /Account Form */}
@@ -85,10 +165,8 @@ const Loginpage = () => {
           </div>
         </div>
       </div>
-
     </React.Fragment>
   );
-
-}
+};
 
 export default Loginpage;

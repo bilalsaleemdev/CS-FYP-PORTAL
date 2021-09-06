@@ -11,6 +11,8 @@ class Header extends Component {
    render() {
     const {  location } = this.props
     let pathname = location.pathname
+    const type = localStorage.getItem("EmployeeType");
+    const path = `/purple/app/profile/${type}-profile`;
     
       return (
          <div className="header" style={{right:"0px"}}>
@@ -266,8 +268,7 @@ class Header extends Component {
               <span>Admin</span>
             </a>
             <div className="dropdown-menu">
-              <a className="dropdown-item" href="/purple/app/profile/employee-profile">My Profile</a>
-              <a className="dropdown-item" href="/purple/settings/companysetting">Settings</a>
+              <a className="dropdown-item" href={path}>My Profile</a>
               <a className="dropdown-item" href="/purple/login">Logout</a>
             </div>
           </li>
@@ -277,8 +278,7 @@ class Header extends Component {
         <div className="dropdown mobile-user-menu">
           <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="fa fa-ellipsis-v" /></a>
           <div className="dropdown-menu dropdown-menu-right">
-            <a className="dropdown-item" href="/purple/app/profile/employee-profile">My Profile</a>
-            <a className="dropdown-item" href="/purple/settings/companysetting">Settings</a>
+            <a className="dropdown-item" href={path}>My Profile</a>
             <a className="dropdown-item" href="/purple/login">Logout</a>
           </div>
         </div>

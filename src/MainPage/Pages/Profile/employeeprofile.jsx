@@ -15,6 +15,8 @@ import { ManagerProfileCreate, getUserProfileAPI } from '../../../api/network/cu
 
 const EmployeeProfile = () => {
 
+  const [userProfileData, setUserProfileData]= useState('')
+
   const [user_id, Usetser_id] = useState(100);
   const [first_name, setFirst_name] = useState('awais');
   const [last_name, setLast_name] = useState('yasin');
@@ -26,8 +28,8 @@ const EmployeeProfile = () => {
 
   const CancelTokenSource = axios.CancelToken.source();
   useEffect(() => {
-    ManagerProfileCreateApi();
-    getUserProfile(151);
+    // ManagerProfileCreateApi();
+    getUserProfile(1);
     
   }, [])
 
@@ -41,8 +43,10 @@ const EmployeeProfile = () => {
 
     const response = await getUserProfileAPI(userId, CancelTokenSource.token);
     if (response.success == true) {
+      const {data} = response;
+      setUserProfileData(data);
       // const awais = response.PromiseResult;    
-      console.log('  data miral ', response)
+      console.log('  data miral ', data)
     } else {
       console.log('Failed Response', response);
     }
@@ -52,7 +56,7 @@ const EmployeeProfile = () => {
   return (
     <div className="page-wrapper">
       <Helmet>
-        <title>Employee Profile - HRMS admin Template</title>
+        <title>Employee Profile </title>
         <meta name="description" content="Reactify Blank Page" />
       </Helmet>
       {/* Page Content */}
@@ -61,7 +65,7 @@ const EmployeeProfile = () => {
         <div className="page-header">
           <div className="row">
             <div className="col-sm-12">
-              <h3 className="page-title">Profile</h3>
+              <h3 className="page-title">Employee Profile</h3>
               <ul className="breadcrumb">
                 <li className="breadcrumb-item">
                   <a href="/purple/app/main/dashboard">Dashboard</a>
@@ -88,12 +92,11 @@ const EmployeeProfile = () => {
                     <div className="row">
                       <div className="col-md-5">
                         <div className="profile-info-left">
-                          <h3 className="user-name m-t-0 mb-0">John Doe</h3>
-                          <h6 className="text-muted">UI/UX Design Team</h6>
-                          <small className="text-muted">Web Designer</small>
-                          <div className="staff-id">Employee ID : FT-0001</div>
+                          <h3 className="user-name m-t-0 mb-0">{userProfileData.first_name}</h3>
+                          <h6 className="text-muted">{userProfileData.country}</h6>
+                          <small className="text-muted">{userProfileData.designation}</small>
                           <div className="small doj text-muted">
-                            Date of Join : 1st Jan 2013
+                          {userProfileData.dob}
                           </div>
                         </div>
                       </div>

@@ -4,14 +4,17 @@
 /* eslint-disable */
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import Admindashboard from './Manager/admindashboard';
-import Employeedashboard from './employeedashboard';
+import ManagerDashboard from './Manager/managerdashboard';
+import EmployeeDashboard from './Employee/employeedashboard';
+import CeoDashboard from './Ceo/ceodashboard';
+
 
 const DashboardRoute = ({ match }) => (
    <Switch>
       <Redirect exact from={`${match.url}/`} to={`${match.url}/dashboard`} />
-      <Route path={`${match.url}/dashboard`} component={Admindashboard} />
-      <Route path={`${match.url}/employee-dashboard`} component={Employeedashboard} />
+      <Route path={`${match.url}/dashboard/manager`} component={ManagerDashboard} />
+      <Route path={`${match.url}/dashboard/employee`} component={EmployeeDashboard} />
+      <Route path={`${match.url}/dashboard/ceo`} component={CeoDashboard} />
    </Switch>
   
 );
