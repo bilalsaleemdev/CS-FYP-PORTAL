@@ -86,5 +86,15 @@ export const getUserProfileAPI = async (userId, cancelToken) => {
     }
 };
 
+export const getUsersPendingRequestAPI = async (cancelToken) => {    
+    const url = `pending-approve-request-users`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
 
 
