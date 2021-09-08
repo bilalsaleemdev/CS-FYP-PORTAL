@@ -2,19 +2,16 @@
  * Signin Firebase
  */
 
-import React, { Component } from 'react';
-import { Helmet } from "react-helmet";
-import { withRouter } from 'react-router-dom';
-import {User,Avatar_19,Avatar_07,Avatar_06,Avatar_14} from '../../../../Entryfile/imagepath.jsx'
-
-import {BarChart,Bar, Cell,ResponsiveContainer,
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-} from 'recharts';
-
-import "../../index.css"
-// import 'Assets/plugins/morris/morris.min.js';
-// import 'Assets/plugins/raphael/raphael.min.js';
-// import 'Assets/js/chart.js';
+ import React, { Component } from 'react';
+ import { Helmet } from "react-helmet";
+ import { withRouter } from 'react-router-dom';
+ import {User,Avatar_19,Avatar_07,Avatar_06,Avatar_14} from '../../../../Entryfile/imagepath'
+ 
+ import {BarChart,Bar, Cell,ResponsiveContainer,
+   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+ } from 'recharts';
+ 
+ import "../../../index.css"
 
 const barchartdata = [
       { y: '2006', "Total Income" : 100, 'Total Outcome' : 90 },
@@ -34,7 +31,7 @@ const linechartdata = [
 			{ y: '2011', "Total Sales": 75,  'Total Revenue': 65 },
 			{ y: '2012', "Total Sales": 100, 'Total Revenue': 50 }
 ];
-class AdminDashboard extends Component {
+class CeoDashboard extends Component {
   UNSAFE_componentWillMount (){
     let firstload = localStorage.getItem("firstload")
     if(firstload === "true"){
@@ -50,7 +47,7 @@ class AdminDashboard extends Component {
          
          <div className="page-wrapper">
              <Helmet>
-                    <title>Dashboard - HRMS Admin Template</title>
+                    <title>Dashboard-CEO</title>
                     <meta name="description" content="Dashboard"/>					
             </Helmet>
         {/* Page Content */}
@@ -799,4 +796,4 @@ class AdminDashboard extends Component {
    }
 }
 
-export default withRouter(AdminDashboard);
+export default withRouter(CeoDashboard);

@@ -34,7 +34,7 @@ const linechartdata = [
 			{ y: '2011', "Total Sales": 75,  'Total Revenue': 65 },
 			{ y: '2012', "Total Sales": 100, 'Total Revenue': 50 }
 ];
-class AdminDashboard extends Component {
+class ManagerDashboard extends Component {
   UNSAFE_componentWillMount (){
     let firstload = localStorage.getItem("firstload")
     if(firstload === "true"){
@@ -50,7 +50,7 @@ class AdminDashboard extends Component {
          
          <div className="page-wrapper">
              <Helmet>
-                    <title> awais Dashboard - HRMS Admin Template</title>
+                    <title>Dashboard-Manager</title>
                     <meta name="description" content="Dashboard"/>					
             </Helmet>
         {/* Page Content */}
@@ -799,4 +799,4 @@ class AdminDashboard extends Component {
    }
 }
 
-export default withRouter(AdminDashboard);
+export default withRouter(ManagerDashboard);
