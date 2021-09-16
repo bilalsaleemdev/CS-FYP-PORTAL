@@ -87,3 +87,37 @@ export const getUserProfileAPI = async (userId, cancelToken) => {
         return {error:error};
     }
 };
+
+export const getUsersPendingRequestAPI = async (cancelToken) => {    
+    const url = `pending-approve-request-users`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+export const approveUsersPendingRequestAPI = async (userId,cancelToken) => {    
+    const url = `approve-request-user/${userId}`;    
+    const request = { type: 'PUT', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+export const deleteUsersPendingRequestAPI = async (userId,cancelToken) => {    
+    const url = `approve-request-user/${userId}`;    
+    const request = { type: 'DELETE', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+

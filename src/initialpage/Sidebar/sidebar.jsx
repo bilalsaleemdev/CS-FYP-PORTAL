@@ -35,7 +35,7 @@
                    <i className="la la-key" /> 
                    <span> Approve Request</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
-                   <li><a className={pathname.includes('main/dashboard') ?"active" :""} href="/purple/app/main/dashboard">Approve Requests</a></li>
+                   <li><a className={pathname.includes('/main/approve-request') ?"active" :""} href="/purple/app/main/approve-request">Approve Requests</a></li>
                    <li><a className={pathname.includes('main/employee-') ?"active" :""} href="/purple/app/main/employee-dashboard">Approve Request</a></li>
                  </ul>
                </li>
