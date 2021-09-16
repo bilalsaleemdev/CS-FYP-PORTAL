@@ -15,65 +15,135 @@ import {
   ManagerProfileCreate,
   getUserProfileAPI,
 } from "../../../api/network/customer/EmployeeApi";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 
 const ManagerProfile = () => {
+  const [open, setOpen] = React.useState(false);
   const [userProfileData, setUserProfileData] = useState("");
   const [openCreataeProfile, setOpenCreateProfile] = useState(false);
 
   const [user_id, Usetser_id] = useState(5);
   const [email, setEmail] = useState("");
-  const [first_name, setFirst_name] = useState("shamis");
-  const [last_name, setLast_name] = useState("yasin");
+  const [first_name, setFirst_name] = useState("");
+  const [last_name, setLast_name] = useState("");
   const [dob, setDob] = useState("2019-01-01");
-  const [gender, setGender] = useState("male");
-  const [address, setAddress] = useState("lahore");
+  const [gender, setGender] = useState("");
+  const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState();
-  const [country, setCountry] = useState("male");
+  const [country, setCountry] = useState("");
   const [post, setPost] = useState("manager");
   const [postalCode, setPostalCode] = useState("123");
+  const [submitResponse, setSubmitResponse] = useState(false);
 
-  const CancelTokenSource = axios.CancelToken.source();
+  const user_id_local = localStorage.getItem("user_id");
+
+  const cancelTokenSource = axios.CancelToken.source();
   useEffect(() => {
     // ManagerProfileCreateApi();
-    getUserProfile(1);
+    getUserProfile(user_id_local);
   }, []);
 
-  const ManagerProfileCreateApi = () => {
-    const response = ManagerProfileCreate(
-      5,
+  const handleCloseSubmitResponse = () => {
+    setOpen(false);
+    window.location.reload();
+  };
+  const ManagerProfileCreateApi = async () => {
+    setOpen(true);
+    const response = await ManagerProfileCreate(
+      user_id_local,
       first_name,
       last_name,
       dob,
-      postalCode,
+      phoneNumber,
+
       gender,
       address,
       country,
-      CancelTokenSource.token
+      postalCode,
+      cancelTokenSource.token
     );
+    if (response) {
+      // const awais = response.PromiseResult;
+      const { data } = response;
+      setOpenCreateProfile(true);
 
-    console.log(response, "awaisssssss");
-    // setOpenCreataeProfile(true);
+      console.log("  data awaiss ", response);
+    } else {
+      console.log("Failed Response", response);
+    }
   };
+  // const ManagerProfileCreateApi = () => {
+  //   const response = ManagerProfileCreate(
+  //     5,
+  //     first_name,
+  //     last_name,
+  //     dob,
+  //     postalCode,
+  //     gender,
+  //     address,
+  //     country,
+  //     cancelTokenSource.token
+  //   );
+
+  //   console.log(response, "awaisssssss");
+  //   // setOpenCreataeProfile(true);
+  // };
 
   const getUserProfile = async (userId) => {
-    const response = await getUserProfileAPI(userId, CancelTokenSource.token);
+    const response = await getUserProfileAPI(userId, cancelTokenSource.token);
     if (response.success == true) {
       const { data } = response;
-      setPhoneNumber(data.phone);
-      setEmail(data.email);
-      setAddress(data.address);
-      setGender(data.gender);
+      setOpenCreateProfile(true);
+      // setPhoneNumber(data.phone);
+      // setEmail(data.email);
+      // setAddress(data.address);
+      // setGender(data.gender);
       setUserProfileData(data);
       // const awais = response.PromiseResult;
       console.log("  data miral ", data);
     } else {
-      setOpenCreateProfile(true);
+      setOpenCreateProfile(false);
       console.log("Failed Response", response);
     }
   };
 
   return (
     <React.Fragment>
+    {open && (
+      <Dialog
+        open={open}
+        onClose={handleCloseSubmitResponse}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Confirmation message"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Hey!
+            Your Profile created successfully..!
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseSubmitResponse} color="primary">
+            Disagree
+          </Button>
+          <Button
+            onClick={handleCloseSubmitResponse}
+            color="primary"
+            autoFocus
+          >
+            Agree
+          </Button>
+        </DialogActions>
+      </Dialog>
+    )}
       {openCreataeProfile ? (
         <div className="page-wrapper">
           <Helmet>
@@ -191,7 +261,7 @@ const ManagerProfile = () => {
                     <div className="card profile-box flex-fill">
                       <div className="card-body">
                         <h3 className="card-title">
-                          Personal Informations{" "}
+                          Personal Information{" "}
                           <a
                             href="#"
                             className="edit-icon"
@@ -203,39 +273,44 @@ const ManagerProfile = () => {
                         </h3>
                         <ul className="personal-info">
                           <li>
-                            <div className="title">Passport No.</div>
-                            <div className="text">9876543210</div>
+                            <div className="title">Name:</div>
+                            <div className="text">{`${userProfileData.first_name} ${userProfileData.last_name }`}</div>
                           </li>
                           <li>
-                            <div className="title">Passport Exp Date.</div>
-                            <div className="text">9876543210</div>
+                            <div className="title">Email:</div>
+                            <div className="text">{userProfileData.email}</div>
                           </li>
                           <li>
-                            <div className="title">Tel</div>
+                            <div className="title">Country:</div>
+                            <div className="text">{userProfileData.country}</div>
+                          </li>
+                          <li>
+                            <div className="title">Phone Number:</div>
                             <div className="text">
-                              <a href="">9876543210</a>
+                              <a href="">{userProfileData.phone}</a>
                             </div>
                           </li>
                           <li>
-                            <div className="title">Nationality</div>
-                            <div className="text">Indian</div>
+                            <div className="title">CNIC</div>
+                            <div className="text">{userProfileData.cnic}</div>
                           </li>
                           <li>
-                            <div className="title">Religion</div>
-                            <div className="text">Christian</div>
+                            <div className="title">Gender:</div>
+                            <div className="text">{userProfileData.gender}</div>
                           </li>
                           <li>
-                            <div className="title">Marital status</div>
-                            <div className="text">Married</div>
+                            <div className="title">Postal Code:</div>
+                            <div className="text">{userProfileData.postal_code}</div>
                           </li>
                           <li>
-                            <div className="title">Employment of spouse</div>
-                            <div className="text">No</div>
+                            <div className="title">Employee Type</div>
+                            <div className="text">{userProfileData.type}</div>
                           </li>
                           <li>
-                            <div className="title">No. of children</div>
-                            <div className="text">2</div>
-                          </li>
+                          <div className="title">Address:</div>
+                          <div className="text">{userProfileData.address}</div>
+                        </li>
+                          
                         </ul>
                       </div>
                     </div>
@@ -269,162 +344,158 @@ const ManagerProfile = () => {
                   </button>
                 </div>
                 <div className="modal-body">
-                  <form>
-                    <div className="row">
-                      <div className="col-md-12">
-                        <div className="profile-img-wrap edit-img">
-                          <img
-                            className="inline-block"
-                            src={Avatar_02}
-                            alt="user"
-                          />
-                          <div className="fileupload btn">
-                            <span className="btn-text">edit</span>
-                            <input className="upload" type="file" />
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-group">
-                              <label>First Name</label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                defaultValue="John"
-                              />
+                <form>
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div className="profile-img-wrap edit-img">
+                            <img
+                              className="inline-block"
+                              src={Avatar_02}
+                              alt="user"
+                            />
+                            <div className="fileupload btn">
+                              <span className="btn-text">upload</span>
+                              <input className="upload" type="file" />
                             </div>
                           </div>
-                          <div className="col-md-6">
-                            <div className="form-group">
-                              <label>Last Name</label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                defaultValue="Doe"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-group">
-                              <label>Birth Date</label>
-                              <div className="cal-icon">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="form-group">
+                                <label>First Name</label>
                                 <input
-                                  className="form-control datetimepicker"
                                   type="text"
-                                  defaultValue="05/06/1985"
+                                  className="form-control"
+                                  value={first_name}
+                                  onChange={(e) =>
+                                    setFirst_name(e.target.value)
+                                  }
                                 />
                               </div>
                             </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-group">
-                              <label>Gender</label>
-                              <select className="select form-control">
-                                <option value="male selected">Male</option>
-                                <option value="female">Female</option>
-                              </select>
+                            <div className="col-md-6">
+                              <div className="form-group">
+                                <label>Last Name</label>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  value={last_name}
+                                  onChange={(e) => setLast_name(e.target.value)}
+                                />
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="form-group">
+                                <label>Birth Date</label>
+                                <div className="cal-icon">
+                                  <input
+                                    className="form-control datetimepicker"
+                                    type="text"
+                                    value={dob}
+                                    onChange={(e) => setDob(e.target.value)}
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="form-group">
+                                <label>Gender</label>
+                                <select
+                                  className="form-control"
+                                  value={gender}
+                                  onChange={(e) => setGender(e.target.value)}
+                                >
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                                </select>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-md-12">
-                        <div className="form-group">
-                          <label>Address</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            defaultValue="4487 Snowbird Lane"
-                          />
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div className="form-group">
+                            <label>Address</label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              value={address}
+                              onChange={(e) => setAddress(e.target.value)}
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label>Country</label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              value={country}
+                              onChange={(e) => setCountry(e.target.value)}
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label>Postal Code</label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              value={postalCode}
+                              onChange={(e) => setPostalCode(e.target.value)}
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label>Phone Number</label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              value={phoneNumber}
+                              onChange={(e) => setPhoneNumber(e.target.value)}
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label>
+                              Designation <span className="text-danger">*no change</span>
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              value={post}
+                              // onChange={(e) => setPost(e.target.value)}
+                            />
+                          </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>State</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            defaultValue="New York"
-                          />
+                      <div className="submit-section">
+                        <div className="form-group text-center" style={{display:'flex', justifyContent:'space-around'}}>
+                          <a
+                            className="btn btn-primary account-btn"
+                            style={{flexDirection:'space-between'}}
+                            // onClick={() => ManagerProfileCreateApi()}
+                          >
+                            Cancel
+                          </a>
+                       
+                        <a
+                          className="btn btn-primary account-btn"
+                          // onClick={() => ManagerProfileCreateApi()}
+                        >
+                          Update
+                        </a>
                         </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>Country</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            defaultValue="United States"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>Pin Code</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            defaultValue={10523}
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>Phone Number</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            defaultValue="631-889-3206"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>
-                            Department <span className="text-danger">*</span>
-                          </label>
-                          <select className="select">
-                            <option>Select Department</option>
-                            <option>Web Development</option>
-                            <option>IT Management</option>
-                            <option>Marketing</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>
-                            Designation <span className="text-danger">*</span>
-                          </label>
-                          <select className="select">
-                            <option>Select Designation</option>
-                            <option>Web Designer</option>
-                            <option>Web Developer</option>
-                            <option>Android Developer</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>
-                            Reports To <span className="text-danger">*</span>
-                          </label>
-                          <select className="select">
-                            <option>-</option>
-                            <option>Wilmer Deluna</option>
-                            <option>Lesley Grauer</option>
-                            <option>Jeffery Lalor</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="submit-section">
-                      <button className="btn btn-primary submit-btn">
+                        {/*<a
+                          className="btn btn-primary account-btn"
+                          onClick={ManagerProfileCreateApi}
+                        >
                         Submit
-                      </button>
-                    </div>
-                  </form>
+                                </a>*/}
+                      </div>
+                    </form>
                 </div>
               </div>
             </div>
@@ -541,7 +612,7 @@ const ManagerProfile = () => {
                                   type="text"
                                   className="form-control"
                                   value={last_name}
-                                  onChange={(e) => setLast_name(e.targrt.value)}
+                                  onChange={(e) => setLast_name(e.target.value)}
                                 />
                               </div>
                             </div>
@@ -582,7 +653,7 @@ const ManagerProfile = () => {
                               type="text"
                               className="form-control"
                               value={address}
-                              onChange={(e) => setAddress(e.target.address)}
+                              onChange={(e) => setAddress(e.target.value)}
                             />
                           </div>
                         </div>
@@ -604,7 +675,7 @@ const ManagerProfile = () => {
                               type="text"
                               className="form-control"
                               value={postalCode}
-                              onChange={(e) => e.target.value}
+                              onChange={(e) => setPostalCode(e.target.value)}
                             />
                           </div>
                         </div>
@@ -634,13 +705,12 @@ const ManagerProfile = () => {
                         </div>
                       </div>
                       <div className="submit-section">
-                        
                         <div className="form-group text-center">
                           <a
                             className="btn btn-primary account-btn"
                             onClick={() => ManagerProfileCreateApi()}
                           >
-                          Submit
+                            Submit
                           </a>
                         </div>
                         {/*<a

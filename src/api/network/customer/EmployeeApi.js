@@ -63,9 +63,9 @@ export const Registration = async (name, email, type, password, cancelToken) => 
 
 
 
-export const ManagerProfileCreate = async (user_id, first_name,last_name, dob,gender,address,country, cancelToken,postal_code) => {    
+export const ManagerProfileCreate = async (user_id, first_name,last_name, dob,phoneNumber,gender,address,country, postal_code,cancelToken) => {    
     const url = `users-profile`;
-    const data = { 'user_id': user_id , 'first_name':first_name,'last_name':last_name, 'dob':dob ,'gender':gender,'address':address, 'country':country , 'postal_code': postal_code };
+    const data = { 'user_id': user_id , 'first_name':first_name,'last_name':last_name, 'dob':dob ,'phone': phoneNumber, 'gender':gender,'address':address, 'country':country , 'postal_code': postal_code };
     const request = { type: 'POST', urlString: url, params: data };
     try {
          const response = await processRequest(request, cancelToken); 
