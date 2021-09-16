@@ -99,4 +99,25 @@ export const getUsersPendingRequestAPI = async (cancelToken) => {
     }
 };
 
+export const approveUsersPendingRequestAPI = async (userId,cancelToken) => {    
+    const url = `approve-request-user/${userId}`;    
+    const request = { type: 'PUT', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+export const deleteUsersPendingRequestAPI = async (userId,cancelToken) => {    
+    const url = `approve-request-user/${userId}`;    
+    const request = { type: 'DELETE', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
 

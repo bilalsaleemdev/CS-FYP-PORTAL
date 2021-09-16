@@ -7,119 +7,152 @@ import { Table } from 'antd';
 import 'antd/dist/antd.css';
 import {itemRender,onShowSizeChange} from "../../paginationfunction"
 import "../../antdstyle.css"
-import { getUsersPendingRequestAPI } from "../../../api/network/customer/EmployeeApi";
+import { getUserProfileAPI, getUsersPendingRequestAPI,approveUsersPendingRequestAPI,deleteUsersPendingRequestAPI } from "../../../api/network/customer/EmployeeApi";
 
 const ApproveRequest = () => {
   const[wrongPassword, setWeongPassword] = useState(false);
-
+  // var  data = [];
+  const [data, setdata] = useState([]);
   const [transition, setTransition] = useState(undefined);
   const history = useHistory();
+  const [userType, setUsertype] = useState('');    
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
   const cancelTokenSource = axios.CancelToken.source();
-  const columns = [
-            
+  const columns = [            
     {
       title: 'Name',
-      dataIndex: 'name',
-      render: (text, record) => (
-        <a href="/purple/app/sales/estimatesview">{text}</a>
-        ),
-      sorter: (a, b) => a.invoicenumber.length - b.invoicenumber.length,
+      dataIndex: 'name',      
     },     
     {
       title: 'Id',
       dataIndex: 'id',
-      sorter: (a, b) => a.client.length - b.client.length,
+      // sorter: (a, b) => a.client.length - b.client.length,
     },
     {
       title: 'Name',
       dataIndex: 'name', 
-      sorter: (a, b) => a.createddate.length - b.createddate.length,
+      // sorter: (a, b) => a.createddate.length - b.createddate.length,
     },
     {
       title: 'Email',
       dataIndex: 'email',
-        sorter: (a, b) => a.duedate.length - b.duedate.length,
+        // sorter: (a, b) => a.duedate.length - b.duedate.length,
     },    
     {
       title: 'Employee Type',
       dataIndex: 'type',
       render: (text, record) => (
-      <span>$ {text}</span>
+      <span>{text}</span>
         ),
-      sorter: (a, b) => a.amount.length - b.amount.length,
-    },
+      // sorter: (a, b) => a.amount.length - b.amount.length,
+    },    
     {
-      title: 'Status',
-      dataIndex: 'status',
+      title: 'Action',            
       render: (text, record) => (
-      <span className={"badge bg-inverse-success"}>Accepted</span>
+      <span  onClick = { ()=>{ 
+        ApproveRequest(record)
+      } }
+      style={{cursor: "-webkit-grabbing", cursor: 'grabbing'}}
+       className={"badge bg-inverse-primary"}>Acceped</span>
         ),
-      sorter: (a, b) => a.status.length - b.status.length,
+        
+      // sorter: (a, b) => a.status.length - b.status.length,
     },
-    // {
-    //   title: 'Action',
-    //   render: (text, record) => (
-    //       <div className="dropdown dropdown-action text-right">
-    //            <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
-    //             <div className="dropdown-menu dropdown-menu-right">
-    //               <a className="dropdown-item" href="/purple/app/sales/editestimates"><i className="fa fa-pencil m-r-5" /> Edit</a>
-    //               <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i className="fa fa-trash-o m-r-5" /> Delete</a>
-    //             </div>
-    //       </div>
-    //     ),
-    // },
+     
+    {
+      title: 'Action',            
+      render: (text, record) => (
+      <span  onClick = { ()=>{ 
+        cancleRequest(record)
+      } }
+      style={{cursor: "-webkit-grabbing", cursor: 'grabbing'}}
+       className={"badge bg-inverse-danger"}>Cancle</span>
+        ),
+        
+      // sorter: (a, b) => a.status.length - b.status.length,
+    },
+
   ]
-  // let data = [
-  //   {id:1,invoicenumber:"EST-0001",client:"	Global Technologies",createddate:"11 Mar 2019",duedate:"11 Mar 2019",amount:"2099",status:"Accepted"},
-  //   {id:2,invoicenumber:"EST-0002",client:"Delta Infotech",createddate:"11 Mar 2019",duedate:"11 Mar 2019",amount:"2099",status:"Declined"},
-  //  ]
-  let data = [
-    {
-        "id": 7,
-        "name": "Bilal",
-        "email": "bilalTest1@mailinator.com",
-        "type": "ceo",
-        "status": 0,
-        "password": "12345",
-        "created_at": "2021-08-22T12:02:42.000Z",
-        "updated_at": "2021-08-22T12:02:42.000Z"
-    },
-    {
-        "id": 10,
-        "name": "Bilal 2",
-        "email": "bilalTest122@mailinator.com",
-        "type": "ceo",
-        "status": 0,
-        "password": "12345",
-        "created_at": "2021-08-25T05:32:31.000Z",
-        "updated_at": "2021-08-25T05:32:31.000Z"
-    }
-]
+
   useEffect(()=>{
-    getUsersPendingRequest()
+    let userId = window.localStorage.getItem('user_id')    
+    getUserProfile(userId);        
   },[])
+  useEffect(()=>{    
+    if(userType != '')    {      
+      getUsersPendingRequest();
+    }
+
+  },[userType])
   // function TransitionLeft(props) {
   //   return <Slide {...props} direction="left" />;
   // }
+  
+  const getUserProfile = async (userId) => {
+    const response = await getUserProfileAPI(userId, cancelTokenSource.token);    
+    if (response.success == true) {
+      console.log('ArrayData::0bar',response.data)
+      setUsertype(response.data.type)            
+    } else {      
+      console.log("Failed Response", response);
+    }
+  };
 
   const getUsersPendingRequest = async () => {
-    // setTransition(() => TransitionLeft);
+    
     const response = await getUsersPendingRequestAPI(cancelTokenSource.token);
     if (response.success == true) {
       // const awais = response.PromiseResult;
-      const  data  = response.data;
+      let localData = []
+
+      console.log(response.data,'ArrayData::', ' ', userType)
+      if(userType == 'manager'){
+        for (let item in response.data) {
+          console.log(item,'ArrayData::')
+          if(response.data[item].type != 'ceo' && response.data[item].type != 'manager'){
+            localData.push(response.data[item])
+          }        
+        }  
+      }
+      else if(userType == 'ceo'){
+        for (let item in response.data) {
+          console.log(item,'ArrayData::')
+          if(response.data[item].type != 'ceo'){
+            localData.push(response.data[item])
+          }        
+        }         
+      }
+            
+      setdata(localData);
       console.log("  data awaiss ", data);
       setWeongPassword(true);
     } else {
       console.log("Failed Response", wrongPassword);
     }
   };
-  
+  const ApproveRequest = async (item) => {
+    
+    const response = await approveUsersPendingRequestAPI(item.id,cancelTokenSource.token);
+    if (response.success == true) {
+      // const awais = response.PromiseResult;
+      getUsersPendingRequest()
+      console.log("  data awaiss ", response);
+      // setWeongPassword(true);
+    } else {
+      console.log("Failed Response", response);
+    }
+  }
    
+  const cancleRequest = async (item) => {
+    const response = await deleteUsersPendingRequestAPI (item.id,cancelTokenSource.token);
+    if (response.success == true) {
+      getUsersPendingRequest()
+      console.log("Success Response ", response.message);      
+    } else {
+      console.log("Failed Response", response.success);
+    }
+  }
+
 
 
   return (
