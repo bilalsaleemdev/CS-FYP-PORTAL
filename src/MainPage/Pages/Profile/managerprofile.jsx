@@ -21,6 +21,7 @@ const ManagerProfile = () => {
   const [openCreataeProfile, setOpenCreateProfile] = useState(false);
 
   const [user_id, Usetser_id] = useState(5);
+  const [email, setEmail] = useState("");
   const [first_name, setFirst_name] = useState("shamis");
   const [last_name, setLast_name] = useState("yasin");
   const [dob, setDob] = useState("2019-01-01");
@@ -29,7 +30,7 @@ const ManagerProfile = () => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [country, setCountry] = useState("male");
   const [post, setPost] = useState("manager");
-  const [postalCode, setPostalCode] = useState("");
+  const [postalCode, setPostalCode] = useState("123");
 
   const CancelTokenSource = axios.CancelToken.source();
   useEffect(() => {
@@ -39,21 +40,29 @@ const ManagerProfile = () => {
 
   const ManagerProfileCreateApi = () => {
     const response = ManagerProfileCreate(
-      3,
+      5,
       first_name,
       last_name,
       dob,
+      postalCode,
       gender,
       address,
       country,
       CancelTokenSource.token
     );
+
+    console.log(response, "awaisssssss");
+    // setOpenCreataeProfile(true);
   };
 
   const getUserProfile = async (userId) => {
     const response = await getUserProfileAPI(userId, CancelTokenSource.token);
     if (response.success == true) {
       const { data } = response;
+      setPhoneNumber(data.phone);
+      setEmail(data.email);
+      setAddress(data.address);
+      setGender(data.gender);
       setUserProfileData(data);
       // const awais = response.PromiseResult;
       console.log("  data miral ", data);
@@ -65,7 +74,7 @@ const ManagerProfile = () => {
 
   return (
     <React.Fragment>
-      {!openCreataeProfile ? (
+      {openCreataeProfile ? (
         <div className="page-wrapper">
           <Helmet>
             <title>Manager Profile </title>
@@ -123,56 +132,31 @@ const ManagerProfile = () => {
                               <li>
                                 <div className="title">Phone:</div>
                                 <div className="text">
-                                  <a href="">9876543210</a>
+                                  <a href="">{userProfileData.phone}</a>
                                 </div>
                               </li>
                               <li>
                                 <div className="title">Email:</div>
                                 <div className="text">
-                                  <a href="">johndoe@example.com</a>
+                                  <a href="">{userProfileData.email}</a>
                                 </div>
                               </li>
-                              <li>
-                                <div className="title">Birthday:</div>
-                                <div className="text">24th July</div>
-                              </li>
+
                               <li>
                                 <div className="title">Address:</div>
                                 <div className="text">
-                                  1861 Bayonne Ave, Manchester Township, NJ,
-                                  08759
+                                  {userProfileData.address}
                                 </div>
                               </li>
                               <li>
                                 <div className="title">Gender:</div>
-                                <div className="text">Male</div>
-                              </li>
-                              <li>
-                                <div className="title">Reports to:</div>
                                 <div className="text">
-                                  <div className="avatar-box">
-                                    <div className="avatar avatar-xs">
-                                      <img src={Avatar_16} alt="" />
-                                    </div>
-                                  </div>
-                                  <a href="/purple/app/profile/employee-profile">
-                                    Jeffery Lalor
-                                  </a>
+                                  {userProfileData.gender}
                                 </div>
                               </li>
                             </ul>
                           </div>
                         </div>
-                      </div>
-                      <div className="pro-edit">
-                        <a
-                          data-target="#profile_info"
-                          data-toggle="modal"
-                          className="edit-icon"
-                          href="#"
-                        >
-                          <i className="fa fa-pencil" />
-                        </a>
                       </div>
                     </div>
                   </div>
@@ -212,7 +196,7 @@ const ManagerProfile = () => {
                             href="#"
                             className="edit-icon"
                             data-toggle="modal"
-                            data-target="#personal_info_modal"
+                            data-target="#profile_info"
                           >
                             <i className="fa fa-pencil" />
                           </a>
@@ -447,106 +431,6 @@ const ManagerProfile = () => {
           </div>
           {/* /Profile Modal */}
           {/* Personal Info Modal */}
-          <div
-            id="personal_info_modal"
-            className="modal custom-modal fade"
-            role="dialog"
-          >
-            <div
-              className="modal-dialog modal-dialog-centered modal-lg"
-              role="document"
-            >
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title">Personal Information</h5>
-                  <button
-                    type="button"
-                    className="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">×</span>
-                  </button>
-                </div>
-                <div className="modal-body">
-                  <form>
-                    <div className="row">
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>Passport No</label>
-                          <input type="text" className="form-control" />
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>Passport Expiry Date</label>
-                          <div className="cal-icon">
-                            <input
-                              className="form-control datetimepicker"
-                              type="text"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>Tel</label>
-                          <input className="form-control" type="text" />
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>
-                            Nationality <span className="text-danger">*</span>
-                          </label>
-                          <input className="form-control" type="text" />
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>Religion</label>
-                          <div className="cal-icon">
-                            <input className="form-control" type="text" />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>
-                            Marital status{" "}
-                            <span className="text-danger">*</span>
-                          </label>
-                          <select className="select form-control">
-                            <option>-</option>
-                            <option>Single</option>
-                            <option>Married</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>Employment of spouse</label>
-                          <input className="form-control" type="text" />
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <label>No. of children </label>
-                          <input className="form-control" type="text" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="submit-section">
-                      <button className="btn btn-primary submit-btn">
-                        Submit
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* /Personal Info Modal */}
         </div>
       ) : (
         <div className="page-wrapper">
@@ -750,18 +634,21 @@ const ManagerProfile = () => {
                         </div>
                       </div>
                       <div className="submit-section">
-                        <button
-                          className="btn btn-primary"
+                        
+                        <div className="form-group text-center">
+                          <a
+                            className="btn btn-primary account-btn"
+                            onClick={() => ManagerProfileCreateApi()}
+                          >
+                          Submit
+                          </a>
+                        </div>
+                        {/*<a
+                          className="btn btn-primary account-btn"
                           onClick={ManagerProfileCreateApi}
                         >
-                          Submit
-                        </button>
-                        <a
-                          className="btn btn-primary account-btn"
-                          onClick={() => ManagerProfileCreateApi()}
-                        >
                         Submit
-                        </a>
+                                </a>*/}
                       </div>
                     </form>
                   </div>
