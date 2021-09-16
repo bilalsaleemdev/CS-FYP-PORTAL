@@ -63,7 +63,7 @@ export const Registration = async (name, email, type, password, cancelToken) => 
 
 
 
-export const ManagerProfileCreate = async (user_id, first_name,last_name, dob,phoneNumber,gender,address,country, postal_code,cancelToken) => {    
+export const ProfileCreate = async (user_id, first_name,last_name, dob,phoneNumber,gender,address,country, postal_code,cancelToken) => {    
     const url = `users-profile`;
     const data = { 'user_id': user_id , 'first_name':first_name,'last_name':last_name, 'dob':dob ,'phone': phoneNumber, 'gender':gender,'address':address, 'country':country , 'postal_code': postal_code };
     const request = { type: 'POST', urlString: url, params: data };
@@ -76,6 +76,24 @@ export const ManagerProfileCreate = async (user_id, first_name,last_name, dob,ph
         return {error:error};
     }
 };
+
+//user profile put api for edit
+
+export const ProfileEdit = async (user_id, first_name,last_name, dob,phoneNumber,gender,address,country, postal_code,cancelToken) => {    
+    const url = `users-profile/${user_id}`;
+    const data = { 'user_id': user_id , 'first_name':first_name,'last_name':last_name, 'dob':dob ,'phone': phoneNumber, 'gender':gender,'address':address, 'country':country , 'postal_code': postal_code };
+    const request = { type: 'PUT', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('manager profile', response)
+        return response.data;
+    } catch (error) { 
+        console.log('manager  error', error)
+        return {error:error};
+    }
+};
+
+
 
 export const getUserProfileAPI = async (userId, cancelToken) => {    
     const url = `users-profile/${userId}`;    

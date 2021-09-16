@@ -12,7 +12,7 @@
    Avatar_16,
  } from "../../../Entryfile/imagepath";
  import {
-   ManagerProfileCreate,
+   ProfileCreate,
    getUserProfileAPI,
  } from "../../../api/network/customer/EmployeeApi";
  import Button from "@material-ui/core/Button";
@@ -54,7 +54,7 @@
    };
    const ManagerProfileCreateApi = async () => {
      setOpen(true);
-     const response = await ManagerProfileCreate(
+     const response = await ProfileCreate(
        user_id_local,
        first_name,
        last_name,
