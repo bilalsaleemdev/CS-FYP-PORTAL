@@ -4,47 +4,57 @@ import { Helmet } from "react-helmet";
 import ReactSummernote from 'react-summernote';
 import 'react-summernote/dist/react-summernote.css'; // import styles
 import {
-  createWorkShopeAPI
+  createWorkShopeAPI,
+  getUserWorkshopesAPI,
+  createUserWorkShopeAPI
 } from "../../../../api/network/customer/EmployeeApi";
 
 const Workshopes = () => {
 
   const cancelTokenSource = axios.CancelToken.source();
-  
+  var user_id = localStorage.getItem('user_id');
+
   const [purpose, setPurpose] = useState();
   const [day, setDay] = useState();
   const [start_at, setStart_at] = useState('2021-01-01');
   const [last_at, setLast_at] = useState('2021-01-01');
   const [url, setUrl] = useState();
+  const [conferanceData, setConferanceData] = useState([]);
 
-  let array = [1,2];
-  useEffect(() => {
-    console.log('day::', purpose)
-    console.log('day::', day)
-    console.log('day::', start_at)
-    console.log('day::', last_at)
-    console.log('day::', url)
-  }, [day, purpose, start_at, last_at, url])
+  // let conferanceData = [1,2];
+  useEffect(() => {    
+    getUserWorkshopes()
+  }, [])
 
   $('#empid').on('change', function (e) {
     setDay(e.target.value)    
   });
-  // $('#stdid').on('change', function (e) {
-  //   console.log("Bilal::",'sad')
-  // });  
-  // function update(){
-  //   console.log("Bilal::",'sad')
-  // }
   
-  const createWorkShope = () => {
+  const createWorkShope = async() => {
     const data = { 'day': day , 'url':url,'start_at':start_at, 'last_at':last_at ,'purpose': purpose};
-    const response = createWorkShopeAPI(
-      data,
-      cancelTokenSource.token
-    );
+    const response = await createWorkShopeAPI(data,cancelTokenSource.token); 
+    if(response.success == true){
+      console.log('Data::',response.data.id)
+      createUserWorkShope(localStorage.getItem('user_id'),response.data.id)
+    }
+  };
 
-    console.log(response, "awaisssssss");
-    // setOpenCreataeProfile(true);
+  const createUserWorkShope = async(user_id,workshope_id) => {
+    const data = { 'user_id': user_id , 'conference_id':workshope_id};
+    const response = await createUserWorkShopeAPI(data,cancelTokenSource.token); 
+    if(response.success == true){
+      getUserWorkshopes()
+    }
+  };
+
+  const getUserWorkshopes = async() => {    
+    const response = await getUserWorkshopesAPI( 
+      user_id,    
+      cancelTokenSource.token
+    );    
+    if(response.success == true){      
+      setConferanceData([...[],...response.data])
+    }
   };
   
   
@@ -69,49 +79,14 @@ const Workshopes = () => {
                 </ul>
               </div>
               <div className="col-auto float-right ml-auto">
-                <a href="#" className="btn add-btn" data-toggle="modal" data-target="#create_project"><i className="fa fa-plus" /> Create Workshope</a>
-                {/* <div className="view-icons">
-                  <a href="/app/projects/project_dashboard" className="grid-view btn btn-link active"><i className="fa fa-th" /></a>
-                  <a href="/app/projects/projects-list" className="list-view btn btn-link"><i className="fa fa-bars" /></a>
-                </div> */}
+                <a href="#" className="btn add-btn" data-toggle="modal" data-target="#create_project"><i className="fa fa-plus" /> Create Workshope</a>                
               </div>
             </div>
           </div>
-          {/* /Page Header */}
-          {/* Search Filter */}
-          {/* <div className="row filter-row">
-            <div className="col-sm-6 col-md-3">
-              <div className="form-group form-focus">
-                <input type="text" className="form-control floating" />
-                <label className="focus-label">Project Name</label>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-3">
-              <div className="form-group form-focus">
-                <input type="text" className="form-control floating" />
-                <label className="focus-label">Employee Name</label>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-3">
-              <div className="form-group form-focus select-focus">
-                <select className="select floating">
-                  <option>Select Roll</option>
-                  <option>Web Developer</option>
-                  <option>Web Designer</option>
-                  <option>Android Developer</option>
-                  <option>Ios Developer</option>
-                </select>
-                <label className="focus-label">Designation</label>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-3">
-              <a href="#" className="btn btn-success btn-block"> Search </a>
-            </div>
-          </div> */}
-          {/* Search Filter */}
+
           <div className="row">
-            {
-              array.map(() => (
+            { 
+              conferanceData.map((key,item) => (
                 <div className="col-lg-4 col-sm-6 col-md-4 col-xl-3">
                 <div className="card">
                   <div className="card-body">
@@ -122,224 +97,26 @@ const Workshopes = () => {
                         <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                       </div>
                     </div>
-                    <h4 className="project-title"><a href="/app/projects/projects-view">Office Management</a></h4>
-                    <small className="block text-ellipsis m-b-15">
-                      <span className="text-xs">1</span> <span className="text-muted">open tasks, </span>
-                      <span className="text-xs">9</span> <span className="text-muted">tasks completed</span>
-                    </small>
-                    <p className="text-muted">Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. When an unknown printer took a galley of type and
-                    scrambled it...
+              <h4 className="project-title"><a href="/app/projects/projects-view">Management WorkShope</a></h4>                    
+                    <p className="text-muted">{key.purpose}
                   </p>
                     <div className="pro-deadline m-b-15">
                       <div className="sub-title">
-                        Deadline:
+                        day:
                     </div>
                       <div className="text-muted">
-                        17 Apr 2019
+                      {key.day}
                     </div>
                     </div>
                     <div className="project-members m-b-15">
-                      <div>Project Leader :</div>
-                      <ul className="team-members">
-                        <li>
-                          <a href="#" data-toggle="tooltip" title="Jeffery Lalor"><img alt="" /></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="project-members m-b-15">
-                      <div>Team :</div>
-                      <ul className="team-members">
-                        <li>
-                          <a href="#" data-toggle="tooltip" title="John Doe"><img alt="" /></a>
-                        </li>
-                        <li>
-                          <a href="#" data-toggle="tooltip" title="Richard Miles"><img alt="" /></a>
-                        </li>
-                        <li>
-                          <a href="#" data-toggle="tooltip" title="John Smith"><img alt="" /></a>
-                        </li>
-                        <li>
-                          <a href="#" data-toggle="tooltip" title="Mike Litorus"><img alt="" /></a>
-                        </li>
-                        <li className="dropdown avatar-dropdown">
-                          <a href="#" className="all-users dropdown-toggle" data-toggle="dropdown" aria-expanded="false">+15</a>
-                          <div className="dropdown-menu dropdown-menu-right">
-                            <div className="avatar-group">
-                              <a className="avatar avatar-xs" href="#">
-                                <img alt="" />
-                              </a>
-                              <a className="avatar avatar-xs" href="#">
-                                <img alt="" />
-                              </a>
-                              <a className="avatar avatar-xs" href="#">
-                                <img alt="" />
-                              </a>
-                              <a className="avatar avatar-xs" href="#">
-                                <img alt="" />
-                              </a>
-                              <a className="avatar avatar-xs" href="#">
-                                <img alt="" />
-                              </a>
-                              <a className="avatar avatar-xs" href="#">
-                                <img alt="" />
-                              </a>
-                              <a className="avatar avatar-xs" href="#">
-                                <img alt="" />
-                              </a>
-                              <a className="avatar avatar-xs" href="#">
-                                <img alt="" />
-                              </a>
-                              <a className="avatar avatar-xs" href="#">
-                                <img alt="" />
-                              </a>
-                            </div>
-                            <div className="avatar-pagination">
-                              <ul className="pagination">
-                                <li className="page-item">
-                                  <a className="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">«</span>
-                                    <span className="sr-only">Previous</span>
-                                  </a>
-                                </li>
-                                <li className="page-item"><a className="page-link" href="#">1</a></li>
-                                <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                <li className="page-item">
-                                  <a className="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">»</span>
-                                    <span className="sr-only">Next</span>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                    <p className="m-b-5">Progress <span className="text-success float-right">40%</span></p>
-                    <div className="progress progress-xs mb-0">
-                      <div className="progress-bar bg-success" role="progressbar" data-toggle="tooltip" title="40%" style={{ width: '40%' }} />
-                    </div>
+                      <div>Start At:<span>{key.start_at}</span></div>
+                      <div>Start At:<span>{key.last_at}</span></div>                      
+                    </div>                    
                   </div>
                 </div>
               </div>
               ))              
-            }
-            {/* <div className="col-lg-4 col-sm-6 col-md-4 col-xl-3">
-              <div className="card">
-                <div className="card-body">
-                  <div className="dropdown dropdown-action profile-action">
-                    <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
-                    <div className="dropdown-menu dropdown-menu-right">
-                      <a className="dropdown-item" href="#" data-toggle="modal" data-target="#edit_project"><i className="fa fa-pencil m-r-5" /> Edit</a>
-                      <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i className="fa fa-trash-o m-r-5" /> Delete</a>
-                    </div>
-                  </div>
-                  <h4 className="project-title"><a href="/app/projects/projects-view">Office Management</a></h4>
-                  <small className="block text-ellipsis m-b-15">
-                    <span className="text-xs">1</span> <span className="text-muted">open tasks, </span>
-                    <span className="text-xs">9</span> <span className="text-muted">tasks completed</span>
-                  </small>
-                  <p className="text-muted">Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. When an unknown printer took a galley of type and
-                  scrambled it...
-                </p>
-                  <div className="pro-deadline m-b-15">
-                    <div className="sub-title">
-                      Deadline:
-                  </div>
-                    <div className="text-muted">
-                      17 Apr 2019
-                  </div>
-                  </div>
-                  <div className="project-members m-b-15">
-                    <div>Project Leader :</div>
-                    <ul className="team-members">
-                      <li>
-                        <a href="#" data-toggle="tooltip" title="Jeffery Lalor"><img alt="" /></a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="project-members m-b-15">
-                    <div>Team :</div>
-                    <ul className="team-members">
-                      <li>
-                        <a href="#" data-toggle="tooltip" title="John Doe"><img alt="" /></a>
-                      </li>
-                      <li>
-                        <a href="#" data-toggle="tooltip" title="Richard Miles"><img alt="" /></a>
-                      </li>
-                      <li>
-                        <a href="#" data-toggle="tooltip" title="John Smith"><img alt="" /></a>
-                      </li>
-                      <li>
-                        <a href="#" data-toggle="tooltip" title="Mike Litorus"><img alt="" /></a>
-                      </li>
-                      <li className="dropdown avatar-dropdown">
-                        <a href="#" className="all-users dropdown-toggle" data-toggle="dropdown" aria-expanded="false">+15</a>
-                        <div className="dropdown-menu dropdown-menu-right">
-                          <div className="avatar-group">
-                            <a className="avatar avatar-xs" href="#">
-                              <img alt="" />
-                            </a>
-                            <a className="avatar avatar-xs" href="#">
-                              <img alt="" />
-                            </a>
-                            <a className="avatar avatar-xs" href="#">
-                              <img alt="" />
-                            </a>
-                            <a className="avatar avatar-xs" href="#">
-                              <img alt="" />
-                            </a>
-                            <a className="avatar avatar-xs" href="#">
-                              <img alt="" />
-                            </a>
-                            <a className="avatar avatar-xs" href="#">
-                              <img alt="" />
-                            </a>
-                            <a className="avatar avatar-xs" href="#">
-                              <img alt="" />
-                            </a>
-                            <a className="avatar avatar-xs" href="#">
-                              <img alt="" />
-                            </a>
-                            <a className="avatar avatar-xs" href="#">
-                              <img alt="" />
-                            </a>
-                          </div>
-                          <div className="avatar-pagination">
-                            <ul className="pagination">
-                              <li className="page-item">
-                                <a className="page-link" href="#" aria-label="Previous">
-                                  <span aria-hidden="true">«</span>
-                                  <span className="sr-only">Previous</span>
-                                </a>
-                              </li>
-                              <li className="page-item"><a className="page-link" href="#">1</a></li>
-                              <li className="page-item"><a className="page-link" href="#">2</a></li>
-                              <li className="page-item">
-                                <a className="page-link" href="#" aria-label="Next">
-                                  <span aria-hidden="true">»</span>
-                                  <span className="sr-only">Next</span>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <p className="m-b-5">Progress <span className="text-success float-right">40%</span></p>
-                  <div className="progress progress-xs mb-0">
-                    <div className="progress-bar bg-success" role="progressbar" data-toggle="tooltip" title="40%" style={{ width: '40%' }} />
-                  </div>
-                </div>
-              </div>
-            </div> */}
-            
-
-
-
+            }            
           </div>
         </div>
         {/* /Page Content */}
@@ -422,30 +199,10 @@ const Workshopes = () => {
                           onChange={(e) => setUrl(e.target.value)}
                           className="form-control" type="text" />
                       </div>
-                    </div>
-                    {/* <div className="col-sm-6">
-                      <div className="form-group">
-                        <label>Team Members</label>
-                        <div className="project-members">
-                          <a href="#" data-toggle="tooltip" title="John Doe" className="avatar">
-                            <img alt="" />
-                          </a>
-                          <a href="#" data-toggle="tooltip" title="Richard Miles" className="avatar">
-                            <img alt="" />
-                          </a>
-                          <a href="#" data-toggle="tooltip" title="John Smith" className="avatar">
-                            <img alt="" />
-                          </a>
-                          <a href="#" data-toggle="tooltip" title="Mike Litorus" className="avatar">
-                            <img alt="" />
-                          </a>
-                          <span className="all-team">+2</span>
-                        </div>
-                      </div>
-                    </div> */}
+                    </div>                    
                   </div>
                   <div className="submit-section">
-                    <button onClick={createWorkShope}className="btn btn-primary">Submit</button>
+                    <div onClick={createWorkShope}className="btn btn-primary">Submit</div>
                   </div>                  
                 </form>
               </div>

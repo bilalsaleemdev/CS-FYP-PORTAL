@@ -134,3 +134,26 @@ export const createWorkShopeAPI = async (data,cancelToken) => {
     }
 };
 
+export const createUserWorkShopeAPI = async (data,cancelToken) => {    
+    const url = `user-conference`;    
+    const request = { type: 'POST', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('conference', response)
+        return response.data;
+    } catch (error) { 
+        console.log('conference', error)
+        return {error:error};
+    }
+};
+
+export const getUserWorkshopesAPI = async (user_id,cancelToken) => {    
+    const url = `user-conference/${user_id}`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
