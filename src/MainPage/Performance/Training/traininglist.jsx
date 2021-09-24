@@ -44,8 +44,8 @@ class TrainingList extends Component {
         dataIndex: 'name',
         render: (text, record) => (            
             <h2 className="table-avatar">
-              <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-              <a href="/purple/app/profile/employee-profile">{text} <span>{record.name}</span></a>
+              <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+              <a href="/app/profile/employee-profile">{text} <span>{record.name}</span></a>
             </h2>
           ), 
           sorter: (a, b) => a.name.length - b.name.length,
@@ -178,7 +178,7 @@ class TrainingList extends Component {
                   <div className="col">
                     <h3 className="page-title">Training</h3>
                     <ul className="breadcrumb">
-                      <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                      <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                       <li className="breadcrumb-item active">Training</li>
                     </ul>
                   </div>
@@ -222,8 +222,8 @@ class TrainingList extends Component {
                           <td>Git Training</td>
                           <td>
                             <h2 className="table-avatar">
-                              <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
-                              <a href="/purple/app/profile/employee-profile">John Doe </a>
+                              <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
+                              <a href="/app/profile/employee-profile">John Doe </a>
                             </h2>
                           </td>
                           <td>
@@ -317,8 +317,8 @@ class TrainingList extends Component {
                           <td>Swift Training</td>
                           <td>
                             <h2 className="table-avatar">
-                              <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_09} /></a>
-                              <a href="/purple/app/profile/employee-profile">Richard Miles</a>
+                              <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_09} /></a>
+                              <a href="/app/profile/employee-profile">Richard Miles</a>
                             </h2>
                           </td>
                           <td>
@@ -412,8 +412,8 @@ class TrainingList extends Component {
                           <td>Node Training</td>
                           <td>
                             <h2 className="table-avatar">
-                              <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
-                              <a href="/purple/app/profile/employee-profile">John Doe </a>
+                              <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
+                              <a href="/app/profile/employee-profile">John Doe </a>
                             </h2>
                           </td>
                           <td>
@@ -507,8 +507,8 @@ class TrainingList extends Component {
                           <td>Angular Training</td>
                           <td>
                             <h2 className="table-avatar">
-                              <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_05} /></a>
-                              <a href="/purple/app/profile/employee-profile">Mike Litorus </a>
+                              <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_05} /></a>
+                              <a href="/app/profile/employee-profile">Mike Litorus </a>
                             </h2>
                           </td>
                           <td>
@@ -602,8 +602,8 @@ class TrainingList extends Component {
                           <td>Git Training</td>
                           <td>
                             <h2 className="table-avatar">
-                              <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_11} /></a>
-                              <a href="/purple/app/profile/employee-profile">Wilmer Deluna </a>
+                              <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_11} /></a>
+                              <a href="/app/profile/employee-profile">Wilmer Deluna </a>
                             </h2>
                           </td>
                           <td>

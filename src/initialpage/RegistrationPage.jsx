@@ -66,13 +66,13 @@ const Registrationpage = () => {
         <meta name="description" content="Login page" />
       </Helmet>
       <div className="account-content">
-        <a href="/purple/login" className="btn btn-primary apply-btn">
+        <a href="/login" className="btn btn-primary apply-btn">
           Login
         </a>
         <div className="container">
           {/* Account Logo */}
           <div className="account-logo">
-            <a href="/purple/app/main/dashboard">
+            <a href="/app/main/dashboard">
               <img src={Applogo} alt="Dreamguy's Technologies" />
             </a>
           </div>
@@ -82,7 +82,7 @@ const Registrationpage = () => {
               <h3 className="account-title">Register</h3>
               <p className="account-subtitle">Access to our dashboard</p>
               {/* Account Form */}
-              <form action="/purple/app/main/dashboard">
+              <form action="/app/main/dashboard">
                 <div className="form-group">
                   <label>Name</label>
                   <input
@@ -140,7 +140,7 @@ const Registrationpage = () => {
                 </div>
                 <div className="account-footer">
                   <p>
-                    Already have an account? <a href="/purple/login">Login</a>
+                    Already have an account? <a href="/login">Login</a>
                   </p>
                 </div>
               </form>

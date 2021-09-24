@@ -20,7 +20,7 @@ class Holidays extends Component {
             <div className="col">
               <h3 className="page-title">Holidays 2019</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Holidays</li>
               </ul>
             </div>

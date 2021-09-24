@@ -169,12 +169,12 @@ const ApproveRequest = () => {
             <div className="col">
               <h3 className="page-title">Approve Request</h3>
               {/* <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Approve Request</li>
               </ul> */}
             </div>
             {/* <div className="col-auto float-right ml-auto">
-              <a href="/purple/app/sales/createestimates" className="btn add-btn"><i className="fa fa-plus" /> Create Estimate</a>
+              <a href="/app/sales/createestimates" className="btn add-btn"><i className="fa fa-plus" /> Create Estimate</a>
             </div> */}
           </div>
         </div>

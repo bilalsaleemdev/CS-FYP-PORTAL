@@ -34,8 +34,8 @@ class EmployeeSalary extends Component {
               dataIndex: 'name',
               render: (text, record) => (            
                   <h2 className="table-avatar">
-                    <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-                    <a href="/purple/app/profile/employee-profile">{text} <span>{record.role}</span></a>
+                    <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+                    <a href="/app/profile/employee-profile">{text} <span>{record.role}</span></a>
                   </h2>
                 ), 
                 sorter: (a, b) => a.name.length - b.name.length,
@@ -83,7 +83,7 @@ class EmployeeSalary extends Component {
             {
               title: 'Payslip',
               render: (text, record) => (
-                <a className="btn btn-sm btn-primary" href="/purple/app/payroll/salary-view">Generate Slip</a>
+                <a className="btn btn-sm btn-primary" href="/app/payroll/salary-view">Generate Slip</a>
                 ),
             },
             {
@@ -113,7 +113,7 @@ class EmployeeSalary extends Component {
                     <div className="col">
                       <h3 className="page-title">Employee Salary</h3>
                       <ul className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                        <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                         <li className="breadcrumb-item active">Salary</li>
                       </ul>
                     </div>

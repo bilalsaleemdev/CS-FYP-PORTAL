@@ -19,7 +19,7 @@ class TaskBoard extends Component {
             <div className="col-sm-12">
               <h3 className="page-title">Hospital Admin</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Task Board</li>
               </ul>
             </div>
@@ -67,7 +67,7 @@ class TaskBoard extends Component {
           </div>
           <div className="col-8 text-right">
             <a href="#" className="btn btn-white float-right ml-2" data-toggle="modal" data-target="#add_task_board"><i className="fa fa-plus" /> Create List</a>
-            <a href="/purple/app/projects/projects-view" className="btn btn-white float-right" title="View Board"><i className="fa fa-link" /></a>
+            <a href="/app/projects/projects-view" className="btn btn-white float-right" title="View Board"><i className="fa fa-link" /></a>
           </div>
           <div className="col-12">
             <div className="pro-progress">

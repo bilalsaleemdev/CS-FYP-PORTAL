@@ -23,7 +23,7 @@ class UserReport extends Component {
                   <div className="col-sm-12">
                     <h3 className="page-title">User Report</h3>
                     <ul className="breadcrumb">
-                      <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                      <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                       <li className="breadcrumb-item active">User Reports</li>
                     </ul>
                   </div>
@@ -73,8 +73,8 @@ class UserReport extends Component {
                           <td>1</td>
                           <td>
                             <h2 className="table-avatar">
-                              <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_19} /></a>
-                              <a href="/purple/app/profile/employee-profile">Barry Cuda <span>Global Technologies</span></a>
+                              <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_19} /></a>
+                              <a href="/app/profile/employee-profile">Barry Cuda <span>Global Technologies</span></a>
                             </h2>
                           </td>
                           <td>Global Technologies</td>
@@ -93,8 +93,8 @@ class UserReport extends Component {
                           <td>2</td>
                           <td>
                             <h2 className="table-avatar">
-                              <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_21} /></a>
-                              <a href="/purple/app/profile/employee-profile">Daniel Porter <span>Admin</span></a>
+                              <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_21} /></a>
+                              <a href="/app/profile/employee-profile">Daniel Porter <span>Admin</span></a>
                             </h2>
                           </td>
                           <td>Focus Technologies</td>

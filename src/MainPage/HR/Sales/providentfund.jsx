@@ -27,8 +27,8 @@ render() {
           dataIndex: 'name',
           render: (text, record) => (            
               <h2 className="table-avatar">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-                <a href="/purple/app/profile/employee-profile">{text} <span>{record.role}</span></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+                <a href="/app/profile/employee-profile">{text} <span>{record.role}</span></a>
               </h2>
             ), 
             sorter: (a, b) => a.name.length - b.name.length,
@@ -91,7 +91,7 @@ render() {
             <div className="col">
               <h3 className="page-title">Provident Fund</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Provident Fund</li>
               </ul>
             </div>
@@ -130,8 +130,8 @@ render() {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
-                        <a href="/purple/app/profile/employee-profile">John Doe <span>Web Designer</span></a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
+                        <a href="/app/profile/employee-profile">John Doe <span>Web Designer</span></a>
                       </h2>
                     </td>
                     <td>Percentage of Basic Salary</td>

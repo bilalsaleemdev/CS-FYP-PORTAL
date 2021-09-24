@@ -159,7 +159,7 @@
                    <h3 className="page-title">Employee Profile</h3>
                    <ul className="breadcrumb">
                      <li className="breadcrumb-item">
-                       <a href="/purple/app/main/dashboard">Dashboard</a>
+                       <a href="/app/main/dashboard">Dashboard</a>
                      </li>
                      <li className="breadcrumb-item active">Profile</li>
                    </ul>
@@ -516,7 +516,7 @@
                    <h3 className="page-title">Employee Profile</h3>
                    <ul className="breadcrumb">
                      <li className="breadcrumb-item">
-                       <a href="/purple/app/main/dashboard">Dashboard</a>
+                       <a href="/app/main/dashboard">Dashboard</a>
                      </li>
                      <li className="breadcrumb-item active">
                        You don't have profile yet

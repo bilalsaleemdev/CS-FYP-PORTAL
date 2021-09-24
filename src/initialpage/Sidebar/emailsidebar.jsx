@@ -16,10 +16,10 @@ class Sidebar extends Component {
           <div className="sidebar-menu">
             <ul>
               <li> 
-                <a href="/purple/app/main/dashboard"><i className="la la-home" /> <span>Back to Home</span></a>
+                <a href="/app/main/dashboard"><i className="la la-home" /> <span>Back to Home</span></a>
               </li>
               <li className="active"> 
-                <a href="/purple/email/inbox">Inbox <span className="mail-count">(21)</span></a>
+                <a href="/email/inbox">Inbox <span className="mail-count">(21)</span></a>
               </li>
               <li> 
                 <a href="#">Starred</a>

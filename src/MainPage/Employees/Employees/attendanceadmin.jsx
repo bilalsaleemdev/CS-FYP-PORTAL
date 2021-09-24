@@ -18,7 +18,7 @@ class Attendance extends Component {
             <div className="col-sm-12">
               <h3 className="page-title">Attendance</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Attendance</li>
               </ul>
             </div>
@@ -114,8 +114,8 @@ class Attendance extends Component {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a className="avatar avatar-xs" href="/purple/app/profile/employee-profile"><img alt="" src={Avatar_09} /></a>
-                        <a href="/purple/app/profile/employee-profile">John Doe</a>
+                        <a className="avatar avatar-xs" href="/app/profile/employee-profile"><img alt="" src={Avatar_09} /></a>
+                        <a href="/app/profile/employee-profile">John Doe</a>
                       </h2>
                     </td>
                     <td><a href="" data-toggle="modal" data-target="#attendance_info"><i className="fa fa-check text-success" /></a></td>
@@ -162,8 +162,8 @@ class Attendance extends Component {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a className="avatar avatar-xs" href="/purple/app/profile/employee-profile"><img alt="" src={Avatar_09} /></a>
-                        <a href="/purple/app/profile/employee-profile">Richard Miles</a>
+                        <a className="avatar avatar-xs" href="/app/profile/employee-profile"><img alt="" src={Avatar_09} /></a>
+                        <a href="/app/profile/employee-profile">Richard Miles</a>
                       </h2>
                     </td>
                     <td><a href="" data-toggle="modal" data-target="#attendance_info"><i className="fa fa-check text-success" /></a></td>
@@ -200,8 +200,8 @@ class Attendance extends Component {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a className="avatar avatar-xs" href="/purple/app/profile/employee-profile"><img alt="" src={Avatar_10} /></a>
-                        <a href="/purple/app/profile/employee-profile">John Smith</a>
+                        <a className="avatar avatar-xs" href="/app/profile/employee-profile"><img alt="" src={Avatar_10} /></a>
+                        <a href="/app/profile/employee-profile">John Smith</a>
                       </h2>
                     </td>
                     <td><a href="" data-toggle="modal" data-target="#attendance_info"><i className="fa fa-check text-success" /></a></td>
@@ -238,8 +238,8 @@ class Attendance extends Component {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a className="avatar avatar-xs" href="/purple/app/profile/employee-profile"><img alt="" src={Avatar_05} /></a>
-                        <a href="/purple/app/profile/employee-profile">Mike Litorus</a>
+                        <a className="avatar avatar-xs" href="/app/profile/employee-profile"><img alt="" src={Avatar_05} /></a>
+                        <a href="/app/profile/employee-profile">Mike Litorus</a>
                       </h2>
                     </td>
                     <td><a href="" data-toggle="modal" data-target="#attendance_info"><i className="fa fa-check text-success" /></a></td>
@@ -276,8 +276,8 @@ class Attendance extends Component {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a className="avatar avatar-xs" href="/purple/app/profile/employee-profile"><img alt="" src={Avatar_11} /></a>
-                        <a href="/purple/app/profile/employee-profile">Wilmer Deluna</a>
+                        <a className="avatar avatar-xs" href="/app/profile/employee-profile"><img alt="" src={Avatar_11} /></a>
+                        <a href="/app/profile/employee-profile">Wilmer Deluna</a>
                       </h2>
                     </td>
                     <td><a href="" data-toggle="modal" data-target="#attendance_info"><i className="fa fa-check text-success" /></a></td>
@@ -314,8 +314,8 @@ class Attendance extends Component {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a className="avatar avatar-xs" href="/purple/app/profile/employee-profile"><img alt="" src={Avatar_12} /></a>
-                        <a href="/purple/app/profile/employee-profile">Jeffrey Warden</a>
+                        <a className="avatar avatar-xs" href="/app/profile/employee-profile"><img alt="" src={Avatar_12} /></a>
+                        <a href="/app/profile/employee-profile">Jeffrey Warden</a>
                       </h2>
                     </td>
                     <td><a href="" data-toggle="modal" data-target="#attendance_info"><i className="fa fa-check text-success" /></a></td>
@@ -352,8 +352,8 @@ class Attendance extends Component {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a className="avatar avatar-xs" href="/purple/app/profile/employee-profile"><img alt="" src={Avatar_13} /></a>
-                        <a href="/purple/app/profile/employee-profile">Bernardo Galaviz</a>
+                        <a className="avatar avatar-xs" href="/app/profile/employee-profile"><img alt="" src={Avatar_13} /></a>
+                        <a href="/app/profile/employee-profile">Bernardo Galaviz</a>
                       </h2>
                     </td>
                     <td><a href="" data-toggle="modal" data-target="#attendance_info"><i className="fa fa-check text-success" /></a></td>
@@ -390,8 +390,8 @@ class Attendance extends Component {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a className="avatar avatar-xs" href="/purple/app/profile/employee-profile"><img alt="" src={Avatar_01} /></a>
-                        <a href="/purple/app/profile/employee-profile">Lesley Grauer</a>
+                        <a className="avatar avatar-xs" href="/app/profile/employee-profile"><img alt="" src={Avatar_01} /></a>
+                        <a href="/app/profile/employee-profile">Lesley Grauer</a>
                       </h2>
                     </td>
                     <td><a href="" data-toggle="modal" data-target="#attendance_info"><i className="fa fa-check text-success" /></a></td>
@@ -428,8 +428,8 @@ class Attendance extends Component {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a className="avatar avatar-xs" href="/purple/app/profile/employee-profile"><img alt="" src={Avatar_16} /></a>
-                        <a href="/purple/app/profile/employee-profile">Jeffery Lalor</a>
+                        <a className="avatar avatar-xs" href="/app/profile/employee-profile"><img alt="" src={Avatar_16} /></a>
+                        <a href="/app/profile/employee-profile">Jeffery Lalor</a>
                       </h2>
                     </td>
                     <td><a href="" data-toggle="modal" data-target="#attendance_info"><i className="fa fa-check text-success" /></a></td>
@@ -466,8 +466,8 @@ class Attendance extends Component {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a className="avatar avatar-xs" href="/purple/app/profile/employee-profile"><img alt="" src={Avatar_04} /></a>
-                        <a href="/purple/app/profile/employee-profile">Loren Gatlin</a>
+                        <a className="avatar avatar-xs" href="/app/profile/employee-profile"><img alt="" src={Avatar_04} /></a>
+                        <a href="/app/profile/employee-profile">Loren Gatlin</a>
                       </h2>
                     </td>
                     <td><a href="" data-toggle="modal" data-target="#attendance_info"><i className="fa fa-check text-success" /></a></td>

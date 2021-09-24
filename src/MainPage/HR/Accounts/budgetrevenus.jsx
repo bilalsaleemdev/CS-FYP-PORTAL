@@ -22,7 +22,7 @@ class BudgetRevenus extends Component {
                 <div className="col">
                   <h3 className="page-title">Budgets Revenues</h3>
                   <ul className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                    <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                     <li className="breadcrumb-item active">Accounts</li>
                   </ul>
                 </div>

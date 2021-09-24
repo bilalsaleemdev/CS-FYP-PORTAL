@@ -82,8 +82,8 @@ render() {
           dataIndex: 'name',
           render: (text, record) => (            
               <h2 className="table-avatar">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-                <a href="/purple/app/profile/employee-profile">{text} </a>
+                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+                <a href="/app/profile/employee-profile">{text} </a>
               </h2>
             ), 
             sorter: (a, b) => a.name.length - b.name.length,
@@ -119,7 +119,7 @@ render() {
             <div className="col">
               <h3 className="page-title">Leaves</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Leaves</li>
               </ul>
             </div>
@@ -201,7 +201,7 @@ render() {
                     </td>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
+                        <a href="/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
                         <a href="#">Richard Miles</a>
                       </h2>
                     </td>
@@ -230,7 +230,7 @@ render() {
                     </td>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
+                        <a href="/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
                         <a href="#">Richard Miles</a>
                       </h2>
                     </td>
@@ -259,7 +259,7 @@ render() {
                     </td>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
+                        <a href="/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
                         <a href="#">Richard Miles</a>
                       </h2>
                     </td>
@@ -288,7 +288,7 @@ render() {
                     </td>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
+                        <a href="/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
                         <a href="#">Richard Miles</a>
                       </h2>
                     </td>
@@ -317,7 +317,7 @@ render() {
                     </td>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
+                        <a href="/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
                         <a href="#">Richard Miles</a>
                       </h2>
                     </td>
@@ -346,7 +346,7 @@ render() {
                     </td>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
+                        <a href="/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
                         <a href="#">Richard Miles</a>
                       </h2>
                     </td>
@@ -375,7 +375,7 @@ render() {
                     </td>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
+                        <a href="/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
                         <a href="#">Richard Miles</a>
                       </h2>
                     </td>
@@ -404,7 +404,7 @@ render() {
                     </td>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
+                        <a href="/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
                         <a href="#">Richard Miles</a>
                       </h2>
                     </td>

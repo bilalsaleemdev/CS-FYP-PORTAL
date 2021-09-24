@@ -31,7 +31,7 @@ class Tickets extends Component {
         title: 'Ticket Id',
         dataIndex: 'ticketid',
         render: (text, record) => (            
-          <a href="/purple/app/employees/ticket-view">#TKT-0001</a>
+          <a href="/app/employees/ticket-view">#TKT-0001</a>
           ), 
         sorter: (a, b) => a.ticketid.length - b.ticketid.length,
       },
@@ -40,8 +40,8 @@ class Tickets extends Component {
         dataIndex: 'name',
         render: (text, record) => (            
             <h2 className="table-avatar">
-              <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-              <a href="/purple/app/profile/employee-profile">{text}</a>
+              <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+              <a href="/app/profile/employee-profile">{text}</a>
             </h2>
           ), 
           sorter: (a, b) => a.name.length - b.name.length,
@@ -117,7 +117,7 @@ class Tickets extends Component {
                 <div className="col">
                   <h3 className="page-title">Tickets</h3>
                   <ul className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                    <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                     <li className="breadcrumb-item active">Tickets</li>
                   </ul>
                 </div>
@@ -280,11 +280,11 @@ class Tickets extends Component {
                     <tbody>
                       <tr>
                         <td>1</td>
-                        <td><a href="/purple/app/employees/ticket-view">#TKT-0001</a></td>
+                        <td><a href="/app/employees/ticket-view">#TKT-0001</a></td>
                         <td>Laptop Issue</td>
                         <td>
                           <h2 className="table-avatar">
-                            <a className="avatar avatar-xs" href="/purple/app/profile/employee-profile"><img alt="" src={Avatar_10} /></a>
+                            <a className="avatar avatar-xs" href="/app/profile/employee-profile"><img alt="" src={Avatar_10} /></a>
                             <a href="#">John Smith</a>
                           </h2>
                         </td>
@@ -327,11 +327,11 @@ class Tickets extends Component {
                       </tr>
                       <tr>
                         <td>2</td>
-                        <td><a href="/purple/app/employees/ticket-view">#TKT-0001</a></td>
+                        <td><a href="/app/employees/ticket-view">#TKT-0001</a></td>
                         <td>Internet Issue</td>
                         <td>
                           <h2 className="table-avatar">
-                            <a className="avatar avatar-xs" href="/purple/app/profile/employee-profile"><img alt="" src={Avatar_08} /></a>
+                            <a className="avatar avatar-xs" href="/app/profile/employee-profile"><img alt="" src={Avatar_08} /></a>
                             <a href="#">Catherine Manseau</a>
                           </h2>
                         </td>

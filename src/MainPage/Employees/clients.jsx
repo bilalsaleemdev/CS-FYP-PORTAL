@@ -19,15 +19,15 @@ class Clients extends Component {
                <div className="col">
                  <h3 className="page-title">Clients</h3>
                  <ul className="breadcrumb">
-                   <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                   <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                    <li className="breadcrumb-item active">Clients</li>
                  </ul>
                </div>
                <div className="col-auto float-right ml-auto">
                  <a href="#" className="btn add-btn" data-toggle="modal" data-target="#add_client"><i className="fa fa-plus" /> Add Client</a>
                  <div className="view-icons">
-                   <a href="/purple/app/employees/clients" className="grid-view btn btn-link active"><i className="fa fa-th" /></a>
-                   <a href="/purple/app/employees/clients-list" className="list-view btn btn-link"><i className="fa fa-bars" /></a>
+                   <a href="/app/employees/clients" className="grid-view btn btn-link active"><i className="fa fa-th" /></a>
+                   <a href="/app/employees/clients-list" className="list-view btn btn-link"><i className="fa fa-bars" /></a>
                  </div>
                </div>
              </div>
@@ -66,7 +66,7 @@ class Clients extends Component {
              <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                <div className="profile-widget">
                  <div className="profile-img">
-                   <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_19} /></a>
+                   <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_19} /></a>
                  </div>
                  <div className="dropdown profile-action">
                    <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -75,17 +75,17 @@ class Clients extends Component {
                      <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                    </div>
                  </div>
-                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Global Technologies</a></h4>
-                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Barry Cuda</a></h5>
+                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Global Technologies</a></h4>
+                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Barry Cuda</a></h5>
                  <div className="small text-muted">CEO</div>
-                 <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a> 
-                 <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                 <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a> 
+                 <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                </div>
              </div>
              <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                <div className="profile-widget">
                  <div className="profile-img">
-                   <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_29} /></a>
+                   <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_29} /></a>
                  </div>
                  <div className="dropdown profile-action">
                    <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -94,17 +94,17 @@ class Clients extends Component {
                      <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                    </div>
                  </div>
-                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Delta Infotech</a></h4>
-                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Tressa Wexler</a></h5>
+                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Delta Infotech</a></h4>
+                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Tressa Wexler</a></h5>
                  <div className="small text-muted">Manager</div>
-                 <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                 <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                 <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                 <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                </div>
              </div>
              <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                <div className="profile-widget">
                  <div className="profile-img">
-                   <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_07} alt="" /></a>
+                   <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_07} alt="" /></a>
                  </div>
                  <div className="dropdown profile-action">
                    <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -113,17 +113,17 @@ class Clients extends Component {
                      <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                    </div>
                  </div>
-                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Cream Inc</a></h4>
-                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Ruby Bartlett</a></h5>
+                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Cream Inc</a></h4>
+                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Ruby Bartlett</a></h5>
                  <div className="small text-muted">CEO</div>
-                 <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                 <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                 <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                 <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                </div>
              </div>
              <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                <div className="profile-widget">
                  <div className="profile-img">
-                   <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_06} alt="" /></a>
+                   <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_06} alt="" /></a>
                  </div>
                  <div className="dropdown profile-action">
                    <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -132,17 +132,17 @@ class Clients extends Component {
                      <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                    </div>
                  </div>
-                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Wellware Company</a></h4>
-                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Misty Tison</a></h5>
+                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Wellware Company</a></h4>
+                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Misty Tison</a></h5>
                  <div className="small text-muted">CEO</div>
-                 <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                 <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                 <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                 <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                </div>
              </div>
              <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                <div className="profile-widget">
                  <div className="profile-img">
-                   <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_14} /></a>
+                   <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_14} /></a>
                  </div>
                  <div className="dropdown profile-action">
                    <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -151,17 +151,17 @@ class Clients extends Component {
                      <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                    </div>
                  </div>
-                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Mustang Technologies</a></h4>
-                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Daniel Deacon</a></h5>
+                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Mustang Technologies</a></h4>
+                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Daniel Deacon</a></h5>
                  <div className="small text-muted">CEO</div>
-                 <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                 <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                 <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                 <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                </div>
              </div>
              <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                <div className="profile-widget">
                  <div className="profile-img">
-                   <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_18} /></a>
+                   <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_18} /></a>
                  </div>
                  <div className="dropdown profile-action">
                    <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -170,17 +170,17 @@ class Clients extends Component {
                      <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                    </div>
                  </div>
-                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">International Software Inc</a></h4>
-                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Walter Weaver</a></h5>
+                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">International Software Inc</a></h4>
+                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Walter Weaver</a></h5>
                  <div className="small text-muted">CEO</div>
-                 <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                 <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                 <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                 <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                </div>
              </div>
              <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                <div className="profile-widget">
                  <div className="profile-img">
-                   <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_28} /></a>
+                   <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_28} /></a>
                  </div>
                  <div className="dropdown profile-action">
                    <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -189,17 +189,17 @@ class Clients extends Component {
                      <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                    </div>
                  </div>
-                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Mercury Software Inc</a></h4>
-                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Amanda Warren</a></h5>
+                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Mercury Software Inc</a></h4>
+                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Amanda Warren</a></h5>
                  <div className="small text-muted">CEO</div>
-                 <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                 <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                 <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                 <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                </div>
              </div>
              <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                <div className="profile-widget">
                  <div className="profile-img">
-                   <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_13} /></a>
+                   <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_13} /></a>
                  </div>
                  <div className="dropdown profile-action">
                    <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -208,11 +208,11 @@ class Clients extends Component {
                      <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                    </div>
                  </div>
-                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Carlson Tech</a></h4>
-                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Betty Carlson</a></h5>
+                 <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Carlson Tech</a></h4>
+                 <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Betty Carlson</a></h5>
                  <div className="small text-muted">CEO</div>
-                 <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                 <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                 <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                 <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                </div>
              </div>
            </div>

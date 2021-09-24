@@ -23,13 +23,13 @@ class ShiftScheduling extends Component {
                 <div className="col">
                   <h3 className="page-title">Daily Scheduling</h3>
                   <ul className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
-                    <li className="breadcrumb-item"><a href="/purple/app/employee/allemployees">Employees</a></li>
+                    <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
+                    <li className="breadcrumb-item"><a href="/app/employee/allemployees">Employees</a></li>
                     <li className="breadcrumb-item active">Shift Scheduling</li>
                   </ul>
                 </div>
                 <div className="col-auto float-right ml-auto">
-                  <a href="/purple/app/employee/shift-list" className="btn add-btn m-r-5">Shifts</a>
+                  <a href="/app/employee/shift-list" className="btn add-btn m-r-5">Shifts</a>
                   <a href="#" className="btn add-btn m-r-5" data-toggle="modal" data-target="#add_schedule"> Assign Shifts</a>
                 </div>
               </div>
@@ -99,8 +99,8 @@ class ShiftScheduling extends Component {
                       <tr>
                         <td>
                           <h2 className="table-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_02} /></a>
-                            <a href="/purple/app/profile/employee-profile">John Doe <span>Web Designer</span></a>
+                            <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_02} /></a>
+                            <a href="/app/profile/employee-profile">John Doe <span>Web Designer</span></a>
                           </h2>
                         </td>
                         <td>
@@ -176,8 +176,8 @@ class ShiftScheduling extends Component {
                       <tr>
                         <td>
                           <h2 className="table-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_09} /></a>
-                            <a href="/purple/app/profile/employee-profile">Richard Miles <span>Web Developer</span></a>
+                            <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_09} /></a>
+                            <a href="/app/profile/employee-profile">Richard Miles <span>Web Developer</span></a>
                           </h2>
                         </td>
                         <td>
@@ -253,8 +253,8 @@ class ShiftScheduling extends Component {
                       <tr>
                         <td>
                           <h2 className="table-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_10} /></a>
-                            <a href="/purple/app/profile/employee-profile">John Smith <span>Android Developer</span></a>
+                            <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_10} /></a>
+                            <a href="/app/profile/employee-profile">John Smith <span>Android Developer</span></a>
                           </h2>
                         </td>
                         <td>
@@ -330,8 +330,8 @@ class ShiftScheduling extends Component {
                       <tr>
                         <td>
                           <h2 className="table-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_05} /></a>
-                            <a href="/purple/app/profile/employee-profile">Mike Litorus <span>IOS Developer</span></a>
+                            <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_05} /></a>
+                            <a href="/app/profile/employee-profile">Mike Litorus <span>IOS Developer</span></a>
                           </h2>
                         </td>
                         <td>
@@ -407,8 +407,8 @@ class ShiftScheduling extends Component {
                       <tr>
                         <td>
                           <h2 className="table-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_11} /></a>
-                            <a href="/purple/app/profile/employee-profile">Wilmer Deluna <span>Team Leader</span></a>
+                            <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_11} /></a>
+                            <a href="/app/profile/employee-profile">Wilmer Deluna <span>Team Leader</span></a>
                           </h2>
                         </td>
                         <td>
@@ -484,8 +484,8 @@ class ShiftScheduling extends Component {
                       <tr>
                         <td>
                           <h2 className="table-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_12} /></a>
-                            <a href="/purple/app/profile/employee-profile">Jeffrey Warden <span>Web Developer</span></a>
+                            <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_12} /></a>
+                            <a href="/app/profile/employee-profile">Jeffrey Warden <span>Web Developer</span></a>
                           </h2>
                         </td>
                         <td>
@@ -561,8 +561,8 @@ class ShiftScheduling extends Component {
                       <tr>
                         <td>
                           <h2 className="table-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_13} /></a>
-                            <a href="/purple/app/profile/employee-profile">Bernardo Galaviz <span>Web Developer</span></a>
+                            <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_13} /></a>
+                            <a href="/app/profile/employee-profile">Bernardo Galaviz <span>Web Developer</span></a>
                           </h2>
                         </td>
                         <td>

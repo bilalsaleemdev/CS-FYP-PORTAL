@@ -34,7 +34,7 @@
           title: 'Job Title',
           dataIndex: 'jobtitle',
           render: (text, record) => (            
-              <a href="/purple/app/administrator/job-details">{text}</a>
+              <a href="/app/administrator/job-details">{text}</a>
             ), 
             sorter: (a, b) => a.jobtitle.length - b.jobtitle.length,
         },
@@ -83,7 +83,7 @@
                  <div className="col-sm-12">
                    <h3 className="page-title">Offered Jobs</h3>
                    <ul className="breadcrumb">
-                     <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                     <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                      <li className="breadcrumb-item ">Jobs</li>
                      <li className="breadcrumb-item ">User Dashboard</li>
                      <li className="breadcrumb-item active">Offered Jobs</li>

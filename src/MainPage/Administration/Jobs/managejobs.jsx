@@ -33,7 +33,7 @@ class Managedjobs extends Component {
         title: 'Job Title',
         dataIndex: 'jobtitle',
         render: (text, record) => (            
-            <a href="/purple/app/administrator/job-details">{text}</a>
+            <a href="/app/administrator/job-details">{text}</a>
           ), 
           sorter: (a, b) => a.jobtitle.length - b.jobtitle.length,
       },
@@ -97,7 +97,7 @@ class Managedjobs extends Component {
         title: 'Applicants',
         dataIndex: 'applicants',
         render: (text, record) => (
-          <a href="/purple/app/administrator/job-applicants" className="btn btn-sm btn-primary">{text}</a>
+          <a href="/app/administrator/job-applicants" className="btn btn-sm btn-primary">{text}</a>
           ),
         sorter: (a, b) => a.applicants.length - b.applicants.length,
       },
@@ -132,7 +132,7 @@ class Managedjobs extends Component {
             <div className="col">
               <h3 className="page-title">Jobs</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Jobs</li>
               </ul>
             </div>

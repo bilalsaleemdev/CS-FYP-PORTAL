@@ -16,11 +16,11 @@ class ForgotPassword extends Component {
                     <meta name="description" content="Login page"/>					
             </Helmet>
           <div className="account-content">
-            <a href="/purple/applyjob/joblist" className="btn btn-primary apply-btn">Apply Job</a>
+            <a href="/applyjob/joblist" className="btn btn-primary apply-btn">Apply Job</a>
             <div className="container">
               {/* Account Logo */}
               <div className="account-logo">
-                <a href="/purple/app/main/dashboard"><img src={Applogo} alt="Dreamguy's Technologies" /></a>
+                <a href="/app/main/dashboard"><img src={Applogo} alt="Dreamguy's Technologies" /></a>
               </div>
               {/* /Account Logo */}
               <div className="account-box">
@@ -37,7 +37,7 @@ class ForgotPassword extends Component {
                       <button className="btn btn-primary account-btn" type="submit">Reset Password</button>
                     </div>
                     <div className="account-footer">
-                      <p>Remember your password? <a href="/purple/login">Login</a></p>
+                      <p>Remember your password? <a href="/login">Login</a></p>
                     </div>
                   </form>
                   {/* /Account Form */}

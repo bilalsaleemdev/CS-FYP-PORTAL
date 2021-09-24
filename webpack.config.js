@@ -11,7 +11,7 @@ const envKeys = Object.keys(env).reduce((prev, next) => {
   console.log(env);
   return prev;
 }, {});
-// const publicPath = '/purple/';
+// const publicPath = '/';
 const publicPath = '/';
 
 // Make sure any symlinks in the project folder are resolved:
@@ -73,7 +73,7 @@ module.exports = {
       apiUrl: '',
       imageapiUrl: '',
       
-      publicPath : '/purple'            
+      publicPath : '/'            
   })
 },
  resolve: {

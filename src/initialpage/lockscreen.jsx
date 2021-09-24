@@ -17,11 +17,11 @@ class Lockscreen extends Component {
                <meta name="description" content="Login page"/>					
              </Helmet>
           <div className="account-content">
-            <a href="/purple/applyjob/joblist" className="btn btn-primary apply-btn">Apply Job</a>
+            <a href="/applyjob/joblist" className="btn btn-primary apply-btn">Apply Job</a>
             <div className="container">
               {/* Account Logo */}
               <div className="account-logo">
-                <a href="/purple/app/main/dashboard"><img src={Applogo} alt="Dreamguy's Technologies" /></a>
+                <a href="/app/main/dashboard"><img src={Applogo} alt="Dreamguy's Technologies" /></a>
               </div>
               {/* /Account Logo */}
               <div className="account-box">
@@ -33,7 +33,7 @@ class Lockscreen extends Component {
                   </div>
                   {/* /Lock User Img */}
                   {/* Account Form */}
-                  <form action="/purple/app/main/dashboard">
+                  <form action="/app/main/dashboard">
                     <div className="form-group">
                       <label>Password</label>
                       <input className="form-control" type="password" />
@@ -42,7 +42,7 @@ class Lockscreen extends Component {
                       <button className="btn btn-primary account-btn" type="submit">Enter</button>
                     </div>
                     <div className="account-footer">
-                      <p>Sign in as a different user? <a href="/purple/register">Login</a></p>
+                      <p>Sign in as a different user? <a href="/register">Login</a></p>
                     </div>
                   </form>
                   {/* /Account Form */}

@@ -63,7 +63,7 @@ export default class App extends Component {
             // if (user === null) {
             //     return (<Redirect to={'/login'} />);
             // } else {
-            //     return (<Redirect to={'/purple/app/main/dashboard'} />);
+            //     return (<Redirect to={'/app/main/dashboard'} />);
             // }
             // }
             if (location.pathname === '/') {

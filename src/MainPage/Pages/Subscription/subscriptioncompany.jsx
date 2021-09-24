@@ -21,7 +21,7 @@ export default class SubscriptionCompany extends Component {
 				  <div className="col-sm-8 col-4">
 					<h3 className="page-title">Subscriptions</h3>
 					<ul className="breadcrumb">
-					  <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+					  <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
 					  <li className="breadcrumb-item active">Subscriptions</li>
 					</ul>
 				  </div>

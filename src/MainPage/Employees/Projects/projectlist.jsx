@@ -34,15 +34,15 @@ class Projects extends Component {
             <div className="col">
               <h3 className="page-title">Projects</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Projects</li>
               </ul>
             </div>
             <div className="col-auto float-right ml-auto">
               <a href="#" className="btn add-btn" data-toggle="modal" data-target="#create_project"><i className="fa fa-plus" /> Create Project</a>
               <div className="view-icons">
-                <a href="/purple/app/projects/project_dashboard" className="grid-view btn btn-link"><i className="fa fa-th" /></a>
-                <a href="/purple/app/projects/projects-list" className="list-view btn btn-link active"><i className="fa fa-bars" /></a>
+                <a href="/app/projects/project_dashboard" className="grid-view btn btn-link"><i className="fa fa-th" /></a>
+                <a href="/app/projects/projects-list" className="list-view btn btn-link active"><i className="fa fa-bars" /></a>
               </div>
             </div>
           </div>
@@ -98,7 +98,7 @@ class Projects extends Component {
                 <tbody>
                   <tr>
                     <td>
-                      <a href="/purple/app/projects/projects-view">Office Management</a>
+                      <a href="/app/projects/projects-view">Office Management</a>
                     </td>
                     <td>PRO-0001</td>
                     <td>
@@ -208,7 +208,7 @@ class Projects extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <a href="/purple/app/projects/projects-view">Project Management</a>
+                      <a href="/app/projects/projects-view">Project Management</a>
                     </td>
                     <td>PRO-0002</td>
                     <td>
@@ -269,7 +269,7 @@ class Projects extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <a href="/purple/app/projects/projects-view">Video Calling App</a>
+                      <a href="/app/projects/projects-view">Video Calling App</a>
                     </td>
                     <td>PRO-0003</td>
                     <td>
@@ -330,7 +330,7 @@ class Projects extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <a href="/purple/app/projects/projects-view">Hospital Administration</a>
+                      <a href="/app/projects/projects-view">Hospital Administration</a>
                     </td>
                     <td>PRO-0004</td>
                     <td>
@@ -391,7 +391,7 @@ class Projects extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <a href="/purple/app/projects/projects-view">Office Management</a>
+                      <a href="/app/projects/projects-view">Office Management</a>
                     </td>
                     <td>PRO-0005</td>
                     <td>
@@ -452,7 +452,7 @@ class Projects extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <a href="/purple/app/projects/projects-view">Project Management</a>
+                      <a href="/app/projects/projects-view">Project Management</a>
                     </td>
                     <td>PRO-0006</td>
                     <td>
@@ -513,7 +513,7 @@ class Projects extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <a href="/purple/app/projects/projects-view">Video Calling App</a>
+                      <a href="/app/projects/projects-view">Video Calling App</a>
                     </td>
                     <td>PRO-0007</td>
                     <td>
@@ -574,7 +574,7 @@ class Projects extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <a href="/purple/app/projects/projects-view">Hospital Administration</a>
+                      <a href="/app/projects/projects-view">Hospital Administration</a>
                     </td>
                     <td>PRO-0008</td>
                     <td>
@@ -635,7 +635,7 @@ class Projects extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <a href="/purple/app/projects/projects-view">Office Management</a>
+                      <a href="/app/projects/projects-view">Office Management</a>
                     </td>
                     <td>PRO-0009</td>
                     <td>
@@ -696,7 +696,7 @@ class Projects extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <a href="/purple/app/projects/projects-view">Project Management</a>
+                      <a href="/app/projects/projects-view">Project Management</a>
                     </td>
                     <td>PRO-0010</td>
                     <td>
@@ -757,7 +757,7 @@ class Projects extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <a href="/purple/app/projects/projects-view">Video Calling App</a>
+                      <a href="/app/projects/projects-view">Video Calling App</a>
                     </td>
                     <td>PRO-0011</td>
                     <td>

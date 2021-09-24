@@ -16,50 +16,50 @@
            <div className="sidebar-menu">
              <ul>
                <li> 
-                 <a href="/purple/app/main/dashboard"><i className="la la-home" /> <span>Back to Home</span></a>
+                 <a href="/app/main/dashboard"><i className="la la-home" /> <span>Back to Home</span></a>
                </li>
                <li className="menu-title">Settings</li>
                <li className={pathname.includes('companysetting') ?"active" :""}> 
-                 <a href="/purple/settings/companysetting"><i className="la la-building" /> <span>Company Settings</span></a>
+                 <a href="/settings/companysetting"><i className="la la-building" /> <span>Company Settings</span></a>
                </li>
                <li className={pathname.includes('localization') ?"active" :""}> 
-                 <a href="/purple/settings/localization"><i className="la la-clock-o" /> <span>Localization</span></a>
+                 <a href="/settings/localization"><i className="la la-clock-o" /> <span>Localization</span></a>
                </li>
                <li className={pathname.includes('theme-') ?"active" :""}> 
-                 <a href="/purple/settings/theme-settings"><i className="la la-photo" /> <span>Theme Settings</span></a>
+                 <a href="/settings/theme-settings"><i className="la la-photo" /> <span>Theme Settings</span></a>
                </li>
                <li className={pathname.includes('roles-permissions') ?"active" :""}> 
-                 <a href="/purple/settings/roles-permissions"><i className="la la-key" /> <span>Roles &amp; Permissions</span></a>
+                 <a href="/settings/roles-permissions"><i className="la la-key" /> <span>Roles &amp; Permissions</span></a>
                </li>
                <li className={pathname.includes('email-') ?"active" :""}> 
-                 <a href="/purple/settings/email-settings"><i className="la la-at" /> <span>Email Settings</span></a>
+                 <a href="/settings/email-settings"><i className="la la-at" /> <span>Email Settings</span></a>
                </li>
                <li className={pathname.includes('performance-') ?"active" :""}> 
-                 <a href="/purple/settings/performance-setting"><i className="la la-chart-bar" /> <span>Performance Settings</span></a>
+                 <a href="/settings/performance-setting"><i className="la la-chart-bar" /> <span>Performance Settings</span></a>
                </li>
                <li className={pathname.includes('approval-') ?"active" :""}> 
-                 <a href="/purple/settings/approval-setting"><i className="la la-thumbs-up" /> <span>Approval Settings</span></a>
+                 <a href="/settings/approval-setting"><i className="la la-thumbs-up" /> <span>Approval Settings</span></a>
                </li>
                <li className={pathname.includes('invoice-') ?"active" :""}> 
-                 <a href="/purple/settings/invoice-settings"><i className="la la-pencil-square" /> <span>Invoice Settings</span></a>
+                 <a href="/settings/invoice-settings"><i className="la la-pencil-square" /> <span>Invoice Settings</span></a>
                </li>
                <li className={pathname.includes('salary-') ?"active" :""}> 
-                 <a href="/purple/settings/salary-settings"><i className="la la-money" /> <span>Salary Settings</span></a>
+                 <a href="/settings/salary-settings"><i className="la la-money" /> <span>Salary Settings</span></a>
                </li>
                <li className={pathname.includes('notifications') ?"active" :""}> 
-                 <a href="/purple/settings/notifications"><i className="la la-globe" /> <span>Notifications</span></a>
+                 <a href="/settings/notifications"><i className="la la-globe" /> <span>Notifications</span></a>
                </li>
                <li className={pathname.includes('-password') ?"active" :""}> 
-                 <a href="/purple/settings/change-password"><i className="la la-lock" /> <span>Change Password</span></a>
+                 <a href="/settings/change-password"><i className="la la-lock" /> <span>Change Password</span></a>
                </li>
                <li className={pathname.includes('-type') ?"active" :""}> 
-                 <a href="/purple/settings/leave-type"><i className="la la-cogs" /> <span>Leave Type</span></a>
+                 <a href="/settings/leave-type"><i className="la la-cogs" /> <span>Leave Type</span></a>
                </li>
                <li className={pathname.includes('toxbox-') ?"active" :""}> 
-                 <a href="/purple/settings/toxbox-setting"><i className="la la-comment" /> <span>ToxBox Settings</span></a>
+                 <a href="/settings/toxbox-setting"><i className="la la-comment" /> <span>ToxBox Settings</span></a>
                </li>
                <li className={pathname.includes('cron') ?"active" :""}> 
-                 <a href="/purple/settings/cron-setting"><i className="la la-rocket" /> <span>Cron Settings</span></a>
+                 <a href="/settings/cron-setting"><i className="la la-rocket" /> <span>Cron Settings</span></a>
                </li>
              </ul>
            </div>

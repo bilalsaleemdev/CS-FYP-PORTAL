@@ -28,7 +28,7 @@
                     <div className="col-sm-12">
                       <h3 className="page-title">User Job Dashboard</h3>
                       <ul className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                        <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                         <li className="breadcrumb-item">Jobs</li>
                         <li className="breadcrumb-item">User Dashboard</li>
                         <li className="breadcrumb-item">User Dashboard</li>
@@ -137,7 +137,7 @@
                             <tbody>
                               <tr>
                                 <td>1</td>
-                                <td><a href="/purple/app/administrator/job-details">Web Developer</a></td>
+                                <td><a href="/app/administrator/job-details">Web Developer</a></td>
                                 <td>Development</td>
                                 <td className="text-center">
                                   <div className="action-label">
@@ -152,7 +152,7 @@
                               </tr>
                               <tr>
                                 <td>2</td>
-                                <td><a href="/purple/app/administrator/job-details">Web Designer</a></td>
+                                <td><a href="/app/administrator/job-details">Web Designer</a></td>
                                 <td>Designing</td>
                                 <td className="text-center">
                                   <div className="action-label">
@@ -167,7 +167,7 @@
                               </tr>
                               <tr>
                                 <td>3</td>
-                                <td><a href="/purple/app/administrator/job-details">Android Developer</a></td>
+                                <td><a href="/app/administrator/job-details">Android Developer</a></td>
                                 <td>Android</td>
                                 <td className="text-center">
                                   <div className="action-label">
@@ -211,7 +211,7 @@
                             <tbody>
                               <tr>
                                 <td>1</td>
-                                <td><a href="/purple/app/administrator/job-details">Web Developer</a></td>
+                                <td><a href="/app/administrator/job-details">Web Developer</a></td>
                                 <td>Development</td>
                                 <td>3 Mar 2019</td>
                                 <td>31 May 2019</td>
@@ -240,7 +240,7 @@
                               </tr>
                               <tr>
                                 <td>2</td>
-                                <td><a href="/purple/app/administrator/job-details">Web Designer</a></td>
+                                <td><a href="/app/administrator/job-details">Web Designer</a></td>
                                 <td>Designing</td>
                                 <td>3 Mar 2019</td>
                                 <td>31 May 2019</td>
@@ -269,7 +269,7 @@
                               </tr>
                               <tr>
                                 <td>3</td>
-                                <td><a href="/purple/app/administrator/job-details">Android Developer</a></td>
+                                <td><a href="/app/administrator/job-details">Android Developer</a></td>
                                 <td>Android</td>
                                 <td>3 Mar 2019</td>
                                 <td>31 May 2019</td>

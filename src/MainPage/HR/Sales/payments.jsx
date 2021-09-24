@@ -24,7 +24,7 @@ class Payments extends Component {
         title: 'Invoice ID',
         dataIndex: 'invoicenumber',
         render: (text, record) => (
-          <a href="/purple/app/sales/invoices-view">#{text}</a>
+          <a href="/app/sales/invoices-view">#{text}</a>
           ),
         sorter: (a, b) => a.invoicenumber.length - b.invoicenumber.length,
       },     
@@ -67,7 +67,7 @@ class Payments extends Component {
             <div className="col-sm-12">
               <h3 className="page-title">Payments</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Payments</li>
               </ul>
             </div>
@@ -100,7 +100,7 @@ class Payments extends Component {
                 </thead>
                 <tbody>
                   <tr>
-                    <td><a href="/purple/app/sales/invoices-view">#INV-0001</a></td>
+                    <td><a href="/app/sales/invoices-view">#INV-0001</a></td>
                     <td>
                       <h2><a href="#">Global Technologies</a></h2>
                     </td>
@@ -109,7 +109,7 @@ class Payments extends Component {
                     <td>$500</td>
                   </tr>
                   <tr>
-                    <td><a href="/purple/app/sales/invoices-view">#INV-0002</a></td>
+                    <td><a href="/app/sales/invoices-view">#INV-0002</a></td>
                     <td>
                       <h2><a href="#">Delta Infotech</a></h2>
                     </td>
@@ -118,7 +118,7 @@ class Payments extends Component {
                     <td>$500</td>
                   </tr>
                   <tr>
-                    <td><a href="/purple/app/sales/invoices-view">#INV-0003</a></td>
+                    <td><a href="/app/sales/invoices-view">#INV-0003</a></td>
                     <td>
                       <h2><a href="#">Cream Inc</a></h2>
                     </td>

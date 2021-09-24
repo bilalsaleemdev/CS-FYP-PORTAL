@@ -89,11 +89,11 @@ const Loginpage = () => {
                <meta name="description" content="Login page"/>					
          </Helmet> */}
         <div className="account-content">
-          {/* <a href="/purple/applyjob/joblist" className="btn btn-primary apply-btn">Apply Job</a> */}
+          {/* <a href="/applyjob/joblist" className="btn btn-primary apply-btn">Apply Job</a> */}
           <div className="container">
             {/* Account Logo */}
             <div className="account-logo">
-              <a href="/purple/login">
+              <a href="/login">
                 <img src={Applogo} alt="Dreamguy's Technologies" />
               </a>
             </div>
@@ -122,7 +122,7 @@ const Loginpage = () => {
                         <label>Password</label>
                       </div>
                       {/* <div className="col-auto">
-                        <a className="text-muted" href="/purple/forgotpassword">
+                        <a className="text-muted" href="/forgotpassword">
                           Forgot password?
                         </a>
                       </div> */}
@@ -138,7 +138,7 @@ const Loginpage = () => {
                   </div>
                   {/* <div className="form-group text-center">
                     <a className="btn btn-primary account-btn"
-                    //  href="/purple/app/main/dashboard">
+                    //  href="/app/main/dashboard">
                     // onClick ={Loginpage()}              
                     href=""
                     >                                      
@@ -155,7 +155,7 @@ const Loginpage = () => {
                   <div className="account-footer">
                     <p>
                       Don't have an account yet?{" "}
-                      <a href="/purple/register">Register</a>
+                      <a href="/register">Register</a>
                     </p>
                   </div>
                 </form>
