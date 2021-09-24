@@ -8,7 +8,7 @@ import { loginAdmin } from "../api/network/customer/EmployeeApi";
 import axios, { CancelTokenSource } from "axios";
 import { Config } from "../../Config";
 import { Helmet } from "react-helmet";
-import CeoDashboard from "../MainPage/Main/Dashboard/Ceo/ceodashboard.jsx";
+import CeoDashboard from "../MainPage/Main/pages/Ceo/ceodashboard.jsx";
 import { useHistory } from "react-router-dom";
 
 const Loginpage = () => {

@@ -121,3 +121,16 @@ export const deleteUsersPendingRequestAPI = async (userId,cancelToken) => {
     }
 };
 
+export const createWorkShopeAPI = async (data,cancelToken) => {    
+    const url = `conference`;    
+    const request = { type: 'POST', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('conference', response)
+        return response.data;
+    } catch (error) { 
+        console.log('conference', error)
+        return {error:error};
+    }
+};
+

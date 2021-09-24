@@ -1,6 +1,6 @@
 
 //main
-import Dashboard from '../MainPage/Main/Dashboard';
+import Dashboard from '../MainPage/Main/pages';
 import Apps from '../MainPage/Main/Apps';
 //UI Interface
 import UIinterface from '../MainPage/UIinterface';

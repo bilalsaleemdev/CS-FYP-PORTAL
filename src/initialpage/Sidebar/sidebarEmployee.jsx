@@ -15,10 +15,10 @@
            <div id="sidebar-menu" className="sidebar-menu">
              <ul>
                <li className="menu-title"> 
-                 <span>Main</span>
+                 <span>EMPLOYEE</span>
                </li>
-               <li className={pathname.includes('main/dashboard') ?"active" :""}> 
-                 <a href="/app/main/dashboard"><i className="la la-dashboard" /> <span>Dashboard</span></a>
+               <li className={pathname.includes('/app/main/dashboard/employee') ?"active" :""}> 
+                 <a href="/app/main/dashboard/employee"><i className="la la-dashboard" /> <span>Dashboard</span></a>
                </li>               
                {/* <li className="submenu">
                  
