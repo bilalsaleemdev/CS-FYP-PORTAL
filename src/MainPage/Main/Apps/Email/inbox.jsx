@@ -23,12 +23,12 @@ class InboxPage extends Component {
             <div className="col">
               <h3 className="page-title">Inbox</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Inbox</li>
               </ul>
             </div>
             <div className="col-auto float-right ml-auto">
-              <a href="/purple/email/compose" className="btn add-btn"><i className="fa fa-plus" /> Compose</a>
+              <a href="/email/compose" className="btn add-btn"><i className="fa fa-plus" /> Compose</a>
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@ class InboxPage extends Component {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="unread clickable-row" data-href="/purple/email/mail-view">
+                        <tr className="unread clickable-row" data-href="/email/mail-view">
                           <td>
                             <input type="checkbox" className="checkmail" />
                           </td>
@@ -129,7 +129,7 @@ class InboxPage extends Component {
                           <td><i className="fa fa-paperclip" /></td>
                           <td className="mail-date">13:14</td>
                         </tr>
-                        <tr className="unread clickable-row" data-href="/purple/email/mail-view">
+                        <tr className="unread clickable-row" data-href="/email/mail-view">
                           <td>
                             <input type="checkbox" className="checkmail" />
                           </td>
@@ -139,7 +139,7 @@ class InboxPage extends Component {
                           <td />
                           <td className="mail-date">8:42</td>
                         </tr>
-                        <tr className="clickable-row" data-href="/purple/email/mail-view">
+                        <tr className="clickable-row" data-href="/email/mail-view">
                           <td>
                             <input type="checkbox" className="checkmail" />
                           </td>
@@ -149,7 +149,7 @@ class InboxPage extends Component {
                           <td />
                           <td className="mail-date">30 Nov</td>
                         </tr>
-                        <tr className="unread clickable-row" data-href="/purple/email/mail-view">
+                        <tr className="unread clickable-row" data-href="/email/mail-view">
                           <td>
                             <input type="checkbox" className="checkmail" />
                           </td>
@@ -159,7 +159,7 @@ class InboxPage extends Component {
                           <td />
                           <td className="mail-date">18 Sep</td>
                         </tr>
-                        <tr className="clickable-row" data-href="/purple/email/mail-view">
+                        <tr className="clickable-row" data-href="/email/mail-view">
                           <td>
                             <input type="checkbox" className="checkmail" />
                           </td>
@@ -169,7 +169,7 @@ class InboxPage extends Component {
                           <td />
                           <td className="mail-date">21 Aug</td>
                         </tr>
-                        <tr className="clickable-row" data-href="/purple/email/mail-view">
+                        <tr className="clickable-row" data-href="/email/mail-view">
                           <td>
                             <input type="checkbox" className="checkmail" />
                           </td>
@@ -179,7 +179,7 @@ class InboxPage extends Component {
                           <td />
                           <td className="mail-date">1 Aug</td>
                         </tr>
-                        <tr className="unread clickable-row" data-href="/purple/email/mail-view">
+                        <tr className="unread clickable-row" data-href="/email/mail-view">
                           <td>
                             <input type="checkbox" className="checkmail" />
                           </td>
@@ -189,7 +189,7 @@ class InboxPage extends Component {
                           <td />
                           <td className="mail-date">Jul 13</td>
                         </tr>
-                        <tr className="clickable-row" data-href="/purple/email/mail-view">
+                        <tr className="clickable-row" data-href="/email/mail-view">
                           <td>
                             <input type="checkbox" className="checkmail" />
                           </td>
@@ -199,7 +199,7 @@ class InboxPage extends Component {
                           <td><i className="fa fa-paperclip" /></td>
                           <td className="mail-date">May 14</td>
                         </tr>
-                        <tr className="unread clickable-row" data-href="/purple/email/mail-view">
+                        <tr className="unread clickable-row" data-href="/email/mail-view">
                           <td>
                             <input type="checkbox" className="checkmail" />
                           </td>
@@ -209,7 +209,7 @@ class InboxPage extends Component {
                           <td />
                           <td className="mail-date">11/11/16</td>
                         </tr>
-                        <tr className="clickable-row" data-href="/purple/email/mail-view">
+                        <tr className="clickable-row" data-href="/email/mail-view">
                           <td>
                             <input type="checkbox" className="checkmail" />
                           </td>

@@ -31,8 +31,8 @@ class Leads extends Component {
         dataIndex: 'name',
         render: (text, record) => (            
             <h2 className="table-avatar">
-              <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-              <a href="/purple/app/profile/employee-profile">{text}</a>
+              <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+              <a href="/app/profile/employee-profile">{text}</a>
             </h2>
           ), 
           sorter: (a, b) => a.name.length - b.name.length,
@@ -53,7 +53,7 @@ class Leads extends Component {
         title: 'Project',
         dataIndex: 'project',
         render: (text, record) => (
-        <a href="/purple/app/projects/projects-view">{text}</a>
+        <a href="/app/projects/projects-view">{text}</a>
           ),
         sorter: (a, b) => a.project.length - b.project.length,
       },
@@ -164,7 +164,7 @@ class Leads extends Component {
                <div className="col-sm-12">
                  <h3 className="page-title">Leads</h3>
                  <ul className="breadcrumb">
-                   <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                   <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                    <li className="breadcrumb-item active">Leads</li>
                  </ul>
                </div>
@@ -211,7 +211,7 @@ class Leads extends Component {
                        </td>
                        <td>wilmerdeluna@example.com</td>
                        <td>9876543210</td>
-                       <td><a href="/purple/app/projects/projects-view">Hospital Administration</a></td>
+                       <td><a href="/app/projects/projects-view">Hospital Administration</a></td>
                        <td>
                          <ul className="team-members">
                            <li>
@@ -296,7 +296,7 @@ class Leads extends Component {
                        </td>
                        <td>lesleygrauer@example.com</td>
                        <td>9876543210</td>
-                       <td><a href="/purple/app/projects/projects-view">Video Calling App</a></td>
+                       <td><a href="/app/projects/projects-view">Video Calling App</a></td>
                        <td>
                          <ul className="team-members">
                            <li>
@@ -332,7 +332,7 @@ class Leads extends Component {
                        </td>
                        <td>jefferylalor@example.com</td>
                        <td>9876543210</td>
-                       <td><a href="/purple/app/projects/projects-view">Office Management</a></td>
+                       <td><a href="/app/projects/projects-view">Office Management</a></td>
                        <td>
                          <ul className="team-members">
                            <li>
@@ -368,7 +368,7 @@ class Leads extends Component {
                        </td>
                        <td>wilmerdeluna@example.com</td>
                        <td>9876543210</td>
-                       <td><a href="/purple/app/projects/projects-view">Hospital Administration</a></td>
+                       <td><a href="/app/projects/projects-view">Hospital Administration</a></td>
                        <td>
                          <ul className="team-members">
                            <li>
@@ -404,7 +404,7 @@ class Leads extends Component {
                        </td>
                        <td>lesleygrauer@example.com</td>
                        <td>9876543210</td>
-                       <td><a href="/purple/app/projects/projects-view">Video Calling App</a></td>
+                       <td><a href="/app/projects/projects-view">Video Calling App</a></td>
                        <td>
                          <ul className="team-members">
                            <li>
@@ -440,7 +440,7 @@ class Leads extends Component {
                        </td>
                        <td>jefferylalor@example.com</td>
                        <td>9876543210</td>
-                       <td><a href="/purple/app/projects/projects-view">Office Management</a></td>
+                       <td><a href="/app/projects/projects-view">Office Management</a></td>
                        <td>
                          <ul className="team-members">
                            <li>
@@ -476,7 +476,7 @@ class Leads extends Component {
                        </td>
                        <td>wilmerdeluna@example.com</td>
                        <td>9876543210</td>
-                       <td><a href="/purple/app/projects/projects-view">Hospital Administration</a></td>
+                       <td><a href="/app/projects/projects-view">Hospital Administration</a></td>
                        <td>
                          <ul className="team-members">
                            <li>
@@ -512,7 +512,7 @@ class Leads extends Component {
                        </td>
                        <td>lesleygrauer@example.com</td>
                        <td>9876543210</td>
-                       <td><a href="/purple/app/projects/projects-view">Video Calling App</a></td>
+                       <td><a href="/app/projects/projects-view">Video Calling App</a></td>
                        <td>
                          <ul className="team-members">
                            <li>
@@ -548,7 +548,7 @@ class Leads extends Component {
                        </td>
                        <td>jefferylalor@example.com</td>
                        <td>9876543210</td>
-                       <td><a href="/purple/app/projects/projects-view">Office Management</a></td>
+                       <td><a href="/app/projects/projects-view">Office Management</a></td>
                        <td>
                          <ul className="team-members">
                            <li>

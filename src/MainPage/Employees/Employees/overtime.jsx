@@ -32,8 +32,8 @@ render() {
           dataIndex: 'name',
           render: (text, record) => (            
               <h2 className="table-avatar">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-                <a href="/purple/app/profile/employee-profile">{text} <span>{record.role}</span></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+                <a href="/app/profile/employee-profile">{text} <span>{record.role}</span></a>
               </h2>
             ), 
             sorter: (a, b) => a.name.length - b.name.length,
@@ -78,8 +78,8 @@ render() {
           dataIndex: 'approvedby',
           render: (text, record) => (            
               <h2 className="table-avatar">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.apimage} /></a>
-                <a href="/purple/app/profile/employee-profile">{text}</a>
+                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.apimage} /></a>
+                <a href="/app/profile/employee-profile">{text}</a>
               </h2>
             ), 
           sorter: (a, b) => a.approvedby.length - b.approvedby.length,
@@ -115,7 +115,7 @@ render() {
             <div className="col">
               <h3 className="page-title">Overtime</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Overtime</li>
               </ul>
             </div>
@@ -187,8 +187,8 @@ render() {
                     <td>1</td>
                     <td>
                       <h2 className="table-avatar blue-link">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
-                        <a href="/purple/app/profile/employee-profile">John Doe</a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
+                        <a href="/app/profile/employee-profile">John Doe</a>
                       </h2>
                     </td>
                     <td>8 Mar 2019</td>
@@ -204,7 +204,7 @@ render() {
                     </td>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
+                        <a href="/app/profile/employee-profile" className="avatar avatar-xs"><img src={Avatar_09} alt="" /></a>
                         <a href="#">Richard Miles</a>
                       </h2>
                     </td>

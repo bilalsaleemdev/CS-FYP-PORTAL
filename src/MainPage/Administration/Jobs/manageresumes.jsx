@@ -36,8 +36,8 @@
          dataIndex: 'name',
          render: (text, record) => (            
              <h2 className="table-avatar">
-               <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-               <a href="/purple/app/profile/employee-profile">{text} <span>{record.role}</span></a>
+               <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+               <a href="/app/profile/employee-profile">{text} <span>{record.role}</span></a>
              </h2>
            ), 
            sorter: (a, b) => a.name.length - b.name.length,
@@ -46,7 +46,7 @@
           title: 'Job Title',
           dataIndex: 'jobtitle',
           render: (text, record) => (            
-              <a href="/purple/app/administrator/job-details">{text}</a>
+              <a href="/app/administrator/job-details">{text}</a>
             ), 
             sorter: (a, b) => a.jobtitle.length - b.jobtitle.length,
         },
@@ -143,7 +143,7 @@
                  <div className="col-12">
                    <h3 className="page-title">Manage Resumes</h3>
                    <ul className="breadcrumb">
-                     <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                     <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                      <li className="breadcrumb-item">Jobs</li>
                      <li className="breadcrumb-item active">Manage Resumes</li>
                    </ul>

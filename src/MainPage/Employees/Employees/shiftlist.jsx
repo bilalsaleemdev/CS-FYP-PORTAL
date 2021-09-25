@@ -115,7 +115,7 @@ render() {
                 <div className="col">
                   <h3 className="page-title">Shift List</h3>
                   <ul className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                    <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                     <li className="breadcrumb-item"><a href="#">Employees</a></li>
                     <li className="breadcrumb-item active">Shift List</li>
                   </ul>

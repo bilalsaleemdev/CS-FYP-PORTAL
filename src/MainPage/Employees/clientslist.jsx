@@ -27,8 +27,8 @@ class Clients extends Component {
         dataIndex: 'name',
         render: (text, record) => (            
             <h2 className="table-avatar">
-              <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-              <a href="/purple/app/profile/employee-profile">{text}</a>
+              <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+              <a href="/app/profile/employee-profile">{text}</a>
             </h2>
           ), 
           sorter: (a, b) => a.name.length - b.name.length,
@@ -97,15 +97,15 @@ class Clients extends Component {
                <div className="col">
                  <h3 className="page-title">Clients</h3>
                  <ul className="breadcrumb">
-                   <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                   <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                    <li className="breadcrumb-item active">Clients</li>
                  </ul>
                </div>
                <div className="col-auto float-right ml-auto">
                  <a href="#" className="btn add-btn" data-toggle="modal" data-target="#add_client"><i className="fa fa-plus" /> Add Client</a>
                  <div className="view-icons">
-                   <a href="/purple/app/employees/clients" className="grid-view btn btn-link"><i className="fa fa-th" /></a>
-                   <a href="/purple/app/employees/clients-list" className="list-view btn btn-link active"><i className="fa fa-bars" /></a>
+                   <a href="/app/employees/clients" className="grid-view btn btn-link"><i className="fa fa-th" /></a>
+                   <a href="/app/employees/clients-list" className="list-view btn btn-link active"><i className="fa fa-bars" /></a>
                  </div>
                </div>
              </div>
@@ -171,8 +171,8 @@ class Clients extends Component {
                      <tr>
                        <td>
                          <h2 className="table-avatar">
-                           <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_19} alt="" /></a>
-                           <a href="/purple/app/profile/client-profile">Global Technologies</a>
+                           <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_19} alt="" /></a>
+                           <a href="/app/profile/client-profile">Global Technologies</a>
                          </h2>
                        </td>
                        <td>CLT-0001</td>
@@ -201,8 +201,8 @@ class Clients extends Component {
                      <tr>
                        <td>
                          <h2 className="table-avatar">
-                           <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_29} alt="" /></a>
-                           <a href="/purple/app/profile/client-profile">Delta Infotech</a>
+                           <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_29} alt="" /></a>
+                           <a href="/app/profile/client-profile">Delta Infotech</a>
                          </h2>
                        </td>
                        <td>CLT-0002</td>
@@ -231,8 +231,8 @@ class Clients extends Component {
                      <tr>
                        <td>
                          <h2 className="table-avatar">
-                           <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_07} /></a>
-                           <a href="/purple/app/profile/client-profile">Cream Inc</a>
+                           <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_07} /></a>
+                           <a href="/app/profile/client-profile">Cream Inc</a>
                          </h2>
                        </td>
                        <td>CLT-0003</td>
@@ -261,8 +261,8 @@ class Clients extends Component {
                      <tr>
                        <td>
                          <h2 className="table-avatar">
-                           <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_06} /></a>
-                           <a href="/purple/app/profile/client-profile">Wellware Company</a>
+                           <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_06} /></a>
+                           <a href="/app/profile/client-profile">Wellware Company</a>
                          </h2>
                        </td>
                        <td>CLT-0004</td>
@@ -291,8 +291,8 @@ class Clients extends Component {
                      <tr>
                        <td>
                          <h2 className="table-avatar">
-                           <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_14} alt="" /></a>
-                           <a href="/purple/app/profile/client-profile">Mustang Technologies</a>
+                           <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_14} alt="" /></a>
+                           <a href="/app/profile/client-profile">Mustang Technologies</a>
                          </h2>
                        </td>
                        <td>CLT-0005</td>
@@ -321,8 +321,8 @@ class Clients extends Component {
                      <tr>
                        <td>
                          <h2 className="table-avatar">
-                           <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_18} alt="" /></a>
-                           <a href="/purple/app/profile/client-profile">International Software Inc</a>
+                           <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_18} alt="" /></a>
+                           <a href="/app/profile/client-profile">International Software Inc</a>
                          </h2>
                        </td>
                        <td>CLT-0006</td>
@@ -351,8 +351,8 @@ class Clients extends Component {
                      <tr>
                        <td>
                          <h2 className="table-avatar">
-                           <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_28} alt="" /></a>
-                           <a href="/purple/app/profile/client-profile">Mercury Software Inc</a>
+                           <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_28} alt="" /></a>
+                           <a href="/app/profile/client-profile">Mercury Software Inc</a>
                          </h2>
                        </td>
                        <td>CLT-0007</td>
@@ -381,8 +381,8 @@ class Clients extends Component {
                      <tr>
                        <td>
                          <h2 className="table-avatar">
-                           <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_22} alt="" /></a>
-                           <a href="/purple/app/profile/client-profile">Carlson Tech</a>
+                           <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_22} alt="" /></a>
+                           <a href="/app/profile/client-profile">Carlson Tech</a>
                          </h2>
                        </td>
                        <td>CLT-0008</td>

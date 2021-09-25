@@ -36,8 +36,8 @@ class Users extends Component {
         dataIndex: 'name',
         render: (text, record) => (            
             <h2 className="table-avatar">
-              <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-              <a href="/purple/app/profile/employee-profile">{text} <span>{record.role}</span></a>
+              <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+              <a href="/app/profile/employee-profile">{text} <span>{record.role}</span></a>
             </h2>
           ), 
           sorter: (a, b) => a.name.length - b.name.length,
@@ -95,7 +95,7 @@ class Users extends Component {
                     <div className="col">
                       <h3 className="page-title">Users</h3>
                       <ul className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                        <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                         <li className="breadcrumb-item active">Users</li>
                       </ul>
                     </div>
@@ -169,8 +169,8 @@ class Users extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_21} alt="" /></a>
-                                <a href="/purple/app/profile/employee-profile">Daniel Porter <span>Admin</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_21} alt="" /></a>
+                                <a href="/app/profile/employee-profile">Daniel Porter <span>Admin</span></a>
                               </h2>
                             </td>
                             <td>danielporter@example.com</td>
@@ -192,8 +192,8 @@ class Users extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
-                                <a href="/purple/app/profile/employee-profile">John Doe <span>Web Designer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
+                                <a href="/app/profile/employee-profile">John Doe <span>Web Designer</span></a>
                               </h2>
                             </td>
                             <td>johndoe@example.com</td>
@@ -215,8 +215,8 @@ class Users extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_09} /></a>
-                                <a href="/purple/app/profile/employee-profile">Richard Miles <span>Admin</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_09} /></a>
+                                <a href="/app/profile/employee-profile">Richard Miles <span>Admin</span></a>
                               </h2>
                             </td>
                             <td>richardmiles@example.com</td>
@@ -238,8 +238,8 @@ class Users extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_10} /></a>
-                                <a href="/purple/app/profile/employee-profile">John Smith <span>Android Developer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_10} /></a>
+                                <a href="/app/profile/employee-profile">John Smith <span>Android Developer</span></a>
                               </h2>
                             </td>
                             <td>johnsmith@example.com</td>
@@ -261,8 +261,8 @@ class Users extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_05} /></a>
-                                <a href="/purple/app/profile/employee-profile">Mike Litorus <span>IOS Developer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_05} /></a>
+                                <a href="/app/profile/employee-profile">Mike Litorus <span>IOS Developer</span></a>
                               </h2>
                             </td>
                             <td>mikelitorus@example.com</td>
@@ -284,8 +284,8 @@ class Users extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_11} /></a>
-                                <a href="/purple/app/profile/employee-profile">Wilmer Deluna <span>Team Leader</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_11} /></a>
+                                <a href="/app/profile/employee-profile">Wilmer Deluna <span>Team Leader</span></a>
                               </h2>
                             </td>
                             <td>wilmerdeluna@example.com</td>
@@ -307,8 +307,8 @@ class Users extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_19} alt="" /></a>
-                                <a href="/purple/app/profile/employee-profile">Barry Cuda <span>Global Technologies</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_19} alt="" /></a>
+                                <a href="/app/profile/employee-profile">Barry Cuda <span>Global Technologies</span></a>
                               </h2>
                             </td>
                             <td>barrycuda@example.com</td>

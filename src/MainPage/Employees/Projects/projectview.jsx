@@ -20,13 +20,13 @@ class Projects extends Component {
             <div className="col">
               <h3 className="page-title">Hospital Admin</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Project</li>
               </ul>
             </div>
             <div className="col-auto float-right ml-auto">
               <a href="#" className="btn add-btn" data-toggle="modal" data-target="#edit_project"><i className="fa fa-plus" /> Edit Project</a>
-              <a href="/purple/app/projects/task-board" className="btn btn-white float-right m-r-10" data-toggle="tooltip" title="Task Board"><i className="fa fa-bars" /></a>
+              <a href="/app/projects/task-board" className="btn btn-white float-right m-r-10" data-toggle="tooltip" title="Task Board"><i className="fa fa-bars" /></a>
             </div>
           </div>
         </div>
@@ -317,7 +317,7 @@ class Projects extends Component {
                     </tr>
                     <tr>
                       <td>Created by:</td>
-                      <td className="text-right"><a href="/purple/app/profile/employee-profile">Barry Cuda</a></td>
+                      <td className="text-right"><a href="/app/profile/employee-profile">Barry Cuda</a></td>
                     </tr>
                     <tr>
                       <td>Status:</td>
@@ -336,7 +336,7 @@ class Projects extends Component {
                 <h6 className="card-title m-b-20">Assigned Leader <button type="button" className="float-right btn btn-primary btn-sm" data-toggle="modal" data-target="#assign_leader"><i className="fa fa-plus" /> Add</button></h6>
                 <ul className="list-box">
                   <li>
-                    <a href="/purple/app/profile/employee-profile">
+                    <a href="/app/profile/employee-profile">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar"><img alt="" src={Avatar_11} /></span>
@@ -350,7 +350,7 @@ class Projects extends Component {
                     </a>
                   </li>
                   <li>
-                    <a href="/purple/app/profile/employee-profile">
+                    <a href="/app/profile/employee-profile">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar"><img alt="" src={Avatar_01} /></span>
@@ -374,7 +374,7 @@ class Projects extends Component {
                 </h6>
                 <ul className="list-box">
                   <li>
-                    <a href="/purple/app/profile/employee-profile">
+                    <a href="/app/profile/employee-profile">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar"><img alt="" src={Avatar_02} /></span>
@@ -388,7 +388,7 @@ class Projects extends Component {
                     </a>
                   </li>
                   <li>
-                    <a href="/purple/app/profile/employee-profile">
+                    <a href="/app/profile/employee-profile">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar"><img alt="" src={Avatar_09} /></span>

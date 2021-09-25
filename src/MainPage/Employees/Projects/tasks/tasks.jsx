@@ -282,7 +282,7 @@ class Tasks extends Component {
                        </div>
                        <div className="chat chat-left">
                          <div className="chat-avatar">
-                           <a href="/purple/app/profile/employee-profile" className="avatar">
+                           <a href="/app/profile/employee-profile" className="avatar">
                              <img alt="" src={Avatar_02} />
                            </a>
                          </div>
@@ -299,7 +299,7 @@ class Tasks extends Component {
                        <div className="completed-task-msg"><span className="task-success"><a href="#">John Doe</a> completed this task.</span> <span className="task-time">Today at 9:27am</span></div>
                        <div className="chat chat-left">
                          <div className="chat-avatar">
-                           <a href="/purple/app/profile/employee-profile" className="avatar">
+                           <a href="/app/profile/employee-profile" className="avatar">
                              <img alt="" src={Avatar_02} />
                            </a>
                          </div>
@@ -318,7 +318,7 @@ class Tasks extends Component {
                        </div>
                        <div className="chat chat-left">
                          <div className="chat-avatar">
-                           <a href="/purple/app/profile/employee-profile" className="avatar">
+                           <a href="/app/profile/employee-profile" className="avatar">
                              <img alt="" src={Avatar_16} />
                            </a>
                          </div>
@@ -335,7 +335,7 @@ class Tasks extends Component {
                        </div>
                        <div className="chat chat-left">
                          <div className="chat-avatar">
-                           <a href="/purple/app/profile/employee-profile" className="avatar">
+                           <a href="/app/profile/employee-profile" className="avatar">
                              <img alt="" src={Avatar_16} />
                            </a>
                          </div>

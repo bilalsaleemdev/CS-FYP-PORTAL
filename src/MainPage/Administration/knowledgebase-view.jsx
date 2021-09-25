@@ -18,7 +18,7 @@ class KnowledgebaseView extends Component {
               <div className="col-sm-12">
                 <h3 className="page-title">Knowledgebase</h3>
                 <ul className="breadcrumb">
-                  <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                  <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                   <li className="breadcrumb-item active">Knowledgebase</li>
                 </ul>
               </div>
@@ -34,9 +34,9 @@ class KnowledgebaseView extends Component {
                     <h1 className="post-title">Lorem ipsum dolor sit amet </h1>
                     <ul className="meta">
                       <li><span>Created :</span> Feb, 04, 2016</li>
-                      <li><span>Category:</span> <a href="/purple/app/administrator/knowledgebase-view">Category 1</a>, <a href="/purple/app/administrator/knowledgebase-view">Category 2</a></li>
+                      <li><span>Category:</span> <a href="/app/administrator/knowledgebase-view">Category 1</a>, <a href="/app/administrator/knowledgebase-view">Category 2</a></li>
                       <li><span>Last Updated:</span> April, 15, 2016</li>
-                      <li><span>Comments :</span> <a href="/purple/app/administrator/knowledgebase-view">5</a></li>
+                      <li><span>Comments :</span> <a href="/app/administrator/knowledgebase-view">5</a></li>
                       <li><span>Views :</span> 1198</li>
                     </ul>
                     <p>
@@ -57,8 +57,8 @@ class KnowledgebaseView extends Component {
                   <div className="feedback">
                     <h3>Was this article helpful to you?</h3>
                     <p>
-                      <a href="/purple/app/administrator/knowledgebase-view" className="btn btn-success mr-1"><i className="fa fa-thumbs-up" /></a>
-                      <a href="/purple/app/administrator/knowledgebase-view" className="btn btn-danger"><i className="fa fa-thumbs-down" /></a>
+                      <a href="/app/administrator/knowledgebase-view" className="btn btn-success mr-1"><i className="fa fa-thumbs-up" /></a>
+                      <a href="/app/administrator/knowledgebase-view" className="btn btn-danger"><i className="fa fa-thumbs-down" /></a>
                     </p>
                     <p>29 found this helpful</p>
                   </div>
@@ -73,12 +73,12 @@ class KnowledgebaseView extends Component {
                             </div>
                             <div className="comment-details">
                               <div className="author-name">
-                                <a className="url" href="/purple/app/administrator/knowledgebase-view">John Doe</a> <span className="commentmetadata">October 25, 2016 at 01:10 pm</span>
+                                <a className="url" href="/app/administrator/knowledgebase-view">John Doe</a> <span className="commentmetadata">October 25, 2016 at 01:10 pm</span>
                               </div>
                               <div className="comment-body">
                                 <p>Integer id dolor libero. Cras in turpis nulla. Vivamus at tellus erat. Nulla ligula sem, eleifend vitae semper et, blandit a elit. Nam et ultrices lectus. Ut sit amet risus eget neque scelerisque consectetur.</p>
                               </div>
-                              <div className="reply"><a href="/purple/app/administrator/knowledgebase-view" className="comment-reply-link" rel="nofollow"><i className="fa fa-reply" /> Reply</a></div>
+                              <div className="reply"><a href="/app/administrator/knowledgebase-view" className="comment-reply-link" rel="nofollow"><i className="fa fa-reply" /> Reply</a></div>
                             </div>
                           </div>
                           <ul className="children">
@@ -89,12 +89,12 @@ class KnowledgebaseView extends Component {
                                 </div>
                                 <div className="comment-details">
                                   <div className="author-name">
-                                    <a href="/purple/app/administrator/knowledgebase-view" className="comment-reply-link" /><a className="url" href="/purple/app/administrator/knowledgebase-view">Astin Robert</a> <span className="commentmetadata">October 25, 2016 at 01:10 pm</span>
+                                    <a href="/app/administrator/knowledgebase-view" className="comment-reply-link" /><a className="url" href="/app/administrator/knowledgebase-view">Astin Robert</a> <span className="commentmetadata">October 25, 2016 at 01:10 pm</span>
                                   </div>
                                   <div className="comment-body">
                                     <p>Mauris hendrerit consequat quam, sit amet fermentum metus cursus in. Nunc ac justo suscipit erat sagittis maximus a at tellus. Pellentesque congue nisi a nisl volutpat tempor.</p>
                                   </div>
-                                  <div className="reply"><a href="/purple/app/administrator/knowledgebase-view" className="comment-reply-link"><i className="fa fa-reply" /> Reply</a></div>
+                                  <div className="reply"><a href="/app/administrator/knowledgebase-view" className="comment-reply-link"><i className="fa fa-reply" /> Reply</a></div>
                                 </div>
                               </div>
                             </li>
@@ -144,46 +144,46 @@ class KnowledgebaseView extends Component {
                   <h4 className="widget-title"><i className="fa fa-folder-o" /> Categories</h4>
                   <ul>
                     <li>
-                      <a href="/purple/app/administrator/knowledgebase-view">Categories 1</a>
+                      <a href="/app/administrator/knowledgebase-view">Categories 1</a>
                     </li>
                     <li>
-                      <a href="/purple/app/administrator/knowledgebase-view">Categories 2</a>
+                      <a href="/app/administrator/knowledgebase-view">Categories 2</a>
                     </li>
                     <li>
-                      <a href="/purple/app/administrator/knowledgebase-view">Categories 3</a>
+                      <a href="/app/administrator/knowledgebase-view">Categories 3</a>
                     </li>
                     <li>
-                      <a href="/purple/app/administrator/knowledgebase-view">Categories 4</a>
+                      <a href="/app/administrator/knowledgebase-view">Categories 4</a>
                     </li>
                     <li>
-                      <a href="/purple/app/administrator/knowledgebase-view">Categories 5</a>
+                      <a href="/app/administrator/knowledgebase-view">Categories 5</a>
                     </li>
                   </ul>
                 </div>
                 <div className="widget widget-category">
                   <h4 className="widget-title"><i className="fa fa-folder-o" /> Popular Articles</h4>
                   <ul>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> Installation &amp; Activation </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> Premium Members Features </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> API Usage &amp; Guide lines </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> Getting Started &amp; What is next. </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> Installation &amp; Activation </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> Premium Members Features </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> API Usage &amp; Guide lines </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> Getting Started &amp; What is next. </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> Installation &amp; Activation </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> Premium Members Features </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> API Usage &amp; Guide lines </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> Getting Started &amp; What is next. </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> Installation &amp; Activation </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> Premium Members Features </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> API Usage &amp; Guide lines </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> Getting Started &amp; What is next. </a></li>
                   </ul>
                 </div>
                 <div className="widget widget-category">
                   <h4 className="widget-title"><i className="fa fa-folder-o" /> Latest Articles</h4>
                   <ul>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> Installation &amp; Activation </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> Premium Members Features </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> API Usage &amp; Guide lines </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> Getting Started &amp; What is next. </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> Installation &amp; Activation </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> Premium Members Features </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> API Usage &amp; Guide lines </a></li>
-                    <li><a href="/purple/app/administrator/knowledgebase-view"> Getting Started &amp; What is next. </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> Installation &amp; Activation </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> Premium Members Features </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> API Usage &amp; Guide lines </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> Getting Started &amp; What is next. </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> Installation &amp; Activation </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> Premium Members Features </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> API Usage &amp; Guide lines </a></li>
+                    <li><a href="/app/administrator/knowledgebase-view"> Getting Started &amp; What is next. </a></li>
                   </ul>
                 </div>
               </div>

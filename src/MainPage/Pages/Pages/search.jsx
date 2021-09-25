@@ -23,7 +23,7 @@ export default class TermsCondition extends Component {
               <div className="col-sm-12">
                 <h3 className="page-title">Search</h3>
                 <ul className="breadcrumb">
-                  <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                  <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                   <li className="breadcrumb-item active">Search</li>
                 </ul>
               </div>
@@ -68,7 +68,7 @@ export default class TermsCondition extends Component {
                                 <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                               </div>
                             </div>
-                            <h4 className="project-title"><a href="/purple/app/projects/projects-view">Office Management</a></h4>
+                            <h4 className="project-title"><a href="/app/projects/projects-view">Office Management</a></h4>
                             <small className="block text-ellipsis m-b-15">
                               <span className="text-xs">1</span> <span className="text-muted">open tasks, </span>
                               <span className="text-xs">9</span> <span className="text-muted">tasks completed</span>
@@ -179,7 +179,7 @@ export default class TermsCondition extends Component {
                                 <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                               </div>
                             </div>
-                            <h4 className="project-title"><a href="/purple/app/projects/projects-view">Project Management</a></h4>
+                            <h4 className="project-title"><a href="/app/projects/projects-view">Project Management</a></h4>
                             <small className="block text-ellipsis m-b-15">
                               <span className="text-xs">2</span> <span className="text-muted">open tasks, </span>
                               <span className="text-xs">5</span> <span className="text-muted">tasks completed</span>
@@ -290,7 +290,7 @@ export default class TermsCondition extends Component {
                                 <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                               </div>
                             </div>
-                            <h4 className="project-title"><a href="/purple/app/projects/projects-view">Video Calling App</a></h4>
+                            <h4 className="project-title"><a href="/app/projects/projects-view">Video Calling App</a></h4>
                             <small className="block text-ellipsis m-b-15">
                               <span className="text-xs">3</span> <span className="text-muted">open tasks, </span>
                               <span className="text-xs">3</span> <span className="text-muted">tasks completed</span>
@@ -401,7 +401,7 @@ export default class TermsCondition extends Component {
                                 <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                               </div>
                             </div>
-                            <h4 className="project-title"><a href="/purple/app/projects/projects-view">Hospital Administration</a></h4>
+                            <h4 className="project-title"><a href="/app/projects/projects-view">Hospital Administration</a></h4>
                             <small className="block text-ellipsis m-b-15">
                               <span className="text-xs">12</span> <span className="text-muted">open tasks, </span>
                               <span className="text-xs">4</span> <span className="text-muted">tasks completed</span>
@@ -509,7 +509,7 @@ export default class TermsCondition extends Component {
                       <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                         <div className="profile-widget">
                           <div className="profile-img">
-                            <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_19} /></a>
+                            <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_19} /></a>
                           </div>
                           <div className="dropdown profile-action">
                             <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -518,17 +518,17 @@ export default class TermsCondition extends Component {
                               <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                             </div>
                           </div>
-                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Global Technologies</a></h4>
-                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Barry Cuda</a></h5>
+                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Global Technologies</a></h4>
+                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Barry Cuda</a></h5>
                           <div className="small text-muted">CEO</div>
-                          <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                          <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                          <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                          <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                         </div>
                       </div>
                       <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                         <div className="profile-widget">
                           <div className="profile-img">
-                            <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_29} /></a>
+                            <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_29} /></a>
                           </div>
                           <div className="dropdown profile-action">
                             <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -537,17 +537,17 @@ export default class TermsCondition extends Component {
                               <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                             </div>
                           </div>
-                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Delta Infotech</a></h4>
-                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Tressa Wexler</a></h5>
+                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Delta Infotech</a></h4>
+                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Tressa Wexler</a></h5>
                           <div className="small text-muted">Manager</div>
-                          <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                          <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                          <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                          <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                         </div>
                       </div>
                       <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                         <div className="profile-widget">
                           <div className="profile-img">
-                            <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_07} alt="" /></a>
+                            <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_07} alt="" /></a>
                           </div>
                           <div className="dropdown profile-action">
                             <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -556,17 +556,17 @@ export default class TermsCondition extends Component {
                               <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                             </div>
                           </div>
-                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Cream Inc</a></h4>
-                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Ruby Bartlett</a></h5>
+                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Cream Inc</a></h4>
+                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Ruby Bartlett</a></h5>
                           <div className="small text-muted">CEO</div>
-                          <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                          <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                          <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                          <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                         </div>
                       </div>
                       <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                         <div className="profile-widget">
                           <div className="profile-img">
-                            <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_06} alt="" /></a>
+                            <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_06} alt="" /></a>
                           </div>
                           <div className="dropdown profile-action">
                             <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -575,17 +575,17 @@ export default class TermsCondition extends Component {
                               <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                             </div>
                           </div>
-                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Wellware Company</a></h4>
-                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Misty Tison</a></h5>
+                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Wellware Company</a></h4>
+                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Misty Tison</a></h5>
                           <div className="small text-muted">CEO</div>
-                          <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                          <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                          <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                          <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                         </div>
                       </div>
                       <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                         <div className="profile-widget">
                           <div className="profile-img">
-                            <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_14} /></a>
+                            <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_14} /></a>
                           </div>
                           <div className="dropdown profile-action">
                             <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -594,17 +594,17 @@ export default class TermsCondition extends Component {
                               <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                             </div>
                           </div>
-                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Mustang Technologies</a></h4>
-                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Daniel Deacon</a></h5>
+                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Mustang Technologies</a></h4>
+                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Daniel Deacon</a></h5>
                           <div className="small text-muted">CEO</div>
-                          <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                          <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                          <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                          <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                         </div>
                       </div>
                       <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                         <div className="profile-widget">
                           <div className="profile-img">
-                            <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_18} /></a>
+                            <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_18} /></a>
                           </div>
                           <div className="dropdown profile-action">
                             <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -613,17 +613,17 @@ export default class TermsCondition extends Component {
                               <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                             </div>
                           </div>
-                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">International Software Inc</a></h4>
-                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Walter Weaver</a></h5>
+                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">International Software Inc</a></h4>
+                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Walter Weaver</a></h5>
                           <div className="small text-muted">CEO</div>
-                          <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                          <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                          <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                          <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                         </div>
                       </div>
                       <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                         <div className="profile-widget">
                           <div className="profile-img">
-                            <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_28} /></a>
+                            <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_28} /></a>
                           </div>
                           <div className="dropdown profile-action">
                             <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -632,17 +632,17 @@ export default class TermsCondition extends Component {
                               <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                             </div>
                           </div>
-                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Mercury Software Inc</a></h4>
-                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Amanda Warren</a></h5>
+                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Mercury Software Inc</a></h4>
+                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Amanda Warren</a></h5>
                           <div className="small text-muted">CEO</div>
-                          <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                          <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                          <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                          <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                         </div>
                       </div>
                       <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                         <div className="profile-widget">
                           <div className="profile-img">
-                            <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_13} /></a>
+                            <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_13} /></a>
                           </div>
                           <div className="dropdown profile-action">
                             <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -651,11 +651,11 @@ export default class TermsCondition extends Component {
                               <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                             </div>
                           </div>
-                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Carlson Tech</a></h4>
-                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/client-profile">Betty Carlson</a></h5>
+                          <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Carlson Tech</a></h4>
+                          <h5 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/client-profile">Betty Carlson</a></h5>
                           <div className="small text-muted">CEO</div>
-                          <a href="/purple/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
-                          <a href="/purple/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
+                          <a href="/conversation/chat" className="btn btn-white btn-sm m-t-10 mr-1">Message</a>
+                          <a href="/app/profile/client-profile" className="btn btn-white btn-sm m-t-10">View Profile</a>
                         </div>
                       </div>
                     </div>
@@ -677,8 +677,8 @@ export default class TermsCondition extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_21} alt="" /></a>
-                                <a href="/purple/app/profile/employee-profile">Daniel Porter <span>Admin</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_21} alt="" /></a>
+                                <a href="/app/profile/employee-profile">Daniel Porter <span>Admin</span></a>
                               </h2>
                             </td>
                             <td>danielporter@example.com</td>
@@ -700,8 +700,8 @@ export default class TermsCondition extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
-                                <a href="/purple/app/profile/employee-profile">John Doe <span>Web Designer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
+                                <a href="/app/profile/employee-profile">John Doe <span>Web Designer</span></a>
                               </h2>
                             </td>
                             <td>johndoe@example.com</td>
@@ -723,8 +723,8 @@ export default class TermsCondition extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_09} /></a>
-                                <a href="/purple/app/profile/employee-profile">Richard Miles <span>Admin</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_09} /></a>
+                                <a href="/app/profile/employee-profile">Richard Miles <span>Admin</span></a>
                               </h2>
                             </td>
                             <td>richardmiles@example.com</td>
@@ -746,8 +746,8 @@ export default class TermsCondition extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_10} /></a>
-                                <a href="/purple/app/profile/employee-profile">John Smith <span>Android Developer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_10} /></a>
+                                <a href="/app/profile/employee-profile">John Smith <span>Android Developer</span></a>
                               </h2>
                             </td>
                             <td>johnsmith@example.com</td>
@@ -769,8 +769,8 @@ export default class TermsCondition extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_05} /></a>
-                                <a href="/purple/app/profile/employee-profile">Mike Litorus <span>IOS Developer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_05} /></a>
+                                <a href="/app/profile/employee-profile">Mike Litorus <span>IOS Developer</span></a>
                               </h2>
                             </td>
                             <td>mikelitorus@example.com</td>
@@ -792,8 +792,8 @@ export default class TermsCondition extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_11} /></a>
-                                <a href="/purple/app/profile/employee-profile">Wilmer Deluna <span>Team Leader</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_11} /></a>
+                                <a href="/app/profile/employee-profile">Wilmer Deluna <span>Team Leader</span></a>
                               </h2>
                             </td>
                             <td>wilmerdeluna@example.com</td>
@@ -815,9 +815,9 @@ export default class TermsCondition extends Component {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_19}
+                                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_19}
                                  alt="" /></a>
-                                <a href="/purple/app/profile/employee-profile">Barry Cuda <span>Global Technologies</span></a>
+                                <a href="/app/profile/employee-profile">Barry Cuda <span>Global Technologies</span></a>
                               </h2>
                             </td>
                             <td>barrycuda@example.com</td>

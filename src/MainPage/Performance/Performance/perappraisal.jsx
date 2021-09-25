@@ -39,8 +39,8 @@ class PerformanceAppraisal extends Component {
         dataIndex: 'name',
         render: (text, record) => (            
             <h2 className="table-avatar">
-              <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-              <a href="/purple/app/profile/employee-profile">{text} <span>{record.role}</span></a>
+              <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+              <a href="/app/profile/employee-profile">{text} <span>{record.role}</span></a>
             </h2>
           ), 
           sorter: (a, b) => a.name.length - b.name.length,
@@ -104,7 +104,7 @@ class PerformanceAppraisal extends Component {
                     <div className="col">
                       <h3 className="page-title">Performance Appraisal</h3>
                       <ul className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                        <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                         <li className="breadcrumb-item active">Performance</li>
                       </ul>
                     </div>
@@ -145,8 +145,8 @@ class PerformanceAppraisal extends Component {
                             <td>1</td>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
-                                <a href="/purple/app/profile/employee-profile">John Doe </a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
+                                <a href="/app/profile/employee-profile">John Doe </a>
                               </h2>
                             </td>
                             <td>Web Designer </td>
@@ -179,8 +179,8 @@ class PerformanceAppraisal extends Component {
                             <td>2</td>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_05} /></a>
-                                <a href="/purple/app/profile/employee-profile">Mike Litorus </a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_05} /></a>
+                                <a href="/app/profile/employee-profile">Mike Litorus </a>
                               </h2>
                             </td>
                             <td>IOS Developer </td>
@@ -213,8 +213,8 @@ class PerformanceAppraisal extends Component {
                             <td>3</td>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_13} /></a>
-                                <a href="/purple/app/profile/employee-profile">Bernardo Galaviz </a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_13} /></a>
+                                <a href="/app/profile/employee-profile">Bernardo Galaviz </a>
                               </h2>
                             </td>
                             <td>Web Developer </td>
@@ -247,8 +247,8 @@ class PerformanceAppraisal extends Component {
                             <td>4</td>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_12} /></a>
-                                <a href="/purple/app/profile/employee-profile">Jeffrey Warden </a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_12} /></a>
+                                <a href="/app/profile/employee-profile">Jeffrey Warden </a>
                               </h2>
                             </td>
                             <td>Web Developer </td>
@@ -281,8 +281,8 @@ class PerformanceAppraisal extends Component {
                             <td>5</td>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_11} /></a>
-                                <a href="/purple/app/profile/employee-profile">Wilmer Deluna </a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_11} /></a>
+                                <a href="/app/profile/employee-profile">Wilmer Deluna </a>
                               </h2>
                             </td>
                             <td>Team Leader </td>

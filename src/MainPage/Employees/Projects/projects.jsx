@@ -35,15 +35,15 @@ class Projects extends Component {
             <div className="col">
               <h3 className="page-title">Projects</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Projects</li>
               </ul>
             </div>
             <div className="col-auto float-right ml-auto">
               <a href="#" className="btn add-btn" data-toggle="modal" data-target="#create_project"><i className="fa fa-plus" /> Create Project</a>
               <div className="view-icons">
-                <a href="/purple/app/projects/project_dashboard" className="grid-view btn btn-link active"><i className="fa fa-th" /></a>
-                <a href="/purple/app/projects/projects-list" className="list-view btn btn-link"><i className="fa fa-bars" /></a>
+                <a href="/app/projects/project_dashboard" className="grid-view btn btn-link active"><i className="fa fa-th" /></a>
+                <a href="/app/projects/projects-list" className="list-view btn btn-link"><i className="fa fa-bars" /></a>
               </div>
             </div>
           </div>
@@ -91,7 +91,7 @@ class Projects extends Component {
                     <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                   </div>
                 </div>
-                <h4 className="project-title"><a href="/purple/app/projects/projects-view">Office Management</a></h4>
+                <h4 className="project-title"><a href="/app/projects/projects-view">Office Management</a></h4>
                 <small className="block text-ellipsis m-b-15">
                   <span className="text-xs">1</span> <span className="text-muted">open tasks, </span>
                   <span className="text-xs">9</span> <span className="text-muted">tasks completed</span>
@@ -202,7 +202,7 @@ class Projects extends Component {
                     <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                   </div>
                 </div>
-                <h4 className="project-title"><a href="/purple/app/projects/projects-view">Project Management</a></h4>
+                <h4 className="project-title"><a href="/app/projects/projects-view">Project Management</a></h4>
                 <small className="block text-ellipsis m-b-15">
                   <span className="text-xs">2</span> <span className="text-muted">open tasks, </span>
                   <span className="text-xs">5</span> <span className="text-muted">tasks completed</span>
@@ -313,7 +313,7 @@ class Projects extends Component {
                     <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                   </div>
                 </div>
-                <h4 className="project-title"><a href="/purple/app/projects/projects-view">Video Calling App</a></h4>
+                <h4 className="project-title"><a href="/app/projects/projects-view">Video Calling App</a></h4>
                 <small className="block text-ellipsis m-b-15">
                   <span className="text-xs">3</span> <span className="text-muted">open tasks, </span>
                   <span className="text-xs">3</span> <span className="text-muted">tasks completed</span>
@@ -424,7 +424,7 @@ class Projects extends Component {
                     <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                   </div>
                 </div>
-                <h4 className="project-title"><a href="/purple/app/projects/projects-view">Hospital Administration</a></h4>
+                <h4 className="project-title"><a href="/app/projects/projects-view">Hospital Administration</a></h4>
                 <small className="block text-ellipsis m-b-15">
                   <span className="text-xs">12</span> <span className="text-muted">open tasks, </span>
                   <span className="text-xs">4</span> <span className="text-muted">tasks completed</span>

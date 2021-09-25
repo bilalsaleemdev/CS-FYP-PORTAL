@@ -26,7 +26,7 @@
                  <div className="col-sm-12">
                    <h3 className="page-title">Interviewing</h3>
                    <ul className="breadcrumb">
-                     <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                     <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                      <li className="breadcrumb-item">Jobs</li>
                      <li className="breadcrumb-item">User Dashboard</li>
                      <li className="breadcrumb-item active">Interviewing</li>
@@ -78,7 +78,7 @@
                                      </div>
                                    </td>
                                    <td className="text-center">
-                                     <a href="/purple/app/administrator/job-aptitude" className="btn btn-primary aptitude-btn"><span>Click Here</span></a>
+                                     <a href="/app/administrator/job-aptitude" className="btn btn-primary aptitude-btn"><span>Click Here</span></a>
                                    </td>
                                  </tr>
                                  <tr>
@@ -93,7 +93,7 @@
                                      </div>
                                    </td>
                                    <td className="text-center">
-                                     <a href="/purple/app/administrator/job-aptitude" className="btn btn-primary aptitude-btn"><span>Click Here</span></a>
+                                     <a href="/app/administrator/job-aptitude" className="btn btn-primary aptitude-btn"><span>Click Here</span></a>
                                    </td>
                                  </tr>
                                  <tr>
@@ -108,7 +108,7 @@
                                      </div>
                                    </td>
                                    <td className="text-center">
-                                     <a href="/purple/app/administrator/job-aptitude" className="btn btn-primary aptitude-btn"><span>Click Here</span></a>
+                                     <a href="/app/administrator/job-aptitude" className="btn btn-primary aptitude-btn"><span>Click Here</span></a>
                                    </td>
                                  </tr>
                                </tbody>

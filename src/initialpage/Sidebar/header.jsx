@@ -18,13 +18,13 @@ class Header extends Component {
     const {  location } = this.props
     let pathname = location.pathname
     const type = localStorage.getItem("EmployeeType");
-    const path = `/purple/app/profile/${type}-profile`;
+    const path = `/app/profile/${type}-profile`;
     
       return (
          <div className="header" style={{right:"0px"}}>
         {/* Logo */}
         <div className="header-left">
-          <a href="/purple/app/main/dashboard" className="logo">
+          <a href="/app/main/dashboard" className="logo">
             <img src={headerlogo} width={40} height={40} alt="" />
           </a>
         </div>
@@ -49,7 +49,7 @@ class Header extends Component {
               <a href="" className="responsive-search">
                 <i className="fa fa-search" />
               </a>
-              <form action="/purple/app/pages/search">
+              <form action="/app/pages/search">
                 <input className="form-control" type="text" placeholder="Search here" />
                 <button className="btn" type="submit"><i className="fa fa-search" /></button>
               </form>
@@ -90,7 +90,7 @@ class Header extends Component {
               <div className="noti-content">
                 <ul className="notification-list">
                   <li className="notification-message">
-                    <a href="/purple/app/administrator/activities">
+                    <a href="/app/administrator/activities">
                       <div className="media">
                         <span className="avatar">
                           <img alt="" src={Avatar_02} />
@@ -103,7 +103,7 @@ class Header extends Component {
                     </a>
                   </li>
                   <li className="notification-message">
-                    <a href="/purple/app/administrator/activities">
+                    <a href="/app/administrator/activities">
                       <div className="media">
                         <span className="avatar">
                           <img alt="" src={Avatar_03} />
@@ -116,7 +116,7 @@ class Header extends Component {
                     </a>
                   </li>
                   <li className="notification-message">
-                    <a href="/purple/app/administrator/activities">
+                    <a href="/app/administrator/activities">
                       <div className="media">
                         <span className="avatar">
                           <img alt="" src={Avatar_06} />
@@ -129,7 +129,7 @@ class Header extends Component {
                     </a>
                   </li>
                   <li className="notification-message">
-                    <a href="/purple/app/administrator/activities">
+                    <a href="/app/administrator/activities">
                       <div className="media">
                         <span className="avatar">
                           <img alt="" src={Avatar_17} />
@@ -142,7 +142,7 @@ class Header extends Component {
                     </a>
                   </li>
                   <li className="notification-message">
-                    <a href="/purple/app/administrator/activities">
+                    <a href="/app/administrator/activities">
                       <div className="media">
                         <span className="avatar">
                           <img alt="" src={Avatar_13} />
@@ -157,7 +157,7 @@ class Header extends Component {
                 </ul>
               </div>
               <div className="topnav-dropdown-footer">
-                <a href="/purple/app/administrator/activities">View all Notifications</a>
+                <a href="/app/administrator/activities">View all Notifications</a>
               </div>
             </div>
           </li>
@@ -175,7 +175,7 @@ class Header extends Component {
               <div className="noti-content">
                 <ul className="notification-list">
                   <li className="notification-message">
-                    <a href="/purple/conversation/chat">
+                    <a href="/conversation/chat">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar">
@@ -192,7 +192,7 @@ class Header extends Component {
                     </a>
                   </li>
                   <li className="notification-message">
-                    <a href="/purple/conversation/chat">
+                    <a href="/conversation/chat">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar">
@@ -209,7 +209,7 @@ class Header extends Component {
                     </a>
                   </li>
                   <li className="notification-message">
-                    <a href="/purple/conversation/chat">
+                    <a href="/conversation/chat">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar">
@@ -226,7 +226,7 @@ class Header extends Component {
                     </a>
                   </li>
                   <li className="notification-message">
-                    <a href="/purple/conversation/chat">
+                    <a href="/conversation/chat">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar">
@@ -243,7 +243,7 @@ class Header extends Component {
                     </a>
                   </li>
                   <li className="notification-message">
-                    <a href="/purple/conversation/chat">
+                    <a href="/conversation/chat">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar">
@@ -262,7 +262,7 @@ class Header extends Component {
                 </ul>
               </div>
               <div className="topnav-dropdown-footer">
-                <a href="/purple/conversation/chat">View all Messages</a>
+                <a href="/conversation/chat">View all Messages</a>
               </div>
             </div>
           </li> */}
@@ -275,7 +275,11 @@ class Header extends Component {
             </a>
             <div className="dropdown-menu">
               <a className="dropdown-item" href={path}>My Profile</a>
+<<<<<<< HEAD
               <a className="dropdown-item"  onClick={this.handleLogout} href="/purple/login">Logout</a>
+=======
+              <a className="dropdown-item" href="/login">Logout</a>
+>>>>>>> awais/first-task
             </div>
           </li>
         </ul>
@@ -285,7 +289,11 @@ class Header extends Component {
           <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="fa fa-ellipsis-v" /></a>
           <div className="dropdown-menu dropdown-menu-right">
             <a className="dropdown-item" href={path}>My Profile</a>
+<<<<<<< HEAD
             <a className="dropdown-item" onClick={this.handleLogout}  href="/purple/login">Logout</a>
+=======
+            <a className="dropdown-item" href="/login">Logout</a>
+>>>>>>> awais/first-task
           </div>
         </div>
         {/* /Mobile Menu */}

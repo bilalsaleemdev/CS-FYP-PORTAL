@@ -35,8 +35,8 @@ class Employeeslist extends Component {
               dataIndex: 'name',
               render: (text, record) => (            
                   <h2 className="table-avatar">
-                    <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-                    <a href="/purple/app/profile/employee-profile">{text} <span>{record.role}</span></a>
+                    <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+                    <a href="/app/profile/employee-profile">{text} <span>{record.role}</span></a>
                   </h2>
                 ), 
                 sorter: (a, b) => a.name.length - b.name.length,
@@ -109,15 +109,15 @@ class Employeeslist extends Component {
                <div className="col">
                  <h3 className="page-title">Employee</h3>
                  <ul className="breadcrumb">
-                   <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                   <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                    <li className="breadcrumb-item active">Employee</li>
                  </ul>
                </div>
                <div className="col-auto float-right ml-auto">
                  <a href="#" className="btn add-btn" data-toggle="modal" data-target="#add_employee"><i className="fa fa-plus" /> Add Employee</a>
                  <div className="view-icons">
-                   <a href="/purple/app/employee/allemployees" className="grid-view btn btn-link"><i className="fa fa-th" /></a>
-                   <a href="/purple/app/employee/employees-list" className="list-view btn btn-link active"><i className="fa fa-bars" /></a>
+                   <a href="/app/employee/allemployees" className="grid-view btn btn-link"><i className="fa fa-th" /></a>
+                   <a href="/app/employee/employees-list" className="list-view btn btn-link active"><i className="fa fa-bars" /></a>
                  </div>
                </div>
              </div>

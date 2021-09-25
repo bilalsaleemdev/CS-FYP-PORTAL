@@ -19,7 +19,7 @@ class Error404 extends Component {
            <h1>404</h1>
            <h3><i className="fa fa-warning" /> Oops! Page not found!</h3>
            <p>The page you requested was not found.</p>
-           <a onclick={()=>localStorage.setItem("firstload","true")} href="/purple/app/main/dashboard" className="btn btn-custom">Back to Home</a>
+           <a onclick={()=>localStorage.setItem("firstload","true")} href="/app/main/dashboard" className="btn btn-custom">Back to Home</a>
          </div>
        </div>
         

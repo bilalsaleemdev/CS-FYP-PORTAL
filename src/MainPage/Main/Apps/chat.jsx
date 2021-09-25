@@ -26,13 +26,13 @@ class ChatPage extends Component {
                 <div className="navbar">
                   <div className="user-details mr-auto">
                     <div className="float-left user-img">
-                      <a className="avatar" href="/purple/app/profile/employee-profile" title="Mike Litorus">
+                      <a className="avatar" href="/app/profile/employee-profile" title="Mike Litorus">
                         <img src={Avatar_05} alt="" className="rounded-circle" />
                         <span className="status online" />
                       </a>
                     </div>
                     <div className="user-info float-left">
-                      <a href="/purple/app/profile/employee-profile" title="Mike Litorus"><span>Mike Litorus</span> <i className="typing-text">Typing...</i></a>
+                      <a href="/app/profile/employee-profile" title="Mike Litorus"><span>Mike Litorus</span> <i className="typing-text">Typing...</i></a>
                       <span className="last-seen">Last seen today at 7:50 AM</span>
                     </div>
                   </div>
@@ -49,10 +49,10 @@ class ChatPage extends Component {
                       <a className="nav-link task-chat profile-rightbar float-right" id="task_chat" href="#task_window"><i className="fa fa-user" /></a>
                     </li>
                     <li className="nav-item">
-                      <a href="/purple/conversation/voice-call" className="nav-link"><i className="fa fa-phone" /></a>
+                      <a href="/conversation/voice-call" className="nav-link"><i className="fa fa-phone" /></a>
                     </li>
                     <li className="nav-item">
-                      <a href="/purple/conversation/video-call" className="nav-link"><i className="fa fa-video-camera" /></a>
+                      <a href="/conversation/video-call" className="nav-link"><i className="fa fa-video-camera" /></a>
                     </li>
                     <li className="nav-item dropdown dropdown-action">
                       <a aria-expanded="false" data-toggle="dropdown" className="nav-link dropdown-toggle" href=""><i className="fa fa-cog" /></a>
@@ -91,7 +91,7 @@ class ChatPage extends Component {
                         </div>
                         <div className="chat chat-left">
                           <div className="chat-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar">
+                            <a href="/app/profile/employee-profile" className="avatar">
                               <img alt="" src={Avatar_05} />
                             </a>
                           </div>
@@ -157,7 +157,7 @@ class ChatPage extends Component {
                         </div>
                         <div className="chat chat-left">
                           <div className="chat-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar">
+                            <a href="/app/profile/employee-profile" className="avatar">
                               <img alt="" src={Avatar_05} />
                             </a>
                           </div>
@@ -257,7 +257,7 @@ class ChatPage extends Component {
                         </div>
                         <div className="chat chat-left">
                           <div className="chat-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar">
+                            <a href="/app/profile/employee-profile" className="avatar">
                               <img alt="" src={Avatar_05} />
                             </a>
                           </div>
@@ -369,7 +369,7 @@ class ChatPage extends Component {
                         </div>
                         <div className="chat chat-left">
                           <div className="chat-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar">
+                            <a href="/app/profile/employee-profile" className="avatar">
                               <img alt="" src={Avatar_05} />
                             </a>
                           </div>
@@ -412,7 +412,7 @@ class ChatPage extends Component {
                         </div>
                         <div className="chat chat-left">
                           <div className="chat-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar">
+                            <a href="/app/profile/employee-profile" className="avatar">
                               <img alt="" src={Avatar_05} />
                             </a>
                           </div>
@@ -463,7 +463,7 @@ class ChatPage extends Component {
                       <div className="chats">
                         <div className="chat chat-left">
                           <div className="chat-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar">
+                            <a href="/app/profile/employee-profile" className="avatar">
                               <img alt="" src={Avatar_02} />
                             </a>
                           </div>
@@ -485,7 +485,7 @@ class ChatPage extends Component {
                         </div>
                         <div className="chat chat-left">
                           <div className="chat-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar">
+                            <a href="/app/profile/employee-profile" className="avatar">
                               <img alt="" src={Avatar_02} />
                             </a>
                           </div>
@@ -509,7 +509,7 @@ class ChatPage extends Component {
                         </div>
                         <div className="chat chat-left">
                           <div className="chat-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar">
+                            <a href="/app/profile/employee-profile" className="avatar">
                               <img alt="" src={Avatar_05} />
                             </a>
                           </div>
@@ -531,7 +531,7 @@ class ChatPage extends Component {
                         </div>
                         <div className="chat chat-left">
                           <div className="chat-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar">
+                            <a href="/app/profile/employee-profile" className="avatar">
                               <img alt="" src={Avatar_02} />
                             </a>
                           </div>

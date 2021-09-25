@@ -36,8 +36,8 @@
          dataIndex: 'name',
          render: (text, record) => (            
              <h2 className="table-avatar">
-               <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-               <a href="/purple/app/profile/employee-profile">{text}</a>
+               <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+               <a href="/app/profile/employee-profile">{text}</a>
              </h2>
            ), 
            sorter: (a, b) => a.name.length - b.name.length,
@@ -88,7 +88,7 @@
                  <div className="col">
                    <h3 className="page-title">Candidates List</h3>
                    <ul className="breadcrumb">
-                     <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                     <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                      <li className="breadcrumb-item">Jobs</li>
                      <li className="breadcrumb-item active">Candidates List</li>
                    </ul>

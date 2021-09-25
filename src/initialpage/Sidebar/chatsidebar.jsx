@@ -17,11 +17,11 @@ class Sidebar extends Component {
           <div className="sidebar-menu">
             <ul>
               <li> 
-                <a href="/purple/app/main/dashboard"><i className="la la-home" /> <span>Back to Home</span></a>
+                <a href="/app/main/dashboard"><i className="la la-home" /> <span>Back to Home</span></a>
               </li>
               <li className="menu-title"><span>Chat Groups</span> <a href="#" data-toggle="modal" data-target="#add_group"><i className="fa fa-plus" /></a></li>
               <li> 
-                <a href="/purple/conversation/chat">
+                <a href="/conversation/chat">
                   <span className="chat-avatar-sm user-img">
                     <img className="rounded-circle" alt="" src={User} />
                   </span> 
@@ -29,7 +29,7 @@ class Sidebar extends Component {
                 </a>
               </li>
               <li> 
-                <a href="/purple/conversation/chat">
+                <a href="/conversation/chat">
                   <span className="chat-avatar-sm user-img">
                     <img className="rounded-circle" alt="" src={User} />
                   </span> 
@@ -37,7 +37,7 @@ class Sidebar extends Component {
                 </a>
               </li>
               <li> 
-                <a href="/purple/conversation/chat">
+                <a href="/conversation/chat">
                   <span className="chat-avatar-sm user-img">
                     <img className="rounded-circle" alt="" src={User} />
                   </span> 
@@ -45,7 +45,7 @@ class Sidebar extends Component {
                 </a>
               </li>
               <li> 
-                <a href="/purple/conversation/chat">
+                <a href="/conversation/chat">
                   <span className="chat-avatar-sm user-img">
                     <img className="rounded-circle" alt="" src={User} />
                   </span> 
@@ -54,7 +54,7 @@ class Sidebar extends Component {
               </li>
               <li className="menu-title">Direct Chats <a href="#" data-toggle="modal" data-target="#add_chat_user"><i className="fa fa-plus" /></a></li>
               <li>
-                <a href="/purple/conversation/chat">
+                <a href="/conversation/chat">
                   <span className="chat-avatar-sm user-img">
                     <img className="rounded-circle" alt="" src={Avatar_02} /><span className="status online" />
                   </span> 
@@ -62,7 +62,7 @@ class Sidebar extends Component {
                 </a>
               </li>
               <li>
-                <a href="/purple/conversation/chat">
+                <a href="/conversation/chat">
                   <span className="chat-avatar-sm user-img">
                     <img className="rounded-circle" alt="" src={Avatar_09} /><span className="status offline" />
                   </span> 
@@ -70,7 +70,7 @@ class Sidebar extends Component {
                 </a>
               </li>
               <li>
-                <a href="/purple/conversation/chat">
+                <a href="/conversation/chat">
                   <span className="chat-avatar-sm user-img">
                     <img className="rounded-circle" alt="" src={Avatar_10} /><span className="status away" />
                   </span> 
@@ -78,7 +78,7 @@ class Sidebar extends Component {
                 </a>
               </li>
               <li className="active">
-                <a href="/purple/conversation/chat">
+                <a href="/conversation/chat">
                   <span className="chat-avatar-sm user-img">
                     <img className="rounded-circle" alt="" src={Avatar_05} /><span className="status online" />
                   </span> 

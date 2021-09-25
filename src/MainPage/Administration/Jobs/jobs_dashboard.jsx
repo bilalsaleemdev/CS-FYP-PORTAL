@@ -26,7 +26,7 @@ import { Avatar_02,Avatar_09,Avatar_10  } from "../../../Entryfile/imagepath";
                  <div className="col-sm-12">
                    <h3 className="page-title">Job Dashboard</h3>
                    <ul className="breadcrumb">
-                     <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                     <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                      <li className="breadcrumb-item">Jobs</li>
                      <li className="breadcrumb-item active">Job Dashboard</li>
                    </ul>
@@ -136,11 +136,11 @@ import { Avatar_02,Avatar_09,Avatar_10  } from "../../../Entryfile/imagepath";
                              <td>1</td>
                              <td>
                                <h2 className="table-avatar">
-                                 <a href="/purple/app/profile/employee-profile/profile" className="avatar"><img src={Avatar_02} /></a>
-                                 <a href="/purple/app/profile/employee-profile/profile">John Doe <span>Web Designer</span></a>
+                                 <a href="/app/profile/employee-profile/profile" className="avatar"><img src={Avatar_02} /></a>
+                                 <a href="/app/profile/employee-profile/profile">John Doe <span>Web Designer</span></a>
                                </h2>
                              </td>
-                             <td><a href="/purple/app/administrator/job-details">Web Developer</a></td>
+                             <td><a href="/app/administrator/job-details">Web Developer</a></td>
                              <td>Development</td>
                              <td>3 Mar 2019</td>
                              <td>31 May 2019</td>
@@ -185,11 +185,11 @@ import { Avatar_02,Avatar_09,Avatar_10  } from "../../../Entryfile/imagepath";
                              <td>2</td>
                              <td>
                                <h2 className="table-avatar">
-                                 <a href="/purple/app/profile/employee-profile/profile" className="avatar"><img src={Avatar_09} /></a>
-                                 <a href="/purple/app/profile/employee-profile/profile">Richard Miles <span>Web Developer</span></a>
+                                 <a href="/app/profile/employee-profile/profile" className="avatar"><img src={Avatar_09} /></a>
+                                 <a href="/app/profile/employee-profile/profile">Richard Miles <span>Web Developer</span></a>
                                </h2>
                              </td>
-                             <td><a href="/purple/app/administrator/job-details">Web Designer</a></td>
+                             <td><a href="/app/administrator/job-details">Web Designer</a></td>
                              <td>Designing</td>
                              <td>3 Mar 2019</td>
                              <td>31 May 2019</td>
@@ -234,11 +234,11 @@ import { Avatar_02,Avatar_09,Avatar_10  } from "../../../Entryfile/imagepath";
                              <td>3</td>
                              <td>
                                <h2 className="table-avatar">
-                                 <a href="/purple/app/profile/employee-profile/profile" className="avatar"><img src={Avatar_10} /></a>
-                                 <a href="/purple/app/profile/employee-profile/profile">John Smith <span>Android Developer</span></a>
+                                 <a href="/app/profile/employee-profile/profile" className="avatar"><img src={Avatar_10} /></a>
+                                 <a href="/app/profile/employee-profile/profile">John Smith <span>Android Developer</span></a>
                                </h2>
                              </td>
-                             <td><a href="/purple/app/administrator/job-details">Android Developer</a></td>
+                             <td><a href="/app/administrator/job-details">Android Developer</a></td>
                              <td>Android</td>
                              <td>3 Mar 2019</td>
                              <td>31 May 2019</td>
@@ -311,11 +311,11 @@ import { Avatar_02,Avatar_09,Avatar_10  } from "../../../Entryfile/imagepath";
                              </td>
                              <td>
                                <h2 className="table-avatar">
-                                 <a href="/purple/app/profile/employee-profile/profile" className="avatar"><img src={Avatar_02} /></a>
-                                 <a href="/purple/app/profile/employee-profile/profile">John Doe <span>Web Designer</span></a>
+                                 <a href="/app/profile/employee-profile/profile" className="avatar"><img src={Avatar_02} /></a>
+                                 <a href="/app/profile/employee-profile/profile">John Doe <span>Web Designer</span></a>
                                </h2>
                              </td>
-                             <td><a href="/purple/app/administrator/job-details">Web Designer</a></td>
+                             <td><a href="/app/administrator/job-details">Web Designer</a></td>
                              <td>Department</td>
                              <td className="text-center">
                                <div className="action-label">
@@ -331,11 +331,11 @@ import { Avatar_02,Avatar_09,Avatar_10  } from "../../../Entryfile/imagepath";
                              </td>
                              <td>
                                <h2 className="table-avatar">
-                                 <a href="/purple/app/profile/employee-profile/profile" className="avatar"><img src={Avatar_09} /></a>
-                                 <a href="/purple/app/profile/employee-profile/profile">Richard Miles <span>Web Developer</span></a>
+                                 <a href="/app/profile/employee-profile/profile" className="avatar"><img src={Avatar_09} /></a>
+                                 <a href="/app/profile/employee-profile/profile">Richard Miles <span>Web Developer</span></a>
                                </h2>
                              </td>
-                             <td><a href="/purple/app/administrator/job-details">Web Developer</a></td>
+                             <td><a href="/app/administrator/job-details">Web Developer</a></td>
                              <td>Department</td>
                              <td className="text-center">
                                <div className="action-label">
@@ -351,11 +351,11 @@ import { Avatar_02,Avatar_09,Avatar_10  } from "../../../Entryfile/imagepath";
                              </td>
                              <td>
                                <h2 className="table-avatar">
-                                 <a href="/purple/app/profile/employee-profile/profile" className="avatar"><img src={Avatar_10} /></a>
-                                 <a href="/purple/app/profile/employee-profile/profile">John Smith <span>Android Developer</span></a>
+                                 <a href="/app/profile/employee-profile/profile" className="avatar"><img src={Avatar_10} /></a>
+                                 <a href="/app/profile/employee-profile/profile">John Smith <span>Android Developer</span></a>
                                </h2>
                              </td>
-                             <td><a href="/purple/app/administrator/job-details">Android Developer</a></td>
+                             <td><a href="/app/administrator/job-details">Android Developer</a></td>
                              <td>Department</td>
                              <td className="text-center">
                                <div className="action-label">
