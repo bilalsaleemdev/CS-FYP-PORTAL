@@ -31,6 +31,8 @@ const linechartdata = [
 			{ y: '2011', "Total Sales": 75,  'Total Revenue': 65 },
 			{ y: '2012', "Total Sales": 100, 'Total Revenue': 50 }
 ];
+
+
 class CeoDashboard extends Component {
   UNSAFE_componentWillMount (){
     let firstload = localStorage.getItem("firstload")
@@ -51,7 +53,7 @@ class CeoDashboard extends Component {
                     <meta name="description" content="Dashboard"/>					
             </Helmet>
         {/* Page Content */}
-        <div className="content container-fluid">
+        <div className="container-fluid">
           {/* Page Header */}
           <div className="page-header">
             <div className="row">

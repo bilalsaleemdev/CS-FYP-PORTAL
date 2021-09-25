@@ -7,6 +7,12 @@ import {headerlogo,lnEnglish,lnFrench,lnSpanish,lnGerman, Avatar_02,Avatar_03,Av
   Avatar_06,Avatar_08,Avatar_09,Avatar_13,Avatar_17,Avatar_21} from '../../Entryfile/imagepath'
 
 class Header extends Component {
+  handleLogout = () => {
+    localStorage.removeItem("EmployeeType");
+    localStorage.setItem("isLogin", false);
+    localStorage.removeItem("user_id");
+
+  }
 
    render() {
     const {  location } = this.props
@@ -269,7 +275,7 @@ class Header extends Component {
             </a>
             <div className="dropdown-menu">
               <a className="dropdown-item" href={path}>My Profile</a>
-              <a className="dropdown-item" href="/purple/login">Logout</a>
+              <a className="dropdown-item"  onClick={this.handleLogout} href="/purple/login">Logout</a>
             </div>
           </li>
         </ul>
@@ -279,7 +285,7 @@ class Header extends Component {
           <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="fa fa-ellipsis-v" /></a>
           <div className="dropdown-menu dropdown-menu-right">
             <a className="dropdown-item" href={path}>My Profile</a>
-            <a className="dropdown-item" href="/purple/login">Logout</a>
+            <a className="dropdown-item" onClick={this.handleLogout}  href="/purple/login">Logout</a>
           </div>
         </div>
         {/* /Mobile Menu */}

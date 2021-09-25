@@ -63,9 +63,9 @@ export const Registration = async (name, email, type, password, cancelToken) => 
 
 
 
-export const ProfileCreate = async (user_id, first_name,last_name, dob,phoneNumber,gender,address,country, postal_code,cancelToken) => {    
+export const ProfileCreate = async (user_id, first_name,last_name, dob,cnic,department ,phoneNumber,gender,address,country, postal_code,cancelToken) => {    
     const url = `users-profile`;
-    const data = { 'user_id': user_id , 'first_name':first_name,'last_name':last_name, 'dob':dob ,'phone': phoneNumber, 'gender':gender,'address':address, 'country':country , 'postal_code': postal_code };
+    const data = { 'user_id': user_id , 'first_name':first_name,'last_name':last_name, 'dob':dob ,'cnic': cnic,'department':department,'phone': phoneNumber, 'gender':gender,'address':address, 'country':country , 'postal_code': postal_code };
     const request = { type: 'POST', urlString: url, params: data };
     try {
          const response = await processRequest(request, cancelToken); 
@@ -79,9 +79,9 @@ export const ProfileCreate = async (user_id, first_name,last_name, dob,phoneNumb
 
 //user profile put api for edit
 
-export const ProfileEdit = async (user_id, first_name,last_name, dob,phoneNumber,gender,address,country, postal_code,cancelToken) => {    
+export const ProfileEdit = async (user_id, first_name,last_name, dob,cnic, department, phoneNumber,gender,address,country, postal_code,cancelToken) => {    
     const url = `users-profile/${user_id}`;
-    const data = { 'user_id': user_id , 'first_name':first_name,'last_name':last_name, 'dob':dob ,'phone': phoneNumber, 'gender':gender,'address':address, 'country':country , 'postal_code': postal_code };
+    const data = { 'user_id': user_id , 'first_name':first_name,'last_name':last_name, 'dob':dob ,'cnic': cnic,'department':department,'phone': phoneNumber, 'gender':gender,'address':address, 'country':country , 'postal_code': postal_code };
     const request = { type: 'PUT', urlString: url, params: data };
     try {
          const response = await processRequest(request, cancelToken); 

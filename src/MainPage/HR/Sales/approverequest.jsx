@@ -18,11 +18,7 @@ const ApproveRequest = () => {
   const [userType, setUsertype] = useState('');    
 
   const cancelTokenSource = axios.CancelToken.source();
-  const columns = [            
-    {
-      title: 'Name',
-      dataIndex: 'name',      
-    },     
+  const columns = [                 
     {
       title: 'Id',
       dataIndex: 'id',
@@ -228,7 +224,7 @@ const ApproveRequest = () => {
                   style = {{overflowX : 'auto'}}
                   columns={columns}                 
                   // bordered
-                  dataSource={data}
+                  dataSource={data} 
                   rowKey={record => record.id}
                   // onChange={handleTableChange}
                 />

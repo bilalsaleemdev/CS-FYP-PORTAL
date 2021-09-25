@@ -2,6 +2,8 @@
 //main
 import Dashboard from '../MainPage/Main/Dashboard';
 import Apps from '../MainPage/Main/Apps';
+import Conference from '../MainPage/Conference';
+
 //UI Interface
 import UIinterface from '../MainPage/UIinterface';
 //Pages
@@ -30,6 +32,11 @@ export default [
    {
       path: 'main',
       component: Dashboard
+   },
+   {
+      path: 'conference',
+      component: Conference
+
    },
    {
       path: 'apps',

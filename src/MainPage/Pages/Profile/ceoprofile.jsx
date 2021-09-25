@@ -14,6 +14,7 @@
  import {
    ProfileCreate,
    getUserProfileAPI,
+   ProfileEdit,
  } from "../../../api/network/customer/EmployeeApi";
  import Button from "@material-ui/core/Button";
  import Dialog from "@material-ui/core/Dialog";
@@ -23,9 +24,13 @@
  import DialogTitle from "@material-ui/core/DialogTitle";
  
  const CeoProfile = () => {
+
+  const [isEditOpen, setIsEditOpen] = useState(false);
    const [open, setOpen] = React.useState(false);
    const [userProfileData, setUserProfileData] = useState("");
    const [openCreataeProfile, setOpenCreateProfile] = useState(false);
+   const [ department, setDepartment] = useState('');
+   const [cnic, setCnic] = useState('');
  
    const [user_id, Usetser_id] = useState(5);
    const [email, setEmail] = useState("");
@@ -36,7 +41,7 @@
    const [address, setAddress] = useState("");
    const [phoneNumber, setPhoneNumber] = useState();
    const [country, setCountry] = useState("");
-   const [post, setPost] = useState("ceo");
+   const [post, setPost] = useState("employee");
    const [postalCode, setPostalCode] = useState("");
    const [submitResponse, setSubmitResponse] = useState(false);
  
@@ -49,8 +54,37 @@
    }, []);
  
    const handleCloseSubmitResponse = () => {
+    setIsEditOpen(false);
      setOpen(false);
      window.location.reload();
+   };
+ 
+   const EditProfileApi = async () => {
+     const response = ProfileEdit(
+       user_id_local,
+       first_name,
+       last_name,
+       dob,
+       cnic,
+       '',
+       phoneNumber,
+ 
+       gender,
+       address,
+       country,
+       postalCode,
+       cancelTokenSource.token
+     );
+     if (response) {
+      setIsEditOpen(true);
+       // const awais = response.PromiseResult;
+       const { data } = response;
+       setOpenCreateProfile(true);
+ 
+       console.log("  data awaiss ", response);
+     } else {
+       console.log("Failed Response", response);
+     }
    };
    const ManagerProfileCreateApi = async () => {
      setOpen(true);
@@ -59,8 +93,10 @@
        first_name,
        last_name,
        dob,
+       cnic,
+       '',
        phoneNumber,
- 
+      
        gender,
        address,
        country,
@@ -98,12 +134,20 @@
      const response = await getUserProfileAPI(userId, cancelTokenSource.token);
      if (response.success == true) {
        const { data } = response;
+ 
        setOpenCreateProfile(true);
-       // setPhoneNumber(data.phone);
-       // setEmail(data.email);
-       // setAddress(data.address);
-       // setGender(data.gender);
+ 
+       setEmail(data.email);
+ 
        setUserProfileData(data);
+       setFirst_name(data.first_name);
+       setLast_name(data.last_name);
+       setPhoneNumber(data.phone);
+       setAddress(data.address);
+       setPostalCode(data.postal_code);
+       setCountry(data.country);
+       setDepartment(data.department);
+       setCnic(data.cnic);
        // const awais = response.PromiseResult;
        console.log("  data miral ", data);
      } else {
@@ -111,39 +155,76 @@
        console.log("Failed Response", response);
      }
    };
+
+   const ProfileEditHandle = () => {
+    EditProfileApi();
+    setIsEditOpen(true);
+
+
+   }
+ 
  
    return (
      <React.Fragment>
-     {open && (
+     {
+      isEditOpen &&
       <Dialog
-        open={open}
-        onClose={handleCloseSubmitResponse}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">
-          {"Confirmation message"}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            Hey!
-            Your Profile created successfully..!
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCloseSubmitResponse} color="primary">
-            Disagree
-          </Button>
-          <Button
-            onClick={handleCloseSubmitResponse}
-            color="primary"
-            autoFocus
-          >
-            Agree
-          </Button>
-        </DialogActions>
-      </Dialog>
-    )}
+           open={isEditOpen}
+           onClose={handleCloseSubmitResponse}
+           aria-labelledby="alert-dialog-title"
+           aria-describedby="alert-dialog-description"
+         >
+           <DialogTitle id="alert-dialog-title">
+             {"Confirmation message"}
+           </DialogTitle>
+           <DialogContent>
+             <DialogContentText id="alert-dialog-description">
+               Hey! Your Profile Edited successfully..!
+             </DialogContentText>
+           </DialogContent>
+           <DialogActions>
+             <Button onClick={handleCloseSubmitResponse} color="primary">
+               Disagree
+             </Button>
+             <Button
+               onClick={handleCloseSubmitResponse}
+               color="primary"
+               autoFocus
+             >
+               Agree
+             </Button>
+           </DialogActions>
+         </Dialog>
+     }
+       {open && (
+         <Dialog
+           open={open}
+           onClose={handleCloseSubmitResponse}
+           aria-labelledby="alert-dialog-title"
+           aria-describedby="alert-dialog-description"
+         >
+           <DialogTitle id="alert-dialog-title">
+             {"Confirmation message"}
+           </DialogTitle>
+           <DialogContent>
+             <DialogContentText id="alert-dialog-description">
+               Hey! Your Profile created successfully..!
+             </DialogContentText>
+           </DialogContent>
+           <DialogActions>
+             <Button onClick={handleCloseSubmitResponse} color="primary">
+               Disagree
+             </Button>
+             <Button
+               onClick={handleCloseSubmitResponse}
+               color="primary"
+               autoFocus
+             >
+               Agree
+             </Button>
+           </DialogActions>
+         </Dialog>
+       )}
        {openCreataeProfile ? (
          <div className="page-wrapper">
            <Helmet>
@@ -274,7 +355,7 @@
                          <ul className="personal-info">
                            <li>
                              <div className="title">Name:</div>
-                             <div className="text">{`${userProfileData.first_name} ${userProfileData.last_name }`}</div>
+                             <div className="text">{`${userProfileData.first_name} ${userProfileData.last_name}`}</div>
                            </li>
                            <li>
                              <div className="title">Email:</div>
@@ -282,7 +363,9 @@
                            </li>
                            <li>
                              <div className="title">Country:</div>
-                             <div className="text">{userProfileData.country}</div>
+                             <div className="text">
+                               {userProfileData.country}
+                             </div>
                            </li>
                            <li>
                              <div className="title">Phone Number:</div>
@@ -300,17 +383,20 @@
                            </li>
                            <li>
                              <div className="title">Postal Code:</div>
-                             <div className="text">{userProfileData.postal_code}</div>
+                             <div className="text">
+                               {userProfileData.postal_code}
+                             </div>
                            </li>
                            <li>
-                             <div className="title">Employee Type</div>
+                             <div className="title">CEO Type</div>
                              <div className="text">{userProfileData.type}</div>
                            </li>
                            <li>
-                           <div className="title">Address:</div>
-                           <div className="text">{userProfileData.address}</div>
-                         </li>
-                           
+                             <div className="title">Address:</div>
+                             <div className="text">
+                               {userProfileData.address}
+                             </div>
+                           </li>
                          </ul>
                        </div>
                      </div>
@@ -333,7 +419,7 @@
              >
                <div className="modal-content">
                  <div className="modal-header">
-                   <h5 className="modal-title">Profile Information</h5>
+                   <h5 className="modal-title">Edit Profile Information</h5>
                    <button
                      type="button"
                      className="close"
@@ -344,158 +430,181 @@
                    </button>
                  </div>
                  <div className="modal-body">
-                 <form>
-                       <div className="row">
-                         <div className="col-md-12">
-                           <div className="profile-img-wrap edit-img">
-                             <img
-                               className="inline-block"
-                               src={Avatar_02}
-                               alt="user"
-                             />
-                             <div className="fileupload btn">
-                               <span className="btn-text">upload</span>
-                               <input className="upload" type="file" />
+                   <form>
+                     <div className="row">
+                       <div className="col-md-12">
+                         <div className="profile-img-wrap edit-img">
+                           <img
+                             className="inline-block"
+                             src={Avatar_02}
+                             alt="user"
+                           />
+                           <div className="fileupload btn">
+                             <span className="btn-text">upload</span>
+                             <input className="upload" type="file" />
+                           </div>
+                         </div>
+                         <div className="row">
+                           <div className="col-md-6">
+                             <div className="form-group">
+                               <label>First Name</label>
+                               <input
+                                 type="text"
+                                 className="form-control"
+                                 value={first_name}
+                                 onChange={(e) => setFirst_name(e.target.value)}
+                               />
                              </div>
                            </div>
-                           <div className="row">
-                             <div className="col-md-6">
-                               <div className="form-group">
-                                 <label>First Name</label>
+                           <div className="col-md-6">
+                             <div className="form-group">
+                               <label>Last Name</label>
+                               <input
+                                 type="text"
+                                 className="form-control"
+                                 value={last_name}
+                                 onChange={(e) => setLast_name(e.target.value)}
+                               />
+                             </div>
+                           </div>
+                           <div className="col-md-6">
+                             <div className="form-group">
+                               <label>
+                                 Birth Date{" "}
+                                 <span className="text-danger">*no change</span>
+                               </label>
+                               <div className="cal-icon">
                                  <input
+                                   className="form-control datetimepicker"
                                    type="text"
-                                   className="form-control"
-                                   value={first_name}
-                                   onChange={(e) =>
-                                     setFirst_name(e.target.value)
-                                   }
+                                   value={dob}
+                                   // onChange={(e) => setDob(e.target.value)}
                                  />
                                </div>
                              </div>
-                             <div className="col-md-6">
-                               <div className="form-group">
-                                 <label>Last Name</label>
-                                 <input
-                                   type="text"
-                                   className="form-control"
-                                   value={last_name}
-                                   onChange={(e) => setLast_name(e.target.value)}
-                                 />
-                               </div>
-                             </div>
-                             <div className="col-md-6">
-                               <div className="form-group">
-                                 <label>Birth Date</label>
-                                 <div className="cal-icon">
-                                   <input
-                                     className="form-control datetimepicker"
-                                     type="text"
-                                     value={dob}
-                                     onChange={(e) => setDob(e.target.value)}
-                                   />
-                                 </div>
-                               </div>
-                             </div>
-                             <div className="col-md-6">
-                               <div className="form-group">
-                                 <label>Gender</label>
-                                 <select
-                                   className="form-control"
-                                   value={gender}
-                                   onChange={(e) => setGender(e.target.value)}
-                                 >
-                                   <option value="male">Male</option>
-                                   <option value="female">Female</option>
-                                 </select>
-                               </div>
+                           </div>
+                           <div className="col-md-6">
+                             <div className="form-group">
+                               <label>Gender</label>
+                               <select
+                                 className="form-control"
+                                 value={gender}
+                                 onChange={(e) => setGender(e.target.value)}
+                               >
+                                 <option value="male">Male</option>
+                                 <option value="female">Female</option>
+                               </select>
                              </div>
                            </div>
                          </div>
                        </div>
-                       <div className="row">
-                         <div className="col-md-12">
-                           <div className="form-group">
-                             <label>Address</label>
-                             <input
-                               type="text"
-                               className="form-control"
-                               value={address}
-                               onChange={(e) => setAddress(e.target.value)}
-                             />
-                           </div>
-                         </div>
-                         <div className="col-md-6">
-                           <div className="form-group">
-                             <label>Country</label>
-                             <input
-                               type="text"
-                               className="form-control"
-                               value={country}
-                               onChange={(e) => setCountry(e.target.value)}
-                             />
-                           </div>
-                         </div>
-                         <div className="col-md-6">
-                           <div className="form-group">
-                             <label>Postal Code</label>
-                             <input
-                               type="text"
-                               className="form-control"
-                               value={postalCode}
-                               onChange={(e) => setPostalCode(e.target.value)}
-                             />
-                           </div>
-                         </div>
-                         <div className="col-md-6">
-                           <div className="form-group">
-                             <label>Phone Number</label>
-                             <input
-                               type="text"
-                               className="form-control"
-                               value={phoneNumber}
-                               onChange={(e) => setPhoneNumber(e.target.value)}
-                             />
-                           </div>
-                         </div>
-                         <div className="col-md-6">
-                           <div className="form-group">
-                             <label>
-                               Designation <span className="text-danger">*</span>
-                             </label>
-                             <input
-                               type="text"
-                               className="form-control"
-                               value={post}
-                               onChange={(e) => setPost(e.target.value)}
-                             />
-                           </div>
+                     </div>
+                     <div className="row">
+                       <div className="col-md-12">
+                         <div className="form-group">
+                           <label>Address</label>
+                           <input
+                             type="text"
+                             className="form-control"
+                             value={address}
+                             onChange={(e) => setAddress(e.target.value)}
+                           />
                          </div>
                        </div>
-                       <div className="submit-section">
-                         <div className="form-group text-center" style={{display:'flex', justifyContent:'space-around'}}>
-                           <a
-                             className="btn btn-primary account-btn"
-                             style={{flexDirection:'space-between'}}
-                             // onClick={() => ManagerProfileCreateApi()}
-                           >
-                             Cancel
-                           </a>
-                        
+                       <div className="col-md-6">
+                         <div className="form-group">
+                           <label>Country</label>
+                           <input
+                             type="text"
+                             className="form-control"
+                             value={country}
+                             onChange={(e) => setCountry(e.target.value)}
+                           />
+                         </div>
+                       </div>
+                       <div className="col-md-6">
+                         <div className="form-group">
+                           <label>Postal Code</label>
+                           <input
+                             type="text"
+                             className="form-control"
+                             value={postalCode}
+                             onChange={(e) => setPostalCode(e.target.value)}
+                           />
+                         </div>
+                       </div>
+                       <div className="col-md-6">
+                         <div className="form-group">
+                           <label>Cnic</label>
+                           <input
+                             type="text"
+                             className="form-control"
+                             value={cnic}
+                             onChange={(e) => setCnic(e.target.value)}
+                           />
+                         </div>
+                       </div>
+                       
+                       <div className="col-md-6">
+                         <div className="form-group">
+                           <label>Phone Number</label>
+                           <input
+                             type="text"
+                             className="form-control"
+                             value={phoneNumber}
+                             onChange={(e) => setPhoneNumber(e.target.value)}
+                           />
+                         </div>
+                       </div>
+                       <div className="col-md-6">
+                         <div className="form-group">
+                           <label>
+                             Designation{" "}
+                             <span className="text-danger">*no change</span>
+                           </label>
+                           <input
+                             type="text"
+                             className="form-control"
+                             value={post}
+                             // onChange={(e) => setPost(e.target.value)}
+                           />
+                         </div>
+                       </div>
+                       
+                     </div>
+                     <div className="submit-section">
+                       <div
+                         className="form-group text-center"
+                         style={{
+                           display: "flex",
+                           justifyContent: "space-around",
+                         }}
+                       >
                          <a
                            className="btn btn-primary account-btn"
-                           // onClick={() => ManagerProfileCreateApi()}
+                           style={{ flexDirection: "space-between" }}
+                           type="button"
+                           data-dismiss="modal"
+                           aria-label="Close"
+                         >
+                           Cancel
+                         </a>
+ 
+                         <a
+                           className="btn btn-primary account-btn"
+                           onClick={() => ProfileEditHandle()}
                          >
                            Update
                          </a>
-                         </div>
-                         {/*<a
+                       </div>
+                       {/*<a
                            className="btn btn-primary account-btn"
                            onClick={ManagerProfileCreateApi}
                          >
                          Submit
                                  </a>*/}
-                       </div>
-                     </form>
+                     </div>
+                   </form>
                  </div>
                </div>
              </div>
@@ -680,6 +789,17 @@
                            </div>
                          </div>
                          <div className="col-md-6">
+                         <div className="form-group">
+                           <label>Cnic</label>
+                           <input
+                             type="text"
+                             className="form-control"
+                             value={cnic}
+                             onChange={(e) => setCnic(e.target.value)}
+                           />
+                         </div>
+                       </div>
+                         <div className="col-md-6">
                            <div className="form-group">
                              <label>Phone Number</label>
                              <input
@@ -690,19 +810,7 @@
                              />
                            </div>
                          </div>
-                         <div className="col-md-6">
-                           <div className="form-group">
-                             <label>
-                               Designation <span className="text-danger">*</span>
-                             </label>
-                             <input
-                               type="text"
-                               className="form-control"
-                               value={post}
-                               onChange={(e) => setPost(e.target.value)}
-                             />
-                           </div>
-                         </div>
+                        
                        </div>
                        <div className="submit-section">
                          <div className="form-group text-center">
