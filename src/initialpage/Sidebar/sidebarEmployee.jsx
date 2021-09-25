@@ -1,31 +1,6 @@
 /**
  * App Header
  */
-<<<<<<< HEAD:src/initialpage/Sidebar/sidebar.jsx
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-
-class Sidebar extends Component {
-  render() {
-    const { location } = this.props;
-    let pathname = location.pathname;
-    return (
-      <div className="sidebar" id="sidebar">
-        <div className="sidebar-inner slimscroll">
-          <div id="sidebar-menu" className="sidebar-menu">
-            <ul>
-              <li className="menu-title">
-                <span>Main</span>
-              </li>
-              <li
-                className={pathname.includes("main/dashboard") ? "active" : ""}
-              >
-                <a href="/purple/app/main/dashboard">
-                  <i className="la la-dashboard" /> <span>Dashboard</span>
-                </a>
-              </li>
-              {/* <li className="submenu">
-=======
  import React, { Component } from 'react';
  import { withRouter } from 'react-router-dom';
  
@@ -46,7 +21,6 @@ class Sidebar extends Component {
                  <a href="/app/main/dashboard/employee"><i className="la la-dashboard" /> <span>Dashboard</span></a>
                </li>               
                {/* <li className="submenu">
->>>>>>> awais/first-task:src/initialpage/Sidebar/sidebarEmployee.jsx
                  
                  <a href="#"><i className="la la-dashboard" /> <span> Dashboard</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
@@ -55,30 +29,6 @@ class Sidebar extends Component {
                  </ul>
                </li> */}
 
-<<<<<<< HEAD:src/initialpage/Sidebar/sidebar.jsx
-              <li className="submenu">
-                <a href="#">
-                  <i className="la la-key" />
-                  <span> Approve Request</span> <span className="menu-arrow" />
-                </a>
-                <ul style={{ display: "none" }}>
-                  <li>
-                    <a
-                      className={
-                        pathname.includes("/main/approve-request")
-                          ? "active"
-                          : ""
-                      }
-                      href="/purple/app/main/approve-request"
-                    >
-                      Approve Requests
-                    </a>
-                  </li>
-                  {/*       <li><a className={pathname.includes('main/employee-') ?"active" :""} href="/purple/app/main/employee-dashboard">Approve Request</a></li>
-                   */}
-                </ul>
-              </li>
-=======
                <li className="submenu">
                  
                  <a href="#">
@@ -89,7 +39,6 @@ class Sidebar extends Component {
                    <li><a className={pathname.includes('main/employee-') ?"active" :""} href="/app/main/employee-dashboard">Approve Request</a></li>
                  </ul>
                </li>
->>>>>>> awais/first-task:src/initialpage/Sidebar/sidebarEmployee.jsx
 
               {/* <li className="submenu">
                  <a href="#"><i className="la la-cube" /> <span> Apps</span> <span className="menu-arrow" /></a>
@@ -113,128 +62,6 @@ class Sidebar extends Component {
               {/* <li className="menu-title"> 
                  <span>Employees</span>
                </li> */}
-<<<<<<< HEAD:src/initialpage/Sidebar/sidebar.jsx
-              <li className="submenu">
-                <a href="#" className="noti-dot">
-                  <i className="la la-user" /> <span> Employees</span>{" "}
-                  <span className="menu-arrow" />
-                </a>
-                <ul style={{ display: "none" }}>
-                  <li>
-                    <a
-                      className={
-                        pathname.includes("allemployees")
-                          ? "active"
-                          : pathname.includes("employees-list")
-                          ? "active"
-                          : ""
-                      }
-                      href="/purple/app/employee/allemployees"
-                    >
-                      All Employees
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className={pathname.includes("holidays") ? "active" : ""}
-                      href="/purple/app/employee/holidays"
-                    >
-                      Employees Progress
-                    </a>
-                  </li>
-                  {/* <li><a className={pathname.includes('es-admin') ?"active" :""} href="/purple/app/employee/leaves-admin">Leaves (Admin) <span className="badge badge-pill bg-primary float-right">1</span></a></li>
-                   <li><a className={pathname.includes('ves-employee') ?"active" :""} href="/purple/app/employee/leaves-employee">Leaves (Employee)</a></li>
-                   <li><a className={pathname.includes('e-settings') ?"active" :""} href="/purple/app/employee/leave-settings">Leave Settings</a></li>
-                   <li><a className={pathname.includes('nce-admin') ?"active" :""} href="/purple/app/employee/attendance-admin">Attendance (Admin)</a></li>
-                   <li><a className={pathname.includes('ce-employee') ?"active" :""} href="/purple/app/employee/attendance-employee">Attendance (Employee)</a></li>
-                   <li><a className={pathname.includes('departments') ?"active" :""} href="/purple/app/employee/departments">Departments</a></li>
-                   <li><a className={pathname.includes('designations') ?"active" :""} href="/purple/app/employee/designations">Designations</a></li>
-                   <li><a className={pathname.includes('timesheet') ?"active" :""} href="/purple/app/employee/timesheet">Timesheet</a></li>
-                   <li><a className={pathname.includes('shift-scheduling') || pathname.includes('shift-list') ?"active" :""} 
-                         href="/purple/app/employee/shift-scheduling">Shift &amp; Schedule</a></li>
-                   <li><a className={pathname.includes('overtime') ?"active" :""} href="/purple/app/employee/overtime">Overtime</a></li> */}
-                </ul>
-              </li>
-              {/* <li className={pathname.includes('clients') ?"active" :""}> 
-                 <a href="/purple/app/employees/clients"><i className="la la-users" /> <span>Clients</span></a>
-               </li> */}
-              <li className="submenu">
-                <a href="#">
-                  <i className="la la-rocket" /> <span> Projects</span>{" "}
-                  <span className="menu-arrow" />
-                </a>
-                <ul style={{ display: "none" }}>
-                  <li>
-                    <a
-                      className={
-                        pathname.includes("t_dashboard")
-                          ? "active"
-                          : pathname.includes("projects-list")
-                          ? "active"
-                          : pathname.includes("cts-view")
-                          ? "active"
-                          : ""
-                      }
-                      href="/purple/app/projects/project_dashboard"
-                    >
-                      Projects
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/purple/tasks/tasks">Tasks</a>
-                  </li>
-                  <li>
-                    <a
-                      className={
-                        pathname.includes("task-board") ? "active" : ""
-                      }
-                      href="/purple/app/projects/task-board"
-                    >
-                      Task Board
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="submenu">
-                <a href="#">
-                  <i className="la la-rocket" /> <span> Tasks</span>{" "}
-                  <span className="menu-arrow" />
-                </a>
-                <ul style={{ display: "none" }}>
-                  <li>
-                    <a
-                      className={
-                        pathname.includes("t_dashboard")
-                          ? "active"
-                          : pathname.includes("projects-list")
-                          ? "active"
-                          : pathname.includes("cts-view")
-                          ? "active"
-                          : ""
-                      }
-                      href="/purple/app/projects/project_dashboard"
-                    >
-                      Projects
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/purple/tasks/tasks">Tasks</a>
-                  </li>
-                  <li>
-                    <a
-                      className={
-                        pathname.includes("task-board") ? "active" : ""
-                      }
-                      href="/purple/app/projects/task-board"
-                    >
-                      Task Board
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              {/* <li className={pathname.includes('leads') ?"active" :""}> 
-                 <a href="/purple/app/employees/leads"><i className="la la-user-secret" /> <span>Leads</span></a>
-=======
                <li className="submenu">
                  <a href="#" className="noti-dot"><i className="la la-user" /> <span> Employees</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
@@ -279,7 +106,6 @@ class Sidebar extends Component {
                </li>
                {/* <li className={pathname.includes('leads') ?"active" :""}> 
                  <a href="/app/employees/leads"><i className="la la-user-secret" /> <span>Leads</span></a>
->>>>>>> awais/first-task:src/initialpage/Sidebar/sidebarEmployee.jsx
                </li>
                <li className={pathname.includes('tickets') ?"active" :""}> 
                  <a href="/app/employees/tickets"><i className="la la-ticket" /> <span>Tickets</span></a>
@@ -360,16 +186,6 @@ class Sidebar extends Component {
                    <li><a className={pathname.includes('training-type') ?"active" :""} href="/app/training/training-type"> Training Type </a></li>
                  </ul>
                </li>
-<<<<<<< HEAD:src/initialpage/Sidebar/sidebar.jsx
-               <li className={pathname.includes('promotion') ?"active" :""}><a href="/purple/app/performance/promotion"><i className="la la-bullhorn" /> <span>Promotion</span></a></li>
-               <li className={pathname.includes('resignation') ?"active" :""}><a href="/purple/app/performance/resignation"><i className="la la-external-link-square" /> <span>Resignation</span></a></li>
-               <li className={pathname.includes('termination') ?"active" :""}><a href="/purple/app/performance/termination"><i className="la la-times-circle" /> <span>Termination</span></a></li> */}
-              <li className="menu-title">
-                <span>Administration</span>
-              </li>
-              {/* <li className={pathname.includes('assets') ?"active" :""}> 
-                 <a href="/purple/app/administrator/assets"><i className="la la-object-ungroup" /> <span>Assets</span></a>
-=======
                <li className={pathname.includes('promotion') ?"active" :""}><a href="/app/performance/promotion"><i className="la la-bullhorn" /> <span>Promotion</span></a></li>
                <li className={pathname.includes('resignation') ?"active" :""}><a href="/app/performance/resignation"><i className="la la-external-link-square" /> <span>Resignation</span></a></li>
                <li className={pathname.includes('termination') ?"active" :""}><a href="/app/performance/termination"><i className="la la-times-circle" /> <span>Termination</span></a></li> */}
@@ -378,7 +194,6 @@ class Sidebar extends Component {
                </li>
                {/* <li className={pathname.includes('assets') ?"active" :""}> 
                  <a href="/app/administrator/assets"><i className="la la-object-ungroup" /> <span>Assets</span></a>
->>>>>>> awais/first-task:src/initialpage/Sidebar/sidebarEmployee.jsx
                </li>
                <li className="submenu">
                  <a href="#"><i className="la la-briefcase" /> <span> Jobs </span> <span className="menu-arrow" /></a>
@@ -404,56 +219,6 @@ class Sidebar extends Component {
                <li className={pathname.includes('knowledgebase') ?"active" :""}> 
                  <a href="/app/administrator/knowledgebase"><i className="la la-question" /> <span>Knowledgebase</span></a>
                </li> */}
-<<<<<<< HEAD:src/initialpage/Sidebar/sidebar.jsx
-              <li className="submenu">
-                <a href="#">
-                  <i className="la la-user" /> <span> Profile </span>{" "}
-                  <span className="menu-arrow" />
-                </a>
-                <ul style={{ display: "none" }}>
-                  <li>
-                    <a
-                      className={
-                        pathname.includes("profile/employee-") ? "active" : ""
-                      }
-                      href="/purple/app/profile/employee-profile"
-                    >
-                      {" "}
-                      Employee Profile{" "}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className={pathname.includes("client-") ? "active" : ""}
-                      href="/purple/app/profile/client-profile"
-                    >
-                      {" "}
-                      Client Profile{" "}
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className={pathname.includes("activities") ? "active" : ""}>
-                <a href="/purple/app/administrator/activities">
-                  <i className="la la-bell" /> <span>Activities</span>
-                </a>
-              </li>
-              <li
-                className={
-                  pathname.includes("administrator/users") ? "active" : ""
-                }
-              >
-                <a href="/purple/app/administrator/users">
-                  <i className="la la-user-plus" /> <span>Users</span>
-                </a>
-              </li>
-              <li>
-                <a href="/purple/settings/companysetting">
-                  <i className="la la-cog" /> <span>Settings</span>
-                </a>
-              </li>
-              {/* <li className="menu-title"> 
-=======
                <li className="submenu">
                  <a href="#"><i className="la la-user" /> <span> Profile </span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
@@ -471,7 +236,6 @@ class Sidebar extends Component {
                  <a href="/settings/companysetting"><i className="la la-cog" /> <span>Settings</span></a>
                </li>
                {/* <li className="menu-title"> 
->>>>>>> awais/first-task:src/initialpage/Sidebar/sidebarEmployee.jsx
                  <span>Pages</span>
                </li> */}
               {/* <li className="submenu">

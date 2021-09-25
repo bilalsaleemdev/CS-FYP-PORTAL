@@ -275,11 +275,7 @@ class Header extends Component {
             </a>
             <div className="dropdown-menu">
               <a className="dropdown-item" href={path}>My Profile</a>
-<<<<<<< HEAD
-              <a className="dropdown-item"  onClick={this.handleLogout} href="/purple/login">Logout</a>
-=======
               <a className="dropdown-item" href="/login">Logout</a>
->>>>>>> awais/first-task
             </div>
           </li>
         </ul>
@@ -289,11 +285,7 @@ class Header extends Component {
           <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="fa fa-ellipsis-v" /></a>
           <div className="dropdown-menu dropdown-menu-right">
             <a className="dropdown-item" href={path}>My Profile</a>
-<<<<<<< HEAD
-            <a className="dropdown-item" onClick={this.handleLogout}  href="/purple/login">Logout</a>
-=======
             <a className="dropdown-item" href="/login">Logout</a>
->>>>>>> awais/first-task
           </div>
         </div>
         {/* /Mobile Menu */}
