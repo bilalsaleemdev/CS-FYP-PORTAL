@@ -152,6 +152,31 @@ export const createWorkShopeAPI = async (data,cancelToken) => {
     }
 };
 
+export const updateWorkShopeAPI = async (data,cancelToken) => {    
+    const url = `conference/${data.id}`;    
+    const request = { type: 'PUT', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('conference', response)
+        return response.data;
+    } catch (error) { 
+        console.log('conference', error)
+        return {error:error};
+    }
+};
+export const deleteWorkShopeAPI = async (selectedWorkShopId,cancelToken) => {    
+    const url = `conferance/${selectedWorkShopId}`;    
+    const request = { type: 'DELETE', urlString: url};
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('conference', response)
+        return response.data;
+    } catch (error) { 
+        console.log('conference', error)
+        return {error:error};
+    }
+};
+
 export const createUserWorkShopeAPI = async (data,cancelToken) => {    
     const url = `user-conference`;    
     const request = { type: 'POST', urlString: url, params: data };
