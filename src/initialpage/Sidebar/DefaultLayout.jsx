@@ -19,7 +19,15 @@ const DefaultLayout = (props) => {
 		return (
 			<div className="main-wrapper">
 				<Header/>
-				<div>					
+				<div>
+				{
+					console.log('miral testing',routerService.map((route,key)=>
+					 console.log(key, 'key')
+					//  onsole.log(key, 'key')
+					// <Route key={key} path={`${match.url}/${route.path}`} component={route.component} />
+						// <Route key={key} path={`${props.match.url}/${route.path}`} component={route.component} />
+					))
+				}					
 					{routerService && routerService.map((route,key)=>
 					// <Route key={key} path={`${match.url}/${route.path}`} component={route.component} />
 						<Route key={key} path={`${props.match.url}/${route.path}`} component={route.component} />

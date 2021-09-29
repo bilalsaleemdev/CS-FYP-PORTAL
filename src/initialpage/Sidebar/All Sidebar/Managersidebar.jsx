@@ -21,7 +21,7 @@
              <li
                className={pathname.includes("main/dashboard/manager") ? "active" : ""}
              >
-               <a href="/purple/app/main/dashboard/manager">
+               <a href="/app/main/dashboard/manager">
                  <i className="la la-dashboard" /> <span>Manager Dashboard</span>
                </a>
              </li>
@@ -47,7 +47,7 @@
                          ? "active"
                          : ""
                      }
-                     href="/purple/app/main/approve-request"
+                     href="/app/main/approve-request"
                    >
                      Requests
                    </a>
@@ -94,7 +94,7 @@
                          ? "active"
                          : ""
                      }
-                     href="/purple/app/employee/allemployees"
+                     href="/app/employee/allemployees"
                    >
                      All Employees
                    </a>
@@ -102,7 +102,7 @@
                  <li>
                    <a
                      className={pathname.includes("holidays") ? "active" : ""}
-                     href="/purple/app/employee/holidays"
+                     href="/app/employee/holidays"
                    >
                      Employees Progress
                    </a>
@@ -140,20 +140,20 @@
                          ? "active"
                          : ""
                      }
-                     href="/purple/app/projects/project_dashboard"
+                     href="/app/projects/project_dashboard"
                    >
                      Projects
                    </a>
                  </li>
                  <li>
-                   <a href="/purple/tasks/tasks">Tasks</a>
+                   <a href="/tasks/tasks">Tasks</a>
                  </li>
                  <li>
                    <a
                      className={
                        pathname.includes("task-board") ? "active" : ""
                      }
-                     href="/purple/app/projects/task-board"
+                     href="/app/projects/task-board"
                    >
                      Task Board
                    </a>
@@ -177,20 +177,20 @@
                          ? "active"
                          : ""
                      }
-                     href="/purple/app/projects/project_dashboard"
+                     href="/app/projects/project_dashboard"
                    >
                      Assign Tasks
                    </a>
                  </li>
                  <li>
-                   <a href="/purple/tasks/tasks">Completed Tasks</a>
+                   <a href="/tasks/tasks">Completed Tasks</a>
                  </li>
                  <li>
                    <a
                      className={
                        pathname.includes("task-board") ? "active" : ""
                      }
-                     href="/purple/app/projects/task-board"
+                     href="/app/projects/task-board"
                    >
                      Task Board
                    </a>
@@ -321,7 +321,7 @@
                      className={
                        pathname.includes("profile/employee-") ? "active" : ""
                      }
-                     href="/purple/app/dashboard/manager/conference"
+                     href="/app/dashboard/manager/conference"
                    >
                      {" "}
                      Competition {" "}
@@ -331,7 +331,7 @@
                </ul>
              </li>
              <li className={pathname.includes("activities") ? "active" : ""}>
-               <a href="/purple/app/administrator/activities">
+               <a href="/app/administrator/activities">
                  <i className="la la-bell" /> <span>Activities</span>
                </a>
              </li>
@@ -340,12 +340,12 @@
                  pathname.includes("administrator/users") ? "active" : ""
                }
              >
-               <a href="/purple/app/administrator/users">
+               <a href="/app/administrator/users">
                  <i className="la la-user-plus" /> <span>Users</span>
                </a>
              </li>
              <li>
-               <a href="/purple/settings/companysetting">
+               <a href="/settings/companysetting">
                  <i className="la la-cog" /> <span>Settings</span>
                </a>
              </li>

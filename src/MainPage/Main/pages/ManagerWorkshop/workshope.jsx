@@ -63,7 +63,7 @@ const Workshopes = () => {
     <>
       <div className="page-wrapper">
         <Helmet>
-          <title>Manager - WorkShope</title>
+          <title>Manager - WorkShop</title>
           <meta name="description" content="Login page" />
         </Helmet>
         {/* Page Content */}
@@ -72,10 +72,10 @@ const Workshopes = () => {
           <div className="page-header">
             <div className="row align-items-center">
               <div className="col">
-                <h3 className="page-title">Workshope</h3>
+                <h3 className="page-title">Workshop</h3>
                 <ul className="breadcrumb">
                   <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
-                  <li className="breadcrumb-item active">workshope</li>
+                  <li className="breadcrumb-item active">workshop</li>
                 </ul>
               </div>
               <div className="col-auto float-right ml-auto">
@@ -97,7 +97,7 @@ const Workshopes = () => {
                         <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                       </div>
                     </div>
-              <h4 className="project-title"><a href="/app/projects/projects-view">Management WorkShope</a></h4>                    
+              <h4 className="project-title"><a href="/app/projects/projects-view">Management WorkShop</a></h4>                    
                     <p className="text-muted">{key.purpose}
                   </p>
                     <div className="pro-deadline m-b-15">

@@ -6,6 +6,9 @@ import { withRouter } from 'react-router-dom';
 import {headerlogo,lnEnglish,lnFrench,lnSpanish,lnGerman, Avatar_02,Avatar_03,Avatar_05,
   Avatar_06,Avatar_08,Avatar_09,Avatar_13,Avatar_17,Avatar_21} from '../../Entryfile/imagepath'
 
+
+const typeDashboard = localStorage.getItem('EmployeeType');
+
 class Header extends Component {
   handleLogout = () => {
     localStorage.removeItem("EmployeeType");
@@ -24,7 +27,7 @@ class Header extends Component {
          <div className="header" style={{right:"0px"}}>
         {/* Logo */}
         <div className="header-left">
-          <a href="/app/main/dashboard" className="logo">
+          <a href={`/app/main/dashboard/${typeDashboard}`} className="logo">
             <img src={headerlogo} width={40} height={40} alt="" />
           </a>
         </div>

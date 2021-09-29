@@ -18,7 +18,7 @@
                  <span>MANAGER</span>
                </li>
                <li className={pathname.includes('/app/main/dashboard/manager') ?"active" :""}> 
-                 <a href="/app/main/dashboard/manager"><i className="la la-dashboard" /> <span>Dashboardsss</span></a>
+                 <a href="/app/main/dashboard/manager"><i className="la la-dashboard" /> <span>Dashboards</span></a>
                </li>               
                {/* <li className="submenu">
                  
@@ -33,10 +33,9 @@
                  
                  <a href="#">
                    <i className="la la-key" /> 
-                   <span> Approve Request</span> <span className="menu-arrow" /></a>
+                   <span>Requests</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
                    <li><a className={pathname.includes('/main/approve-request') ?"active" :""} href="/app/main/approve-request">Approve Requests</a></li>
-                   <li><a className={pathname.includes('main/employee-') ?"active" :""} href="/app/main/employee-dashboard">Approve Request</a></li>
                  </ul>
                </li>
 
@@ -85,26 +84,22 @@
                  <a href="/app/employees/clients"><i className="la la-users" /> <span>Clients</span></a>
                </li> */}   
                <li className={pathname.includes('/app/main/manager/workshope') ?"active" :""}> 
-                 <a href="/app/main/manager/workshope"><i className="la la-graduation-cap" /> <span>Workshopes</span></a>
+                 <a href="/app/main/manager/workshope"><i className="la la-graduation-cap" /> <span>Workshops</span></a>
                </li>                         
                <li className="submenu">
                  <a href="#"><i className="la la-rocket" /> <span> Projects</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
                    <li><a className={pathname.includes('t_dashboard' ) ?"active" : pathname.includes('projects-list' ) ?
                    "active" : pathname.includes('cts-view' ) ? "active" : ""} 
-                       href="/app/projects/project_dashboard">Projects</a></li>
-                   <li><a href="/tasks/tasks">Tasks</a></li>
-                   <li><a className={pathname.includes('task-board') ?"active" :""} href="/app/projects/task-board">Task Board</a></li>
-                 </ul>
+                       href="/app/main/Projects">Projects</a></li>
+                </ul>
                </li>
                <li className="submenu">
                  <a href="#"><i className="la la-rocket" /> <span> Tasks</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
-                   <li><a className={pathname.includes('t_dashboard' ) ?"active" : pathname.includes('projects-list' ) ?
-                   "active" : pathname.includes('cts-view' ) ? "active" : ""} 
-                       href="/app/projects/project_dashboard">Projects</a></li>
+                
                    <li><a href="/tasks/tasks">Tasks</a></li>
-                   <li><a className={pathname.includes('task-board') ?"active" :""} href="/app/projects/task-board">Task Board</a></li>
+                   <li><a className={pathname.includes('task-board') ?"active" :""} href="/app/projects/task-board">Feedback</a></li>
                  </ul>
                </li>
                {/* <li className={pathname.includes('leads') ?"active" :""}> 
@@ -192,36 +187,7 @@
                <li className={pathname.includes('promotion') ?"active" :""}><a href="/app/performance/promotion"><i className="la la-bullhorn" /> <span>Promotion</span></a></li>
                <li className={pathname.includes('resignation') ?"active" :""}><a href="/app/performance/resignation"><i className="la la-external-link-square" /> <span>Resignation</span></a></li>
                <li className={pathname.includes('termination') ?"active" :""}><a href="/app/performance/termination"><i className="la la-times-circle" /> <span>Termination</span></a></li> */}
-               <li className="menu-title"> 
-                 <span>Administration</span>
-               </li>
-               {/* <li className={pathname.includes('assets') ?"active" :""}> 
-                 <a href="/app/administrator/assets"><i className="la la-object-ungroup" /> <span>Assets</span></a>
-               </li>
-               <li className="submenu">
-                 <a href="#"><i className="la la-briefcase" /> <span> Jobs </span> <span className="menu-arrow" /></a>
-                 <ul style={{display: 'none'}}>
-                   <li><a className={pathname.includes('user-dashboard') || pathname.includes('user-all-jobs')|| pathname.includes('saved-jobs')
-                       || pathname.includes('applied-jobs')|| pathname.includes('interviewing')|| pathname.includes('offered-jobs')|| 
-                       pathname.includes('visited-jobs') || pathname.includes('archived-jobs')
-                       || pathname.includes('job-aptitude') || pathname.includes('questions') ?"active" :""} 
-                       href="/app/administrator/user-dashboard"> User Dasboard </a></li>
-                   <li><a className={pathname.includes('jobs-dashboard') ?"active" :""} href="/app/administrator/jobs-dashboard"> Jobs Dasboard </a></li>
-                   <li><a className={pathname === ('/app/administrator/jobs') ?"active" :""} href="/app/administrator/jobs"> Manage Jobs </a></li>
-                   <li><a className={pathname.includes('manage-resumes') ?"active" :""} href="/app/administrator/manage-resumes"> Manage Resumes </a></li>
-                   <li><a className={pathname.includes('shortlist-candidates') ?"active" :""} href="/app/administrator/shortlist-candidates"> Shortlist Candidates </a></li>
-                   <li><a className={pathname === ('/app/administrator/interview-questions') ?"active" :""} href="/app/administrator/interview-questions"> Interview Questions </a></li>
-                   <li><a className={pathname.includes('offer_approvals') ?"active" :""} href="/app/administrator/offer_approvals"> Offer Approvals </a></li>
-                   <li><a className={pathname.includes('experiance-level') ?"active" :""} href="/app/administrator/experiance-level"> Experience Level </a></li>
-                   <li><a className={pathname === ('/app/administrator/candidates') ?"active" :""} href="/app/administrator/candidates"> Candidates List </a></li>
-                   <li><a className={pathname.includes('schedule-timing') ?"active" :""} href="/app/administrator/schedule-timing"> Schedule timing </a></li>
-                   <li><a className={pathname.includes('apptitude-result') ?"active" :""} href="/app/administrator/apptitude-result"> Aptitude Results </a></li>
-                   
-                 </ul>
-               </li>
-               <li className={pathname.includes('knowledgebase') ?"active" :""}> 
-                 <a href="/app/administrator/knowledgebase"><i className="la la-question" /> <span>Knowledgebase</span></a>
-               </li> */}               
+                          
                {/* <li className="submenu">
                  <a href="#"><i className="la la-user" /> <span> Profile </span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
@@ -229,15 +195,7 @@
                    <li><a className={pathname.includes('client-') ?"active" :""} href="/app/profile/client-profile"> Client Profile </a></li>
                  </ul>
                </li> */}
-               <li className={pathname.includes('activities') ?"active" :""}> 
-                 <a href="/app/administrator/activities"><i className="la la-bell" /> <span>Activities</span></a>
-               </li>
-               <li className={pathname.includes('administrator/users') ?"active" :""}> 
-                 <a href="/app/administrator/users"><i className="la la-user-plus" /> <span>Users</span></a>
-               </li>
-               <li> 
-                 <a href="/settings/companysetting"><i className="la la-cog" /> <span>Settings</span></a>
-               </li>
+               
                {/* <li className="menu-title"> 
                  <span>Pages</span>
                </li> */}

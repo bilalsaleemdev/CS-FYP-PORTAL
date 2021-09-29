@@ -175,3 +175,20 @@ export const getUserWorkshopesAPI = async (user_id,cancelToken) => {
         return {error:error};
     }
 };
+
+
+//manager api crate project
+
+
+export const createProject = async (data,cancelToken) => {    
+    const url = `project`;    
+    const request = { type: 'POST', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('conference', response)
+        return response.data;
+    } catch (error) { 
+        console.log('conference', error)
+        return {error:error};
+    }
+};
