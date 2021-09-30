@@ -137,18 +137,6 @@ const Workshopes = () => {
                         <div className="sub-title">
                           day:
                     </div>
-<<<<<<< HEAD
-              <h4 className="project-title"><a href="/app/projects/projects-view">Management WorkShop</a></h4>                    
-                    <p className="text-muted">{key.purpose}
-                  </p>
-                    <div className="pro-deadline m-b-15">
-                      <div className="sub-title">
-                        day:
-                    </div>
-                      <div className="text-muted">
-                      {key.day}
-                    </div>
-=======
                         <div className="text-muted">
                           {key.day}
                         </div>
@@ -160,7 +148,6 @@ const Workshopes = () => {
                       <div className="project-members m-b-15">
                         <div>URL:<span>{key.url}</span></div>                        
                       </div>
->>>>>>> dfc006b2a26d6f3fda9d8137431c35a02cc3bba6
                     </div>
                   </div>
                 </div>
