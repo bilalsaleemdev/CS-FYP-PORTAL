@@ -53,7 +53,7 @@
      window.location.reload();
    };
    const ManagerProfileCreateApi = async () => {
-     setOpen(true);
+     
      const response = await ManagerProfileCreate(
        user_id_local,
        first_name,
@@ -71,6 +71,7 @@
        // const awais = response.PromiseResult;
        const { data } = response;
        setOpenCreateProfile(true);
+       setOpen(true);
  
        console.log("  data awaiss ", response);
      } else {
