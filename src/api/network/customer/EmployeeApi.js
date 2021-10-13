@@ -217,3 +217,16 @@ export const createProject = async (data,cancelToken) => {
         return {error:error};
     }
 };
+//get all Employee user
+
+
+export const getAllEmployeeUser = async (cancelToken) => {    
+    const url = `employees-users`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};

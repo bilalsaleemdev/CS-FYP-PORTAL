@@ -13,6 +13,7 @@ import ApproveRequest from '../../HR/Sales/approverequest';
 
 import { Divider } from 'material-ui';
 import Projects from './Project/projects';
+import Employee from './Employee/allemployees';
 
 
 // const userType = localStorasssge.getItem('u')
@@ -28,6 +29,8 @@ const DashboardRoute = ({ match }) => (
       <Route  path={`${match.url}/dashboard/ceo`} component={CeoDashboard} />
       <Route  path={`${match.url}/approve-request`} component={ApproveRequest} />
       <Route  path={`${match.url}/projects`} component={Projects} />
+      <Route  path={`${match.url}/employeesall`} component={Employee} />
+
           
        
    </Switch>
