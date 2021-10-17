@@ -9,11 +9,14 @@ import Workshope from './ManagerWorkshop/workshope';
 import EmployeeDashboard from './Employee/employeedashboard';
 import CeoDashboard from './Ceo/ceodashboard';
 import ApproveRequest from '../../HR/Sales/approverequest';
-// import ApproveRequest1 from '../../HR/Sales/approverequest1';
+//  import ApproveRequest1 from '../../HR/Sales/approverequest1';
 
 import { Divider } from 'material-ui';
 import Projects from './Project/projects';
-
+import Tasks from './tasks/tasks';
+import Feedback from './tasks/Feedback';
+import CompletedTask from './tasks/taskboard';
+import ProjectList from './Project/projectlist';
 
 // const userType = localStorasssge.getItem('u')
 
@@ -28,6 +31,11 @@ const DashboardRoute = ({ match }) => (
       <Route  path={`${match.url}/dashboard/ceo`} component={CeoDashboard} />
       <Route  path={`${match.url}/approve-request`} component={ApproveRequest} />
       <Route  path={`${match.url}/projects`} component={Projects} />
+      <Route  path={`${match.url}/tasks`} component={Tasks} />
+      <Route  path={`${match.url}/completedTask`} component={CompletedTask} />
+      <Route  path={`${match.url}/projectlist`} component={ProjectList} />
+
+      <Route  path={`${match.url}/feedbacks`} component={Feedback} />
           
        
    </Switch>

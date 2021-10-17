@@ -98,8 +98,9 @@
                  <a href="#"><i className="la la-rocket" /> <span> Tasks</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
                 
-                   <li><a href="/tasks/tasks">Tasks</a></li>
-                   <li><a className={pathname.includes('task-board') ?"active" :""} href="/app/projects/task-board">Feedback</a></li>
+                   <li><a href="/app/main/tasks">Assign Tasks</a></li>
+                   <li><a href="/app/main/completedTask">Task Board</a></li>
+                   <li><a className={pathname.includes('task-board') ?"active" :""} href="/app/main/feedbacks">Feedback</a></li>
                  </ul>
                </li>
                {/* <li className={pathname.includes('leads') ?"active" :""}> 

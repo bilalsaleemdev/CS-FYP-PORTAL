@@ -1,15 +1,31 @@
 
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { Helmet } from "react-helmet";
 import {Avatar_16,Avatar_02,Avatar_05,Avatar_09,Avatar_10,Avatar_11,Avatar_01,PlaceHolder} from "../../../Entryfile/imagepath"
+import { useHistory } from 'react-router-dom'
+import moment from "moment";
 
-class Projects extends Component {
-  
-   render() {
+const Projects = (props) => {
+  const history = useHistory()
+  const [project, setProject] = useState('')
+  // const []
+  useEffect(() => {
+    getData();
+
+  }, [])
+  const getData = () => {
+    if(props?.history?.location?.state) {
+      setProject(props.history.location.state)
+    } else {
+      history.push('/app/main/Projects')
+    }
+
+
+  }
       return (         
       <div className="page-wrapper" >
         <Helmet>
-            <title>Projects - HRMS Admin Template</title>
+        Projects
             <meta name="description" content="Login page"/>					
         </Helmet>
       {/* Page Content */}
@@ -18,7 +34,7 @@ class Projects extends Component {
         <div className="page-header">
           <div className="row align-items-center">
             <div className="col">
-              <h3 className="page-title">Hospital Admin</h3>
+              <h3 className="page-title">Project</h3>
               <ul className="breadcrumb">
                 <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Project</li>
@@ -36,248 +52,16 @@ class Projects extends Component {
             <div className="card">
               <div className="card-body">
                 <div className="project-title">
-                  <h5 className="card-title">Hospital Administration</h5>
-                  <small className="block text-ellipsis m-b-15"><span className="text-xs">2</span> <span className="text-muted">open tasks, </span><span className="text-xs">5</span> <span className="text-muted">tasks completed</span></small>
+                  <h5 className="card-title">{ project?.project?.name}</h5>
+                  <small className="block text-ellipsis m-b-15"><span className="text-xs">{project?.task?.filter(x => x.task_status === 0 )?.length} </span> <span className="text-muted">open tasks, </span><span className="text-xs"> {project?.task?.filter(x => x.task_status === 1 )?.length}</span> 
+                  <span className="text-muted">tasks completed</span></small>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel elit neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum sollicitudin libero vitae est consectetur, a molestie tortor consectetur. Aenean tincidunt interdum ipsum, id pellentesque diam suscipit ut. Vivamus massa mi, fermentum eget neque eget, imperdiet tristique lectus. Proin at purus ut sem pellentesque tempor sit amet ut lectus. Sed orci augue, placerat et pretium ac, hendrerit in felis. Integer scelerisque libero non metus commodo, et hendrerit diam aliquet. Proin tincidunt porttitor ligula, a tincidunt orci pellentesque nec. Ut ultricies maximus nulla id consequat. Fusce eu consequat mi, eu euismod ligula. Aliquam porttitor neque id massa porttitor, a pretium velit vehicula. Morbi volutpat tincidunt urna, vel ullamcorper ligula fermentum at. </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel elit neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum sollicitudin libero vitae est consectetur, a molestie tortor consectetur. Aenean tincidunt interdum ipsum, id pellentesque diam suscipit ut. Vivamus massa mi, fermentum eget neque eget, imperdiet tristique lectus. Proin at purus ut sem pellentesque tempor sit amet ut lectus. Sed orci augue, placerat et pretium ac, hendrerit in felis. Integer scelerisque libero non metus commodo, et hendrerit diam aliquet. Proin tincidunt porttitor ligula, a tincidunt orci pellentesque nec. Ut ultricies maximus nulla id consequat. Fusce eu consequat mi, eu euismod ligula. Aliquam porttitor neque id massa porttitor, a pretium velit vehicula. Morbi volutpat tincidunt urna, vel ullamcorper ligula fermentum at. </p>
-              </div>
+                <p> { project?.project?.description} </p>
             </div>
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title m-b-20">Uploaded image files</h5>
-                <div className="row">
-                  <div className="col-md-3 col-sm-4 col-lg-4 col-xl-3">
-                    <div className="uploaded-box">
-                      <div className="uploaded-img">
-                        <img src={PlaceHolder} className="img-fluid" alt="" />
-                      </div>
-                      <div className="uploaded-img-name">
-                        demo.png
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3 col-sm-4 col-lg-4 col-xl-3">
-                    <div className="uploaded-box">
-                      <div className="uploaded-img">
-                        <img src={PlaceHolder} className="img-fluid" alt="" />
-                      </div>
-                      <div className="uploaded-img-name">
-                        demo.png
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3 col-sm-4 col-lg-4 col-xl-3">
-                    <div className="uploaded-box">
-                      <div className="uploaded-img">
-                        <img src={PlaceHolder} className="img-fluid" alt="" />
-                      </div>
-                      <div className="uploaded-img-name">
-                        demo.png
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3 col-sm-4 col-lg-4 col-xl-3">
-                    <div className="uploaded-box">
-                      <div className="uploaded-img">
-                        <img src={PlaceHolder} className="img-fluid" alt="" />
-                      </div>
-                      <div className="uploaded-img-name">
-                        demo.png
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title m-b-20">Uploaded files</h5>
-                <ul className="files-list">
-                  <li>
-                    <div className="files-cont">
-                      <div className="file-type">
-                        <span className="files-icon"><i className="fa fa-file-pdf-o" /></span>
-                      </div>
-                      <div className="files-info">
-                        <span className="file-name text-ellipsis"><a href="#">AHA Selfcare Mobile Application Test-Cases.xls</a></span>
-                        <span className="file-author"><a href="#">John Doe</a></span> <span className="file-date">May 31st at 6:53 PM</span>
-                        <div className="file-size">Size: 14.8Mb</div>
-                      </div>
-                      <ul className="files-action">
-                        <li className="dropdown dropdown-action">
-                          <a href="" className="dropdown-toggle btn btn-link" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_horiz</i></a>
-                          <div className="dropdown-menu dropdown-menu-right">
-                            <a className="dropdown-item" href="">Download</a>
-                            <a className="dropdown-item" href="#" data-toggle="modal" data-target="#share_files">Share</a>
-                            <a className="dropdown-item" href="">Delete</a>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="files-cont">
-                      <div className="file-type">
-                        <span className="files-icon"><i className="fa fa-file-pdf-o" /></span>
-                      </div>
-                      <div className="files-info">
-                        <span className="file-name text-ellipsis"><a href="#">AHA Selfcare Mobile Application Test-Cases.xls</a></span>
-                        <span className="file-author"><a href="#">Richard Miles</a></span> <span className="file-date">May 31st at 6:53 PM</span>
-                        <div className="file-size">Size: 14.8Mb</div>
-                      </div>
-                      <ul className="files-action">
-                        <li className="dropdown dropdown-action">
-                          <a href="" className="dropdown-toggle btn btn-link" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_horiz</i></a>
-                          <div className="dropdown-menu dropdown-menu-right">
-                            <a className="dropdown-item" href="">Download</a>
-                            <a className="dropdown-item" href="#" data-toggle="modal" data-target="#share_files">Share</a>
-                            <a className="dropdown-item" href="">Delete</a>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="project-task">
-              <ul className="nav nav-tabs nav-tabs-top nav-justified mb-0">
-                <li className="nav-item"><a className="nav-link active" href="#all_tasks" data-toggle="tab" aria-expanded="true">All Tasks</a></li>
-                <li className="nav-item"><a className="nav-link" href="#pending_tasks" data-toggle="tab" aria-expanded="false">Pending Tasks</a></li>
-                <li className="nav-item"><a className="nav-link" href="#completed_tasks" data-toggle="tab" aria-expanded="false">Completed Tasks</a></li>
-              </ul>
-              <div className="tab-content">
-                <div className="tab-pane show active" id="all_tasks">
-                  <div className="task-wrapper">
-                    <div className="task-list-container">
-                      <div className="task-list-body">
-                        <ul id="task-list">
-                          <li className="task">
-                            <div className="task-container">
-                              <span className="task-action-btn task-check">
-                                <span className="action-circle large complete-btn" title="Mark Complete">
-                                  <i className="material-icons">check</i>
-                                </span>
-                              </span>
-                              <span className="task-label" contentEditable="true" suppressContentEditableWarning={true}>Patient appointment booking</span>
-                              <span className="task-action-btn task-btn-right">
-                                <span className="action-circle large" title="Assign">
-                                  <i className="material-icons">person_add</i>
-                                </span>
-                                <span className="action-circle large delete-btn" title="Delete Task">
-                                  <i className="material-icons">delete</i>
-                                </span>
-                              </span>
-                            </div>
-                          </li>
-                          <li className="task">
-                            <div className="task-container">
-                              <span className="task-action-btn task-check">
-                                <span className="action-circle large complete-btn" title="Mark Complete">
-                                  <i className="material-icons">check</i>
-                                </span>
-                              </span>
-                              <span className="task-label" contentEditable="true" suppressContentEditableWarning={true}>Appointment booking with payment gateway</span>
-                              <span className="task-action-btn task-btn-right">
-                                <span className="action-circle large" title="Assign">
-                                  <i className="material-icons">person_add</i>
-                                </span>
-                                <span className="action-circle large delete-btn" title="Delete Task">
-                                  <i className="material-icons">delete</i>
-                                </span>
-                              </span>
-                            </div>
-                          </li>
-                          <li className="completed task">
-                            <div className="task-container">
-                              <span className="task-action-btn task-check">
-                                <span className="action-circle large complete-btn" title="Mark Complete">
-                                  <i className="material-icons">check</i>
-                                </span>
-                              </span>
-                              <span className="task-label">Doctor available module</span>
-                              <span className="task-action-btn task-btn-right">
-                                <span className="action-circle large" title="Assign">
-                                  <i className="material-icons">person_add</i>
-                                </span>
-                                <span className="action-circle large delete-btn" title="Delete Task">
-                                  <i className="material-icons">delete</i>
-                                </span>
-                              </span>
-                            </div>
-                          </li>
-                          <li className="task">
-                            <div className="task-container">
-                              <span className="task-action-btn task-check">
-                                <span className="action-circle large complete-btn" title="Mark Complete">
-                                  <i className="material-icons">check</i>
-                                </span>
-                              </span>
-                              <span className="task-label" contentEditable="true" suppressContentEditableWarning={true}>Patient and Doctor video conferencing</span>
-                              <span className="task-action-btn task-btn-right">
-                                <span className="action-circle large" title="Assign">
-                                  <i className="material-icons">person_add</i>
-                                </span>
-                                <span className="action-circle large delete-btn" title="Delete Task">
-                                  <i className="material-icons">delete</i>
-                                </span>
-                              </span>
-                            </div>
-                          </li>
-                          <li className="task">
-                            <div className="task-container">
-                              <span className="task-action-btn task-check">
-                                <span className="action-circle large complete-btn" title="Mark Complete">
-                                  <i className="material-icons">check</i>
-                                </span>
-                              </span>
-                              <span className="task-label" contentEditable="true" suppressContentEditableWarning={true}>Private chat module</span>
-                              <span className="task-action-btn task-btn-right">
-                                <span className="action-circle large" title="Assign">
-                                  <i className="material-icons">person_add</i>
-                                </span>
-                                <span className="action-circle large delete-btn" title="Delete Task">
-                                  <i className="material-icons">delete</i>
-                                </span>
-                              </span>
-                            </div>
-                          </li>
-                          <li className="task">
-                            <div className="task-container">
-                              <span className="task-action-btn task-check">
-                                <span className="action-circle large complete-btn" title="Mark Complete">
-                                  <i className="material-icons">check</i>
-                                </span>
-                              </span>
-                              <span className="task-label" contentEditable="true" suppressContentEditableWarning={true}>Patient Profile add</span>
-                              <span className="task-action-btn task-btn-right">
-                                <span className="action-circle large" title="Assign">
-                                  <i className="material-icons">person_add</i>
-                                </span>
-                                <span className="action-circle large delete-btn" title="Delete Task">
-                                  <i className="material-icons">delete</i>
-                                </span>
-                              </span>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="task-list-footer">
-                        <div className="new-task-wrapper">
-                          <textarea id="new-task" placeholder="Enter new task here. . ." defaultValue={""} />
-                          <span className="error-message hidden">You need to enter a task first</span>
-                          <span className="add-new-task-btn btn" id="add-task">Add Task</span>
-                          <span className="btn" id="close-task-panel">Close</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="tab-pane" id="pending_tasks" />
-                <div className="tab-pane" id="completed_tasks" />
-              </div>
-            </div>
+     
+          
+           
           </div>
           <div className="col-lg-4 col-xl-3">
             <div className="card">
@@ -285,44 +69,22 @@ class Projects extends Component {
                 <h6 className="card-title m-b-15">Project details</h6>
                 <table className="table table-striped table-border">
                   <tbody>
-                    <tr>
-                      <td>Cost:</td>
-                      <td className="text-right">$1200</td>
-                    </tr>
-                    <tr>
-                      <td>Total Hours:</td>
-                      <td className="text-right">100 Hours</td>
-                    </tr>
+                  
+                 
                     <tr>
                       <td>Created:</td>
-                      <td className="text-right">25 Feb, 2019</td>
+                      <td className="text-right"> {moment(project?.project?.created_at).format("DD MM YYYY") }</td>
                     </tr>
                     <tr>
                       <td>Deadline:</td>
-                      <td className="text-right">12 Jun, 2019</td>
+                      <td className="text-right">{moment(project?.project?.end_at).format("DD MM YYYY") }</td>
                     </tr>
-                    <tr>
-                      <td>Priority:</td>
-                      <td className="text-right">
-                        <div className="btn-group">
-                          <a href="#" className="badge badge-danger dropdown-toggle" data-toggle="dropdown">Highest </a>
-                          <div className="dropdown-menu dropdown-menu-right">
-                            <a className="dropdown-item" href="#"><i className="fa fa-dot-circle-o text-danger" /> Highest priority</a>
-                            <a className="dropdown-item" href="#"><i className="fa fa-dot-circle-o text-info" /> High priority</a>
-                            <a className="dropdown-item" href="#"><i className="fa fa-dot-circle-o text-primary" /> Normal priority</a>
-                            <a className="dropdown-item" href="#"><i className="fa fa-dot-circle-o text-success" /> Low priority</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
+                
                     <tr>
                       <td>Created by:</td>
-                      <td className="text-right"><a href="/app/profile/employee-profile">Barry Cuda</a></td>
+                      <td className="text-right"><a href="/app/profile/employee-profile">{project?.project?.projectManager}</a></td>
                     </tr>
-                    <tr>
-                      <td>Status:</td>
-                      <td className="text-right">Working</td>
-                    </tr>
+                   
                   </tbody>
                 </table>
                 <p className="m-b-5">Progress <span className="text-success float-right">40%</span></p>
@@ -333,30 +95,15 @@ class Projects extends Component {
             </div>
             <div className="card project-user">
               <div className="card-body">
-                <h6 className="card-title m-b-20">Assigned Leader <button type="button" className="float-right btn btn-primary btn-sm" data-toggle="modal" data-target="#assign_leader"><i className="fa fa-plus" /> Add</button></h6>
                 <ul className="list-box">
                   <li>
                     <a href="/app/profile/employee-profile">
                       <div className="list-item">
-                        <div className="list-left">
-                          <span className="avatar"><img alt="" src={Avatar_11} /></span>
-                        </div>
-                        <div className="list-body">
-                          <span className="message-author">Wilmer Deluna</span>
-                          <div className="clearfix" />
-                          <span className="message-content">Team Leader</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/app/profile/employee-profile">
-                      <div className="list-item">
-                        <div className="list-left">
+                        {/* <div className="list-left">
                           <span className="avatar"><img alt="" src={Avatar_01} /></span>
-                        </div>
+                        </div> */}
                         <div className="list-body">
-                          <span className="message-author">Lesley Grauer</span>
+                          <span className="message-author"> {project?.project?.projectManager}</span>
                           <div className="clearfix" />
                           <span className="message-content">Team Leader</span>
                         </div>
@@ -373,34 +120,25 @@ class Projects extends Component {
                   <button type="button" className="float-right btn btn-primary btn-sm" data-toggle="modal" data-target="#assign_user"><i className="fa fa-plus" /> Add</button>
                 </h6>
                 <ul className="list-box">
-                  <li>
-                    <a href="/app/profile/employee-profile">
-                      <div className="list-item">
-                        <div className="list-left">
-                          <span className="avatar"><img alt="" src={Avatar_02} /></span>
-                        </div>
-                        <div className="list-body">
-                          <span className="message-author">John Doe</span>
-                          <div className="clearfix" />
-                          <span className="message-content">Web Designer</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/app/profile/employee-profile">
-                      <div className="list-item">
-                        <div className="list-left">
-                          <span className="avatar"><img alt="" src={Avatar_09} /></span>
-                        </div>
-                        <div className="list-body">
-                          <span className="message-author">Richard Miles</span>
-                          <div className="clearfix" />
-                          <span className="message-content">Web Developer</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
+                  {project?.employee?.map((item, index) => {
+                    return (
+                     <li key={item.id}>
+                     <a href="/app/profile/employee-profile">
+                       <div className="list-item">
+                         <div className="list-left">
+                           <span className="avatar"><img alt="" src={Avatar_02} /></span>
+                         </div>
+                         <div className="list-body">
+                           <span className="message-author"> {item.name}</span>
+                           <div className="clearfix" />
+                           <span className="message-content"> {item.type} </span>
+                         </div>
+                       </div>
+                     </a>
+                   </li>
+                    )
+                  })}
+                 
                 </ul>
               </div>
             </div>
@@ -675,7 +413,7 @@ class Projects extends Component {
       {/* /Edit Project Modal */}
     </div>
       );
-   }
+   
 }
 
 export default Projects;

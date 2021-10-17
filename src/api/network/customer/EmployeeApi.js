@@ -205,7 +205,7 @@ export const getUserWorkshopesAPI = async (user_id,cancelToken) => {
 //manager api crate project
 
 
-export const createProject = async (data,cancelToken) => {    
+export const createProjectAPI = async (data,cancelToken) => {    
     const url = `project`;    
     const request = { type: 'POST', urlString: url, params: data };
     try {
@@ -214,6 +214,120 @@ export const createProject = async (data,cancelToken) => {
         return response.data;
     } catch (error) { 
         console.log('conference', error)
+        return {error:error};
+    }
+};
+
+export const getEmployeeUserAPI = async (user_id,cancelToken) => {    
+    const url = `employees-users`    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+export const getUserProjectAPI = async (user_id,cancelToken) => {    
+    const url = `project-all-data/${user_id}`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+export const getUserProjectForTaskAPI = async (user_id,cancelToken) => {    
+    const url = `manager-project/${user_id}`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+export const getTaskApi = async (cancelToken) => {    
+    const url = `task`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+export const getProjectEmployeeAPI = async (user_id,cancelToken) => {    
+    const url = `project-employee/${user_id}`    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+export const getProjectTaskAPI = async (projectId,cancelToken) => {    
+    const url = `project-task/${projectId}`    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+export const createTaskAPI = async (data,cancelToken) => {    
+    const url = `task`;    
+    const request = { type: 'POST', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('task', response)
+        return response.data;
+    } catch (error) { 
+        console.log('task', error)
+        return {error:error};
+    }
+};
+
+export const updateTaskAPI = async (id ,data, cancelToken) => {    
+    const url = `task/${id}`;    
+    const request = { type: 'PUT', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        console.log('task', error)
+        return {error:error};
+    }
+};
+
+export const putTaskApi = async (id, data,cancelToken) => {    
+    const url = `task/${id}`;    
+    const request = { type: 'PUT', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('task', response)
+        return response.data;
+    } catch (error) { 
+        console.log('task', error)
+        return {error:error};
+    }
+};
+export const updateProjectAPI = async (id ,data, cancelToken) => {    
+    const url = `project/${id}`;    
+    const request = { type: 'PUT', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log(response.data)
+        return response.data;
+    } catch (error) { 
+        console.log('task', error)
         return {error:error};
     }
 };
