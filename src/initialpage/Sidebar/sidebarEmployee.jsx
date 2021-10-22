@@ -281,7 +281,7 @@ class Sidebar extends Component {
                   pathname.includes("administrator/users") ? "active" : ""
                 }
               >
-                <a href="/app/administrator/users">
+                <a href="/app/main/employeeworkshop">
                   <i className="la la-user-plus" /> <span>WorkShops</span>
                 </a>
               </li>
