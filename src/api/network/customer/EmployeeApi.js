@@ -201,6 +201,18 @@ export const getUserWorkshopesAPI = async (user_id,cancelToken) => {
     }
 };
 
+//find all conference
+
+export const getAllWoekShop = async (cancelToken) => {    
+    const url = `conferance`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
 
 //manager api crate project
 
