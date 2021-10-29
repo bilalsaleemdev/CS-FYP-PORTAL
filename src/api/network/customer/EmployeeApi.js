@@ -343,3 +343,36 @@ export const updateProjectAPI = async (id ,data, cancelToken) => {
         return {error:error};
     }
 };
+
+//get allTask of Employees
+export const getAllTaskEmployee = async (emloyee_Id,cancelToken) => {   
+
+    const url = `employee-task/${emloyee_Id}`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All Employee request', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+
+
+// get all project for employee user
+
+export const getProjectEmployee = async (emloyee_Id,cancelToken) => {   
+
+    const url = `employee-project/${emloyee_Id}`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All Employee project request', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log("awaaaaaa");
+        return response.data;
+    } catch (error) { 
+        console.log("awaaaaaa err");
+        return {error:error};
+    }
+};

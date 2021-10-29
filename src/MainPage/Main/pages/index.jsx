@@ -17,7 +17,10 @@ import Tasks from './tasks/tasks';
 import Feedback from './tasks/Feedback';
 import CompletedTask from './tasks/taskboard';
 import ProjectList from './Project/projectlist';
-import EmployeeWorkshop from './Employee/EmployeeWorkshop'
+import EmployeeWorkshop from './Employee/EmployeeWorkshop';
+import EmployeeTasks from './Employee/Tasks/employeeTasks'
+import allProject from './Employee/Projects/allProject';
+import myProject from './Employee/Projects/myProject';
 
 // const userType = localStorasssge.getItem('u')
 
@@ -36,6 +39,10 @@ const DashboardRoute = ({ match }) => (
       <Route  path={`${match.url}/completedTask`} component={CompletedTask} />
       <Route  path={`${match.url}/projectlist`} component={ProjectList} />
       <Route  path={`${match.url}/employeeworkshop`} component={EmployeeWorkshop} />
+      <Route  path={`${match.url}/employeetasks`} component={EmployeeTasks} />
+
+      <Route  path={`${match.url}/employeeprojects`} component={allProject} />
+      <Route  path={`${match.url}/employeemyprojects`} component={myProject} />
 
       <Route  path={`${match.url}/feedbacks`} component={Feedback} />
           

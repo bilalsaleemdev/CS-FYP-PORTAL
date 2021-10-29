@@ -9,7 +9,6 @@
 .note-editor.note-frame .note-editing-area .note-editable, .note-editor.note-airframe .note-editing-area .note-editable {   
     background-color: white;
 }
-
 .recharts-cartesian-grid-vertical{
     display: none !important;
 }

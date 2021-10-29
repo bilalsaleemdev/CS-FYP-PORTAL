@@ -73,7 +73,7 @@ class Sidebar extends Component {
                           ? "active"
                           : ""
                       }
-                      href="/app/employee/allemployees"
+                      href="/app/main/employeeprojects"
                     >
                       All Projects
                     </a>
@@ -81,7 +81,7 @@ class Sidebar extends Component {
                   <li>
                     <a
                       className={pathname.includes("holidays") ? "active" : ""}
-                      href="/app/employee/holidays"
+                      href="/app/main/employeemyprojects"
                     >
                       My Projects
                     </a>
@@ -254,7 +254,7 @@ class Sidebar extends Component {
                       className={
                         pathname.includes("profile/employee-") ? "active" : ""
                       }
-                      href="/app/profile/employee-profile"
+                      href="/app/main/employeetasks"
                     >
                       {" "}
                       All Tasks{" "}
@@ -263,7 +263,7 @@ class Sidebar extends Component {
                   <li>
                     <a
                       className={pathname.includes("client-") ? "active" : ""}
-                      href="/app/profile/client-profile"
+                      href="/app/main/employeeprojects"
                     >
                       {" "}
                     All Projects{" "}

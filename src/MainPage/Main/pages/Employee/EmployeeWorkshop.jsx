@@ -12,7 +12,7 @@ import {
   getUserWorkshopesAPI,
   createUserWorkShopeAPI,
 } from "../../../../api/network/customer/EmployeeApi";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import moment from "moment";
 
@@ -22,15 +22,6 @@ const Workshopes = () => {
   
   const cancelTokenSource = axios.CancelToken.source();
   var user_id = localStorage.getItem("user_id");
-
-  const [selectedWorkShopId, setSelectedWorkShopId] = useState();
-  const [workShopeId, setWorkShopeId] = useState();
-  const [create_update, setCreate_Update] = useState(true);
-  const [purpose, setPurpose] = useState();
-  const [day, setDay] = useState();
-  const [start_at, setStart_at] = useState("2021-01-01");
-  const [last_at, setLast_at] = useState("2021-01-01");
-  const [url, setUrl] = useState();
   const [conferanceData, setConferanceData] = useState([]);
 
   useEffect(() => {
@@ -51,8 +42,8 @@ const Workshopes = () => {
   const handleJoin = (e, url) => {
     console.log(url, 'url::')
     e.preventDefault();
-    history.push('');
-    window.open(url, '_blank', 'noopener,noreferrer')
+    // window.location.href = url
+    window.open("https://" +url, '_blank' )
 
   }
 
@@ -113,6 +104,8 @@ const Workshopes = () => {
                         <Button variant="outlined" onClick={(e) => handleJoin(e, key.url)} targrt='blank'>
                           Join Conference
                         </Button>
+                     
+
                       </div>
                     </div>
                   </div>
