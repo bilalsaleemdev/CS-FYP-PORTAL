@@ -411,3 +411,21 @@ export const getAllProject = async (cancelToken) => {
         return {error:error};
     }
 };
+
+
+
+//Put user profile pic api
+
+export const ProfilePicPutApi = async (user_id, profile_pic,cancelToken) => {    
+    const url = `upload/pic/${user_id}`;
+    const data = { 'user_id': user_id , ' profile_pic': profile_pic};
+    const request = { type: 'PUT', urlString: url, params: data , {}};
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('manager profile', response)
+        return response.data;
+    } catch (error) { 
+        console.log('manager  error', error)
+        return {error:error};
+    }
+};

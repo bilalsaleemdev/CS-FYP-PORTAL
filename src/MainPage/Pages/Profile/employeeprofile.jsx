@@ -14,6 +14,7 @@
  import {
    ManagerProfileCreate,
    getUserProfileAPI,
+   ProfilePicPutApi
  } from "../../../api/network/customer/EmployeeApi";
  import Button from "@material-ui/core/Button";
  import Dialog from "@material-ui/core/Dialog";
@@ -39,7 +40,7 @@
    const [post, setPost] = useState("employee");
    const [postalCode, setPostalCode] = useState("123");
    const [submitResponse, setSubmitResponse] = useState(false);
- 
+
    const user_id_local = localStorage.getItem("user_id");
  
    const cancelTokenSource = axios.CancelToken.source();
@@ -47,6 +48,15 @@
      // ManagerProfileCreateApi();
      getUserProfile(user_id_local);
    }, []);
+
+   useEffect(() => {
+    // ManagerProfileCreateApi();
+    UserProfilePic();
+  }, []);
+   const UserProfilePic = async () => {
+    const response =await ProfilePicPutApi('20',"http://localhost:5002/images/profile_pic_1635970169797.png");
+    console,log(response,'eeeeeee')
+   }
  
    const handleCloseSubmitResponse = () => {
      setOpen(false);
