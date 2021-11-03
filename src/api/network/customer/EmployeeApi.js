@@ -376,3 +376,38 @@ export const getProjectEmployee = async (emloyee_Id,cancelToken) => {
         return {error:error};
     }
 };
+
+//get user by id
+
+
+export const getUserById = async (emloyee_Id,cancelToken) => {   
+
+    const url = `single-user/${emloyee_Id}`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All Employee project request', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log("awaaaaaa");
+        return response.data;
+    } catch (error) { 
+        console.log("awaaaaaa err");
+        return {error:error};
+    }
+};
+
+//get All Project
+
+export const getAllProject = async (cancelToken) => {   
+
+    const url = `project`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All  project request', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log("awaaaaaa");
+        return response.data;
+    } catch (error) { 
+        console.log("awaaaaaa err");
+        return {error:error};
+    }
+};

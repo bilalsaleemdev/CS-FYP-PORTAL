@@ -7,6 +7,7 @@ import "react-summernote/dist/react-summernote.css"; // import styles
 import {
   createProjectAPI,
   updateProjectAPI,
+  getUserById,
   getEmployeeUserAPI,
   getUserProjectAPI,
   getProjectEmployee
@@ -20,22 +21,16 @@ import "../../../../../MainPage/index.css";
 import { Input, Button } from "reactstrap";
 import moment from "moment";
 import { useHistory } from "react-router-dom";
+import { CSVLink } from 'react-csv';
 
 const myProject = () => {
   const cancelTokenSource = axios.CancelToken.source();
+  const [csvArray, setCsvArray] = useState([]);
   const [projectData, setProjectData] = useState([]);
-  const [employeelUser, setEmployeeUser] = useState([]);
-  const [userProjectList, setUserProjectList] = useState([]);
+  const [userData, setUserData] = useState({})
   const EmployeeId = localStorage.getItem('user_id');
+  const [nameMembers, setNameMembers] = useState([]);
 
-  const [listOfIds, setListOfIds] = useState([]);
-  const [listOfNames, setListOfNames] = useState([]);
-
-  const [name, setName] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [description, setDescription] = useState("");
-  const history = useHistory();
 
   const [editName, setEditName] = useState("");
 
@@ -49,14 +44,19 @@ const myProject = () => {
 
   useEffect(() => {
     getUserProject();
+    getUserIdFromApi();
+
   }, []);
 
   useEffect(() => {
-    console.log(projectData ,'awais testing')
-  }, [projectData]);
+    console.log(projectData ,'awais testing');
+    console.log(userData ,'awais user')
+    console.log(nameMembers ,'nameMembers user')
+  }, [projectData, userData, nameMembers]);
 
 
   const getUserProject = async () => {
+    let localDataForCsv = [];
     console.log("12121212");
    
     const response = await getProjectEmployee(EmployeeId ,cancelTokenSource.token);
@@ -66,44 +66,53 @@ const myProject = () => {
       console.log("12121212");
   
       setProjectData(response.data);
+      // setCsvArray(response.data);
+      response.data.map((i) => {
+        setNameMembers( i.project_member.map((a => a.name)));
+      })
+
+      response.data.map((item) => {
+
+        localDataForCsv.push({
+          'Project Name': item.name,
+          ' Project Leader': item.project_leader,
+          'Start Date': moment(item.start_at).format("DD MM YYYY"),
+          'Deadline':moment(item.end_at).format("DD MM YYYY"),
+          'Total Task': item.total_task,
+          'Project Members Numbers': item.project_member_count,
+          'Project Members': item.project_member.map((i => i.name))
+        })
+
+      })
+
+      setCsvArray(localDataForCsv);
+
       // console.log(taskData, "awais data for all task");
     }
     // console.log(taskData, "awais data for all task");
   };
 
-  const setEditModal = async (item) => {
-    const project = item.project;
-    setEditName(project.name);
-    setEditEndDate(moment(project.end_at).format("YYYY-MM-DD"));
-    setEditStartDate(moment(project.start_at).format("YYYY-MM-DD"));
-    setEditDescription(project.description);
-    setEditProject(project);
-    setEditListOfIds();
+  const getUserIdFromApi = async () => {
+    console.log("12121212");
+   
+    const response = await  getUserById(EmployeeId ,cancelTokenSource.token);
+    console.log(response,'my project user')
+
+    if (response.success == true) {
+      console.log("awais",response.data);
+  
+      setUserData(response.user);
+      // console.log(taskData, "awais data for all task");
+    }
+    // console.log(taskData, "awais data for all task");
   };
 
-  const updateProject = async () => {
-    const data = {
-      name: editName,
-      user_id: localStorage.getItem("user_id"),
-      team_member: editListOfIds,
-      start_at: editStartDate,
-      end_at: editEndDate,
-      description: editDescription,
-    };
-    const response = await updateProjectAPI(
-      editProject.id,
-      data,
-      cancelTokenSource.token
-    );
-    if (response.success == true) {
-      getUserProject();
-    }
-  };
+
 
   return (
     <div className="page-wrapper">
       <Helmet>
-        <title>Projects </title>
+        <title>MyProjects </title>
         <meta name="description" content="Login page" />
       </Helmet>
       {/* Page Content */}
@@ -112,18 +121,38 @@ const myProject = () => {
         <div className="page-header">
           <div className="row align-items-center">
             <div className="col">
-              <h3 className="page-title">Projectss</h3>
+              <h3 className="page-title">Projects</h3>
               <ul className="breadcrumb">
                 <li className="breadcrumb-item">
-                  <a href="/app/main/dashboard">Dashboard</a>
+                  <a href="/app/main/dashboard/employee">Dashboard</a>
                 </li>
                 <li className="breadcrumb-item active">Projects</li>
               </ul>
             </div>
-           
+            <div className="col-auto float-right ml-auto">
+              <CSVLink data={csvArray}>
+                <Button variant="contained" color="secondary">
+                  Download CSV File
+                </Button>
+              </CSVLink>
+            </div>
           </div>
         </div>
         {/* /Page Header */}
+        <div
+          className="row"
+          style={{
+            paddingBottom: "20px",
+            marginBottom: "20px",
+            textAlign: "center",
+            fontFamily: "cursive",
+            fontSize: "20px",
+          }}
+        >
+          <div className="col-md-12" style={{}}>
+            Hey! {userData.name} here is the Project in Which You are registered
+          </div>
+        </div>
 
         <div className="row">
           <div className="col-md-12">
@@ -131,13 +160,13 @@ const myProject = () => {
               <table className="table table-striped custom-table ">
                 <thead>
                   <tr>
-                    <th>Project</th>
+                    <th>Project Name</th>
+                    <th>Project Leader</th>
+                    <th>Start Date</th>
                     <th>Deadline</th>
-                    <th>Leader</th>
-                    <th>Open Task</th>
-                    <th>Completed Task</th>
-
-                    <th className="text-right">Action</th>
+                    <th>Total Task</th>
+                    <th>Project Members</th>
+                    <th> Project Member Count</th>
                   </tr>
                 </thead>
 
@@ -145,55 +174,14 @@ const myProject = () => {
                   {projectData.map((item, index) => {
                     return (
                       <tr key={item.id}>
-                        <td>
-                          <a href="/app/projects/projects-view">
-                            {item.name}
-                          </a>
-                        </td>
-                        <td>
-                          {moment(item.end_at).format("DD MM YYYY")}
-                        </td>
-                        <td>{item.projectManager}</td>
+                        <td>{item.name}</td>
+                        <td>{item.project_leader}</td>
+                        <td>{moment(item.start_at).format("DD MM YYYY")}</td>
+                        <td>{moment(item.end_at).format("DD MM YYYY")}</td>
 
-                        <td>
-                          {item.user_id}
-                        </td>
-                        <td>
-                          {item.user_id}
-                        </td>
-
-                        <td className="text-right">
-                          <div className="dropdown dropdown-action">
-                            <a
-                              href="#"
-                              className="action-icon dropdown-toggle"
-                              data-toggle="dropdown"
-                              aria-expanded="false"
-                            >
-                              <i className="material-icons">more_vert</i>
-                            </a>
-
-                            <div className="dropdown-menu dropdown-menu-right">
-                              <a
-                                className="dropdown-item"
-                                href="#"
-                                data-toggle="modal"
-                                onClick={() => setEditModal(item)}
-                                data-target="#edit_project"
-                              >
-                                <i className="fa fa-pencil m-r-5" /> Edit
-                              </a>
-                              <a
-                                className="dropdown-item"
-                                href="#"
-                                data-toggle="modal"
-                                data-target="#delete_project"
-                              >
-                                <i className="fa fa-trash-o m-r-5" /> Delete
-                              </a>
-                            </div>
-                          </div>
-                        </td>
+                        <td>{item.total_task}</td>
+                        <td>{item.project_member.map((i => i.name)).join(' ,')}</td>
+                        <td>{item.project_member_count}</td>
                       </tr>
                     );
                   })}
@@ -204,7 +192,6 @@ const myProject = () => {
         </div>
       </div>
       {/* /Page Content */}
-    
     </div>
   );
 };
