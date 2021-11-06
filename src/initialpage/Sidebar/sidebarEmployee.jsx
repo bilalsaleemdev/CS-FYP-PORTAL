@@ -125,7 +125,7 @@ class Sidebar extends Component {
                     </a>
                   </li>
                   <li>
-                    <a href="/tasks/tasks">Completed Tasks</a>
+                    <a href="/app/main/completedTaskEmployee">Completed Tasks</a>
                   </li>
                 </ul>
               </li>

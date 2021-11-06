@@ -416,16 +416,34 @@ export const getAllProject = async (cancelToken) => {
 
 //Put user profile pic api
 
-export const ProfilePicPutApi = async (user_id, profile_pic,cancelToken) => {    
-    const url = `upload/pic/${user_id}`;
-    const data = { 'user_id': user_id , ' profile_pic': profile_pic};
-    const request = { type: 'PUT', urlString: url, params: data , {}};
+// export const ProfilePicPutApi = async (user_id, profile_pic,cancelToken) => {    
+//     const url = `upload/pic/${user_id}`;
+//     const data = { 'user_id': user_id , ' profile_pic': profile_pic};
+//     const request = { type: 'PUT', urlString: url, params: data , {}};
+//     try {
+//          const response = await processRequest(request, cancelToken); 
+//          console.log('manager profile', response)
+//         return response.data;
+//     } catch (error) { 
+//         console.log('manager  error', error)
+//         return {error:error};
+//     }
+// };
+
+
+//get Employee All projects
+
+export const getAllProjectOfEmployee = async (user_id, cancelToken) => {   
+
+    const url = `employee-project/${user_id}`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All  project of one employee', request )
     try {
          const response = await processRequest(request, cancelToken); 
-         console.log('manager profile', response)
+         console.log("awaaaaaa");
         return response.data;
     } catch (error) { 
-        console.log('manager  error', error)
+        console.log("awaaaaaa err");
         return {error:error};
     }
 };
