@@ -139,3 +139,28 @@ export const deleteUsersPendingRequestAPI = async (userId,cancelToken) => {
     }
 };
 
+
+export const getEmployeeConferenceNotification = async (userId, cancelToken) => {    
+    const url = `employees-conference-notifications/${userId}`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+
+export const conferenceUpdate = async (conferenceId,data,cancelToken) => {    
+    const url = `conference/${conferenceId}`;
+    const request = { type: 'PUT', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('conference Update', response)
+        return response.data;
+    } catch (error) { 
+        console.log('conference  error', error)
+        return {error:error};
+    }
+};

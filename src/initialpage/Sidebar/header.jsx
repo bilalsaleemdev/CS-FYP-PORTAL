@@ -1,18 +1,70 @@
 /**
  * App Header
  */
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import {headerlogo,lnEnglish,lnFrench,lnSpanish,lnGerman, Avatar_02,Avatar_03,Avatar_05,
   Avatar_06,Avatar_08,Avatar_09,Avatar_13,Avatar_17,Avatar_21} from '../../Entryfile/imagepath'
+import axios, { CancelTokenSource } from "axios";
+import {
+  conferenceUpdate,
+  getEmployeeConferenceNotification,
+} from "../../api/network/customer/EmployeeApi";
+import { notification } from 'antd';
+import { format } from 'date-fns';
 
-class Header extends Component {
-
-   render() {
-    const {  location } = this.props
+function Header(props) {
+    const cancelTokenSource = axios.CancelToken.source();
+    const [countNotification, setCountNotification] = useState(0)
+    const [conferenceNotification, setConferenceNotification] = useState([])
+    useEffect(()=>{
+      getNotificationConference()
+    },[])
+    
+    const {  location } = props
     let pathname = location.pathname
     const type = localStorage.getItem("EmployeeType");
     const path = `/purple/app/profile/${type}-profile`;
+
+
+    const getNotificationConference = async () =>{
+      localStorage.getItem('user_id')
+      let response = await getEmployeeConferenceNotification(localStorage.getItem('user_id'),cancelTokenSource.token);
+      if (response.success == true) {
+        setConferenceNotification(response.data)
+        setCountNotification(response.data.length)
+      }
+    }
+    const  notificationCancle =  async(item,e) => {  
+
+        let users_conference_sceen = []
+        // console.log('users_conference_sceen::',users_conference_sceen)
+        let myArr = []
+        if(item.notifications){          
+          myArr = item.notifications.split(",");
+          myArr.forEach(element => {
+            users_conference_sceen.push(element)
+          })      
+        }
+        users_conference_sceen.push(localStorage.getItem('user_id')+"")
+        console.log('users_conference_sceen::',users_conference_sceen)
+      let data = {
+        day:item.day,
+        url:item.url,
+        start_at:format(new Date(item.start_at), 'yyyy-MM-dd'),
+        last_at:format(new Date(item.last_at), 'yyyy-MM-dd'),
+        purpose:item.purpose,
+        notifications:users_conference_sceen.toString()        
+    }
+      let response = await conferenceUpdate(item.id,data,cancelTokenSource.token);
+      if (response.success == true) {
+        window.location.reload(true);
+      }
+      else{
+        console.log(response)
+      }      
+      
+    }
     
       return (
          <div className="header" style={{right:"0px"}}>
@@ -74,29 +126,37 @@ class Header extends Component {
           {/* Notifications */}
           <li className="nav-item dropdown">
             <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown">
-              <i className="fa fa-bell-o" /> <span className="badge badge-pill">3</span>
+              <i className="fa fa-bell-o" /> <span className="badge badge-pill">{countNotification}</span>
             </a>
             <div className="dropdown-menu notifications">
               <div className="topnav-dropdown-header">
                 <span className="notification-title">Notifications</span>
-                <a href="" className="clear-noti"> Clear All </a>
+                {/* <a href="" className="clear-noti"> Clear All </a> */}
               </div>
               <div className="noti-content">
-                <ul className="notification-list">
-                  <li className="notification-message">
-                    <a href="/purple/app/administrator/activities">
+              <ul className="notification-list">
+              {conferenceNotification && conferenceNotification.map(item =>(
+                <li className="notification-message" key = {item.id}>
+                    <div 
+                    >
                       <div className="media">
                         <span className="avatar">
                           <img alt="" src={Avatar_02} />
                         </span>
                         <div className="media-body">
-                          <p className="noti-details"><span className="noti-title">John Doe</span> added new task <span className="noti-title">Patient appointment booking</span></p>
-                          <p className="noti-time"><span className="notification-time">4 mins ago</span></p>
+                          <p className="noti-details"><span className="noti-title">{item.purpose}</span> Start At {item.start_at}<span className="noti-title">Start At {item.last_at}</span></p>
+                          <p className="noti-time"><span className="notification-time">Days {item.day}</span></p>
+                          <p className="noti-details"><span onClick={(e)=>notificationCancle(item,e)} className="noti-title" >Clear Notification X</span></p>
                         </div>
                       </div>
-                    </a>
+                    </div>
                   </li>
-                  <li className="notification-message">
+              ))
+              }
+              </ul>
+                
+                  
+                  {/* <li className="notification-message">
                     <a href="/purple/app/administrator/activities">
                       <div className="media">
                         <span className="avatar">
@@ -148,11 +208,11 @@ class Header extends Component {
                       </div>
                     </a>
                   </li>
-                </ul>
+                </ul> */}
               </div>
-              <div className="topnav-dropdown-footer">
+              {/* <div className="topnav-dropdown-footer">
                 <a href="/purple/app/administrator/activities">View all Notifications</a>
-              </div>
+              </div> */}
             </div>
           </li>
           {/* /Notifications */}
@@ -286,7 +346,6 @@ class Header extends Component {
       </div>
        
       );
-   }
 }
 
 export default withRouter(Header);
