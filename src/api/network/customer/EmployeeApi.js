@@ -150,6 +150,16 @@ export const getEmployeeConferenceNotification = async (userId, cancelToken) => 
         return {error:error};
     }
 };
+export const getEmployeeOfTheMonth = async (cancelToken) => {    
+    const url = `top-employees-of-month`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
 
 
 export const conferenceUpdate = async (conferenceId,data,cancelToken) => {    

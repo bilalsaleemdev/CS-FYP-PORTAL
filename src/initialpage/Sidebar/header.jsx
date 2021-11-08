@@ -8,6 +8,7 @@ import {headerlogo,lnEnglish,lnFrench,lnSpanish,lnGerman, Avatar_02,Avatar_03,Av
 import axios, { CancelTokenSource } from "axios";
 import {
   conferenceUpdate,
+  getEmployeeOfTheMonth,
   getEmployeeConferenceNotification,
 } from "../../api/network/customer/EmployeeApi";
 import { notification } from 'antd';
@@ -17,8 +18,10 @@ function Header(props) {
     const cancelTokenSource = axios.CancelToken.source();
     const [countNotification, setCountNotification] = useState(0)
     const [conferenceNotification, setConferenceNotification] = useState([])
+    const [topEmployee, setTopEmployee] = useState([])
     useEffect(()=>{
-      getNotificationConference()
+      getNotificationConference(),
+      getTopEmployee()
     },[])
     
     const {  location } = props
@@ -32,7 +35,13 @@ function Header(props) {
       let response = await getEmployeeConferenceNotification(localStorage.getItem('user_id'),cancelTokenSource.token);
       if (response.success == true) {
         setConferenceNotification(response.data)
-        setCountNotification(response.data.length)
+        setCountNotification(response.data.length)        
+      }
+    }
+    const getTopEmployee = async () =>{
+      let response = await getEmployeeOfTheMonth(cancelTokenSource.token);
+      if (response.success == true) {
+        setTopEmployee([response.data[0]])
       }
     }
     const  notificationCancle =  async(item,e) => {  
@@ -129,31 +138,118 @@ function Header(props) {
               <i className="fa fa-bell-o" /> <span className="badge badge-pill">{countNotification}</span>
             </a>
             <div className="dropdown-menu notifications">
+            
+            <div className="topnav-dropdown-header">
+                <span className="notification-title">Employee Of The Month</span>
+                {/* <a href="" className="clear-noti"> Clear All </a> */}
+              </div>
+            <ul className="notification-list">
+              
+              {topEmployee && topEmployee.map(item =>(
+                <li className="notification-message" key = {item.id}>
+                    <a>
+                      <div className="media">
+                        <span className="avatar">
+                          <img alt="" src={item.url} />
+                        </span>
+                        <div className="media-body">
+                          <p className="noti-details"><span className="noti-title">Name</span> {item.employ_name}</p>
+                          {/* <p className="noti-time"><span className="notification-time">Days {item.day}</span></p> */}
+                          <p className="noti-details"><span onClick={(e)=>notificationCancle(item,e)} className="noti-title" >Email {item.employ_email}</span></p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+              ))
+              }
+              </ul>
+
+
+
               <div className="topnav-dropdown-header">
-                <span className="notification-title">Notifications</span>
+                <span className="notification-title">Conference</span>
                 {/* <a href="" className="clear-noti"> Clear All </a> */}
               </div>
               <div className="noti-content">
               <ul className="notification-list">
               {conferenceNotification && conferenceNotification.map(item =>(
                 <li className="notification-message" key = {item.id}>
-                    <div 
-                    >
+                    <a>
                       <div className="media">
-                        <span className="avatar">
+                        {/* <span className="avatar">
                           <img alt="" src={Avatar_02} />
-                        </span>
+                        </span> */}
                         <div className="media-body">
                           <p className="noti-details"><span className="noti-title">{item.purpose}</span> Start At {item.start_at}<span className="noti-title">Start At {item.last_at}</span></p>
                           <p className="noti-time"><span className="notification-time">Days {item.day}</span></p>
                           <p className="noti-details"><span onClick={(e)=>notificationCancle(item,e)} className="noti-title" >Clear Notification X</span></p>
                         </div>
                       </div>
-                    </div>
+                    </a>
                   </li>
               ))
               }
               </ul>
+              </div>
+
+
+
+              <div className="topnav-dropdown-header">
+                <span className="notification-title">Projects</span>
+                {/* <a href="" className="clear-noti"> Clear All </a> */}
+              </div>
+              <div className="noti-content">
+              <ul className="notification-list">
+              {conferenceNotification && conferenceNotification.map(item =>(
+                <li className="notification-message" key = {item.id}>
+                    <a>
+                      <div className="media">
+                        {/* <span className="avatar">
+                          <img alt="" src={Avatar_02} />
+                        </span> */}
+                        <div className="media-body">
+                          <p className="noti-details"><span className="noti-title">{item.purpose}</span> Start At {item.start_at}<span className="noti-title">Start At {item.last_at}</span></p>
+                          <p className="noti-time"><span className="notification-time">Days {item.day}</span></p>
+                          <p className="noti-details"><span onClick={(e)=>notificationCancle(item,e)} className="noti-title" >Clear Notification X</span></p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+              ))
+              }
+              </ul>
+              </div>
+
+
+              <div className="topnav-dropdown-header">
+                <span className="notification-title">Tasks</span>
+                {/* <a href="" className="clear-noti"> Clear All </a> */}
+              </div>
+              <div className="noti-content">
+              <ul className="notification-list">
+              {conferenceNotification && conferenceNotification.map(item =>(
+                <li className="notification-message" key = {item.id}>
+                    <a>
+                      <div className="media">
+                        {/* <span className="avatar">
+                          <img alt="" src={Avatar_02} />
+                        </span> */}
+                        <div className="media-body">
+                          <p className="noti-details"><span className="noti-title">{item.purpose}</span> Start At {item.start_at}<span className="noti-title">Start At {item.last_at}</span></p>
+                          <p className="noti-time"><span className="notification-time">Days {item.day}</span></p>
+                          <p className="noti-details"><span onClick={(e)=>notificationCancle(item,e)} className="noti-title" >Clear Notification X</span></p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+              ))
+              }
+              </ul>
+              </div>
+              
+              
+
+              
                 
                   
                   {/* <li className="notification-message">
@@ -209,7 +305,7 @@ function Header(props) {
                     </a>
                   </li>
                 </ul> */}
-              </div>
+              
               {/* <div className="topnav-dropdown-footer">
                 <a href="/purple/app/administrator/activities">View all Notifications</a>
               </div> */}
