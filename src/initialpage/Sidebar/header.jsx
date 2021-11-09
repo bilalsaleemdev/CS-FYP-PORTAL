@@ -10,18 +10,23 @@ import {
   conferenceUpdate,
   getEmployeeOfTheMonth,
   getEmployeeConferenceNotification,
+  getEmployeeTaskNotification,
+  taskConferenceUpdate
 } from "../../api/network/customer/EmployeeApi";
 import { notification } from 'antd';
 import { format } from 'date-fns';
+import { purple } from '@material-ui/core/colors';
 
 function Header(props) {
     const cancelTokenSource = axios.CancelToken.source();
     const [countNotification, setCountNotification] = useState(0)
     const [conferenceNotification, setConferenceNotification] = useState([])
+    const [taskNotification, setTaskNotification] = useState([])
     const [topEmployee, setTopEmployee] = useState([])
     useEffect(()=>{
       getNotificationConference(),
-      getTopEmployee()
+      getTopEmployee(),
+      getNotificationTask()
     },[])
     
     const {  location } = props
@@ -29,7 +34,13 @@ function Header(props) {
     const type = localStorage.getItem("EmployeeType");
     const path = `/purple/app/profile/${type}-profile`;
 
-
+    const getNotificationTask = async () =>{
+      let response = await getEmployeeTaskNotification(localStorage.getItem('user_id'),cancelTokenSource.token);
+      if (response.success == true) {
+        setTaskNotification(response.data)
+        // setCountNotification(response.data.length)        
+      }
+    }
     const getNotificationConference = async () =>{
       localStorage.getItem('user_id')
       let response = await getEmployeeConferenceNotification(localStorage.getItem('user_id'),cancelTokenSource.token);
@@ -74,6 +85,29 @@ function Header(props) {
       }      
       
     }
+
+    const  taskNotificationCancle =  async(item,e) => {
+      
+      let data = {
+        project_id:item.project_id,
+        employee_id:item.employee_id,
+        deadline:format(new Date(item.deadline), 'yyyy-MM-dd'),
+        task_type:item.task_type,
+        priority:item.priority,
+        rating:item.rating,
+        task_status:item.task_status,
+        notifications:0        
+    }
+    console.log(data)
+    let response = await taskConferenceUpdate(item.id,data,cancelTokenSource.token);
+    if (response.success == true) {
+      window.location.reload(true);
+    }
+    else{
+      console.log(response)
+    }      
+    
+  }
     
       return (
          <div className="header" style={{right:"0px"}}>
@@ -139,7 +173,7 @@ function Header(props) {
             </a>
             <div className="dropdown-menu notifications">
             
-            <div className="topnav-dropdown-header">
+            <div style={{backgroundColor:"#bcc8ff"}} className="topnav-dropdown-header">
                 <span className="notification-title">Employee Of The Month</span>
                 {/* <a href="" className="clear-noti"> Clear All </a> */}
               </div>
@@ -165,8 +199,9 @@ function Header(props) {
               </ul>
 
 
-
-              <div className="topnav-dropdown-header">
+              {
+                conferenceNotification.length > 0 && <>
+                <div style={{backgroundColor:"#bcc8ff"}} className="topnav-dropdown-header">
                 <span className="notification-title">Conference</span>
                 {/* <a href="" className="clear-noti"> Clear All </a> */}
               </div>
@@ -182,7 +217,7 @@ function Header(props) {
                         <div className="media-body">
                           <p className="noti-details"><span className="noti-title">{item.purpose}</span> Start At {item.start_at}<span className="noti-title">Start At {item.last_at}</span></p>
                           <p className="noti-time"><span className="notification-time">Days {item.day}</span></p>
-                          <p className="noti-details"><span onClick={(e)=>notificationCancle(item,e)} className="noti-title" >Clear Notification X</span></p>
+                          <p className="noti-details"><span onClick={(e)=>notificationCancle(item,e)} className="noti-title" >Clear Notification</span></p>
                         </div>
                       </div>
                     </a>
@@ -191,16 +226,17 @@ function Header(props) {
               }
               </ul>
               </div>
+                </>
+              }                          
 
-
-
-              <div className="topnav-dropdown-header">
-                <span className="notification-title">Projects</span>
+              {taskNotification.length > 0  && <>
+                <div style={{backgroundColor:"#bcc8ff"}} className="topnav-dropdown-header">
+                <span  className="notification-title">Tasks</span>
                 {/* <a href="" className="clear-noti"> Clear All </a> */}
               </div>
               <div className="noti-content">
               <ul className="notification-list">
-              {conferenceNotification && conferenceNotification.map(item =>(
+              {taskNotification && taskNotification.map(item =>(
                 <li className="notification-message" key = {item.id}>
                     <a>
                       <div className="media">
@@ -208,9 +244,9 @@ function Header(props) {
                           <img alt="" src={Avatar_02} />
                         </span> */}
                         <div className="media-body">
-                          <p className="noti-details"><span className="noti-title">{item.purpose}</span> Start At {item.start_at}<span className="noti-title">Start At {item.last_at}</span></p>
-                          <p className="noti-time"><span className="notification-time">Days {item.day}</span></p>
-                          <p className="noti-details"><span onClick={(e)=>notificationCancle(item,e)} className="noti-title" >Clear Notification X</span></p>
+                          <p className="noti-details"><span className="noti-title">Type: {item.task_type}</span> Priority: {item.priority}<span className="noti-title"> Description {item.description}</span></p>
+                          <p className="noti-time"><span className="notification-time">Deadline {item.deadline}</span></p>
+                          <p className="noti-details"><span onClick={(e)=>taskNotificationCancle(item,e)} className="noti-title" >Clear Notification</span></p>
                         </div>
                       </div>
                     </a>
@@ -219,33 +255,10 @@ function Header(props) {
               }
               </ul>
               </div>
+              </>
 
-
-              <div className="topnav-dropdown-header">
-                <span className="notification-title">Tasks</span>
-                {/* <a href="" className="clear-noti"> Clear All </a> */}
-              </div>
-              <div className="noti-content">
-              <ul className="notification-list">
-              {conferenceNotification && conferenceNotification.map(item =>(
-                <li className="notification-message" key = {item.id}>
-                    <a>
-                      <div className="media">
-                        {/* <span className="avatar">
-                          <img alt="" src={Avatar_02} />
-                        </span> */}
-                        <div className="media-body">
-                          <p className="noti-details"><span className="noti-title">{item.purpose}</span> Start At {item.start_at}<span className="noti-title">Start At {item.last_at}</span></p>
-                          <p className="noti-time"><span className="notification-time">Days {item.day}</span></p>
-                          <p className="noti-details"><span onClick={(e)=>notificationCancle(item,e)} className="noti-title" >Clear Notification X</span></p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-              ))
               }
-              </ul>
-              </div>
+              
               
               
 
