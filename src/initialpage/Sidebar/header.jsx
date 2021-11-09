@@ -11,7 +11,9 @@ import {
   getEmployeeOfTheMonth,
   getEmployeeConferenceNotification,
   getEmployeeTaskNotification,
-  taskConferenceUpdate
+  taskConferenceUpdate,
+  getEmployeeProjectNotification,
+  projectConferenceUpdate
 } from "../../api/network/customer/EmployeeApi";
 import { notification } from 'antd';
 import { format } from 'date-fns';
@@ -22,11 +24,13 @@ function Header(props) {
     const [countNotification, setCountNotification] = useState(0)
     const [conferenceNotification, setConferenceNotification] = useState([])
     const [taskNotification, setTaskNotification] = useState([])
+    const [projectNotification, setProjectNotification] = useState([])
     const [topEmployee, setTopEmployee] = useState([])
     useEffect(()=>{
       getNotificationConference(),
       getTopEmployee(),
-      getNotificationTask()
+      getNotificationTask(),
+      getNotificationProject()
     },[])
     
     const {  location } = props
@@ -34,6 +38,13 @@ function Header(props) {
     const type = localStorage.getItem("EmployeeType");
     const path = `/purple/app/profile/${type}-profile`;
 
+    const getNotificationProject = async () =>{
+      let response = await getEmployeeProjectNotification(localStorage.getItem('user_id'),cancelTokenSource.token);
+      if (response.success == true) {
+        setProjectNotification(response.data)
+        // setCountNotification(response.data.length)        
+      }
+    }
     const getNotificationTask = async () =>{
       let response = await getEmployeeTaskNotification(localStorage.getItem('user_id'),cancelTokenSource.token);
       if (response.success == true) {
@@ -108,6 +119,39 @@ function Header(props) {
     }      
     
   }
+
+  const  ProjectNotificationCancle =  async(item,e) => {
+      
+    let users_conference_sceen = []
+        // console.log('users_conference_sceen::',users_conference_sceen)
+        let myArr = []
+        if(item.notifications){          
+          myArr = item.notifications.split(",");
+          myArr.forEach(element => {
+            users_conference_sceen.push(element)
+          })      
+        }
+        users_conference_sceen.push(localStorage.getItem('user_id')+"")
+
+    let data = {
+      name:item.name,
+      user_id:item.user_id,
+      start_at:format(new Date(item.start_at), 'yyyy-MM-dd'),
+      end_at:format(new Date(item.end_at), 'yyyy-MM-dd'),
+      team_member:item.team_member,
+      description:item.description,
+      notifications:users_conference_sceen.toString()              
+  }
+  console.log(data)
+  let response = await projectConferenceUpdate(item.id,data,cancelTokenSource.token);
+  if (response.success == true) {
+    window.location.reload(true);
+  }
+  else{
+    console.log(response)
+  }      
+  
+}
     
       return (
          <div className="header" style={{right:"0px"}}>
@@ -217,7 +261,7 @@ function Header(props) {
                         <div className="media-body">
                           <p className="noti-details"><span className="noti-title">{item.purpose}</span> Start At {item.start_at}<span className="noti-title">Start At {item.last_at}</span></p>
                           <p className="noti-time"><span className="notification-time">Days {item.day}</span></p>
-                          <p className="noti-details"><span onClick={(e)=>notificationCancle(item,e)} className="noti-title" >Clear Notification</span></p>
+                          <p className="noti-details"><span onClick={(e)=>notificationCancle(item,e)} style = {{color: 'salmon'}} className="noti-title" >Clear Notification</span></p>
                         </div>
                       </div>
                     </a>
@@ -246,7 +290,7 @@ function Header(props) {
                         <div className="media-body">
                           <p className="noti-details"><span className="noti-title">Type: {item.task_type}</span> Priority: {item.priority}<span className="noti-title"> Description {item.description}</span></p>
                           <p className="noti-time"><span className="notification-time">Deadline {item.deadline}</span></p>
-                          <p className="noti-details"><span onClick={(e)=>taskNotificationCancle(item,e)} className="noti-title" >Clear Notification</span></p>
+                          <p className="noti-details"><span onClick={(e)=>taskNotificationCancle(item,e)} style = {{color: 'salmon'}} className="noti-title" >Clear Notification</span></p>
                         </div>
                       </div>
                     </a>
@@ -256,179 +300,41 @@ function Header(props) {
               </ul>
               </div>
               </>
-
               }
-              
-              
-              
-
-              
-                
-                  
-                  {/* <li className="notification-message">
-                    <a href="/purple/app/administrator/activities">
-                      <div className="media">
-                        <span className="avatar">
-                          <img alt="" src={Avatar_03} />
-                        </span>
-                        <div className="media-body">
-                          <p className="noti-details"><span className="noti-title">Tarah Shropshire</span> changed the task name <span className="noti-title">Appointment booking with payment gateway</span></p>
-                          <p className="noti-time"><span className="notification-time">6 mins ago</span></p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="notification-message">
-                    <a href="/purple/app/administrator/activities">
-                      <div className="media">
-                        <span className="avatar">
-                          <img alt="" src={Avatar_06} />
-                        </span>
-                        <div className="media-body">
-                          <p className="noti-details"><span className="noti-title">Misty Tison</span> added <span className="noti-title">Domenic Houston</span> and <span className="noti-title">Claire Mapes</span> to project <span className="noti-title">Doctor available module</span></p>
-                          <p className="noti-time"><span className="notification-time">8 mins ago</span></p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="notification-message">
-                    <a href="/purple/app/administrator/activities">
-                      <div className="media">
-                        <span className="avatar">
-                          <img alt="" src={Avatar_17} />
-                        </span>
-                        <div className="media-body">
-                          <p className="noti-details"><span className="noti-title">Rolland Webber</span> completed task <span className="noti-title">Patient and Doctor video conferencing</span></p>
-                          <p className="noti-time"><span className="notification-time">12 mins ago</span></p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="notification-message">
-                    <a href="/purple/app/administrator/activities">
-                      <div className="media">
-                        <span className="avatar">
-                          <img alt="" src={Avatar_13} />
-                        </span>
-                        <div className="media-body">
-                          <p className="noti-details"><span className="noti-title">Bernardo Galaviz</span> added new task <span className="noti-title">Private chat module</span></p>
-                          <p className="noti-time"><span className="notification-time">2 days ago</span></p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul> */}
-              
-              {/* <div className="topnav-dropdown-footer">
-                <a href="/purple/app/administrator/activities">View all Notifications</a>
-              </div> */}
-            </div>
-          </li>
-          {/* /Notifications */}
-          {/* Message Notifications */}
-          {/* <li className="nav-item dropdown">
-            <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown">
-              <i className="fa fa-comment-o" /> <span className="badge badge-pill">8</span>
-            </a>
-            <div className="dropdown-menu notifications">
-              <div className="topnav-dropdown-header">
-                <span className="notification-title">Messages</span>
-                <a href="" className="clear-noti"> Clear All </a>
+              {
+                projectNotification > 0 && <>
+                <div style={{backgroundColor:"#bcc8ff"}} className="topnav-dropdown-header">
+                <span className="notification-title">Projects</span>
+                {/* <a href="" className="clear-noti"> Clear All </a> */}
               </div>
               <div className="noti-content">
-                <ul className="notification-list">
-                  <li className="notification-message">
-                    <a href="/purple/conversation/chat">
-                      <div className="list-item">
-                        <div className="list-left">
-                          <span className="avatar">
-                            <img alt="" src={Avatar_09} />
-                          </span>
-                        </div>
-                        <div className="list-body">
-                          <span className="message-author">Richard Miles </span>
-                          <span className="message-time">12:28 AM</span>
-                          <div className="clearfix" />
-                          <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="notification-message">
-                    <a href="/purple/conversation/chat">
-                      <div className="list-item">
-                        <div className="list-left">
-                          <span className="avatar">
-                            <img alt="" src={Avatar_02} />
-                          </span>
-                        </div>
-                        <div className="list-body">
-                          <span className="message-author">John Doe</span>
-                          <span className="message-time">6 Mar</span>
-                          <div className="clearfix" />
-                          <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+              <ul className="notification-list">
+              {projectNotification && projectNotification.map(item =>(
+                <li className="notification-message" key = {item.id}>
+                    <a>
+                      <div className="media">
+                        {/* <span className="avatar">
+                          <img alt="" src={Avatar_02} />
+                        </span> */}
+                        <div className="media-body">
+                          <p className="noti-details"><span className="noti-title">Name: {item.name}</span> Description {item.description}</p>
+                          <p className="noti-details"><span onClick={(e)=>ProjectNotificationCancle(item,e)} style = {{color: 'salmon'}} >
+                            Clear Notification
+                            </span>
+                          </p>
                         </div>
                       </div>
                     </a>
                   </li>
-                  <li className="notification-message">
-                    <a href="/purple/conversation/chat">
-                      <div className="list-item">
-                        <div className="list-left">
-                          <span className="avatar">
-                            <img alt="" src={Avatar_03} />
-                          </span>
-                        </div>
-                        <div className="list-body">
-                          <span className="message-author"> Tarah Shropshire </span>
-                          <span className="message-time">5 Mar</span>
-                          <div className="clearfix" />
-                          <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="notification-message">
-                    <a href="/purple/conversation/chat">
-                      <div className="list-item">
-                        <div className="list-left">
-                          <span className="avatar">
-                            <img alt="" src={Avatar_05} />
-                          </span>
-                        </div>
-                        <div className="list-body">
-                          <span className="message-author">Mike Litorus</span>
-                          <span className="message-time">3 Mar</span>
-                          <div className="clearfix" />
-                          <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="notification-message">
-                    <a href="/purple/conversation/chat">
-                      <div className="list-item">
-                        <div className="list-left">
-                          <span className="avatar">
-                            <img alt="" src={Avatar_08} />
-                          </span>
-                        </div>
-                        <div className="list-body">
-                          <span className="message-author"> Catherine Manseau </span>
-                          <span className="message-time">27 Feb</span>
-                          <div className="clearfix" />
-                          <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
+              ))
+              }
+              </ul>
               </div>
-              <div className="topnav-dropdown-footer">
-                <a href="/purple/conversation/chat">View all Messages</a>
-              </div>
+                </>
+              }              
             </div>
-          </li> */}
+          </li>
+    
           {/* /Message Notifications */}
           <li className="nav-item dropdown has-arrow main-drop">
             <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown">

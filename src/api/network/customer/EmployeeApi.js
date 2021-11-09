@@ -139,6 +139,17 @@ export const deleteUsersPendingRequestAPI = async (userId,cancelToken) => {
     }
 };
 
+export const getEmployeeProjectNotification = async (userId, cancelToken) => {    
+    const url = `employees-project-notifications/${userId}`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
 export const getEmployeeTaskNotification = async (userId, cancelToken) => {    
     const url = `employees-task-notifications/${userId}`;    
     const request = { type: 'GET', urlString: url };
@@ -187,6 +198,19 @@ export const conferenceUpdate = async (conferenceId,data,cancelToken) => {
 
 export const taskConferenceUpdate = async (taskID,data,cancelToken) => {    
     const url = `task/${taskID}`;
+    const request = { type: 'PUT', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('task Update', response)
+        return response.data;
+    } catch (error) { 
+        console.log('task  error', error)
+        return {error:error};
+    }
+};
+
+export const projectConferenceUpdate = async (projectId,data,cancelToken) => {    
+    const url = `project/${projectId}`;
     const request = { type: 'PUT', urlString: url, params: data };
     try {
          const response = await processRequest(request, cancelToken); 
