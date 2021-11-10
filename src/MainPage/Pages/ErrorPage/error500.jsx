@@ -19,7 +19,7 @@ class Error500 extends Component {
           <h1>500</h1>
           <h3><i className="fa fa-warning" /> Oops! Something went wrong</h3>
           <p>The page you requested was not found.</p>
-          <a onclick={()=>localStorage.setItem("firstload","true")} href="/purple/app/main/dashboard" className="btn btn-custom">Back to Home</a>
+          <a onclick={()=>localStorage.setItem("firstload","true")} href="/app/main/dashboard" className="btn btn-custom">Back to Home</a>
         </div>
       </div>
 

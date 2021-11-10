@@ -21,15 +21,15 @@ class Employee extends Component {
             <div className="col">
               <h3 className="page-title">Employee</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Employee</li>
               </ul>
             </div>
             <div className="col-auto float-right ml-auto">
               <a href="#" className="btn add-btn" data-toggle="modal" data-target="#add_employee"><i className="fa fa-plus" /> Add Employee</a>
               <div className="view-icons">
-                <a href="/purple/app/employee/allemployees" className="grid-view btn btn-link active"><i className="fa fa-th" /></a>
-                <a href="/purple/app/employee/employees-list" className="list-view btn btn-link"><i className="fa fa-bars" /></a>
+                <a href="/app/employee/allemployees" className="grid-view btn btn-link active"><i className="fa fa-th" /></a>
+                <a href="/app/employee/employees-list" className="list-view btn btn-link"><i className="fa fa-bars" /></a>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ class Employee extends Component {
           <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div className="profile-widget">
               <div className="profile-img">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_02} alt="" /></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_02} alt="" /></a>
               </div>
               <div className="dropdown profile-action">
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -79,14 +79,14 @@ class Employee extends Component {
                   <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                 </div>
               </div>
-              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/employee-profile">John Doe</a></h4>
+              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/employee-profile">John Doe</a></h4>
               <div className="small text-muted">Web Designer</div>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div className="profile-widget">
               <div className="profile-img">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_09} alt="" /></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_09} alt="" /></a>
               </div>
               <div className="dropdown profile-action">
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -95,14 +95,14 @@ class Employee extends Component {
                   <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                 </div>
               </div>
-              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/employee-profile">Richard Miles</a></h4>
+              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/employee-profile">Richard Miles</a></h4>
               <div className="small text-muted">Web Developer</div>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div className="profile-widget">
               <div className="profile-img">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_10} alt="" /></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_10} alt="" /></a>
               </div>
               <div className="dropdown profile-action">
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -111,14 +111,14 @@ class Employee extends Component {
                   <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                 </div>
               </div>
-              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/employee-profile">John Smith</a></h4>
+              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/employee-profile">John Smith</a></h4>
               <div className="small text-muted">Android Developer</div>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div className="profile-widget">
               <div className="profile-img">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_05} alt="" /></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_05} alt="" /></a>
               </div>
               <div className="dropdown profile-action">
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -127,14 +127,14 @@ class Employee extends Component {
                   <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                 </div>
               </div>
-              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/employee-profile">Mike Litorus</a></h4>
+              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/employee-profile">Mike Litorus</a></h4>
               <div className="small text-muted">IOS Developer</div>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div className="profile-widget">
               <div className="profile-img">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_11} alt="" /></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_11} alt="" /></a>
               </div>
               <div className="dropdown profile-action">
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -143,14 +143,14 @@ class Employee extends Component {
                   <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                 </div>
               </div>
-              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/employee-profile">Wilmer Deluna</a></h4>
+              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/employee-profile">Wilmer Deluna</a></h4>
               <div className="small text-muted">Team Leader</div>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div className="profile-widget">
               <div className="profile-img">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_12} alt="" /></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_12} alt="" /></a>
               </div>
               <div className="dropdown profile-action">
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -159,14 +159,14 @@ class Employee extends Component {
                   <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                 </div>
               </div>
-              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/employee-profile">Jeffrey Warden</a></h4>
+              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/employee-profile">Jeffrey Warden</a></h4>
               <div className="small text-muted">Web Developer</div>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div className="profile-widget">
               <div className="profile-img">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_13} alt="" /></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_13} alt="" /></a>
               </div>
               <div className="dropdown profile-action">
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -175,14 +175,14 @@ class Employee extends Component {
                   <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                 </div>
               </div>
-              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/employee-profile">Bernardo Galaviz</a></h4>
+              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/employee-profile">Bernardo Galaviz</a></h4>
               <div className="small text-muted">Web Developer</div>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div className="profile-widget">
               <div className="profile-img">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_01} alt="" /></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_01} alt="" /></a>
               </div>
               <div className="dropdown profile-action">
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -191,14 +191,14 @@ class Employee extends Component {
                   <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                 </div>
               </div>
-              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/employee-profile">Lesley Grauer</a></h4>
+              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/employee-profile">Lesley Grauer</a></h4>
               <div className="small text-muted">Team Leader</div>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div className="profile-widget">
               <div className="profile-img">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_16} alt="" /></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_16} alt="" /></a>
               </div>
               <div className="dropdown profile-action">
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -207,14 +207,14 @@ class Employee extends Component {
                   <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                 </div>
               </div>
-              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/employee-profile">Jeffery Lalor</a></h4>
+              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/employee-profile">Jeffery Lalor</a></h4>
               <div className="small text-muted">Team Leader</div>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div className="profile-widget">
               <div className="profile-img">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_04} alt="" /></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_04} alt="" /></a>
               </div>
               <div className="dropdown profile-action">
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -223,14 +223,14 @@ class Employee extends Component {
                   <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                 </div>
               </div>
-              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/employee-profile">Loren Gatlin</a></h4>
+              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/employee-profile">Loren Gatlin</a></h4>
               <div className="small text-muted">Android Developer</div>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div className="profile-widget">
               <div className="profile-img">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_03} alt="" /></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_03} alt="" /></a>
               </div>
               <div className="dropdown profile-action">
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -239,14 +239,14 @@ class Employee extends Component {
                   <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                 </div>
               </div>
-              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/employee-profile">Tarah Shropshire</a></h4>
+              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/employee-profile">Tarah Shropshire</a></h4>
               <div className="small text-muted">Android Developer</div>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div className="profile-widget">
               <div className="profile-img">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img src={Avatar_08} alt="" /></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img src={Avatar_08} alt="" /></a>
               </div>
               <div className="dropdown profile-action">
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
@@ -255,7 +255,7 @@ class Employee extends Component {
                   <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                 </div>
               </div>
-              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/purple/app/profile/employee-profile">Catherine Manseau</a></h4>
+              <h4 className="user-name m-t-10 mb-0 text-ellipsis"><a href="/app/profile/employee-profile">Catherine Manseau</a></h4>
               <div className="small text-muted">Android Developer</div>
             </div>
           </div>

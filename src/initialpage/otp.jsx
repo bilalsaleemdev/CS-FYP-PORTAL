@@ -17,11 +17,11 @@ class OTPscreen extends Component {
                <meta name="description" content="Login page"/>					
          </Helmet>
       <div className="account-content">
-        <a href="/purple/applyjob/joblist" className="btn btn-primary apply-btn">Apply Job</a>
+        <a href="/applyjob/joblist" className="btn btn-primary apply-btn">Apply Job</a>
         <div className="container">
           {/* Account Logo */}
           <div className="account-logo">
-            <a href="/purple/app/main/dashboard"><img src={Applogo} alt="Dreamguy's Technologies" /></a>
+            <a href="/app/main/dashboard"><img src={Applogo} alt="Dreamguy's Technologies" /></a>
           </div>
           {/* /Account Logo */}
           <div className="account-box">
@@ -29,7 +29,7 @@ class OTPscreen extends Component {
               <h3 className="account-title">OTP</h3>
               <p className="account-subtitle">Verification your account</p>
               {/* Account Form */}
-              <form action="/purple/app/main/dashboard">
+              <form action="/app/main/dashboard">
                 <div className="otp-wrap">
                   <input type="text" placeholder={0} maxLength={1} className="otp-input" />
                   <input type="text" placeholder={0} maxLength={1} className="otp-input" />

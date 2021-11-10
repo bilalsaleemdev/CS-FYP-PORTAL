@@ -50,8 +50,8 @@ render() {
           dataIndex: 'name',
           render: (text, record) => (            
               <h2 className="table-avatar">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-                <a href="/purple/app/profile/employee-profile">{text} <span>{record.role}</span></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+                <a href="/app/profile/employee-profile">{text} <span>{record.role}</span></a>
               </h2>
             ), 
             sorter: (a, b) => a.name.length - b.name.length,
@@ -134,7 +134,7 @@ render() {
             <div className="col">
               <h3 className="page-title">Leaves</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Leaves</li>
               </ul>
             </div>
@@ -255,7 +255,7 @@ render() {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_09} /></a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_09} /></a>
                         <a href="#">Richard Miles <span>Web Developer</span></a>
                       </h2>
                     </td>
@@ -290,7 +290,7 @@ render() {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
                         <a>	John Doe  <span>Web Designer</span></a>
                       </h2>
                     </td>
@@ -325,7 +325,7 @@ render() {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_10} /></a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_10} /></a>
                         <a>John Smith <span>Android Developer</span></a>
                       </h2>
                     </td>
@@ -360,7 +360,7 @@ render() {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_05} /></a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_05} /></a>
                         <a>Mike Litorus  <span>IOS Developer</span></a>
                       </h2>
                     </td>
@@ -395,7 +395,7 @@ render() {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_24} /></a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_24} /></a>
                         <a>Richard Parker <span>Web Developer</span></a>
                       </h2>
                     </td>
@@ -430,7 +430,7 @@ render() {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_08} /></a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_08} /></a>
                         <a>Catherine Manseau <span>Web Developer</span></a>
                       </h2>
                     </td>
@@ -465,7 +465,7 @@ render() {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_15} /></a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_15} /></a>
                         <a>Buster Wigton <span>Web Developer</span></a>
                       </h2>
                     </td>
@@ -500,7 +500,7 @@ render() {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_20} /></a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_20} /></a>
                         <a>Melita Faucher <span>Web Developer</span></a>
                       </h2>
                     </td>
@@ -535,7 +535,7 @@ render() {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_03} /></a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_03} /></a>
                         <a>Tarah Shropshire <span>Web Developer</span></a>
                       </h2>
                     </td>
@@ -570,7 +570,7 @@ render() {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_20} /></a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_20} /></a>
                         <a>Domenic Houston <span>Web Developer</span></a>
                       </h2>
                     </td>
@@ -605,7 +605,7 @@ render() {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
                         <a>John Doe <span>Web Designer</span></a>
                       </h2>
                     </td>
@@ -640,7 +640,7 @@ render() {
                   <tr>
                     <td>
                       <h2 className="table-avatar">
-                        <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_25} /></a>
+                        <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_25} /></a>
                         <a>Rolland Webber <span>Web Developer</span></a>
                       </h2>
                     </td>

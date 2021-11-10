@@ -18,11 +18,7 @@ const ApproveRequest = () => {
   const [userType, setUsertype] = useState('');    
 
   const cancelTokenSource = axios.CancelToken.source();
-  const columns = [            
-    {
-      title: 'Name',
-      dataIndex: 'name',      
-    },     
+  const columns = [                 
     {
       title: 'Id',
       dataIndex: 'id',
@@ -159,7 +155,7 @@ const ApproveRequest = () => {
     <React.Fragment>
     <div className="page-wrapper">
         <Helmet>
-            <title>Estimates - HRMS Admin Template</title>
+            <title>Approve Requests</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
     <div className="content container-fluid">
@@ -169,12 +165,12 @@ const ApproveRequest = () => {
             <div className="col">
               <h3 className="page-title">Approve Request</h3>
               {/* <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Approve Request</li>
               </ul> */}
             </div>
             {/* <div className="col-auto float-right ml-auto">
-              <a href="/purple/app/sales/createestimates" className="btn add-btn"><i className="fa fa-plus" /> Create Estimate</a>
+              <a href="/app/sales/createestimates" className="btn add-btn"><i className="fa fa-plus" /> Create Estimate</a>
             </div> */}
           </div>
         </div>
@@ -228,7 +224,7 @@ const ApproveRequest = () => {
                   style = {{overflowX : 'auto'}}
                   columns={columns}                 
                   // bordered
-                  dataSource={data}
+                  dataSource={data} 
                   rowKey={record => record.id}
                   // onChange={handleTableChange}
                 />

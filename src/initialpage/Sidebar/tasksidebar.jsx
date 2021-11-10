@@ -17,20 +17,20 @@ class Sidebar extends Component {
           <div className="sidebar-menu">
             <ul>
               <li> 
-                <a href="/purple/app/main/dashboard"><i className="la la-home" /> <span>Back to Home</span></a>
+                <a href="/app/main/dashboard"><i className="la la-home" /> <span>Back to Home</span></a>
               </li>
               <li className="menu-title">Projects <a href="#" data-toggle="modal" data-target="#create_project"><i className="fa fa-plus" /></a></li>
               <li> 
-                <a href="/purple/tasks/tasks">Project Management</a>
+                <a href="/tasks/tasks">Project Management</a>
               </li>
               <li className="active"> 
-                <a href="/purple/tasks/tasks">Hospital Administration</a>
+                <a href="/tasks/tasks">Hospital Administration</a>
               </li>
               <li> 
-                <a href="/purple/tasks/tasks">Video Calling App</a>
+                <a href="/tasks/tasks">Video Calling App</a>
               </li>
               <li> 
-                <a href="/purple/tasks/tasks">Office Management</a>
+                <a href="/tasks/tasks">Office Management</a>
               </li>
             </ul>
           </div>

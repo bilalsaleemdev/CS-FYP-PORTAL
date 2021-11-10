@@ -21,7 +21,7 @@ export default class Subscriptionadmin extends Component {
                   <div className="col">
                     <h3 className="page-title">Subscriptions</h3>
                     <ul className="breadcrumb">
-                      <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                      <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                       <li className="breadcrumb-item active">Subscriptions</li>
                     </ul>
                   </div>
@@ -132,7 +132,7 @@ export default class Subscriptionadmin extends Component {
                                       <td>9 Nov 2019</td>
                                       <td>8 Dec 2019</td>
                                       <td>Free</td>
-                                      <td><a className="btn btn-info btn-sm" href="/purple/app/subscription/subscribedcompanies">30 Users</a></td>
+                                      <td><a className="btn btn-info btn-sm" href="/app/subscription/subscribedcompanies">30 Users</a></td>
                                     </tr>
                                     <tr>
                                       <td>Professional</td>
@@ -140,7 +140,7 @@ export default class Subscriptionadmin extends Component {
                                       <td>9 Nov 2019</td>
                                       <td>8 Dec 2019</td>
                                       <td>$21</td>
-                                      <td><a className="btn btn-info btn-sm" href="/purple/app/subscription/subscribedcompanies">97 Users</a></td>
+                                      <td><a className="btn btn-info btn-sm" href="/app/subscription/subscribedcompanies">97 Users</a></td>
                                     </tr>
                                     <tr>
                                       <td>Enterprise</td>
@@ -148,7 +148,7 @@ export default class Subscriptionadmin extends Component {
                                       <td>9 Nov 2019</td>
                                       <td>8 Dec 2019</td>
                                       <td>$38</td>
-                                      <td><a className="btn btn-info btn-sm" href="/purple/app/subscription/subscribedcompanies">125 Users</a></td>
+                                      <td><a className="btn btn-info btn-sm" href="/app/subscription/subscribedcompanies">125 Users</a></td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -246,7 +246,7 @@ export default class Subscriptionadmin extends Component {
                                       <td>9 Nov 2019</td>
                                       <td>8 Dec 2019</td>
                                       <td>Free</td>
-                                      <td><a className="btn btn-info btn-sm" href="/purple/app/subscription/subscribedcompanies">62 Users</a></td>
+                                      <td><a className="btn btn-info btn-sm" href="/app/subscription/subscribedcompanies">62 Users</a></td>
                                     </tr>
                                     <tr>
                                       <td>Professional</td>
@@ -254,7 +254,7 @@ export default class Subscriptionadmin extends Component {
                                       <td>9 Nov 2019</td>
                                       <td>8 Dec 2019</td>
                                       <td>$199</td>
-                                      <td><a className="btn btn-info btn-sm" href="/purple/app/subscription/subscribedcompanies">157 Users</a></td>
+                                      <td><a className="btn btn-info btn-sm" href="/app/subscription/subscribedcompanies">157 Users</a></td>
                                     </tr>
                                     <tr>
                                       <td>Enterprise</td>
@@ -262,7 +262,7 @@ export default class Subscriptionadmin extends Component {
                                       <td>9 Nov 2019</td>
                                       <td>8 Dec 2019</td>
                                       <td>$399</td>
-                                      <td><a className="btn btn-info btn-sm" href="/purple/app/subscription/subscribedcompanies">241 Users</a></td>
+                                      <td><a className="btn btn-info btn-sm" href="/app/subscription/subscribedcompanies">241 Users</a></td>
                                     </tr>
                                   </tbody>
                                 </table>

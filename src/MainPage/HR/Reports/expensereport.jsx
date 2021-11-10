@@ -45,8 +45,8 @@ class ExpenseReport extends Component {
         dataIndex: 'name',
         render: (text, record) => (            
             <h2 className="table-avatar">
-              <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-              <a href="/purple/app/profile/employee-profile">{text} <span>{record.role}</span></a>
+              <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+              <a href="/app/profile/employee-profile">{text} <span>{record.role}</span></a>
             </h2>
           ), 
           sorter: (a, b) => a.name.length - b.name.length,
@@ -109,7 +109,7 @@ class ExpenseReport extends Component {
             <div className="col-sm-12">
               <h3 className="page-title">Expense Report</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Expense Report</li>
               </ul>
             </div>
@@ -184,10 +184,10 @@ class ExpenseReport extends Component {
                     <td>Amazon</td>
                     <td>5 Jan 2019</td>
                     <td>
-                      <a href="/purple/app/profile/employee-profile" className="avatar avatar-xs">
+                      <a href="/app/profile/employee-profile" className="avatar avatar-xs">
                         <img src={Avatar_04} alt="" />
                       </a>
-                      <h2><a href="/purple/app/profile/employee-profile">Loren Gatlin</a></h2>
+                      <h2><a href="/app/profile/employee-profile">Loren Gatlin</a></h2>
                     </td>
                     <td>$ 1215</td>
                     <td>Cash</td>
@@ -219,10 +219,10 @@ class ExpenseReport extends Component {
                     <td>Amazon</td>
                     <td>5 Jan 2019</td>
                     <td>
-                      <a href="/purple/app/profile/employee-profile" className="avatar avatar-xs">
+                      <a href="/app/profile/employee-profile" className="avatar avatar-xs">
                         <img src={Avatar_03} alt="" />
                       </a>
-                      <h2><a href="/purple/app/profile/employee-profile">Tarah Shropshire</a></h2>
+                      <h2><a href="/app/profile/employee-profile">Tarah Shropshire</a></h2>
                     </td>
                     <td>$ 1215</td>
                     <td>Cheque</td>

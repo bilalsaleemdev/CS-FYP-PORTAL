@@ -30,7 +30,7 @@ class InvoiceReport extends Component {
         title: 'Invoice Number',
         dataIndex: 'invoicenumber',
         render: (text, record) => (
-          <a href="/purple/app/sales/invoices-view">#{text}</a>
+          <a href="/app/sales/invoices-view">#{text}</a>
           ),
         sorter: (a, b) => a.invoicenumber.length - b.invoicenumber.length,
       },     
@@ -72,8 +72,8 @@ class InvoiceReport extends Component {
             <div className="dropdown dropdown-action text-right">
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
                   <div className="dropdown-menu dropdown-menu-right">
-                    <a className="dropdown-item" href="/purple/app/sales/invoices-edit"><i className="fa fa-pencil m-r-5" /> Edit</a>
-                    <a className="dropdown-item" href="/purple/app/sales/invoices-view"><i className="fa fa-eye m-r-5" /> View</a>
+                    <a className="dropdown-item" href="/app/sales/invoices-edit"><i className="fa fa-pencil m-r-5" /> Edit</a>
+                    <a className="dropdown-item" href="/app/sales/invoices-view"><i className="fa fa-eye m-r-5" /> View</a>
                     <a className="dropdown-item" href="#"><i className="fa fa-file-pdf-o m-r-5" /> Download</a>
                     <a className="dropdown-item" href="#"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                   </div>
@@ -95,7 +95,7 @@ class InvoiceReport extends Component {
                 <div className="col-sm-12">
                   <h3 className="page-title">Invoice Report</h3>
                   <ul className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                    <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                     <li className="breadcrumb-item active">Invoice Report</li>
                   </ul>
                 </div>
@@ -165,7 +165,7 @@ class InvoiceReport extends Component {
                     <tbody>
                       <tr>
                         <td>1</td>
-                        <td><a href="/purple/app/sales/invoices-view">#INV-0001</a></td>
+                        <td><a href="/app/sales/invoices-view">#INV-0001</a></td>
                         <td>Global Technologies</td>
                         <td>11 Mar 2019</td>
                         <td>17 Mar 2019</td>
@@ -175,8 +175,8 @@ class InvoiceReport extends Component {
                           <div className="dropdown dropdown-action">
                             <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
                             <div className="dropdown-menu dropdown-menu-right">
-                              <a className="dropdown-item" href="/purple/app/sales/invoices-edit"><i className="fa fa-pencil m-r-5" /> Edit</a>
-                              <a className="dropdown-item" href="/purple/app/sales/invoices-view"><i className="fa fa-eye m-r-5" /> View</a>
+                              <a className="dropdown-item" href="/app/sales/invoices-edit"><i className="fa fa-pencil m-r-5" /> Edit</a>
+                              <a className="dropdown-item" href="/app/sales/invoices-view"><i className="fa fa-eye m-r-5" /> View</a>
                               <a className="dropdown-item" href="#"><i className="fa fa-file-pdf-o m-r-5" /> Download</a>
                               <a className="dropdown-item" href="#"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                             </div>
@@ -185,7 +185,7 @@ class InvoiceReport extends Component {
                       </tr>
                       <tr>
                         <td>2</td>
-                        <td><a href="/purple/app/sales/invoices-view">#INV-0002</a></td>
+                        <td><a href="/app/sales/invoices-view">#INV-0002</a></td>
                         <td> 	Delta Infotech</td>
                         <td>11 Mar 2019</td>
                         <td>17 Mar 2019</td>
@@ -195,8 +195,8 @@ class InvoiceReport extends Component {
                           <div className="dropdown dropdown-action">
                             <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
                             <div className="dropdown-menu dropdown-menu-right">
-                              <a className="dropdown-item" href="/purple/app/sales/invoices-edit"><i className="fa fa-pencil m-r-5" /> Edit</a>
-                              <a className="dropdown-item" href="/purple/app/sales/invoices-view"><i className="fa fa-eye m-r-5" /> View</a>
+                              <a className="dropdown-item" href="/app/sales/invoices-edit"><i className="fa fa-pencil m-r-5" /> Edit</a>
+                              <a className="dropdown-item" href="/app/sales/invoices-view"><i className="fa fa-eye m-r-5" /> View</a>
                               <a className="dropdown-item" href="#"><i className="fa fa-file-pdf-o m-r-5" /> Download</a>
                               <a className="dropdown-item" href="#"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                             </div>

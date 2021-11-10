@@ -70,7 +70,7 @@ class Contacts extends Component {
                             <li>
                               <div className="contact-cont">
                                 <div className="float-left user-img">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img className="rounded-circle" alt="" src={Avatar_02} />
                                     <span className="status online" />
                                   </a>
@@ -93,7 +93,7 @@ class Contacts extends Component {
                             <li>
                               <div className="contact-cont">
                                 <div className="float-left user-img">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img className="rounded-circle" alt="" src={Avatar_09} />
                                     <span className="status online" />
                                   </a>
@@ -116,7 +116,7 @@ class Contacts extends Component {
                             <li>
                               <div className="contact-cont">
                                 <div className="float-left user-img">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img className="rounded-circle" alt="" src={Avatar_10} />
                                     <span className="status online" />
                                   </a>
@@ -139,7 +139,7 @@ class Contacts extends Component {
                             <li>
                               <div className="contact-cont">
                                 <div className="float-left user-img">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img className="rounded-circle" alt="" src={Avatar_05} />
                                     <span className="status online" />
                                   </a>
@@ -162,7 +162,7 @@ class Contacts extends Component {
                             <li>
                               <div className="contact-cont">
                                 <div className="float-left user-img">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img className="rounded-circle" alt="" src={Avatar_11} />
                                     <span className="status online" />
                                   </a>
@@ -185,7 +185,7 @@ class Contacts extends Component {
                             <li>
                               <div className="contact-cont">
                                 <div className="float-left user-img">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img className="rounded-circle" alt="" src={Avatar_12} />
                                     <span className="status online" />
                                   </a>
@@ -208,7 +208,7 @@ class Contacts extends Component {
                             <li>
                               <div className="contact-cont">
                                 <div className="float-left user-img">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img className="rounded-circle" alt="" src={Avatar_13} />
                                     <span className="status online" />
                                   </a>
@@ -231,7 +231,7 @@ class Contacts extends Component {
                             <li>
                               <div className="contact-cont">
                                 <div className="float-left user-img">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img className="rounded-circle" alt="" src={Avatar_01} />
                                     <span className="status online" />
                                   </a>
@@ -254,7 +254,7 @@ class Contacts extends Component {
                             <li>
                               <div className="contact-cont">
                                 <div className="float-left user-img">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img className="rounded-circle" alt="" src={Avatar_16} />
                                     <span className="status online" />
                                   </a>
@@ -277,7 +277,7 @@ class Contacts extends Component {
                             <li>
                               <div className="contact-cont">
                                 <div className="float-left user-img">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img className="rounded-circle" alt="" src={Avatar_16} />
                                     <span className="status online" />
                                   </a>

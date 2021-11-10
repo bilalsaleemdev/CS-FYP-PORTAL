@@ -31,8 +31,8 @@ render() {
           dataIndex: 'name',
           render: (text, record) => (            
               <h2 className="table-avatar">
-                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
-                <a href="/purple/app/profile/employee-profile">{text} <span>{record.role}</span></a>
+                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={record.image} /></a>
+                <a href="/app/profile/employee-profile">{text} <span>{record.role}</span></a>
               </h2>
             ), 
             sorter: (a, b) => a.name.length - b.name.length,
@@ -99,7 +99,7 @@ render() {
                     <div className="col">
                       <h3 className="page-title">Timesheet</h3>
                       <ul className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                        <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                         <li className="breadcrumb-item active">Timesheet</li>
                       </ul>
                     </div>
@@ -140,8 +140,8 @@ render() {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
-                                <a href="/purple/app/profile/employee-profile">John Doe <span>Web Designer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_02} /></a>
+                                <a href="/app/profile/employee-profile">John Doe <span>Web Designer</span></a>
                               </h2>
                             </td>
                             <td>8 Mar 2019</td>
@@ -164,8 +164,8 @@ render() {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_09} /></a>
-                                <a href="/purple/app/profile/employee-profile">Richard Miles <span>Web Developer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_09} /></a>
+                                <a href="/app/profile/employee-profile">Richard Miles <span>Web Developer</span></a>
                               </h2>
                             </td>
                             <td>8 Mar 2019</td>
@@ -188,8 +188,8 @@ render() {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_10} /></a>
-                                <a href="/purple/app/profile/employee-profile">John Smith <span>Android Developer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_10} /></a>
+                                <a href="/app/profile/employee-profile">John Smith <span>Android Developer</span></a>
                               </h2>
                             </td>
                             <td>8 Mar 2019</td>
@@ -212,8 +212,8 @@ render() {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_05} /></a>
-                                <a href="/purple/app/profile/employee-profile">Mike Litorus <span>IOS Developer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_05} /></a>
+                                <a href="/app/profile/employee-profile">Mike Litorus <span>IOS Developer</span></a>
                               </h2>
                             </td>
                             <td>8 Mar 2019</td>
@@ -236,8 +236,8 @@ render() {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_11} /></a>
-                                <a href="/purple/app/profile/employee-profile">Wilmer Deluna <span>Team Leader</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_11} /></a>
+                                <a href="/app/profile/employee-profile">Wilmer Deluna <span>Team Leader</span></a>
                               </h2>
                             </td>
                             <td>8 Mar 2019</td>
@@ -260,8 +260,8 @@ render() {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_12} /></a>
-                                <a href="/purple/app/profile/employee-profile">Jeffrey Warden <span>Web Developer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_12} /></a>
+                                <a href="/app/profile/employee-profile">Jeffrey Warden <span>Web Developer</span></a>
                               </h2>
                             </td>
                             <td>8 Mar 2019</td>
@@ -284,8 +284,8 @@ render() {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_13} /></a>
-                                <a href="/purple/app/profile/employee-profile">Bernardo Galaviz <span>Web Developer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_13} /></a>
+                                <a href="/app/profile/employee-profile">Bernardo Galaviz <span>Web Developer</span></a>
                               </h2>
                             </td>
                             <td>8 Mar 2019</td>
@@ -308,8 +308,8 @@ render() {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_01} /></a>
-                                <a href="/purple/app/profile/employee-profile">Lesley Grauer <span>Team Leader</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_01} /></a>
+                                <a href="/app/profile/employee-profile">Lesley Grauer <span>Team Leader</span></a>
                               </h2>
                             </td>
                             <td>8 Mar 2019</td>
@@ -332,8 +332,8 @@ render() {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_16} /></a>
-                                <a href="/purple/app/profile/employee-profile">Jeffery Lalor <span>Team Leader</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_16} /></a>
+                                <a href="/app/profile/employee-profile">Jeffery Lalor <span>Team Leader</span></a>
                               </h2>
                             </td>
                             <td>8 Mar 2019</td>
@@ -356,8 +356,8 @@ render() {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_04} /></a>
-                                <a href="/purple/app/profile/employee-profile">Loren Gatlin <span>Android Developer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_04} /></a>
+                                <a href="/app/profile/employee-profile">Loren Gatlin <span>Android Developer</span></a>
                               </h2>
                             </td>
                             <td>8 Mar 2019</td>
@@ -380,8 +380,8 @@ render() {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_03} /></a>
-                                <a href="/purple/app/profile/employee-profile">Tarah Shropshire <span>Android Developer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_03} /></a>
+                                <a href="/app/profile/employee-profile">Tarah Shropshire <span>Android Developer</span></a>
                               </h2>
                             </td>
                             <td>8 Mar 2019</td>
@@ -404,8 +404,8 @@ render() {
                           <tr>
                             <td>
                               <h2 className="table-avatar">
-                                <a href="/purple/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_08}/></a>
-                                <a href="/purple/app/profile/employee-profile">Catherine Manseau <span>Android Developer</span></a>
+                                <a href="/app/profile/employee-profile" className="avatar"><img alt="" src={Avatar_08}/></a>
+                                <a href="/app/profile/employee-profile">Catherine Manseau <span>Android Developer</span></a>
                               </h2>
                             </td>
                             <td>8 Mar 2019</td>

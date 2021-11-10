@@ -39,7 +39,7 @@ class Jobdetails extends Component
       this.setState({ isviewModal: false })
    }
     onclickBack(){
-      this.props.history.push('/purple/applyjob/joblist')
+      this.props.history.push('/applyjob/joblist')
     }
     renderapplyjobform(){
       const{name,email,message,cvfile} = this.state
@@ -85,7 +85,7 @@ class Jobdetails extends Component
           <div className="header">
             {/* Logo */}
             <div className="header-left">
-              <a href="/purple/app/main/dashboard" className="logo">
+              <a href="/app/main/dashboard" className="logo">
                 <img src={headerlogo} width={40} height={40} alt="" />
               </a>
             </div>
@@ -103,7 +103,7 @@ class Jobdetails extends Component
                   <a href=";" className="responsive-search">
                     <i className="fa fa-search" />
                   </a>
-                  <form action="/purple/app/pages/search">
+                  <form action="/app/pages/search">
                     <input className="form-control" type="text" placeholder="Search here" />
                     <button className="btn" type="submit"><i className="fa fa-search" /></button>
                   </form>
@@ -132,10 +132,10 @@ class Jobdetails extends Component
               </li>
               {/* /Flag */}
               <li className="nav-item">
-                <a className="nav-link" href="/purple/login">Login</a>
+                <a className="nav-link" href="/login">Login</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/purple/register">Register</a>
+                <a className="nav-link" href="/register">Register</a>
               </li>
             </ul>
             {/* /Header Menu */}
@@ -143,8 +143,8 @@ class Jobdetails extends Component
             <div className="dropdown mobile-user-menu">
               <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="fa fa-ellipsis-v" /></a>
               <div className="dropdown-menu dropdown-menu-right">
-                <a className="dropdown-item" href="/purple/login">Login</a>
-                <a className="dropdown-item" href="/purple/register">Register</a>
+                <a className="dropdown-item" href="/login">Login</a>
+                <a className="dropdown-item" href="/register">Register</a>
               </div>
             </div>
             {/* /Mobile Menu */}
@@ -160,7 +160,7 @@ class Jobdetails extends Component
                   <div className="col">
                     <h3 className="page-title">Jobs</h3>
                     <ul className="breadcrumb">
-                      <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                      <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                       <li className="breadcrumb-item active">Jobs</li>
                     </ul>
                   </div>

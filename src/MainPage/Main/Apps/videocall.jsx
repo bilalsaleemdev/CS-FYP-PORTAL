@@ -24,13 +24,13 @@ class VideoCall extends Component {
                 <div className="navbar">
                   <div className="user-details">
                     <div className="float-left user-img">
-                      <a className="avatar" href="/purple/app/profile/employee-profile" title="Mike Litorus">
+                      <a className="avatar" href="/app/profile/employee-profile" title="Mike Litorus">
                         <img src={Avatar_05} alt="" className="rounded-circle" />
                         <span className="status online" />
                       </a>
                     </div>
                     <div className="user-info float-left">
-                      <a href="/purple/app/profile/employee-profile"><span>Mike Litorus</span></a>
+                      <a href="/app/profile/employee-profile"><span>Mike Litorus</span></a>
                       <span className="last-seen">Online</span>
                     </div>
                   </div>
@@ -111,7 +111,7 @@ class VideoCall extends Component {
                       <div className="chats">
                         <div className="chat chat-left">
                           <div className="chat-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar">
+                            <a href="/app/profile/employee-profile" className="avatar">
                               <img alt="" src={Avatar_02} />
                             </a>
                           </div>
@@ -133,7 +133,7 @@ class VideoCall extends Component {
                         </div>
                         <div className="chat chat-left">
                           <div className="chat-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar">
+                            <a href="/app/profile/employee-profile" className="avatar">
                               <img alt="" src={Avatar_02} />
                             </a>
                           </div>
@@ -157,7 +157,7 @@ class VideoCall extends Component {
                         </div>
                         <div className="chat chat-left">
                           <div className="chat-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar">
+                            <a href="/app/profile/employee-profile" className="avatar">
                               <img alt="" src={Avatar_09} className="img-fluid rounded-circle" />
                             </a>
                           </div>
@@ -179,7 +179,7 @@ class VideoCall extends Component {
                         </div>
                         <div className="chat chat-left">
                           <div className="chat-avatar">
-                            <a href="/purple/app/profile/employee-profile" className="avatar">
+                            <a href="/app/profile/employee-profile" className="avatar">
                               <img alt="" src={Avatar_09} />
                             </a>
                           </div>
@@ -212,7 +212,7 @@ class VideoCall extends Component {
                             <div className="chats">
                               <div className="chat chat-left">
                                 <div className="chat-avatar">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img alt="" src={Avatar_09} />
                                   </a>
                                 </div>
@@ -228,7 +228,7 @@ class VideoCall extends Component {
                               </div>
                               <div className="chat chat-left">
                                 <div className="chat-avatar">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img alt="" src={Avatar_09} />
                                   </a>
                                 </div>
@@ -250,7 +250,7 @@ class VideoCall extends Component {
                               </div>
                               <div className="chat chat-left">
                                 <div className="chat-avatar">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img alt="" src={Avatar_16} />
                                   </a>
                                 </div>
@@ -267,7 +267,7 @@ class VideoCall extends Component {
                               </div>
                               <div className="chat chat-left">
                                 <div className="chat-avatar">
-                                  <a href="/purple/app/profile/employee-profile" className="avatar">
+                                  <a href="/app/profile/employee-profile" className="avatar">
                                     <img alt="" src={Avatar_16} />
                                   </a>
                                 </div>

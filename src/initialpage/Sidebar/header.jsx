@@ -157,7 +157,7 @@ function Header(props) {
          <div className="header" style={{right:"0px"}}>
         {/* Logo */}
         <div className="header-left">
-          <a href="/purple/app/main/dashboard" className="logo">
+          <a href={`/app/main/dashboard/${typeDashboard}`} className="logo">
             <img src={headerlogo} width={40} height={40} alt="" />
           </a>
         </div>
@@ -182,7 +182,7 @@ function Header(props) {
               <a href="" className="responsive-search">
                 <i className="fa fa-search" />
               </a>
-              <form action="/purple/app/pages/search">
+              <form action="/app/pages/search">
                 <input className="form-control" type="text" placeholder="Search here" />
                 <button className="btn" type="submit"><i className="fa fa-search" /></button>
               </form>
@@ -344,7 +344,7 @@ function Header(props) {
             </a>
             <div className="dropdown-menu">
               <a className="dropdown-item" href={path}>My Profile</a>
-              <a className="dropdown-item" href="/purple/login">Logout</a>
+              <a className="dropdown-item" href="/login">Logout</a>
             </div>
           </li>
         </ul>
@@ -354,7 +354,7 @@ function Header(props) {
           <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="fa fa-ellipsis-v" /></a>
           <div className="dropdown-menu dropdown-menu-right">
             <a className="dropdown-item" href={path}>My Profile</a>
-            <a className="dropdown-item" href="/purple/login">Logout</a>
+            <a className="dropdown-item" href="/login">Logout</a>
           </div>
         </div>
         {/* /Mobile Menu */}

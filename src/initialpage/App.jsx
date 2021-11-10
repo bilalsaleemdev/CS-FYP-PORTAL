@@ -7,6 +7,7 @@ import RegistrationPage from './RegistrationPage'
 import ForgotPassword from './forgotpassword'
 import OTP from './otp'
 import LockScreen from './lockscreen'
+import Dashboard from './Dashboard/dashboard'
 
 import ApplyJobs from './ApplyJob';
 
@@ -63,7 +64,7 @@ export default class App extends Component {
             // if (user === null) {
             //     return (<Redirect to={'/login'} />);
             // } else {
-            //     return (<Redirect to={'/purple/app/main/dashboard'} />);
+            //     return (<Redirect to={'/app/main/dashboard'} />);
             // }
             // }
             if (location.pathname === '/') {
@@ -79,6 +80,7 @@ export default class App extends Component {
                         component={DefaultLayout}
                     /> */}
                     {/* <Redirect exact from={`${match.url}/`} to={`${match.url}/login`} /> */}
+                    <Route exact path="/app/main/dashboard" component={Dashboard} /> 
                     <Route path="/login" component={LoginPage} />
                     <Route path="/forgotpassword" component={ForgotPassword} />
                     <Route path="/register" component={RegistrationPage} />

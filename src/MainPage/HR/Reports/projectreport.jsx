@@ -24,7 +24,7 @@ class ProjectReport extends Component {
                   <div className="col-sm-12">
                     <h3 className="page-title">Project Reports</h3>
                     <ul className="breadcrumb">
-                      <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                      <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                       <li className="breadcrumb-item active">Project Reports</li>
                     </ul>
                   </div>
@@ -88,12 +88,12 @@ class ProjectReport extends Component {
                         <tr>
                           <td>1</td>
                           <td>
-                            <a href="/purple/app/projects/projects-view">Hospital Administration</a>
+                            <a href="/app/projects/projects-view">Hospital Administration</a>
                           </td>
                           <td>
                             <h2 className="table-avatar">
-                              <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_19} /></a>
-                              <a href="/purple/app/profile/client-profile">Global Technologies</a>
+                              <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_19} /></a>
+                              <a href="/app/profile/client-profile">Global Technologies</a>
                             </h2>
                           </td>
                           <td>9 Jan 2021</td>
@@ -126,12 +126,12 @@ class ProjectReport extends Component {
                         <tr>
                           <td>2</td>
                           <td>
-                            <a href="/purple/app/projects/projects-view">Office Management</a>
+                            <a href="/app/projects/projects-view">Office Management</a>
                           </td>
                           <td>
                             <h2 className="table-avatar">
-                              <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_29} /></a>
-                              <a href="/purple/app/profile/client-profile">Delta Infotech</a>
+                              <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_29} /></a>
+                              <a href="/app/profile/client-profile">Delta Infotech</a>
                             </h2>
                           </td>
                           <td>10 Dec 2021</td>

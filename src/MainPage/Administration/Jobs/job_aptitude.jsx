@@ -26,7 +26,7 @@
                     <div className="col-sm-12">
                     <h3 className="page-title">Aptitude</h3>
                     <ul className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                        <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                         <li className="breadcrumb-item ">Jobs</li>
                         <li className="breadcrumb-item">Interviewing</li>
                         <li className="breadcrumb-item active">Aptitude</li>
@@ -51,16 +51,16 @@
                         <p className="m-b-30">Click button to answer your question.</p>
                         <div className="row">
                         <div className="col-md-6 text-center m-b-30">
-                            <a href="/purple/app/administrator/questions" className="btn btn-primary btn-block submit-btn">Html</a>
+                            <a href="/app/administrator/questions" className="btn btn-primary btn-block submit-btn">Html</a>
                         </div>
                         <div className="col-md-6 text-center m-b-30">
-                            <a href="/purple/app/administrator/questions" className="btn btn-primary btn-block submit-btn">Css</a>
+                            <a href="/app/administrator/questions" className="btn btn-primary btn-block submit-btn">Css</a>
                         </div>
                         <div className="col-md-6 text-center m-b-30">
-                            <a href="/purple/app/administrator/questions" className="btn btn-primary btn-block submit-btn">Design</a>
+                            <a href="/app/administrator/questions" className="btn btn-primary btn-block submit-btn">Design</a>
                         </div>
                         <div className="col-md-6 text-center m-b-30">
-                            <a href="/purple/app/administrator/questions" className="btn btn-primary btn-block submit-btn">Javascript</a>
+                            <a href="/app/administrator/questions" className="btn btn-primary btn-block submit-btn">Javascript</a>
                         </div>
                         </div>
                     </div>

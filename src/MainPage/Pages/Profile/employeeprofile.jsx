@@ -12,8 +12,9 @@
    Avatar_16,
  } from "../../../Entryfile/imagepath";
  import {
-   ProfileCreate,
+   ManagerProfileCreate,
    getUserProfileAPI,
+   ProfilePicPutApi
  } from "../../../api/network/customer/EmployeeApi";
  import Button from "@material-ui/core/Button";
  import Dialog from "@material-ui/core/Dialog";
@@ -39,7 +40,7 @@
    const [post, setPost] = useState("employee");
    const [postalCode, setPostalCode] = useState("123");
    const [submitResponse, setSubmitResponse] = useState(false);
- 
+
    const user_id_local = localStorage.getItem("user_id");
  
    const cancelTokenSource = axios.CancelToken.source();
@@ -47,14 +48,23 @@
      // ManagerProfileCreateApi();
      getUserProfile(user_id_local);
    }, []);
+
+   useEffect(() => {
+    // ManagerProfileCreateApi();
+    UserProfilePic();
+  }, []);
+   const UserProfilePic = async () => {
+    const response =await ProfilePicPutApi('20',"http://localhost:5002/images/profile_pic_1635970169797.png");
+    console,log(response,'eeeeeee')
+   }
  
    const handleCloseSubmitResponse = () => {
      setOpen(false);
      window.location.reload();
    };
    const ManagerProfileCreateApi = async () => {
-     setOpen(true);
-     const response = await ProfileCreate(
+     
+     const response = await ManagerProfileCreate(
        user_id_local,
        first_name,
        last_name,
@@ -71,6 +81,7 @@
        // const awais = response.PromiseResult;
        const { data } = response;
        setOpenCreateProfile(true);
+       setOpen(true);
  
        console.log("  data awaiss ", response);
      } else {
@@ -159,7 +170,7 @@
                    <h3 className="page-title">Employee Profile</h3>
                    <ul className="breadcrumb">
                      <li className="breadcrumb-item">
-                       <a href="/purple/app/main/dashboard">Dashboard</a>
+                       <a href="/app/main/dashboard">Dashboard</a>
                      </li>
                      <li className="breadcrumb-item active">Profile</li>
                    </ul>
@@ -516,7 +527,7 @@
                    <h3 className="page-title">Employee Profile</h3>
                    <ul className="breadcrumb">
                      <li className="breadcrumb-item">
-                       <a href="/purple/app/main/dashboard">Dashboard</a>
+                       <a href="/app/main/dashboard">Dashboard</a>
                      </li>
                      <li className="breadcrumb-item active">
                        You don't have profile yet
@@ -719,19 +730,18 @@
                          >
                          Submit
                                  </a>*/}
-                       </div>
-                     </form>
-                   </div>
-                 </div>
-               </div>
-             </div>
-             {/* /Profile Modal */}
-           </div>
-         </div>
-       )}
-     </React.Fragment>
-   );
- };
- 
- export default EmployeeProfile;
- 
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* /Profile Modal */}
+          </div>
+        </div>
+      )}
+    </React.Fragment>
+  );
+};
+
+export default EmployeeProfile;

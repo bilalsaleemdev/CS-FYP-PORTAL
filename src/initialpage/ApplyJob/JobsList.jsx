@@ -28,7 +28,7 @@ class JobsList extends Component
           <div className="header">
             {/* Logo */}
             <div className="header-left">
-              <a href="/purple/app/main/dashboard" className="logo">
+              <a href="/app/main/dashboard" className="logo">
                 <img src={headerlogo} width={40} height={40} alt="" />
               </a>
             </div>
@@ -46,7 +46,7 @@ class JobsList extends Component
                   <a href="" className="responsive-search">
                     <i className="fa fa-search" />
                   </a>
-                  <form action="/purple/app/pages/search">
+                  <form action="/app/pages/search">
                     <input className="form-control" type="text" placeholder="Search here" />
                     <button className="btn" type="submit"><i className="fa fa-search" /></button>
                   </form>
@@ -75,10 +75,10 @@ class JobsList extends Component
               </li>
               {/* /Flag */}
               <li className="nav-item">
-                <a className="nav-link" href="/purple/login">Login</a>
+                <a className="nav-link" href="/login">Login</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/purple/register">Register</a>
+                <a className="nav-link" href="/register">Register</a>
               </li>
             </ul>
             {/* /Header Menu */}
@@ -86,8 +86,8 @@ class JobsList extends Component
             <div className="dropdown mobile-user-menu">
               <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="fa fa-ellipsis-v" /></a>
               <div className="dropdown-menu dropdown-menu-right">
-                <a className="dropdown-item" href="/purple/login">Login</a>
-                <a className="dropdown-item" href="/purple/register">Register</a>
+                <a className="dropdown-item" href="/login">Login</a>
+                <a className="dropdown-item" href="/register">Register</a>
               </div>
             </div>
             {/* /Mobile Menu */}
@@ -103,7 +103,7 @@ class JobsList extends Component
                   <div className="col-sm-12">
                     <h3 className="page-title">Jobs</h3>
                     <ul className="breadcrumb">
-                      <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                      <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                       <li className="breadcrumb-item active">Jobs</li>
                     </ul>
                   </div>
@@ -112,7 +112,7 @@ class JobsList extends Component
               {/* /Page Header */}
               <div className="row">
                 <div className="col-md-6">
-                  <a className="job-list" href="/purple/applyjob/jobdetail">
+                  <a className="job-list" href="/applyjob/jobdetail">
                     <div className="job-list-det">
                       <div className="job-list-desc">
                         <h3 className="job-list-title">Web Devloper</h3>
@@ -132,7 +132,7 @@ class JobsList extends Component
                   </a>
                 </div>
                 <div className="col-md-6">
-                  <a className="job-list" href="/purple/applyjob/jobdetail">
+                  <a className="job-list" href="/applyjob/jobdetail">
                     <div className="job-list-det">
                       <div className="job-list-desc">
                         <h3 className="job-list-title">Android Devloper</h3>
@@ -152,7 +152,7 @@ class JobsList extends Component
                   </a>
                 </div>
                 <div className="col-md-6">
-                  <a className="job-list" href="/purple/applyjob/jobdetail">
+                  <a className="job-list" href="/applyjob/jobdetail">
                     <div className="job-list-det">
                       <div className="job-list-desc">
                         <h3 className="job-list-title">Web Devloper</h3>
@@ -172,7 +172,7 @@ class JobsList extends Component
                   </a>
                 </div>
                 <div className="col-md-6">
-                  <a className="job-list" href="/purple/applyjob/jobdetail">
+                  <a className="job-list" href="/applyjob/jobdetail">
                     <div className="job-list-det">
                       <div className="job-list-desc">
                         <h3 className="job-list-title">Android Devloper</h3>
@@ -192,7 +192,7 @@ class JobsList extends Component
                   </a>
                 </div>
                 <div className="col-md-6">
-                  <a className="job-list" href="/purple/applyjob/jobdetail">
+                  <a className="job-list" href="/applyjob/jobdetail">
                     <div className="job-list-det">
                       <div className="job-list-desc">
                         <h3 className="job-list-title">Web Devloper</h3>
@@ -212,7 +212,7 @@ class JobsList extends Component
                   </a>
                 </div>
                 <div className="col-md-6">
-                  <a className="job-list" href="/purple/applyjob/jobdetail">
+                  <a className="job-list" href="/applyjob/jobdetail">
                     <div className="job-list-det">
                       <div className="job-list-desc">
                         <h3 className="job-list-title">Android Devloper</h3>
@@ -232,7 +232,7 @@ class JobsList extends Component
                   </a>
                 </div>
                 <div className="col-md-6">
-                  <a className="job-list" href="/purple/applyjob/jobdetail">
+                  <a className="job-list" href="/applyjob/jobdetail">
                     <div className="job-list-det">
                       <div className="job-list-desc">
                         <h3 className="job-list-title">Web Devloper</h3>
@@ -252,7 +252,7 @@ class JobsList extends Component
                   </a>
                 </div>
                 <div className="col-md-6">
-                  <a className="job-list" href="/purple/applyjob/jobdetail">
+                  <a className="job-list" href="/applyjob/jobdetail">
                     <div className="job-list-det">
                       <div className="job-list-desc">
                         <h3 className="job-list-title">Android Devloper</h3>

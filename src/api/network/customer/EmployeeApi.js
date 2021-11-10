@@ -63,9 +63,9 @@ export const Registration = async (name, email, type, password, cancelToken) => 
 
 
 
-export const ProfileCreate = async (user_id, first_name,last_name, dob,phoneNumber,gender,address,country, postal_code,cancelToken) => {    
+export const ProfileCreate = async (user_id, first_name,last_name, dob,cnic,department ,phoneNumber,gender,address,country, postal_code,cancelToken) => {    
     const url = `users-profile`;
-    const data = { 'user_id': user_id , 'first_name':first_name,'last_name':last_name, 'dob':dob ,'phone': phoneNumber, 'gender':gender,'address':address, 'country':country , 'postal_code': postal_code };
+    const data = { 'user_id': user_id , 'first_name':first_name,'last_name':last_name, 'dob':dob ,'cnic': cnic,'department':department,'phone': phoneNumber, 'gender':gender,'address':address, 'country':country , 'postal_code': postal_code };
     const request = { type: 'POST', urlString: url, params: data };
     try {
          const response = await processRequest(request, cancelToken); 
@@ -79,9 +79,9 @@ export const ProfileCreate = async (user_id, first_name,last_name, dob,phoneNumb
 
 //user profile put api for edit
 
-export const ProfileEdit = async (user_id, first_name,last_name, dob,phoneNumber,gender,address,country, postal_code,cancelToken) => {    
+export const ProfileEdit = async (user_id, first_name,last_name, dob,cnic, department, phoneNumber,gender,address,country, postal_code,cancelToken) => {    
     const url = `users-profile/${user_id}`;
-    const data = { 'user_id': user_id , 'first_name':first_name,'last_name':last_name, 'dob':dob ,'phone': phoneNumber, 'gender':gender,'address':address, 'country':country , 'postal_code': postal_code };
+    const data = { 'user_id': user_id , 'first_name':first_name,'last_name':last_name, 'dob':dob ,'cnic': cnic,'department':department,'phone': phoneNumber, 'gender':gender,'address':address, 'country':country , 'postal_code': postal_code };
     const request = { type: 'PUT', urlString: url, params: data };
     try {
          const response = await processRequest(request, cancelToken); 
@@ -139,8 +139,64 @@ export const deleteUsersPendingRequestAPI = async (userId,cancelToken) => {
     }
 };
 
+<<<<<<< HEAD
 export const getEmployeeProjectNotification = async (userId, cancelToken) => {    
     const url = `employees-project-notifications/${userId}`;    
+=======
+export const createWorkShopeAPI = async (data,cancelToken) => {    
+    const url = `conference`;    
+    const request = { type: 'POST', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('conference', response)
+        return response.data;
+    } catch (error) { 
+        console.log('conference', error)
+        return {error:error};
+    }
+};
+
+export const updateWorkShopeAPI = async (data,cancelToken) => {    
+    const url = `conference/${data.id}`;    
+    const request = { type: 'PUT', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('conference', response)
+        return response.data;
+    } catch (error) { 
+        console.log('conference', error)
+        return {error:error};
+    }
+};
+export const deleteWorkShopeAPI = async (selectedWorkShopId,cancelToken) => {    
+    const url = `conferance/${selectedWorkShopId}`;    
+    const request = { type: 'DELETE', urlString: url};
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('conference', response)
+        return response.data;
+    } catch (error) { 
+        console.log('conference', error)
+        return {error:error};
+    }
+};
+
+export const createUserWorkShopeAPI = async (data,cancelToken) => {    
+    const url = `user-conference`;    
+    const request = { type: 'POST', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('conference', response)
+        return response.data;
+    } catch (error) { 
+        console.log('conference', error)
+        return {error:error};
+    }
+};
+
+export const getUserWorkshopesAPI = async (user_id,cancelToken) => {    
+    const url = `user-conference/${user_id}`;    
+>>>>>>> employee/task
     const request = { type: 'GET', urlString: url };
     try {
          const response = await processRequest(request, cancelToken); 
@@ -150,8 +206,15 @@ export const getEmployeeProjectNotification = async (userId, cancelToken) => {
     }
 };
 
+<<<<<<< HEAD
 export const getEmployeeTaskNotification = async (userId, cancelToken) => {    
     const url = `employees-task-notifications/${userId}`;    
+=======
+//find all conference
+
+export const getAllWoekShop = async (cancelToken) => {    
+    const url = `conferance`;    
+>>>>>>> employee/task
     const request = { type: 'GET', urlString: url };
     try {
          const response = await processRequest(request, cancelToken); 
@@ -161,8 +224,29 @@ export const getEmployeeTaskNotification = async (userId, cancelToken) => {
     }
 };
 
+<<<<<<< HEAD
 export const getEmployeeConferenceNotification = async (userId, cancelToken) => {    
     const url = `employees-conference-notifications/${userId}`;    
+=======
+//manager api crate project
+
+
+export const createProjectAPI = async (data,cancelToken) => {    
+    const url = `project`;    
+    const request = { type: 'POST', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('conference', response)
+        return response.data;
+    } catch (error) { 
+        console.log('conference', error)
+        return {error:error};
+    }
+};
+
+export const getEmployeeUserAPI = async (user_id,cancelToken) => {    
+    const url = `employees-users`    
+>>>>>>> employee/task
     const request = { type: 'GET', urlString: url };
     try {
          const response = await processRequest(request, cancelToken); 
@@ -171,8 +255,14 @@ export const getEmployeeConferenceNotification = async (userId, cancelToken) => 
         return {error:error};
     }
 };
+<<<<<<< HEAD
 export const getEmployeeOfTheMonth = async (cancelToken) => {    
     const url = `top-employees-of-month`;    
+=======
+
+export const getUserProjectAPI = async (user_id,cancelToken) => {    
+    const url = `project-all-data/${user_id}`;    
+>>>>>>> employee/task
     const request = { type: 'GET', urlString: url };
     try {
          const response = await processRequest(request, cancelToken); 
@@ -182,6 +272,7 @@ export const getEmployeeOfTheMonth = async (cancelToken) => {
     }
 };
 
+<<<<<<< HEAD
 
 export const conferenceUpdate = async (conferenceId,data,cancelToken) => {    
     const url = `conference/${conferenceId}`;
@@ -192,10 +283,64 @@ export const conferenceUpdate = async (conferenceId,data,cancelToken) => {
         return response.data;
     } catch (error) { 
         console.log('conference  error', error)
+=======
+export const getUserProjectForTaskAPI = async (user_id,cancelToken) => {    
+    const url = `manager-project/${user_id}`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+export const getTaskApi = async (cancelToken) => {    
+    const url = `task`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
         return {error:error};
     }
 };
 
+export const getProjectEmployeeAPI = async (user_id,cancelToken) => {    
+    const url = `project-employee/${user_id}`    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+export const getProjectTaskAPI = async (projectId,cancelToken) => {    
+    const url = `project-task/${projectId}`    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+export const createTaskAPI = async (data,cancelToken) => {    
+    const url = `task`;    
+    const request = { type: 'POST', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('task', response)
+        return response.data;
+    } catch (error) { 
+        console.log('task', error)
+>>>>>>> employee/task
+        return {error:error};
+    }
+};
+
+<<<<<<< HEAD
 export const taskConferenceUpdate = async (taskID,data,cancelToken) => {    
     const url = `task/${taskID}`;
     const request = { type: 'PUT', urlString: url, params: data };
@@ -205,10 +350,21 @@ export const taskConferenceUpdate = async (taskID,data,cancelToken) => {
         return response.data;
     } catch (error) { 
         console.log('task  error', error)
+=======
+export const updateTaskAPI = async (id ,data, cancelToken) => {    
+    const url = `task/${id}`;    
+    const request = { type: 'PUT', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        console.log('task', error)
+>>>>>>> employee/task
         return {error:error};
     }
 };
 
+<<<<<<< HEAD
 export const projectConferenceUpdate = async (projectId,data,cancelToken) => {    
     const url = `project/${projectId}`;
     const request = { type: 'PUT', urlString: url, params: data };
@@ -218,6 +374,133 @@ export const projectConferenceUpdate = async (projectId,data,cancelToken) => {
         return response.data;
     } catch (error) { 
         console.log('task  error', error)
+=======
+export const putTaskApi = async (id, data,cancelToken) => {    
+    const url = `task/${id}`;    
+    const request = { type: 'PUT', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('task', response)
+        return response.data;
+    } catch (error) { 
+        console.log('task', error)
+        return {error:error};
+    }
+};
+export const updateProjectAPI = async (id ,data, cancelToken) => {    
+    const url = `project/${id}`;    
+    const request = { type: 'PUT', urlString: url, params: data };
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log(response.data)
+        return response.data;
+    } catch (error) { 
+        console.log('task', error)
+        return {error:error};
+    }
+};
+
+//get allTask of Employees
+export const getAllTaskEmployee = async (emloyee_Id,cancelToken) => {   
+
+    const url = `employee-task/${emloyee_Id}`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All Employee request', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+
+
+// get all project for employee user
+
+export const getProjectEmployee = async (emloyee_Id,cancelToken) => {   
+
+    const url = `employee-project/${emloyee_Id}`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All Employee project request', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log("awaaaaaa");
+        return response.data;
+    } catch (error) { 
+        console.log("awaaaaaa err");
+        return {error:error};
+    }
+};
+
+//get user by id
+
+
+export const getUserById = async (emloyee_Id,cancelToken) => {   
+
+    const url = `single-user/${emloyee_Id}`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All Employee project request', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log("awaaaaaa");
+        return response.data;
+    } catch (error) { 
+        console.log("awaaaaaa err");
+        return {error:error};
+    }
+};
+
+//get All Project
+
+export const getAllProject = async (cancelToken) => {   
+
+    const url = `project`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All  project request', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log("awaaaaaa");
+        return response.data;
+    } catch (error) { 
+        console.log("awaaaaaa err");
+        return {error:error};
+    }
+};
+
+
+
+//Put user profile pic api
+
+// export const ProfilePicPutApi = async (user_id, profile_pic,cancelToken) => {    
+//     const url = `upload/pic/${user_id}`;
+//     const data = { 'user_id': user_id , ' profile_pic': profile_pic};
+//     const request = { type: 'PUT', urlString: url, params: data , {}};
+//     try {
+//          const response = await processRequest(request, cancelToken); 
+//          console.log('manager profile', response)
+//         return response.data;
+//     } catch (error) { 
+//         console.log('manager  error', error)
+//         return {error:error};
+//     }
+// };
+
+
+//get Employee All projects
+
+export const getAllProjectOfEmployee = async (user_id, cancelToken) => {   
+
+    const url = `employee-project/${user_id}`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All  project of one employee', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log("awaaaaaa");
+        return response.data;
+    } catch (error) { 
+        console.log("awaaaaaa err");
+>>>>>>> employee/task
         return {error:error};
     }
 };

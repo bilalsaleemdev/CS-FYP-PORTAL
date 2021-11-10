@@ -34,7 +34,7 @@ class Compose extends Component {
             <div className="col-sm-12">
               <h3 className="page-title">Compose</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Compose</li>
               </ul>
             </div>

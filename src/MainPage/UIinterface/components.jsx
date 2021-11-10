@@ -26,7 +26,7 @@ class UIComponents extends Component {
           <div className="header">
             {/* Logo */}
             <div className="header-left">
-              <a href="/purple/app/main/dashboard" className="logo">
+              <a href="/app/main/dashboard" className="logo">
                 <img src={headerlogo} width={40} height={40} alt="" />
               </a>
             </div>
@@ -45,7 +45,7 @@ class UIComponents extends Component {
                   <a href="" className="responsive-search">
                     <i className="fa fa-search" />
                   </a>
-                  <form action="/purple/app/pages/search">
+                  <form action="/app/pages/search">
                     <input className="form-control" type="text" placeholder="Search here" />
                     <button className="btn" type="submit"><i className="fa fa-search" /></button>
                   </form>
@@ -86,7 +86,7 @@ class UIComponents extends Component {
                   <div className="noti-content">
                     <ul className="notification-list">
                       <li className="notification-message">
-                        <a href="/purple/app/administrator/activities">
+                        <a href="/app/administrator/activities">
                           <div className="media">
                             <span className="avatar">
                               <img alt="" src={Avatar_02} />
@@ -99,7 +99,7 @@ class UIComponents extends Component {
                         </a>
                       </li>
                       <li className="notification-message">
-                        <a href="/purple/app/administrator/activities">
+                        <a href="/app/administrator/activities">
                           <div className="media">
                             <span className="avatar">
                               <img alt="" src={Avatar_03} />
@@ -112,7 +112,7 @@ class UIComponents extends Component {
                         </a>
                       </li>
                       <li className="notification-message">
-                        <a href="/purple/app/administrator/activities">
+                        <a href="/app/administrator/activities">
                           <div className="media">
                             <span className="avatar">
                               <img alt="" src={Avatar_06} />
@@ -125,7 +125,7 @@ class UIComponents extends Component {
                         </a>
                       </li>
                       <li className="notification-message">
-                        <a href="/purple/app/administrator/activities">
+                        <a href="/app/administrator/activities">
                           <div className="media">
                             <span className="avatar">
                               <img alt="" src={Avatar_17} />
@@ -138,7 +138,7 @@ class UIComponents extends Component {
                         </a>
                       </li>
                       <li className="notification-message">
-                        <a href="/purple/app/administrator/activities">
+                        <a href="/app/administrator/activities">
                           <div className="media">
                             <span className="avatar">
                               <img alt="" src={Avatar_13} />
@@ -153,7 +153,7 @@ class UIComponents extends Component {
                     </ul>
                   </div>
                   <div className="topnav-dropdown-footer">
-                    <a href="/purple/app/administrator/activities">View all Notifications</a>
+                    <a href="/app/administrator/activities">View all Notifications</a>
                   </div>
                 </div>
               </li>
@@ -171,7 +171,7 @@ class UIComponents extends Component {
                   <div className="noti-content">
                     <ul className="notification-list">
                       <li className="notification-message">
-                        <a href="/purple/conversation/chat">
+                        <a href="/conversation/chat">
                           <div className="list-item">
                             <div className="list-left">
                               <span className="avatar">
@@ -188,7 +188,7 @@ class UIComponents extends Component {
                         </a>
                       </li>
                       <li className="notification-message">
-                        <a href="/purple/conversation/chat">
+                        <a href="/conversation/chat">
                           <div className="list-item">
                             <div className="list-left">
                               <span className="avatar">
@@ -205,7 +205,7 @@ class UIComponents extends Component {
                         </a>
                       </li>
                       <li className="notification-message">
-                        <a href="/purple/conversation/chat">
+                        <a href="/conversation/chat">
                           <div className="list-item">
                             <div className="list-left">
                               <span className="avatar">
@@ -222,7 +222,7 @@ class UIComponents extends Component {
                         </a>
                       </li>
                       <li className="notification-message">
-                        <a href="/purple/conversation/chat">
+                        <a href="/conversation/chat">
                           <div className="list-item">
                             <div className="list-left">
                               <span className="avatar">
@@ -239,7 +239,7 @@ class UIComponents extends Component {
                         </a>
                       </li>
                       <li className="notification-message">
-                        <a href="/purple/conversation/chat">
+                        <a href="/conversation/chat">
                           <div className="list-item">
                             <div className="list-left">
                               <span className="avatar">
@@ -258,7 +258,7 @@ class UIComponents extends Component {
                     </ul>
                   </div>
                   <div className="topnav-dropdown-footer">
-                    <a href="/purple/conversation/chat">View all Messages</a>
+                    <a href="/conversation/chat">View all Messages</a>
                   </div>
                 </div>
               </li>
@@ -270,9 +270,9 @@ class UIComponents extends Component {
                   <span>Admin</span>
                 </a>
                 <div className="dropdown-menu">
-                  <a className="dropdown-item" href="/purple/app/profile/employee-profile">My Profile</a>
-                  <a className="dropdown-item" href="/purple/settings/companysetting">Settings</a>
-                  <a className="dropdown-item" href="/purple/login">Logout</a>
+                  <a className="dropdown-item" href="/app/profile/employee-profile">My Profile</a>
+                  <a className="dropdown-item" href="/settings/companysetting">Settings</a>
+                  <a className="dropdown-item" href="/login">Logout</a>
                 </div>
               </li>
             </ul>
@@ -281,9 +281,9 @@ class UIComponents extends Component {
             <div className="dropdown mobile-user-menu">
               <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="fa fa-ellipsis-v" /></a>
               <div className="dropdown-menu dropdown-menu-right">
-                <a className="dropdown-item" href="/purple/app/profile/employee-profile">My Profile</a>
-                <a className="dropdown-item" href="/purple/settings/companysetting">Settings</a>
-                <a className="dropdown-item" href="/purple/login">Logout</a>
+                <a className="dropdown-item" href="/app/profile/employee-profile">My Profile</a>
+                <a className="dropdown-item" href="/settings/companysetting">Settings</a>
+                <a className="dropdown-item" href="/login">Logout</a>
               </div>
             </div>
             {/* /Mobile Menu */}
@@ -340,7 +340,7 @@ class UIComponents extends Component {
                   <div className="col-sm-12">
                     <h3 className="page-title">Components</h3>
                     <ul className="breadcrumb">
-                      <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                      <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                       <li className="breadcrumb-item active">Components</li>
                     </ul>
                   </div>

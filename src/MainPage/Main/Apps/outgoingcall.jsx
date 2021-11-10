@@ -27,7 +27,7 @@ class OutgoingCall extends Component {
             <div className="call-items">
               <a href="" className="btn call-item"><i className="material-icons">mic</i></a>
               <a href="" className="btn call-item"><i className="material-icons">videocam</i></a>
-              <a href="/purple/conversation/chat" className="btn call-item call-end"><i className="material-icons vcend">call_end</i></a>
+              <a href="/conversation/chat" className="btn call-item call-end"><i className="material-icons vcend">call_end</i></a>
               <a href="" className="btn call-item"><i className="material-icons">person_add</i></a>
               <a href="" className="btn call-item"><i className="material-icons">volume_up</i></a>
             </div>

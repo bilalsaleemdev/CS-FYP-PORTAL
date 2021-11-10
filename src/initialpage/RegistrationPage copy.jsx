@@ -59,11 +59,11 @@ class Registrationpage extends Component {
                   <meta name="description" content="Login page"/>					
             </Helmet> 
         <div className="account-content">
-          <a href="/purple/applyjob/joblist" className="btn btn-primary apply-btn">Apply Job</a>
+          <a href="/applyjob/joblist" className="btn btn-primary apply-btn">Apply Job</a>
           <div className="container">
             {/* Account Logo */}
             <div className="account-logo">
-              <a href="/purple/app/main/dashboard"><img src={Applogo} alt="Dreamguy's Technologies" /></a>
+              <a href="/app/main/dashboard"><img src={Applogo} alt="Dreamguy's Technologies" /></a>
             </div>
             {/* /Account Logo */}
             <div className="account-box">
@@ -71,7 +71,7 @@ class Registrationpage extends Component {
                 <h3 className="account-title">Register</h3>
                 <p className="account-subtitle">Access to our dashboard</p>
                 {/* Account Form */}
-                <form action="/purple/app/main/dashboard">
+                <form action="/app/main/dashboard">
                   <div className="form-group">
                     <label>Email</label>
                     <input className="form-control" type="text" />
@@ -88,7 +88,7 @@ class Registrationpage extends Component {
                     <button className="btn btn-primary account-btn" type='submit' onClick={() => console.log('click')}>Register</button>
                   </div>
                   <div className="account-footer">
-                    <p>Already have an account? <a href="/purple/login">Login</a></p>
+                    <p>Already have an account? <a href="/login">Login</a></p>
                   </div>
                 </form>
                 {/* /Account Form */}

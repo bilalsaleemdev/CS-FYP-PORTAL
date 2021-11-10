@@ -28,7 +28,7 @@ const ApproveRequest1 = () => {
       title: 'Estimate Number',
       dataIndex: 'invoicenumber',
       render: (text, record) => (
-        <a href="/purple/app/sales/estimatesview">{text}</a>
+        <a href="/app/sales/estimatesview">{text}</a>
         ),
       sorter: (a, b) => a.invoicenumber.length - b.invoicenumber.length,
     },     
@@ -70,7 +70,7 @@ const ApproveRequest1 = () => {
           <div className="dropdown dropdown-action text-right">
                <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
                 <div className="dropdown-menu dropdown-menu-right">
-                  <a className="dropdown-item" href="/purple/app/sales/editestimates"><i className="fa fa-pencil m-r-5" /> Edit</a>
+                  <a className="dropdown-item" href="/app/sales/editestimates"><i className="fa fa-pencil m-r-5" /> Edit</a>
                   <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                 </div>
           </div>
@@ -93,12 +93,12 @@ const ApproveRequest1 = () => {
             <div className="col">
               <h3 className="page-title">Estimates</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                 <li className="breadcrumb-item active">Estimates</li>
               </ul>
             </div>
             <div className="col-auto float-right ml-auto">
-              <a href="/purple/app/sales/createestimates" className="btn add-btn"><i className="fa fa-plus" /> Create Estimate</a>
+              <a href="/app/sales/createestimates" className="btn add-btn"><i className="fa fa-plus" /> Create Estimate</a>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ const ApproveRequest1 = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td><a href="/purple/app/sales/estimatesview">EST-0001</a></td>
+                    <td><a href="/app/sales/estimatesview">EST-0001</a></td>
                     <td>Global Technologies</td>
                     <td>11 Mar 2019</td>
                     <td>17 Mar 2019</td>
@@ -175,14 +175,14 @@ const ApproveRequest1 = () => {
                       <div className="dropdown dropdown-action">
                         <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
                         <div className="dropdown-menu dropdown-menu-right">
-                          <a className="dropdown-item" href="/purple/app/sales/editestimates"><i className="fa fa-pencil m-r-5" /> Edit</a>
+                          <a className="dropdown-item" href="/app/sales/editestimates"><i className="fa fa-pencil m-r-5" /> Edit</a>
                           <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                         </div>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <td><a href="/purple/app/sales/estimatesview">EST-0002</a></td>
+                    <td><a href="/app/sales/estimatesview">EST-0002</a></td>
                     <td>Delta Infotech</td>
                     <td>11 Mar 2019</td>
                     <td>17 Mar 2019</td>
@@ -192,14 +192,14 @@ const ApproveRequest1 = () => {
                       <div className="dropdown dropdown-action">
                         <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
                         <div className="dropdown-menu dropdown-menu-right">
-                          <a className="dropdown-item" href="/purple/app/sales/editestimates"><i className="fa fa-pencil m-r-5" /> Edit</a>
+                          <a className="dropdown-item" href="/app/sales/editestimates"><i className="fa fa-pencil m-r-5" /> Edit</a>
                           <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                         </div>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <td><a href="/purple/app/sales/estimatesview">EST-0003</a></td>
+                    <td><a href="/app/sales/estimatesview">EST-0003</a></td>
                     <td>Cream Inc</td>
                     <td>11 Mar 2019</td>
                     <td>17 Mar 2019</td>
@@ -209,14 +209,14 @@ const ApproveRequest1 = () => {
                       <div className="dropdown dropdown-action">
                         <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
                         <div className="dropdown-menu dropdown-menu-right">
-                          <a className="dropdown-item" href="/purple/app/sales/editestimates"><i className="fa fa-pencil m-r-5" /> Edit</a>
+                          <a className="dropdown-item" href="/app/sales/editestimates"><i className="fa fa-pencil m-r-5" /> Edit</a>
                           <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                         </div>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <td><a href="/purple/app/sales/estimatesview">EST-0004</a></td>
+                    <td><a href="/app/sales/estimatesview">EST-0004</a></td>
                     <td>International Software Inc</td>
                     <td>11 Mar 2019</td>
                     <td>17 Mar 2019</td>
@@ -226,7 +226,7 @@ const ApproveRequest1 = () => {
                       <div className="dropdown dropdown-action">
                         <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
                         <div className="dropdown-menu dropdown-menu-right">
-                          <a className="dropdown-item" href="/purple/app/sales/editestimates"><i className="fa fa-pencil m-r-5" /> Edit</a>
+                          <a className="dropdown-item" href="/app/sales/editestimates"><i className="fa fa-pencil m-r-5" /> Edit</a>
                           <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i className="fa fa-trash-o m-r-5" /> Delete</a>
                         </div>
                       </div>

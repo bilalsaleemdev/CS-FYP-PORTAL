@@ -20,7 +20,7 @@ export default class FormElements extends Component {
                   <div className="col">
                     <h3 className="page-title">Vertical Form</h3>
                     <ul className="breadcrumb">
-                      <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                      <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                       <li className="breadcrumb-item active">Vertical Form</li>
                     </ul>
                   </div>

@@ -21,7 +21,7 @@ export default class SubscribedCompany extends Component {
                    <div className="col">
                      <h3 className="page-title">Subscribed Companies</h3>
                      <ul className="breadcrumb">
-                       <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                       <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                        <li className="breadcrumb-item active">Subscriptions</li>
                      </ul>
                    </div>
@@ -79,8 +79,8 @@ export default class SubscribedCompany extends Component {
                            <td>1</td>
                            <td>
                              <h2 className="table-avatar">
-                               <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_19} alt="" /></a>
-                               <a href="/purple/app/profile/client-profile">Global Technologies</a>
+                               <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_19} alt="" /></a>
+                               <a href="/app/profile/client-profile">Global Technologies</a>
                              </h2>
                            </td>
                            <td>Free Trial</td>
@@ -102,8 +102,8 @@ export default class SubscribedCompany extends Component {
                            <td>2</td>
                            <td>
                              <h2 className="table-avatar">
-                               <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_29} alt="" /></a>
-                               <a href="/purple/app/profile/client-profile">Delta Infotech</a>
+                               <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_29} alt="" /></a>
+                               <a href="/app/profile/client-profile">Delta Infotech</a>
                              </h2>
                            </td>
                            <td>Premium</td>
@@ -125,8 +125,8 @@ export default class SubscribedCompany extends Component {
                            <td>3</td>
                            <td>
                              <h2 className="table-avatar">
-                               <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_07} /></a>
-                               <a href="/purple/app/profile/client-profile">Cream Inc</a>
+                               <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_07} /></a>
+                               <a href="/app/profile/client-profile">Cream Inc</a>
                              </h2>
                            </td>
                            <td>Professional</td>
@@ -148,8 +148,8 @@ export default class SubscribedCompany extends Component {
                            <td>4</td>
                            <td>
                              <h2 className="table-avatar">
-                               <a href="/purple/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_06} /></a>
-                               <a href="/purple/app/profile/client-profile">Wellware Company</a>
+                               <a href="/app/profile/client-profile" className="avatar"><img alt="" src={Avatar_06} /></a>
+                               <a href="/app/profile/client-profile">Wellware Company</a>
                              </h2>
                            </td>
                            <td>Enterprise</td>
@@ -171,8 +171,8 @@ export default class SubscribedCompany extends Component {
                            <td>5</td>
                            <td>
                              <h2 className="table-avatar">
-                               <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_14} alt="" /></a>
-                               <a href="/purple/app/profile/client-profile">Mustang Technologies</a>
+                               <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_14} alt="" /></a>
+                               <a href="/app/profile/client-profile">Mustang Technologies</a>
                              </h2>
                            </td>
                            <td>Free Trial</td>
@@ -194,8 +194,8 @@ export default class SubscribedCompany extends Component {
                            <td>6</td>
                            <td>
                              <h2 className="table-avatar">
-                               <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_18} alt="" /></a>
-                               <a href="/purple/app/profile/client-profile">International Software Inc</a>
+                               <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_18} alt="" /></a>
+                               <a href="/app/profile/client-profile">International Software Inc</a>
                              </h2>
                            </td>
                            <td>Enterprise</td>
@@ -217,8 +217,8 @@ export default class SubscribedCompany extends Component {
                            <td>7</td>
                            <td>
                              <h2 className="table-avatar">
-                               <a href="/purple/app/profile/client-profile" className="avatar"><img src={Avatar_28} alt="" /></a>
-                               <a href="/purple/app/profile/client-profile">Mercury Software Inc</a>
+                               <a href="/app/profile/client-profile" className="avatar"><img src={Avatar_28} alt="" /></a>
+                               <a href="/app/profile/client-profile">Mercury Software Inc</a>
                              </h2>
                            </td>
                            <td>Professional</td>

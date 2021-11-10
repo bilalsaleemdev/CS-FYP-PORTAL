@@ -25,8 +25,8 @@ class IncomingCall extends Component {
               <span>Calling ...</span>
             </div>							
             <div className="call-items">
-              <a href="/purple/conversation/chat" className="btn call-item call-end"><i className="material-icons">call_end</i></a>
-              <a href="/purple/conversation/video-call" className="btn call-item call-start"><i className="material-icons">call</i></a>
+              <a href="/conversation/chat" className="btn call-item call-end"><i className="material-icons">call_end</i></a>
+              <a href="/conversation/video-call" className="btn call-item call-start"><i className="material-icons">call</i></a>
             </div>
           </div>
         </div>

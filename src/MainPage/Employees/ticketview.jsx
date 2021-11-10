@@ -24,7 +24,7 @@ class Tickets extends Component {
                          <span className="m-l-15 text-muted">Created: </span>
                          <span>5 Jan 2019 07:21 AM </span> 
                          <span className="m-l-15 text-muted">Created by:</span>
-                         <span><a href="/purple/app/profile/employee-profile">John Doe</a></span>
+                         <span><a href="/app/profile/employee-profile">John Doe</a></span>
                        </div>
                      </div>
                      <a className="task-chat profile-rightbar float-right" id="task_chat" href="#task_window"><i className="fa fa fa-comment" /></a>
@@ -197,7 +197,7 @@ class Tickets extends Component {
                          <div className="chats">
                            <div className="chat chat-left">
                              <div className="chat-avatar">
-                               <a href="/purple/app/profile/employee-profile" className="avatar">
+                               <a href="/app/profile/employee-profile" className="avatar">
                                  <img src={Avatar_02} alt="" />
                                </a>
                              </div>
@@ -219,7 +219,7 @@ class Tickets extends Component {
                            </div>
                            <div className="chat chat-left">
                              <div className="chat-avatar">
-                               <a href="/purple/app/profile/employee-profile" className="avatar">
+                               <a href="/app/profile/employee-profile" className="avatar">
                                  <img src={Avatar_02} alt="" />
                                </a>
                              </div>
@@ -240,7 +240,7 @@ class Tickets extends Component {
                            </div>
                            <div className="chat chat-left">
                              <div className="chat-avatar">
-                               <a href="/purple/app/profile/employee-profile" className="avatar">
+                               <a href="/app/profile/employee-profile" className="avatar">
                                  <img src={Avatar_09} alt="" />
                                </a>
                              </div>
@@ -259,7 +259,7 @@ class Tickets extends Component {
                            </div>
                            <div className="chat chat-left">
                              <div className="chat-avatar">
-                               <a href="/purple/app/profile/employee-profile" className="avatar">
+                               <a href="/app/profile/employee-profile" className="avatar">
                                  <img src={Avatar_09} alt="" />
                                </a>
                              </div>

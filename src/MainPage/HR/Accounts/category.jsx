@@ -44,7 +44,7 @@ class Category extends Component {
                 <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
                 <div className="dropdown-menu dropdown-menu-right">
                     <a className="dropdown-item" href="#" data-toggle="modal" data-target="#edit_categories"><i className="fa fa-pencil m-r-5" /> Edit</a>
-                    <a className="dropdown-item" href="/purple/app/accounts/sub-category"><i className="fa fa-object-ungroup m-r-5" /> Sub-Category </a>
+                    <a className="dropdown-item" href="/app/accounts/sub-category"><i className="fa fa-object-ungroup m-r-5" /> Sub-Category </a>
                 </div>
             </div>
           ),
@@ -66,7 +66,7 @@ class Category extends Component {
                 <div className="col">
                   <h3 className="page-title">Categories</h3>
                   <ul className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="/purple/app/main/dashboard">Dashboard</a></li>
+                    <li className="breadcrumb-item"><a href="/app/main/dashboard">Dashboard</a></li>
                     <li className="breadcrumb-item active">Accounts</li>
                   </ul>
                 </div>
