@@ -412,6 +412,35 @@ export const getAllProject = async (cancelToken) => {
     }
 };
 
+export const getAllTopEmployees = async (cancelToken) => {   
+
+    const url = `top-employees-of-month`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All  project request', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log("awaaaaaa");
+        return response.data;
+    } catch (error) { 
+        console.log("awaaaaaa err");
+        return {error:error};
+    }
+};
+
+export const getAllBadgesEmployees = async (cancelToken) => {   
+
+    const url = `badges-of-employees`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All  project request', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log("awaaaaaa");
+        return response.data;
+    } catch (error) { 
+        console.log("awaaaaaa err");
+        return {error:error};
+    }
+};
 
 
 //Put user profile pic api
