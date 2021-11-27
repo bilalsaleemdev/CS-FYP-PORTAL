@@ -1,32 +1,31 @@
-import React, { Component } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import React, { Component } from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
 // We will create these two pages in a moment
 //Authendication
-import LoginPage from './loginpage'
-import RegistrationPage from './RegistrationPage'
-import ForgotPassword from './forgotpassword'
-import OTP from './otp'
-import LockScreen from './lockscreen'
-import Dashboard from './Dashboard/dashboard'
+import LoginPage from "./loginpage";
+import RegistrationPage from "./RegistrationPage";
+import ForgotPassword from "./forgotpassword";
+import OTP from "./otp";
+import LockScreen from "./lockscreen";
+import { Dashboard } from "./Dashboard/dashboard";
 
-import ApplyJobs from './ApplyJob';
+import ApplyJobs from "./ApplyJob";
 
 //Main App
-import DefaultLayout from './Sidebar/DefaultLayout';
-import Settinglayout from './Sidebar/Settinglayout';
-import Tasklayout from './Sidebar/tasklayout';
-import Emaillayout from './Sidebar/emaillayout';
-import chatlayout from './Sidebar/chatlayout';
+import DefaultLayout from "./Sidebar/DefaultLayout";
+import Settinglayout from "./Sidebar/Settinglayout";
+import Tasklayout from "./Sidebar/tasklayout";
+import Emaillayout from "./Sidebar/emaillayout";
+import chatlayout from "./Sidebar/chatlayout";
 
-import uicomponents from '../MainPage/UIinterface/components';
+import uicomponents from "../MainPage/UIinterface/components";
 //Error Page
-import Error404 from '../MainPage/Pages/ErrorPage/error404';
-import Error500 from '../MainPage/Pages/ErrorPage/error500';
-
+import Error404 from "../MainPage/Pages/ErrorPage/error404";
+import Error500 from "../MainPage/Pages/ErrorPage/error500";
 
 // import 'Assets/css/font-awesome.min.css';
 
-import $ from 'jquery';
+import $ from "jquery";
 // window.jQuery = $;
 // window.$ = $;
 // import UserPage from './pages/UserPage'
@@ -48,57 +47,62 @@ import $ from 'jquery';
 //    />;
 
 export default class App extends Component {
-    componentDidMount(){
-        if (location.pathname.includes("login") || location.pathname.includes("register") || location.pathname.includes("forgotpassword")
-        || location.pathname.includes("otp")|| location.pathname.includes("lockscreen") ) {
-            $('body').addClass('account-page');
-        }else if (location.pathname.includes("error-404") || location.pathname.includes("error-500") ) {
-            $('body').addClass('error-page');
-        }
+  componentDidMount() {
+    if (
+      location.pathname.includes("login") ||
+      location.pathname.includes("register") ||
+      location.pathname.includes("forgotpassword") ||
+      location.pathname.includes("otp") ||
+      location.pathname.includes("lockscreen")
+    ) {
+      $("body").addClass("account-page");
+    } else if (
+      location.pathname.includes("error-404") ||
+      location.pathname.includes("error-500")
+    ) {
+      $("body").addClass("error-page");
     }
-       render(){
-            const { location, match, user } = this.props;
-            
-            
-            // if (location.pathname === '/') {
-            // if (user === null) {
-            //     return (<Redirect to={'/login'} />);
-            // } else {
-            //     return (<Redirect to={'/app/main/dashboard'} />);
-            // }
-            // }
-            if (location.pathname === '/') {
-                 
-                   return (<Redirect to={'/app/main/dashboard'} />);
-                
-             }
-            return (
-                <Switch>
-                    {/* <InitialPath
+  }
+  render() {
+    const { location, match, user } = this.props;
+
+    // if (location.pathname === '/') {
+    // if (user === null) {
+    //     return (<Redirect to={'/login'} />);
+    // } else {
+    //     return (<Redirect to={'/app/main/dashboard'} />);
+    // }
+    // }
+    if (location.pathname === "/") {
+      return <Redirect to={"/app/main/dashboard"} />;
+    }
+    return (
+      <Switch>
+        {/* <InitialPath
                         path={`${match.url}app`}
                         // authUser={user}
                         component={DefaultLayout}
                     /> */}
-                    {/* <Redirect exact from={`${match.url}/`} to={`${match.url}/login`} /> */}
-                    <Route exact path="/app/main/dashboard" component={Dashboard} /> 
-                    <Route path="/login" component={LoginPage} />
-                    <Route path="/forgotpassword" component={ForgotPassword} />
-                    <Route path="/register" component={RegistrationPage} />
-                    <Route path="/otp" component={OTP} />
-                    <Route path="/lockscreen" component={LockScreen} />
-                    <Route path="/applyjob" component={ApplyJobs} />
+        {/* <Redirect exact from={`${match.url}/`} to={`${match.url}/login`} /> */}
+        <Route exact path="/app/main/dashboard" component={Dashboard} />
+        <Route path="/login" component={LoginPage} />
 
-                    <Route path="/app" component={DefaultLayout} />
-                    <Route path="/settings" component={Settinglayout} />
-                    <Route path="/tasks" component={Tasklayout} />
-                    <Route path="/email" component={Emaillayout} />
-                    <Route path="/conversation" component={chatlayout} />
-                    
-                    <Route path="/ui-components" component={uicomponents} />
-                    <Route path="/error-404" component={Error404} />
-                    <Route path="/error-500" component={Error500} />
-                </Switch>
-            )
-        }
-         
+        <Route path="/forgotpassword" component={ForgotPassword} />
+        <Route path="/register" component={RegistrationPage} />
+        <Route path="/otp" component={OTP} />
+        <Route path="/lockscreen" component={LockScreen} />
+        <Route path="/applyjob" component={ApplyJobs} />
+
+        <Route path="/app" component={DefaultLayout} />
+        <Route path="/settings" component={Settinglayout} />
+        <Route path="/tasks" component={Tasklayout} />
+        <Route path="/email" component={Emaillayout} />
+        <Route path="/conversation" component={chatlayout} />
+
+        <Route path="/ui-components" component={uicomponents} />
+        <Route path="/error-404" component={Error404} />
+        <Route path="/error-500" component={Error500} />
+      </Switch>
+    );
+  }
 }
