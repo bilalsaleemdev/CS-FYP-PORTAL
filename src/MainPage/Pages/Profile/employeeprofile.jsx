@@ -14,10 +14,7 @@ import {
 import {
   ManagerProfileCreate,
   getUserProfileAPI,
-<<<<<<< HEAD
   ProfilePicPutApi, getAllBadgesEmployees
-=======
->>>>>>> employee/project
 } from "../../../api/network/customer/EmployeeApi";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -25,99 +22,19 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-<<<<<<< HEAD
 import { badge1, badge2, badge3, badge4, badge5 } from "../../../Entryfile/imagepath.jsx"
 import { element } from "prop-types";
 
 
 const EmployeeProfile = () => {
-=======
-import InputBase from "@material-ui/core/InputBase";
-import { withStyles } from "@material-ui/core/styles";
-
-const styles = theme => ({
-  root: {
-    backgroundColor: theme.palette.background.paper,
-    width: 500,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "flex-end"
-  },
-  icon: {
-    margin: theme.spacing.unit * 2
-  },
-  iconHover: {
-    margin: theme.spacing.unit * 2,
-    "&:hover": {
-      color: red[800]
-    }
-  },
-  cardHeader: {
-    textalign: "center",
-    align: "center",
-    backgroundColor: "white"
-  },
-  input: {
-    display: "none"
-  },
-  title: {
-    color: blue[800],
-    fontWeight: "bold",
-    fontFamily: "Montserrat",
-    align: "center"
-  },
-  button: {
-    color: blue[900],
-    margin: 10
-  },
-  secondaryButton: {
-    color: "gray",
-    margin: 10
-  },
-  typography: {
-    margin: theme.spacing.unit * 2,
-    backgroundColor: "default"
-  },
-
-  searchRoot: {
-    padding: "2px 4px",
-    display: "flex",
-    alignItems: "center",
-    width: 400
-  },
-  searchInput: {
-    marginLeft: 8,
-    flex: 1
-  },
-  searchIconButton: {
-    padding: 10
-  },
-  searchDivider: {
-    width: 1,
-    height: 28,
-    margin: 4
-  }
-});
-
-const EmployeeProfile = (props) => {
-
-  const { classes, theme } = props;
->>>>>>> employee/project
   const [open, setOpen] = React.useState(false);
   const [userProfileData, setUserProfileData] = useState("");
   const [openCreataeProfile, setOpenCreateProfile] = useState(false);
 
   const [user_id, Usetser_id] = useState(5);
-<<<<<<< HEAD
   const [userBadge, setUserBadge] = useState(1);
   const [email, setEmail] = useState("");
   const [first_name, setFirst_name] = useState("");
-=======
-  const [email, setEmail] = useState("");
-  const [first_name, setFirst_name] = useState("");
-  const [image_url, setImage_url] = useState("");
-  const [picUrl, setPicUrl] = useState("");
->>>>>>> employee/project
   const [last_name, setLast_name] = useState("");
   const [dob, setDob] = useState("2019-01-01");
   const [gender, setGender] = useState("");
@@ -127,57 +44,25 @@ const EmployeeProfile = (props) => {
   const [post, setPost] = useState("employee");
   const [postalCode, setPostalCode] = useState("123");
   const [submitResponse, setSubmitResponse] = useState(false);
-<<<<<<< HEAD
   const [projectData, setProjectData] = useState([]);
-=======
-  const [profilePic, setProfilePic] = useState('http://localhost:5002/images/profile_pic_1636013308784.png')
->>>>>>> employee/project
 
   const user_id_local = localStorage.getItem("user_id");
 
   const cancelTokenSource = axios.CancelToken.source();
   useEffect(() => {
-<<<<<<< HEAD
     // ManagerProfileCreateApi();
     getUserProfile(user_id_local);
     getUserbadegs(user_id_local)
   }, []);
 
   useEffect(() => {
-=======
->>>>>>> employee/project
     // ManagerProfileCreateApi();
     getUserProfile(user_id_local);
     // UserProfilePic();
   }, []);
-<<<<<<< HEAD
   const UserProfilePic = async () => {
     const response = await ProfilePicPutApi('20', "http://localhost:5002/images/profile_pic_1635970169797.png");
     console, log(response, 'eeeeeee')
-=======
-  useEffect(() => {
-    // ManagerProfileCreateApi();
-    if (userProfileData) {
-      setProfilePic(userProfileData.image_url)
-    }
-    // UserProfilePic();
-  }, [userProfileData]);
-
-  const UserProfilePic = async (file) => {
-    let formData = new FormData();
-    formData.append("profile_pic", file);    
-    axios.put('http://localhost:5002/api/v1/upload/pic/26', formData, {
-      headers: {
-        'Content-Type': file?.type
-      }
-    }).then(response => {
-      console.log("Image Upload Success ", response);
-      axios.defaults.headers['x-auth-token'] = token;
-      verifyDoc(customerFundDocumentId ? customerFundDocumentId : '');
-    }).catch(err => {
-      console.log("Image Upload Failed Response", err);      
-    })
->>>>>>> employee/project
   }
 
   const handleCloseSubmitResponse = () => {
@@ -228,10 +113,6 @@ const EmployeeProfile = (props) => {
   // };
 
   const getUserProfile = async (userId) => {
-<<<<<<< HEAD
-=======
-
->>>>>>> employee/project
     const response = await getUserProfileAPI(userId, cancelTokenSource.token);
     if (response.success == true) {
       const { data } = response;
