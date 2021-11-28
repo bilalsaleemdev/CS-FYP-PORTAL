@@ -38,12 +38,12 @@ export const Header = () => {
                 <a href="#contact_us">Contact Us</a>
               </li>
               <li>
-                <a href="#" className="button">
+                <a  href={"http://localhost:8005/register"} className="button">
                   Sign Up
                 </a>
               </li>{" "}
               <li>
-                <a href="#" className="button">
+                <a  href={"http://localhost:8005/login"} className="button">
                   Login
                 </a>
               </li>

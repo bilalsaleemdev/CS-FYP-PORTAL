@@ -57,6 +57,7 @@ export const Registration = async (name, email, type, password, cancelToken) => 
          console.log('awais api response ', response) 
         return response.data;
     } catch (error) { 
+        console.log(error,'aaaaaa')
         return {error:error};
     }
 };
