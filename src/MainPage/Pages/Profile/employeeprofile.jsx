@@ -96,7 +96,7 @@ import { element } from "prop-types";
 
 
 const EmployeeProfile = () => {
-  const { classes, theme } = props;
+  // const { classes, theme } = props;
   const [open, setOpen] = React.useState(false);
   const [userProfileData, setUserProfileData] = useState("");
   const [openCreataeProfile, setOpenCreateProfile] = useState(false);
@@ -137,7 +137,7 @@ const EmployeeProfile = () => {
   const UserProfilePic = async (file) => {
     let formData = new FormData();
     formData.append("profile_pic", file);    
-    axios.put('http://localhost:5002/api/v1/upload/pic/26', formData, {
+    axios.put(`http://localhost:5002/api/v1/upload/pic/${user_id_local}`, formData, {
       headers: {
         'Content-Type': file?.type
       }
