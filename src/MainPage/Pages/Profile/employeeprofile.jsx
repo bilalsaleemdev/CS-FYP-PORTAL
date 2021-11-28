@@ -22,15 +22,86 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import InputBase from "@material-ui/core/InputBase";
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = theme => ({
+  root: {
+    backgroundColor: theme.palette.background.paper,
+    width: 500,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "flex-end"
+  },
+  icon: {
+    margin: theme.spacing.unit * 2
+  },
+  iconHover: {
+    margin: theme.spacing.unit * 2,
+    "&:hover": {
+      color: red[800]
+    }
+  },
+  cardHeader: {
+    textalign: "center",
+    align: "center",
+    backgroundColor: "white"
+  },
+  input: {
+    display: "none"
+  },
+  title: {
+    color: blue[800],
+    fontWeight: "bold",
+    fontFamily: "Montserrat",
+    align: "center"
+  },
+  button: {
+    color: blue[900],
+    margin: 10
+  },
+  secondaryButton: {
+    color: "gray",
+    margin: 10
+  },
+  typography: {
+    margin: theme.spacing.unit * 2,
+    backgroundColor: "default"
+  },
+
+  searchRoot: {
+    padding: "2px 4px",
+    display: "flex",
+    alignItems: "center",
+    width: 400
+  },
+  searchInput: {
+    marginLeft: 8,
+    flex: 1
+  },
+  searchIconButton: {
+    padding: 10
+  },
+  searchDivider: {
+    width: 1,
+    height: 28,
+    margin: 4
+  }
+});
+
+
+
 import { badge1, badge2, badge3, badge4, badge5 } from "../../../Entryfile/imagepath.jsx"
 import { element } from "prop-types";
 
 
 const EmployeeProfile = () => {
+  // const { classes, theme } = props;
   const [open, setOpen] = React.useState(false);
   const [userProfileData, setUserProfileData] = useState("");
   const [openCreataeProfile, setOpenCreateProfile] = useState(false);
-
+  const [image_url, setImage_url] = useState("");
+  const [picUrl, setPicUrl] = useState("");
   const [user_id, Usetser_id] = useState(5);
   const [userBadge, setUserBadge] = useState(1);
   const [email, setEmail] = useState("");
@@ -44,6 +115,7 @@ const EmployeeProfile = () => {
   const [post, setPost] = useState("employee");
   const [postalCode, setPostalCode] = useState("123");
   const [submitResponse, setSubmitResponse] = useState(false);
+  const [profilePic, setProfilePic] = useState('http://localhost:5002/images/profile_pic_1636013308784.png')
   const [projectData, setProjectData] = useState([]);
 
   const user_id_local = localStorage.getItem("user_id");
@@ -52,16 +124,30 @@ const EmployeeProfile = () => {
   useEffect(() => {
     // ManagerProfileCreateApi();
     getUserProfile(user_id_local);
-    getUserbadegs(user_id_local)
+    // UserProfilePic();
   }, []);
-
   useEffect(() => {
     // ManagerProfileCreateApi();
-    UserProfilePic();
-  }, []);
-  const UserProfilePic = async () => {
-    const response = await ProfilePicPutApi('20', "http://localhost:5002/images/profile_pic_1635970169797.png");
-    console, log(response, 'eeeeeee')
+    if (userProfileData) {
+      setProfilePic(userProfileData.image_url)
+    }
+    // UserProfilePic();
+  }, [userProfileData]);
+
+  const UserProfilePic = async (file) => {
+    let formData = new FormData();
+    formData.append("profile_pic", file);    
+    axios.put(`http://localhost:5002/api/v1/upload/pic/${user_id_local}`, formData, {
+      headers: {
+        'Content-Type': file?.type
+      }
+    }).then(response => {
+      console.log("Image Upload Success ", response);
+      axios.defaults.headers['x-auth-token'] = token;
+      verifyDoc(customerFundDocumentId ? customerFundDocumentId : '');
+    }).catch(err => {
+      console.log("Image Upload Failed Response", err);      
+    })
   }
 
   const handleCloseSubmitResponse = () => {
@@ -128,6 +214,17 @@ const EmployeeProfile = () => {
       console.log("Failed Response", response);
     }
   };
+
+  const handleUploadClick = (event) => {
+    var file = event.target.files[0];
+    let url = URL.createObjectURL(event.target.files[0])
+    console.log(file); // Would see a path?
+    const reader = new FileReader();
+    console.log(url); // Would see a path?
+    setProfilePic(url)
+    UserProfilePic(file)
+  };
+
   const getUserbadegs = async (userID) => {
 
     const response = await getAllBadgesEmployees(cancelTokenSource.token);
@@ -219,7 +316,7 @@ const EmployeeProfile = () => {
                       <div className="profile-img-wrap">
                         <div className="profile-img">
                           <a href="#">
-                            <img alt="" src={Avatar_02} />
+                            <img alt="" src={profilePic} />
                           </a>
                         </div>
                       </div>
@@ -396,15 +493,19 @@ const EmployeeProfile = () => {
                   <form>
                     <div className="row">
                       <div className="col-md-12">
-                        <div className="profile-img-wrap edit-img">
+                        <div className="profile-img-wrap edit-img">                          
                           <img
-                            className="inline-block"
-                            src={Avatar_02}
+                            className="inline-block"                            
+                            src={profilePic}
                             alt="user"
                           />
                           <div className="fileupload btn">
-                            <span className="btn-text">upload</span>
-                            <input className="upload" type="file" />
+                            <input
+                              className="btn-text"
+                              id="contained-button-file"
+                              type="file"
+                              onChange={handleUploadClick}
+                            />
                           </div>
                         </div>
                         <div className="row">
@@ -783,3 +884,4 @@ const EmployeeProfile = () => {
 };
 
 export default EmployeeProfile;
+// export default withStyles(styles, { withTheme: true })(EmployeeProfile);
