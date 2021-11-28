@@ -4,6 +4,11 @@
 // }
 
 // export default imagepaths
+export {default as badge1} from 'Assets/img/badge/1st-Badge.png';
+export {default as badge2} from 'Assets/img/badge/2nd-Badge.png';
+export {default as badge3} from 'Assets/img/badge/3rd-Badge.png';
+export {default as badge4} from 'Assets/img/badge/4th-Badge.png';
+export {default as badge5} from 'Assets/img/badge/5th-Badge.png';
 
 export {default as headerlogo} from 'Assets/img/logo.png';
 export {default as Applogo} from 'Assets/img/logo2.png';

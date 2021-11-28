@@ -14,6 +14,7 @@ import {
 import {
   ManagerProfileCreate,
   getUserProfileAPI,
+  ProfilePicPutApi, getAllBadgesEmployees
 } from "../../../api/network/customer/EmployeeApi";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -88,18 +89,23 @@ const styles = theme => ({
   }
 });
 
-const EmployeeProfile = (props) => {
 
+
+import { badge1, badge2, badge3, badge4, badge5 } from "../../../Entryfile/imagepath.jsx"
+import { element } from "prop-types";
+
+
+const EmployeeProfile = () => {
   const { classes, theme } = props;
   const [open, setOpen] = React.useState(false);
   const [userProfileData, setUserProfileData] = useState("");
   const [openCreataeProfile, setOpenCreateProfile] = useState(false);
-
-  const [user_id, Usetser_id] = useState(5);
-  const [email, setEmail] = useState("");
-  const [first_name, setFirst_name] = useState("");
   const [image_url, setImage_url] = useState("");
   const [picUrl, setPicUrl] = useState("");
+  const [user_id, Usetser_id] = useState(5);
+  const [userBadge, setUserBadge] = useState(1);
+  const [email, setEmail] = useState("");
+  const [first_name, setFirst_name] = useState("");
   const [last_name, setLast_name] = useState("");
   const [dob, setDob] = useState("2019-01-01");
   const [gender, setGender] = useState("");
@@ -110,6 +116,7 @@ const EmployeeProfile = (props) => {
   const [postalCode, setPostalCode] = useState("123");
   const [submitResponse, setSubmitResponse] = useState(false);
   const [profilePic, setProfilePic] = useState('http://localhost:5002/images/profile_pic_1636013308784.png')
+  const [projectData, setProjectData] = useState([]);
 
   const user_id_local = localStorage.getItem("user_id");
 
@@ -191,7 +198,6 @@ const EmployeeProfile = (props) => {
   // };
 
   const getUserProfile = async (userId) => {
-
     const response = await getUserProfileAPI(userId, cancelTokenSource.token);
     if (response.success == true) {
       const { data } = response;
@@ -218,6 +224,33 @@ const EmployeeProfile = (props) => {
     setProfilePic(url)
     UserProfilePic(file)
   };
+
+  const getUserbadegs = async (userID) => {
+
+    const response = await getAllBadgesEmployees(cancelTokenSource.token);
+
+    if (response.success == true) {
+      setProjectData(response.data);
+      let userItem = response.data.find(element => element.id == userID
+      )
+      setUserBadge(userItem.badge)
+    }
+    // console.log(taskData, "awais data for all task");
+  };
+
+  function getImage(val) {
+    if (val >= 0 && val <= 1)
+      return badge1
+    if (val >= 1 && val <= 2)
+      return badge2
+    if (val >= 2 && val <= 3)
+      return badge3
+    if (val >= 3 && val <= 4)
+      return badge4
+    if (val >= 4 && val <= 5)
+      return badge5
+  }
+
 
 
   return (
@@ -302,6 +335,11 @@ const EmployeeProfile = (props) => {
                               </small>
                               <div className="small doj text-muted">
                                 {userProfileData.dob}
+                              </div>
+                              <div className="account-logo">
+                                <a href="/login">
+                                  <img src={getImage(userBadge)} alt="Dreamguy's Technologies" />
+                                </a>
                               </div>
                             </div>
                           </div>
