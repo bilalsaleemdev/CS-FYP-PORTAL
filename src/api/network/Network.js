@@ -38,7 +38,7 @@ API.interceptors.response.use(function (response) {
 });
 
 function _baseUrl() {
-    return Config.API_URL;
+    return Config;
 }
 
 export async function processRequest(request, token){    
