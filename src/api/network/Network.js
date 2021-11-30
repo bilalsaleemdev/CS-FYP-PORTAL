@@ -1,8 +1,10 @@
 
 import axios from "axios";
-import { Config } from "../../../Config";
+// import { Config } from "../../../Config";
 
 const TIMEOUT = 15000;
+
+let Config = 'https://warm-wave-79910.herokuapp.com/'
 
 const API = axios.create({
     baseURL: _baseUrl(),
