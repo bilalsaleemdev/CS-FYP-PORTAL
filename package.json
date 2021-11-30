@@ -9,6 +9,9 @@
     "dev": "webpack-dev-server",
     "production": "webpack --mode production"
   },
+  "engines": {
+    "node": "4.18.1"
+  },
   "keywords": [
     "reactjs",
     "filter",
