@@ -234,8 +234,7 @@ const ApproveRequest = () => {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-           {` Hey ${messageName} !
-             respected accont has been approved successfully`}
+           {`  ${messageName}'s Account Approved Successfully`}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -263,8 +262,8 @@ const ApproveRequest = () => {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-           {` Hey ${messageName} !
-             respected accont has been declined`}
+           {` ${messageName}'s
+              accont has been declined`}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
