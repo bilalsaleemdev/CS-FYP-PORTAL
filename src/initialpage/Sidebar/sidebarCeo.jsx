@@ -189,9 +189,10 @@
                <li className={pathname.includes('promotion') ?"active" :""}><a href="/app/performance/promotion"><i className="la la-bullhorn" /> <span>Promotion</span></a></li>
                <li className={pathname.includes('resignation') ?"active" :""}><a href="/app/performance/resignation"><i className="la la-external-link-square" /> <span>Resignation</span></a></li>
                <li className={pathname.includes('termination') ?"active" :""}><a href="/app/performance/termination"><i className="la la-times-circle" /> <span>Termination</span></a></li> */}
-               <li className="menu-title"> 
+               
+             { /* <li className="menu-title"> 
                  <span>Administration</span>
-               </li>
+              </li> */}
                {/* <li className={pathname.includes('assets') ?"active" :""}> 
                  <a href="/app/administrator/assets"><i className="la la-object-ungroup" /> <span>Assets</span></a>
                </li>
@@ -219,7 +220,7 @@
                <li className={pathname.includes('knowledgebase') ?"active" :""}> 
                  <a href="/app/administrator/knowledgebase"><i className="la la-question" /> <span>Knowledgebase</span></a>
                </li> */}
-               <li className="submenu">
+              {/* <li className="submenu">
                  <a href="#"><i className="la la-user" /> <span> Profile </span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
                    <li><a className={pathname.includes('profile/employee-') ?"active" :""} href="/app/profile/employee-profile"> Employee Profile </a></li>
@@ -234,7 +235,7 @@
                </li>
                <li> 
                  <a href="/settings/companysetting"><i className="la la-cog" /> <span>Settings</span></a>
-               </li>
+              </li> */}
                {/* <li className="menu-title"> 
                  <span>Pages</span>
                </li> */}

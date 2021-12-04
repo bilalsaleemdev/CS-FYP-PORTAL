@@ -10,7 +10,7 @@ import {
 import { Input, Button } from "reactstrap";
 const CompletedTasks = () => {
   const cancelTokenSource = axios.CancelToken.source();
-
+  const EmployeeId = localStorage.getItem('user_id');
   const [selectedProject, setSelectedProject] = useState("");
   const [projectTask, setProjectTask] = useState([]);
   const [userProjectList, setUserProjectList] = useState([]);
@@ -29,7 +29,7 @@ const CompletedTasks = () => {
 
   const getEmployeeAllProject = async () => {
     console.log("sarting");
-    const res = await getAllProjectOfEmployee(20, cancelTokenSource.token);
+    const res = await getAllProjectOfEmployee(EmployeeId, cancelTokenSource.token);
     console.log("sdasdasd", res.data);
     if (res.success == true) {
       setUserProjectList(res.data);
@@ -58,7 +58,7 @@ const CompletedTasks = () => {
                 <li className="breadcrumb-item">
                   <a href="/app/main/dashboard">Dashboard</a>
                 </li>
-                <li className="breadcrumb-item active">Task Board</li>
+                <li className="breadcrumb-item active">Completed Tasks</li>
               </ul>
             </div>
           </div>
@@ -68,7 +68,7 @@ const CompletedTasks = () => {
           <div className="row">
             <div className="col-sm-6">
               <div className="form-group">
-                <label>Project </label>
+                <label>Choose Project</label>
                 <Input
                   type="select"
                   value={selectedProject}
@@ -82,7 +82,7 @@ const CompletedTasks = () => {
                   }}
                   id="exampleSelect"
                 >
-                  <option value=""> Select Project</option>
+                  <option value="">Select Project</option>
                   {userProjectList.map((item, index) => {
                     return (
                       <option key={item.id} value={item.id}>
@@ -103,7 +103,7 @@ const CompletedTasks = () => {
                 return (
                   <div>
                     {item.task_status === 1 ? (
-                      <div  key={item.id} className="kanban-list kanban-success">
+                      <div  key={item.id} style={{marginRight:'15px'}} className="kanban-list kanban-success">
                         <div className="kanban-header">
                           <span className="status-title">Completed</span>
                         </div>

@@ -102,13 +102,13 @@ const Loginpage = () => {
             <div className="account-box">
               <div className="account-wrapper">
                 <h3 className="account-title">Login</h3>
-                <p className="account-subtitle">Access to our dashboard</p>
+                <p className="account-subtitle">Access to Your Dashboard</p>
                 {/* Account Form */}
                 <form>
                   <div className="form-group">
                     <label for="email" >Email Address</label>
                     <input
-                      placeholder="EMAIL"
+                      placeholder="Enter Email"
                       type="email" 
                       id="email" 
                       name="email"
@@ -130,7 +130,7 @@ const Loginpage = () => {
                     </div>
                     <input
                       className="form-control"
-                      placeholder="PASSWORD"
+                      placeholder="Enter Password"
                       type="password"
                       
                       onChange={(e) => setPassword(e.target.value)}

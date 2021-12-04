@@ -175,7 +175,7 @@ const EmployeeProfile = () => {
       setOpenCreateProfile(true);
       setOpen(true);
 
-      console.log("  data awaiss ", response);
+      console.log("data awaiss", response);
     } else {
       console.log("Failed Response", response);
     }
@@ -268,7 +268,7 @@ const EmployeeProfile = () => {
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
               Hey!
-              Your Profile created successfully..!
+              Your Profile Created Successfully. Best of Luck!
             </DialogContentText>
           </DialogContent>
           <DialogActions>
@@ -669,7 +669,7 @@ const EmployeeProfile = () => {
                       <a href="/app/main/dashboard">Dashboard</a>
                     </li>
                     <li className="breadcrumb-item active">
-                      You don't have profile yet
+                      Profile is Incomplete
                     </li>
                   </ul>
                 </div>
@@ -686,7 +686,7 @@ const EmployeeProfile = () => {
                       <div className="row">
                         <div className="col-md-12">
                           <h3 className="user-name m-t-0 mb-0">
-                            Please Create Your Profile
+                            Please Complete your Profile
                           </h3>
                           <button
                             data-target="#profile_info"
@@ -694,7 +694,7 @@ const EmployeeProfile = () => {
                             className="btn btn-secondary"
                             href="#"
                           >
-                            create Profile
+                            Create Profile
                           </button>
                         </div>
                       </div>
@@ -737,7 +737,7 @@ const EmployeeProfile = () => {
                               alt="user"
                             />
                             <div className="fileupload btn">
-                              <span className="btn-text">upload</span>
+                              <span className="btn-text">Upload</span>
                               <input className="upload" type="file" />
                             </div>
                           </div>

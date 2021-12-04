@@ -119,7 +119,7 @@ class Sidebar extends Component {
                           ? "active"
                           : ""
                       }
-                      href="/app/projects/project_dashboard"
+                      href="/app/main/submit-task"
                     >
                       Pending Tasks
                     </a>
