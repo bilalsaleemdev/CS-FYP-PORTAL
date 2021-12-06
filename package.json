@@ -22,6 +22,7 @@
     "js/**/*.js"
   ],
   "dependencies": {
+    "@date-io/date-fns": "^1.3.13",
     "@emotion/react": "^11.7.0",
     "@emotion/styled": "^11.6.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
@@ -35,7 +36,9 @@
     "@fullcalendar/timegrid": "^5.2.0",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/pickers": "^3.3.10",
     "@mui/material": "^5.2.1",
+    "DatePicker": "^2.0.0",
     "antd": "^4.5.2",
     "axios": "^0.21.1",
     "bootstrap": "^4.5.0",

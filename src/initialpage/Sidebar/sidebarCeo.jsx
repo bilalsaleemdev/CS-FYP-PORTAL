@@ -36,7 +36,6 @@
                    <span> Approve Request</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
                    <li><a className={pathname.includes('/main/approve-request') ?"active" :""} href="/app/main/approve-request">Approve Requests</a></li>
-                   <li><a className={pathname.includes('main/employee-') ?"active" :""} href="/app/main/employee-dashboard">Approve Request</a></li>
                  </ul>
                </li>
 
