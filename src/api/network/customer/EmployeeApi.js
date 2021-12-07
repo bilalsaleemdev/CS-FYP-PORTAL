@@ -567,3 +567,17 @@ export const projectConferenceUpdate = async (projectId,data,cancelToken) => {
         return {error:error};
     }
 };
+
+
+//delete Project by id
+
+export const deleteProjectById = async (project_id,cancelToken) => {    
+    const url = `delete-project/${project_id}`;    
+    const request = { type: 'DELETE', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};

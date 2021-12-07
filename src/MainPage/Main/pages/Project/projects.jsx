@@ -22,6 +22,7 @@ import {
   getEmployeeUserAPI,
   updateProjectAPI,
   getUserProjectAPI,
+  deleteProjectById
 } from "../../../../api/network/customer/EmployeeApi";
 
 import MenuItem from "@mui/material/MenuItem";
@@ -43,6 +44,7 @@ const MenuProps = {
 };
 
 const Projects = (props) => {
+  const [selectedWorkShopId, setSelectedWorkShopId] = useState();
   const cancelTokenSource = axios.CancelToken.source();
   const [employeelUser, setEmployeeUser] = useState([]);
   const [userProjectList, setUserProjectList] = useState([]);
@@ -92,6 +94,7 @@ const Projects = (props) => {
       cancelTokenSource.token
     );
     if (response.success == true) {
+      console.log('ahtasham', response.data)
       setUserProjectList(response.data);
     }
   };
@@ -100,6 +103,21 @@ const Projects = (props) => {
     if (response.success == true) {
       setEmployeeUser(response.data);
       getEnployeeName(response.data)
+    }
+  };
+
+  const deleteSerVal = (id) => {
+    console.log('ahtasham',id)
+    setSelectedWorkShopId(id);
+  };
+  const deleteProjectApi = async () => {
+    const response = await deleteProjectById(
+      selectedWorkShopId,
+      cancelTokenSource.token
+    );
+    if (response.success == true) {
+      console.log("Data::", response.data.id);
+      // getUserWorkshopes();
     }
   };
 
@@ -241,6 +259,7 @@ const Projects = (props) => {
                         </a>
                         <a
                           className="dropdown-item"
+                          onClick={() => deleteSerVal(item.project.id)}
                           href="#"
                           data-toggle="modal"
                           data-target="#delete_project"
@@ -258,7 +277,7 @@ const Projects = (props) => {
                           })
                         }
                       >
-                        {item.project.name}
+                        {item.id}
                       </a>
                     </h4>
 
@@ -599,7 +618,7 @@ const Projects = (props) => {
               <div className="modal-btn delete-action">
                 <div className="row">
                   <div className="col-6">
-                    <a href="" className="btn btn-primary continue-btn">
+                    <a href="" className="btn btn-primary continue-btn" onClick={() => deleteProjectApi()}>
                       Delete
                     </a>
                   </div>
