@@ -231,13 +231,16 @@ export const createProjectAPI = async (data,cancelToken) => {
     }
 };
 
-export const getEmployeeUserAPI = async (user_id,cancelToken) => {    
+export const getEmployeeUserAPI = async (cancelToken) => {  
+    console.log('from all employee user');  
     const url = `employees-users`    
     const request = { type: 'GET', urlString: url };
     try {
+        console.log('from all employee user in try');  
          const response = await processRequest(request, cancelToken); 
         return response.data;
     } catch (error) { 
+        console.log('from all employee user in error')
         return {error:error};
     }
 };

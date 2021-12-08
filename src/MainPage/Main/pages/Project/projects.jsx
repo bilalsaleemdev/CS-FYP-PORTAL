@@ -230,6 +230,7 @@ const Projects = (props) => {
         {/* /Page Header */}
         {/* Search Filter */}
         <div className="row">
+        
           {userProjectList.map((item, index) => {
             return (
               <div
@@ -274,10 +275,12 @@ const Projects = (props) => {
                           history.push({
                             pathname: "/app/projects/projects-view",
                             state: item,
+                        
                           })
                         }
                       >
-                        {item.id}
+                      {console.log('awaisitem',item)}
+                        {item.project.name}
                       </a>
                     </h4>
 
@@ -410,7 +413,8 @@ const Projects = (props) => {
                     </div>
                   </div>
                   <div className="col-sm-6">
-                    <FormControl sx={{ m: 1, width: 300 }}>
+                    <FormControl sx={{ m: 1, width: 300  }}>
+                    
                       <InputLabel id="demo-multiple-checkbox-label">
                         Employees
                       </InputLabel>
@@ -529,8 +533,49 @@ const Projects = (props) => {
                     </div>
                   </div>
                   <div className="col-sm-6">
+                  <FormControl sx={{ m: 1, width: 300  }}>
+                  {
+                    console.log('personname',personName)
+                  }
+                    <InputLabel id="demo-multiple-checkbox-label">
+                      Employees
+                    </InputLabel>
+                    <Select
+                      labelId="demo-multiple-checkbox-label"
+                      id="demo-multiple-checkbox"
+                      multiple
+                      value={editListOfNames}
+                      onChange={(e) => {
+                        const employee = e.target.value;
+                        if (employee) {
+                          let name = [];
+                          let id = [];
+                          employee.map((item, index) => {
+                            name.push(item.name);
+                            id.push(item.id);
+                          });
+                          setEditListOfIds(id);
+                          setEditListOfNames(name);
+                        }
+                      }}
+                      input={<OutlinedInput label="Tag" />}
+                      renderValue={(selected) => selected.join(", ")}
+                      MenuProps={MenuProps}
+                    >
+                      {names.map((name) => (
+                        <MenuItem key={name} value={name}>
+                          <Checkbox checked={personName.indexOf(name) > -1} />
+                          <ListItemText primary={name} />
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                  
+                </div>
+                  <div className="col-sm-6">
                     <div className="form-group">
                       <label>Employee</label>
+                      {console.log('ssasasa', editListOfNames)}
                       <div>
                         <Select
                           labelId="demo-multiple-checkbox-label"
