@@ -336,7 +336,8 @@ export const putTaskApi = async (id, data,cancelToken) => {
     }
 };
 export const updateProjectAPI = async (id ,data, cancelToken) => {    
-    const url = `project/${id}`;    
+    const url = `project/${id}`;
+    console.log('awais bhai checking api',data);    
     const request = { type: 'PUT', urlString: url, params: data };
     try {
          const response = await processRequest(request, cancelToken); 
@@ -446,7 +447,18 @@ export const getAllBadgesEmployees = async (cancelToken) => {
     }
 };
 
+export const getAllTaskManager = async (emloyee_Id,cancelToken) => {   
 
+    const url = `task/${emloyee_Id}`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All Employee request', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
 //Put user profile pic api
 
 // export const ProfilePicPutApi = async (user_id, profile_pic,cancelToken) => {    

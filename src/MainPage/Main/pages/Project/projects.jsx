@@ -80,6 +80,8 @@ const Projects = (props) => {
     };
     const response = await createProjectAPI(data, cancelTokenSource.token);
     if (response.success == true) {
+      $("#create_project").modal("hide");
+      window.location.reload();
     }
   };
 
@@ -88,6 +90,9 @@ const Projects = (props) => {
     getUserProject();
   }, []);
 
+  useEffect(() => {
+   
+  }, [userProjectList])
   const getUserProject = async () => {
     const response = await getUserProjectAPI(
       localStorage.getItem("user_id"),
@@ -181,6 +186,14 @@ const Projects = (props) => {
     );
   };
 
+  const isSelected = (name)=>{
+
+    console.log(
+      
+      "test1",name);
+    return (name == "testing")  ;
+  }
+
   return (
     <div className="page-wrapper">
       <Helmet>
@@ -249,7 +262,8 @@ const Projects = (props) => {
                         <i className="material-icons">more_vert</i>
                       </a>
                       <div className="dropdown-menu dropdown-menu-right">
-                        <a
+                      
+                        {/*   <a
                           className="dropdown-item"
                           onClick={() => setEditModal(item)}
                           href="#"
@@ -257,7 +271,7 @@ const Projects = (props) => {
                           data-target="#edit_project"
                         >
                           <i className="fa fa-pencil m-r-5" /> Edit
-                        </a>
+                        </a>*/}
                         <a
                           className="dropdown-item"
                           onClick={() => deleteSerVal(item.project.id)}
@@ -463,7 +477,7 @@ const Projects = (props) => {
                     }
                     className="btn-primary "
                   >
-                    Submit
+                    Create Project
                   </Button>
                 </div>
               </form>
@@ -545,6 +559,7 @@ const Projects = (props) => {
                       id="demo-multiple-checkbox"
                       multiple
                       value={editListOfNames}
+                      selected={editListOfNames}
                       onChange={(e) => {
                         const employee = e.target.value;
                         if (employee) {
@@ -564,7 +579,7 @@ const Projects = (props) => {
                     >
                       {names.map((name) => (
                         <MenuItem key={name} value={name}>
-                          <Checkbox checked={personName.indexOf(name) > -1} />
+                          <Checkbox checked={isSelected(name)}   />
                           <ListItemText primary={name} />
                         </MenuItem>
                       ))}
