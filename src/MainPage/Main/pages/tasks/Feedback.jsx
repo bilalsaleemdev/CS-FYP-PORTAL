@@ -41,14 +41,22 @@ const Projects = () => {
   };
 
   const updateRating = async (item, rating) => {
+    console.log('ssss 44', item)
     const data = {
       priority: item.priority,
       task_type: item.task_type,
-      deadline: moment(item.deadline).format("YYYY-MM-DD"),
+      deadline: item.deadline,
       employee_id: item.employee_id,
       project_id: item.project_id,
       rating: rating,
-      task_status: item.task_status
+      task_status: item.task_status,
+      justification: item.justification,
+      notifications: item.notifications,
+      description: item.description
+
+
+      
+
     };
     const response = await putTaskApi(item.id, data, cancelTokenSource.token);
     if (response.success == true) {
@@ -128,8 +136,8 @@ const Projects = () => {
                     if(item.task_status == 1){
                       return (
                         <tr key={item.id}>
-                          <td>{item.project_id}</td>
-                          <td> {item.employee_id} </td>
+                          <td>{item.project_name}</td>
+                          <td> {item.employee_name} </td>
                           <td>{item.priority}</td>
   
                           <td>{moment(item.created_at).format("DD MM YYYY")}</td>

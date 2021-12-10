@@ -22,6 +22,7 @@ import moment from "moment";
 import axios from "axios";
 import {
   getEmployeeUserAPI,
+  getUserById,
   updateProjectAPI,
 } from "../../../api/network/customer/EmployeeApi";
 
@@ -42,6 +43,8 @@ const Projects = (props) => {
   const [forData, setForData] = useState(false);
   const [stringEmployee, setStringEmployee] = useState("");
   const [open, setOpen] = useState(false);
+  const [managerImage, setManagerImage] = useState("");
+  const user_id_local = localStorage.getItem("user_id");
 
   useEffect(() => {
     console.log("awais bhai checking start created", editStart_at);
@@ -114,10 +117,28 @@ const Projects = (props) => {
     setOpen(true);
     // updateProject();
   };
-  // useEffect(() => {
-  //   console.log('awais bhai useEffect',ProjectData)
-  // }, [ProjectData])
+ 
 
+  const getUserIdFromApi = async (user_id_local) => {
+    console.log("12121212");
+
+    const response = await getUserById(user_id_local, cancelTokenSource.token);
+    console.log("my project user", response);
+ 
+    setManagerImage(response.user.image_url);
+
+    if (response.success == true) {
+      console.log("awais ch", response.user.type);
+
+      // setImageCondition(response.user.image_url);
+      // setNameCeo(response.user.type);
+      // console.log(taskData, "awais data for all task");
+    }
+    // console.log(taskData, "awais data for all task");
+  };
+  useEffect(() => {
+    getUserIdFromApi();
+  }, [user_id_local])
   const getData = () => {
     console.log("awais bhai 0", props.history.location.state.project);
     setEditUserProjectId(props.history.location.state.project.user_id);
@@ -234,7 +255,7 @@ const Projects = (props) => {
                     <small className="block text-ellipsis m-b-15">
                       <span className="text-xs">
                         {
-                          projectData?.project?.task?.filter(
+                          projectData?.task?.filter(
                             (x) => x.task_status === 0
                           )?.length
                         }{" "}
@@ -242,8 +263,9 @@ const Projects = (props) => {
                       <span className="text-muted">open tasks, </span>
                       <span className="text-xs">
                         {" "}
+                        {console.log('aaaaaaaaaaaaaaaaaaa',projectData.task)}
                         {
-                          projectData?.project?.task?.filter(
+                          projectData?.task?.filter(
                             (x) => x.task_status === 1
                           )?.length
                         }
