@@ -111,6 +111,7 @@ const Projects = () => {
       task_type: editTaskType,
       priority: editPriority,
       task_status: 0,
+      description:editdescription
 
     };
     const response = await updateTaskAPI(
@@ -434,9 +435,7 @@ const Projects = () => {
                           </td>
                         </tr>
                       );
-                    } else {
-                      return <p>No data Available</p>;
-                    }
+                    } 
                   })}
                 
                 </tbody>

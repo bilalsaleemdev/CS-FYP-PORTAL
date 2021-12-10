@@ -12,10 +12,17 @@ import "react-summernote/dist/react-summernote.css"; // import styles
 
 import "../../../index.css";
 import moment from "moment";
+import Dialog from "@material-ui/core/Dialog";
+import Button from "@material-ui/core/Button";
 
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 const Projects = () => {
   const cancelTokenSource = axios.CancelToken.source();
   const [taskList, setTaskList] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     getTask();
@@ -26,6 +33,11 @@ const Projects = () => {
     if (response.success == true) {
       setTaskList(response.data);
     }
+  };
+
+  const handleCloseSubmitResponse = () => {
+    setOpen(false);
+    setEditOpen(false);
   };
 
   const updateRating = async (item, rating) => {
@@ -41,11 +53,40 @@ const Projects = () => {
     const response = await putTaskApi(item.id, data, cancelTokenSource.token);
     if (response.success == true) {
       getTask();
+      setOpen(true);
     }
   };
 
   return (
     <div className="page-wrapper">
+    {open && (
+      <Dialog
+        open={open}
+        onClose={handleCloseSubmitResponse}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Confirmation message"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Feedback Added Successfully..!
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          
+          <Button
+            style={{ marginRight: "130" }}
+            onClick={handleCloseSubmitResponse}
+            color="primary"
+            autoFocus
+          >
+            Ok
+          </Button>
+        </DialogActions>
+      </Dialog>
+    )}
       <Helmet>
         <title>Projects - HRMS Admin Template</title>
         <meta name="description" content="Login page" />
@@ -71,8 +112,8 @@ const Projects = () => {
               <table className="table table-striped custom-table ">
                 <thead>
                   <tr>
-                    <th>Project</th>
-                    <th> Employee </th>
+                    <th>Project Name</th>
+                    <th> Employee Name </th>
                     <th>Priority</th>
                     <th>Assign Date</th>
                     <th>Deadline</th>
@@ -82,31 +123,34 @@ const Projects = () => {
                   </tr>
                 </thead>
                 <tbody>
+                {console.log('sssss',taskList )}
                   {taskList.map((item, index) => {
-                    return (
-                      <tr key={item.id}>
-                        <td>{item.project_id}</td>
-                        <td> {item.employee_id} </td>
-                        <td>{item.priority}</td>
-
-                        <td>{moment(item.created_at).format("DD MM YYYY")}</td>
-                        <td>{moment(item.deadline).format("DD MM YYYY")}</td>
-
-                        <td> {item.task_status ? "Completed" : "Pending"} </td>
-
-                        <td>
-                          <ReactStars
-                            count={5}
-                            onChange={(newRating) => {
-                              updateRating(item, newRating);
-                            }}
-                            value={item.rating}
-                            size={24}
-                            activeColor="#ffd700"
-                          />
-                        </td>
-                      </tr>
-                    );
+                    if(item.task_status == 1){
+                      return (
+                        <tr key={item.id}>
+                          <td>{item.project_id}</td>
+                          <td> {item.employee_id} </td>
+                          <td>{item.priority}</td>
+  
+                          <td>{moment(item.created_at).format("DD MM YYYY")}</td>
+                          <td>{moment(item.deadline).format("DD MM YYYY")}</td>
+  
+                          <td> {item.task_status ? "Completed" : "Pending"} </td>
+  
+                          <td>
+                            <ReactStars
+                              count={5}
+                              onChange={(newRating) => {
+                                updateRating(item, newRating);
+                              }}
+                              value={item.rating}
+                              size={24}
+                              activeColor="#ffd700"
+                            />
+                          </td>
+                        </tr>
+                      );
+                    }
                   })}
                 </tbody>
               </table>
