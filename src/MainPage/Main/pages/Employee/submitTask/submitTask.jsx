@@ -191,56 +191,53 @@ const SubmitTask = (props) => {
         <div className="card-body">
           <div className="kanban-cont">
         
-           {data ? ( 
-            pendingTask.map((item, index) => {
-              return(
-                <div>
-                  {item.task_status === 0 ? (
-                    <div  key={item.id} style={{marginRight:'15px'}} className="kanban-list kanban-danger">
-                    <div className="kanban-header">
-                      <span className="status-title">Pending</span>
-                      <div   style={{ width:'62%' , marginRight:'-93px'  }} className="dropdown kanban-action">
-                        <a href="" data-toggle="dropdown" style={{ fontSize:'10px', width:'50%'}}>
-                          Submit Task
-                        </a>
-                        <div className="dropdown-menu dropdown-menu-right">
-                          <a className="dropdown-item" href="#" data-toggle="modal"  onClick={() => setTaskEditModal(item)} data-target="#edit_task_modal">Submit</a>
-                         
-                        </div>
+       {   pendingTask.map((item, index) => {
+            
+            return(
+              <div>
+                {item.task_status === 0 ? (
+                  <div  key={item.id} style={{marginRight:'15px'}} className="kanban-list kanban-danger">
+                  <div className="kanban-header">
+                    <span className="status-title">Pending</span>
+                    <div   style={{ width:'62%' , marginRight:'-93px'  }} className="dropdown kanban-action">
+                      <a href="" data-toggle="dropdown" style={{ fontSize:'10px', width:'50%'}}>
+                        Submit Task
+                      </a>
+                      <div className="dropdown-menu dropdown-menu-right">
+                        <a className="dropdown-item" href="#" data-toggle="modal"  onClick={() => setTaskEditModal(item)} data-target="#edit_task_modal">Submit</a>
+                       
                       </div>
                     </div>
-                    <div className="kanban-wrap">
-                   
-                      <div className="card panel">
-                        <div className="kanban-box">
-                          <div className="task-board-header">
-                            <span className="status-title"><a href="task-view.html">{item.description}</a></span>
-                           
-                          </div>
-                          <div className="task-board-body">
-                            
-                            <div className="kanban-footer">
-                              <span className="task-info-cont">
-                                <span style={{fontWeight:'900'}} className="task-date"><i className="fa fa-clock-o" /><b> Start at:{moment(item.created_at).format("MMM Do YYYY, h:mm:ss")}</b></span>
-                                <span style={{fontWeight:'900'}} className="task-date"><i className="fa fa-clock-o" /><b> Deadline:{moment(item.deadline).format("MMM Do YYYY, h:mm:ss")}</b></span>
-                                <span className="task-priority badge bg-inverse-warning">{item.priority}</span>
-                              </span>
-                            
-                            </div>
+                  </div>
+                  <div className="kanban-wrap">
+                 
+                    <div className="card panel">
+                      <div className="kanban-box">
+                        <div className="task-board-header">
+                          <span className="status-title"><a href="task-view.html">{item.description}</a></span>
+                         
+                        </div>
+                        <div className="task-board-body">
+                          
+                          <div className="kanban-footer">
+                            <span className="task-info-cont">
+                              <span style={{fontWeight:'900'}} className="task-date"><i className="fa fa-clock-o" /><b> Start at:{moment(item.created_at).format("MMM Do YYYY, h:mm:ss")}</b></span>
+                              <span style={{fontWeight:'900'}} className="task-date"><i className="fa fa-clock-o" /><b> Deadline:{moment(item.deadline).format("MMM Do YYYY, h:mm:ss")}</b></span>
+                              <span className="task-priority badge bg-inverse-warning">{item.priority}</span>
+                            </span>
+                          
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  ): <div>
-                    All tasks are completed by you. Great Job!
-                  </div>}
                 </div>
-              );
-            })
-          ): <div>
-            No Task Available
-          </div>}
+                ): <div>
+                  All tasks are completed by you. Great Job!
+                </div>}
+              </div>
+            );
+          })}
 
             {/* 2nd section */}
            

@@ -93,7 +93,7 @@ class LeaveReport extends Component {
           {/* Page Wrapper */}
           <div className="page-wrapper">
             <Helmet>
-                <title>Leave Report - HRMS Admin Template</title>
+                <title>Leave Report - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
             {/* Page Content */}

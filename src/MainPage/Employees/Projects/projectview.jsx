@@ -519,60 +519,8 @@ const Projects = (props) => {
                 </ul>
               </div>
 
-              <div>
-                <ul className="chat-user-list">
-                  <li>
-                    <a href="#">
-                      <div className="media">
-                        <span className="avatar">
-                          <img alt="" src={Avatar_09} />
-                        </span>
-                        <div className="media-body align-self-center text-nowrap">
-                          <div
-                            className="user-name"
-                            onClick={() => handleIdsChange()}
-                          >
-                            Richard Miles
-                          </div>
-                          <span className="designation">Web Developer</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div className="media">
-                        <span className="avatar">
-                          <img alt="" src={Avatar_10} />
-                        </span>
-                        <div
-                          onClick={() => updateProject()}
-                          className="media-body align-self-center text-nowrap"
-                        >
-                          <div className="user-name">John Smith</div>
-                          <span className="designation">Android Developer</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div className="media">
-                        <span className="avatar">
-                          <img alt="" src={Avatar_16} />
-                        </span>
-                        <div className="media-body align-self-center text-nowrap">
-                          <div className="user-name">Jeffery Lalor</div>
-                          <span className="designation">Team Leader</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="submit-section">
-                <button className="btn btn-primary submit-btn">Submit</button>
-              </div>
+           
+             
             </div>
           </div>
         </div>

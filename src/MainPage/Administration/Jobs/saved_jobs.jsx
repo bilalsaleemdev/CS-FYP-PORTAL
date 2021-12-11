@@ -99,7 +99,7 @@
          {/* Page Wrapper */}
          <div className="page-wrapper">
               <Helmet>
-                  <title>Saved Jobs - HRMS Admin Template</title>
+                  <title>Saved Jobs - Gamified Employee Portal</title>
                   <meta name="description" content="Login page"/>					
               </Helmet>
            {/* Page Content */}

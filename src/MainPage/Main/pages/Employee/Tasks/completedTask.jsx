@@ -45,7 +45,7 @@ const CompletedTasks = () => {
   return (
     <div className="page-wrapper">
       <Helmet>
-        <title>awais Task Board our</title>
+        <title>Completed Task</title>
         <meta name="description" content="Login page" />
       </Helmet>
       {/* Page Content */}

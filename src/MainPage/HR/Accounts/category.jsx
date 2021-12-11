@@ -55,7 +55,7 @@ class Category extends Component {
         {/* Page Wrapper */}
         <div className="page-wrapper">
             <Helmet>
-                <title>Categories - HRMS Admin Template</title>
+                <title>Categories - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
           {/* Page Content */}

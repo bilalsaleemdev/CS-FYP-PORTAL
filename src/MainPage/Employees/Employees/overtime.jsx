@@ -104,7 +104,7 @@ render() {
       return (         
       <div className="page-wrapper">
         <Helmet>
-            <title>Overtime - HRMS Admin Template</title>
+            <title>Overtime - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
       {/* Page Content */}

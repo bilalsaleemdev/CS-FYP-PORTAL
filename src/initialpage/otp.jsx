@@ -13,7 +13,7 @@ class OTPscreen extends Component {
       return ( 
       <div className="main-wrapper">
           <Helmet>
-               <title>OTP - HRMS Admin Template</title>
+               <title>OTP - Gamified Employee Portal</title>
                <meta name="description" content="Login page"/>					
          </Helmet>
       <div className="account-content">

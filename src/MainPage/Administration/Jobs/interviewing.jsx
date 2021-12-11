@@ -15,7 +15,7 @@
          {/* Page Wrapper */}
          <div className="page-wrapper">
               <Helmet>
-                  <title>Interviewing - HRMS Admin Template</title>
+                  <title>Interviewing - Gamified Employee Portal</title>
                   <meta name="description" content="Login page"/>					
               </Helmet>
            {/* Page Content */}

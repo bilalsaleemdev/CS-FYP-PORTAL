@@ -12,7 +12,7 @@ class ChatPage extends Component {
       return (
          <div className="page-wrapper">
             <Helmet>
-               <title>Chat - HRMS Admin Template</title>
+               <title>Chat - Gamified Employee Portal</title>
                <meta name="description" content="Chat"/>					
          </Helmet>
       {/* Chat Main Row */}

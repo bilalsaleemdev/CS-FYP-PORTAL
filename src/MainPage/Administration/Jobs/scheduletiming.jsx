@@ -75,7 +75,7 @@
          {/* Page Wrapper */}
          <div className="page-wrapper">
             <Helmet>
-                  <title>Schedule timing - HRMS Admin Template</title>
+                  <title>Schedule timing - Gamified Employee Portal</title>
                   <meta name="description" content="Login page"/>					
             </Helmet>
            {/* Page Content */}

@@ -97,6 +97,7 @@ const Workshopes = () => {
     if (response.success == true) {
       console.log("Data::", response.data.id);
       getUserWorkshopes();
+      window.location.reload();
     }
   };
   const deleteWorkShope = async () => {
@@ -151,6 +152,7 @@ const Workshopes = () => {
     setOpen(false);
     //  window.location.reload();
     $("#create_project").modal("hide");
+    window.location.reload();
    
   };
 

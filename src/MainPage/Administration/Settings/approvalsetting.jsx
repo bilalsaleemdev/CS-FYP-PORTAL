@@ -13,7 +13,7 @@
         {/* Page Wrapper */}
         <div className="page-wrapper">
             <Helmet>
-                <title>Approval Settings - HRMS Admin Template</title>
+                <title>Approval Settings - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
           <div className="content container-fluid">

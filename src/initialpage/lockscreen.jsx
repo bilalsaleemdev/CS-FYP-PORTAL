@@ -13,7 +13,7 @@ class Lockscreen extends Component {
       return (
         <div className="main-wrapper">
             <Helmet>
-               <title>Lockscreen - HRMS Admin Template</title>
+               <title>Lockscreen - Gamified Employee Portal</title>
                <meta name="description" content="Login page"/>					
              </Helmet>
           <div className="account-content">

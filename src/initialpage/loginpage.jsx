@@ -86,7 +86,7 @@ const Loginpage = () => {
       />}
       <div className="main-wrapper">
         {/* <Helmet>
-               <title>Login - HRMS Admin Template</title>
+               <title>Login - Gamified Employee Portal</title>
                <meta name="description" content="Login page"/>					
          </Helmet> */}
         <div className="account-content">

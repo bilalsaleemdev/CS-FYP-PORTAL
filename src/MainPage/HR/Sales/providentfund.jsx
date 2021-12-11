@@ -80,7 +80,7 @@ render() {
         
       <div className="page-wrapper">
         <Helmet>
-            <title>Provident Fund - HRMS Admin Template</title>
+            <title>Provident Fund - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
       {/* Page Content */}

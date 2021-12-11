@@ -107,6 +107,10 @@ const Registrationpage = () => {
       setOpenSuccess(true);
       console.log("awais api");
       console.log("awais res", response);
+      formik.values.name='';
+      formik.values.email='';
+      formik.values.type='employee';
+      formik.values.password='';
       // history.push("/login");
     } else {
       setDuplicateMessage(true)

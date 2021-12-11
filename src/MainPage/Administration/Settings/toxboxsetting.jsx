@@ -14,7 +14,7 @@
         {/* Page Wrapper */}
         <div className="page-wrapper">
             <Helmet>
-                <title>ToxBox Setting - HRMS Admin Template</title>
+                <title>ToxBox Setting - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
           <div className="content container-fluid">

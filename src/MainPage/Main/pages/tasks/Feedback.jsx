@@ -96,7 +96,7 @@ const Projects = () => {
       </Dialog>
     )}
       <Helmet>
-        <title>Projects - HRMS Admin Template</title>
+        <title>Projects - Gamified Employee Portal</title>
         <meta name="description" content="Login page" />
       </Helmet>
       <div className="content container-fluid">

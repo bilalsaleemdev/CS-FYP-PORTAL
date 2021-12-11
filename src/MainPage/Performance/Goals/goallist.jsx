@@ -107,7 +107,7 @@ class GoalTracking extends Component {
       return ( 
             <div className="page-wrapper">
                   <Helmet>
-                      <title>Goal - HRMS Admin Template</title>
+                      <title>Goal - Gamified Employee Portal</title>
                       <meta name="description" content="Login page"/>					
                   </Helmet>
                   {/* Page Content */}

@@ -9,7 +9,7 @@ class Holidays extends Component {
         
       <div className="page-wrapper"> 
       <Helmet>
-          <title>Holidays - HRMS Admin Template</title>
+          <title>Holidays - Gamified Employee Portal</title>
           <meta name="description" content="Login page"/>					
       </Helmet>
       {/* Page Content */}

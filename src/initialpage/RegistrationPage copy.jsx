@@ -55,7 +55,7 @@ class Registrationpage extends Component {
             
             <div className="main-wrapper">
               <Helmet>
-                  <title>Register - HRMS Admin Template</title>
+                  <title>Register - Gamified Employee Portal</title>
                   <meta name="description" content="Login page"/>					
             </Helmet> 
         <div className="account-content">

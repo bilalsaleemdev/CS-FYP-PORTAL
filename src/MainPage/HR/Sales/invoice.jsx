@@ -85,7 +85,7 @@ class Invoices extends Component {
         
       <div className="page-wrapper"> 
         <Helmet>
-            <title>Invoices - HRMS Admin Template</title>
+            <title>Invoices - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
       {/* Page Content */}

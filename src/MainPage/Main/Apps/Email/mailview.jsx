@@ -12,7 +12,7 @@ class MailView extends Component {
       return (
       <div className="page-wrapper">         
         <Helmet>
-            <title>Mail View - HRMS Admin Template</title>
+            <title>Mail View - Gamified Employee Portal</title>
             <meta name="description" content="Chat"/>					
         </Helmet>     
       {/* Page Content */}

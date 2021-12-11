@@ -197,7 +197,7 @@ const Projects = (props) => {
   return (
     <div className="page-wrapper">
       <Helmet>
-        <title>1Projects - HRMS Admin Template</title>
+        <title>1Projects - Gamified Employee Portal</title>
         <meta name="description" content="Login page" />
       </Helmet>
       {/* Page Content */}

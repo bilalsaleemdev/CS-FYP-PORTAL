@@ -10,7 +10,7 @@ export default class Blank extends Component {
 				
 				   <div className="page-wrapper">
 					   <Helmet>
-							<title>Blank - HRMS admin Template</title>
+							<title>Blank - Gamified Employee Portal</title>
 							<meta name="description" content="Reactify Blank Page" />
 						</Helmet>
 				   {/* Page Content */}

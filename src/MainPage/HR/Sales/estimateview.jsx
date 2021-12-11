@@ -8,7 +8,7 @@ class EstimatesView extends Component {
       return ( 
       <div className="page-wrapper">
         <Helmet>
-            <title>Estimates - HRMS Admin Template</title>
+            <title>Estimates - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>      
       {/* Page Content */}

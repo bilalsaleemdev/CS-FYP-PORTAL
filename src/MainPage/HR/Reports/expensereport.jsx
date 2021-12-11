@@ -98,7 +98,7 @@ class ExpenseReport extends Component {
         
       <div className="page-wrapper">
         <Helmet>
-            <title>Expense Report - HRMS Admin Template</title>
+            <title>Expense Report - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
       {/* Page Content */}

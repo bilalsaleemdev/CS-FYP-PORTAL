@@ -12,7 +12,7 @@ class Error404 extends Component {
       return (
          <div className="main-wrapper">
             <Helmet>
-                <title>Error 404 - HRMS Admin Template</title>
+                <title>Error 404 - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
          <div className="error-box">

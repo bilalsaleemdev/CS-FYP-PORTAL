@@ -4,6 +4,23 @@
 import React, { Component, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import axios, { CancelTokenSource } from "axios";
+// import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
+// import DatePicker from '@mui/lab/DatePicker';
+import DateFnsUtils from "@date-io/date-fns";
+import "./progress.css";
+
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+
+import {
+  KeyboardDatePicker,
+  MuiPickersUtilsProvider,
+  DatePicker,
+} from "@material-ui/pickers";
 import {
   Avatar_02,
   Avatar_05,
@@ -11,156 +28,210 @@ import {
   Avatar_10,
   Avatar_16,
 } from "../../../Entryfile/imagepath";
+import { useFormik } from "formik";
+import { Input } from "reactstrap";
 import {
-  ManagerProfileCreate,
+  ProfileCreate,
   getUserProfileAPI,
-  ProfilePicPutApi, getAllBadgesEmployees
+  ProfileEdit,
+  getUserById,
 } from "../../../api/network/customer/EmployeeApi";
-import Button from "@material-ui/core/Button";
+
 import Dialog from "@material-ui/core/Dialog";
+import { format } from "date-fns";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import InputBase from "@material-ui/core/InputBase";
-import { withStyles } from "@material-ui/core/styles";
+const initialValues = {
+  fname: "",
+  lname: "",
+  birthDate: format(new Date(), "yyyy-MM-dd"),
+  gender: "",
+  address: "",
+  country: "",
+  postal: "",
+  cnic: "",
+  phone: "",
+  address: "",
+};
 
-const styles = theme => ({
-  root: {
-    backgroundColor: theme.palette.background.paper,
-    width: 500,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "flex-end"
-  },
-  icon: {
-    margin: theme.spacing.unit * 2
-  },
-  iconHover: {
-    margin: theme.spacing.unit * 2,
-    "&:hover": {
-      color: red[800]
-    }
-  },
-  cardHeader: {
-    textalign: "center",
-    align: "center",
-    backgroundColor: "white"
-  },
-  input: {
-    display: "none"
-  },
-  title: {
-    color: blue[800],
-    fontWeight: "bold",
-    fontFamily: "Montserrat",
-    align: "center"
-  },
-  button: {
-    color: blue[900],
-    margin: 10
-  },
-  secondaryButton: {
-    color: "gray",
-    margin: 10
-  },
-  typography: {
-    margin: theme.spacing.unit * 2,
-    backgroundColor: "default"
-  },
-
-  searchRoot: {
-    padding: "2px 4px",
-    display: "flex",
-    alignItems: "center",
-    width: 400
-  },
-  searchInput: {
-    marginLeft: 8,
-    flex: 1
-  },
-  searchIconButton: {
-    padding: 10
-  },
-  searchDivider: {
-    width: 1,
-    height: 28,
-    margin: 4
-  }
-});
-
-
-
-import { badge1, badge2, badge3, badge4, badge5 } from "../../../Entryfile/imagepath.jsx"
-import { element } from "prop-types";
-
+const onSubmit = (values) => {
+  console.log("Form data", values);
+};
 
 const EmployeeProfile = () => {
-  // const { classes, theme } = props;
+  const [isEditOpen, setIsEditOpen] = useState(false);
   const [open, setOpen] = React.useState(false);
   const [userProfileData, setUserProfileData] = useState("");
   const [openCreataeProfile, setOpenCreateProfile] = useState(false);
-  const [image_url, setImage_url] = useState("");
-  const [picUrl, setPicUrl] = useState("");
+  const [department, setDepartment] = useState("");
+  const [cnic, setCnic] = useState("");
+
   const [user_id, Usetser_id] = useState(5);
-  const [userBadge, setUserBadge] = useState(1);
   const [email, setEmail] = useState("");
   const [first_name, setFirst_name] = useState("");
   const [last_name, setLast_name] = useState("");
   const [dob, setDob] = useState("2019-01-01");
-  const [gender, setGender] = useState("");
+  const [gender, setGender] = useState("male");
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState();
   const [country, setCountry] = useState("");
-  const [post, setPost] = useState("employee");
-  const [postalCode, setPostalCode] = useState("123");
+  const [post, setPost] = useState("Manager");
+  const [postalCode, setPostalCode] = useState("");
   const [submitResponse, setSubmitResponse] = useState(false);
-  const [profilePic, setProfilePic] = useState('http://localhost:5002/images/profile_pic_1636013308784.png')
-  const [projectData, setProjectData] = useState([]);
+  const [conditions, setConditions] = useState(true);
+  const [nameCeo, setNameCeo] = useState();
+  const [imageCondition, setImageCondition] = useState();
+  const [profilePic, setProfilePic] = useState(
+    "http://localhost:5002/images/profile_pic_1636013308784.png"
+  );
 
   const user_id_local = localStorage.getItem("user_id");
 
   const cancelTokenSource = axios.CancelToken.source();
-  useEffect(() => {
-    // ManagerProfileCreateApi();
-    getUserProfile(user_id_local);
-    // UserProfilePic();
-  }, []);
+  const bull = (
+    <Box
+      component="span"
+      sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
+    >
+      •
+    </Box>
+  );
+
+  const card = (
+    <React.Fragment>
+      <CardContent>
+        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          Word of the Day
+        </Typography>
+        <Typography variant="h5" component="div">
+          be{bull}nev{bull}o{bull}lent
+        </Typography>
+        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          adjective
+        </Typography>
+        <Typography variant="body2">
+          well meaning and kindly.
+          <br />
+          {'"a benevolent smile"'}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Learn More</Button>
+      </CardActions>
+    </React.Fragment>
+  );
   useEffect(() => {
     // ManagerProfileCreateApi();
     if (userProfileData) {
-      setProfilePic(userProfileData.image_url)
+      setProfilePic(userProfileData.image_url);
     }
     // UserProfilePic();
   }, [userProfileData]);
 
-  const UserProfilePic = async (file) => {
-    let formData = new FormData();
-    formData.append("profile_pic", file);    
-    axios.put(`http://localhost:5002/api/v1/upload/pic/${user_id_local}`, formData, {
-      headers: {
-        'Content-Type': file?.type
-      }
-    }).then(response => {
-      console.log("Image Upload Success ", response);
-      axios.defaults.headers['x-auth-token'] = token;
-      verifyDoc(customerFundDocumentId ? customerFundDocumentId : '');
-    }).catch(err => {
-      console.log("Image Upload Failed Response", err);      
-    })
-  }
+  useEffect(() => {
+    // ManagerProfileCreateApi();
+    getUserProfile(user_id_local);
+  }, []);
+  useEffect(() => {
+    getUserIdFromApi(user_id_local);
+  }, [nameCeo]);
+  const getUserIdFromApi = async () => {
+    console.log("12121212");
 
+    const response = await getUserById(user_id_local, cancelTokenSource.token);
+    console.log(response, "my project user");
+
+    if (response.success == true) {
+      console.log("awais", response.user.image_url);
+
+      setImageCondition(response.user.image_url);
+      setNameCeo(response.user.name);
+      // console.log(taskData, "awais data for all task");
+    }
+    // console.log(taskData, "awais data for all task");
+  };
+
+  //for profile picture
+  const handleUploadClick = (event) => {
+    var file = event.target.files[0];
+    let url = URL.createObjectURL(event.target.files[0]);
+    console.log(file); // Would see a path?
+    const reader = new FileReader();
+    console.log(url); // Would see a path?
+    setProfilePic(url);
+    UserProfilePic(file);
+  };
+
+  const validate = (values) => {
+    const errors = {};
+    if (
+      values.lname &&
+      values.phone &&
+      values.postal &&
+      values.address &&
+      values.cnic
+    ) {
+      setConditions(false);
+    }
+
+    if (!values.lname) {
+      errors.lname = "Required";
+      setConditions(true);
+    }
+    if (!values.address) {
+      errors.address = "Required";
+      setConditions(true);
+    }
+    if (!values.phone) {
+      errors.phone = "Required";
+      setConditions(true);
+    }
+    if (!values.cnic) {
+      errors.cnic = "Required";
+      setConditions(true);
+    } else if (!/^[0-9+]{5}-[0-9+]{7}-[0-9]{1}$/.test(values.cnic)) {
+      errors.cnic = "Invalid Cnic format Correct Format is xxxxx-xxxxxxx-x";
+      setConditions(true);
+    }
+    if (!values.postal) {
+      errors.postal = "Required";
+      setConditions(true);
+    }
+    if (!values.country) {
+      errors.country = "Required";
+      setConditions(true);
+    }
+    if (!values.birthDate) {
+      errors.birthDate = "Required";
+      setConditions(true);
+    }
+
+    return errors;
+  };
+  const formik = useFormik({
+    initialValues,
+    onSubmit,
+    validate,
+    // validationSchema
+  });
+
+  console.log("formik.touched", formik.values.gender);
   const handleCloseSubmitResponse = () => {
+    setIsEditOpen(false);
     setOpen(false);
     window.location.reload();
   };
-  const ManagerProfileCreateApi = async () => {
 
-    const response = await ManagerProfileCreate(
+  const EditProfileApi = async () => {
+    const response = ProfileEdit(
       user_id_local,
       first_name,
       last_name,
       dob,
+      cnic,
+      "",
       phoneNumber,
 
       gender,
@@ -170,16 +241,67 @@ const EmployeeProfile = () => {
       cancelTokenSource.token
     );
     if (response) {
+      setIsEditOpen(true);
       // const awais = response.PromiseResult;
       const { data } = response;
       setOpenCreateProfile(true);
-      setOpen(true);
 
-      console.log("data awaiss", response);
+      console.log("  data awaiss ", response);
     } else {
       console.log("Failed Response", response);
     }
   };
+  const ManagerProfileCreateApi = async () => {
+    setOpen(true);
+    const response = await ProfileCreate(
+      user_id_local,
+      nameCeo,
+      formik.values.lname,
+      formik.values.birthDate,
+      formik.values.cnic,
+      "",
+      formik.values.phone,
+
+      formik.values.gender,
+      formik.values.address,
+      formik.values.country,
+      formik.values.postal,
+      cancelTokenSource.token
+    );
+    if (response) {
+      // const awais = response.PromiseResult;
+      const { data } = response;
+      setOpenCreateProfile(true);
+
+      console.log("  data awaiss ", response);
+    } else {
+      console.log("Failed Response", response);
+    }
+  };
+
+  const UserProfilePic = async (file) => {
+    let formData = new FormData();
+    formData.append("profile_pic", file);
+    axios
+      .put(
+        `http://localhost:5002/api/v1/upload/pic/${user_id_local}`,
+        formData,
+        {
+          headers: {
+            "Content-Type": file?.type,
+          },
+        }
+      )
+      .then((response) => {
+        console.log("Image Upload Success ", response);
+        axios.defaults.headers["x-auth-token"] = token;
+        verifyDoc(customerFundDocumentId ? customerFundDocumentId : "");
+      })
+      .catch((err) => {
+        console.log("Image Upload Failed Response", err);
+      });
+  };
+
   // const ManagerProfileCreateApi = () => {
   //   const response = ManagerProfileCreate(
   //     5,
@@ -201,12 +323,20 @@ const EmployeeProfile = () => {
     const response = await getUserProfileAPI(userId, cancelTokenSource.token);
     if (response.success == true) {
       const { data } = response;
+
       setOpenCreateProfile(true);
-      // setPhoneNumber(data.phone);
-      // setEmail(data.email);
-      // setAddress(data.address);
-      // setGender(data.gender);
+
+      setEmail(data.email);
+
       setUserProfileData(data);
+      setFirst_name(data.first_name);
+      setLast_name(data.last_name);
+      setPhoneNumber(data.phone);
+      setAddress(data.address);
+      setPostalCode(data.postal_code);
+      setCountry(data.country);
+      setDepartment(data.department);
+      setCnic(data.cnic);
       // const awais = response.PromiseResult;
       console.log("  data miral ", data);
     } else {
@@ -215,46 +345,39 @@ const EmployeeProfile = () => {
     }
   };
 
-  const handleUploadClick = (event) => {
-    var file = event.target.files[0];
-    let url = URL.createObjectURL(event.target.files[0])
-    console.log(file); // Would see a path?
-    const reader = new FileReader();
-    console.log(url); // Would see a path?
-    setProfilePic(url)
-    UserProfilePic(file)
+  const ProfileEditHandle = () => {
+    EditProfileApi();
+    setIsEditOpen(true);
   };
-
-  const getUserbadegs = async (userID) => {
-
-    const response = await getAllBadgesEmployees(cancelTokenSource.token);
-
-    if (response.success == true) {
-      setProjectData(response.data);
-      let userItem = response.data.find(element => element.id == userID
-      )
-      setUserBadge(userItem.badge)
-    }
-    // console.log(taskData, "awais data for all task");
-  };
-
-  function getImage(val) {
-    if (val >= 0 && val <= 1)
-      return badge1
-    if (val >= 1 && val <= 2)
-      return badge2
-    if (val >= 2 && val <= 3)
-      return badge3
-    if (val >= 3 && val <= 4)
-      return badge4
-    if (val >= 4 && val <= 5)
-      return badge5
-  }
-
-
 
   return (
     <React.Fragment>
+      {isEditOpen && (
+        <Dialog
+          open={isEditOpen}
+          onClose={handleCloseSubmitResponse}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">
+            {"Confirmation message"}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              Hey! Your Profile Edited successfully..!
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button
+              onClick={handleCloseSubmitResponse}
+              color="primary"
+              autoFocus
+            >
+              OK!
+            </Button>
+          </DialogActions>
+        </Dialog>
+      )}
       {open && (
         <Dialog
           open={open}
@@ -267,20 +390,16 @@ const EmployeeProfile = () => {
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              Hey!
-              Your Profile Created Successfully. Best of Luck!
+              Hey! Your Profile created successfully..!
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleCloseSubmitResponse} color="primary">
-              Disagree
-            </Button>
             <Button
               onClick={handleCloseSubmitResponse}
               color="primary"
               autoFocus
             >
-              Agree
+              Ok
             </Button>
           </DialogActions>
         </Dialog>
@@ -312,11 +431,91 @@ const EmployeeProfile = () => {
               <div className="card-body">
                 <div className="row">
                   <div className="col-md-12">
+                    <div>
+                      <div class="container">
+                        <div style={{ position: "relative" }}>
+                          <div class="d-flex lineParent">
+                            <div class="connecting-line"></div>
+                          </div>
+                          <div class="d-flex">
+                            <div class="stepTab">
+                              <div class="square-tab">
+                                <div>
+                                  <i
+                                    style={{ color: "silver" }}
+                                    class="fas fa-medal"
+                                  ></i>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="stepTab">
+                              <div class="square-tab">
+                                <div>
+                                  <i
+                                    style={{ color: "yellow" }}
+                                    class="fas fa-medal"
+                                  ></i>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="stepTab">
+                              <div class="square-tab">
+                                <i
+                                  style={{ color: "brown" }}
+                                  class="fas fa-medal"
+                                ></i>
+                              </div>
+                            </div>
+                            <div class="stepTab">
+                              <div class="square-tab">
+                                <i
+                                  style={{ color: "black" }}
+                                  class="fas fa-medal"
+                                ></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="d-flex">
+                          <div class="stepTab text-break">
+                          <div class="stepTab text-break">Silver</div>
+                          </div>
+                          <div class="stepTab text-break">Gold</div>
+                          <div class="stepTab text-break">Diamond</div>
+                          <div class="stepTab text-break">Platinum</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="card mb-0">
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-md-12">
                     <div className="profile-view">
                       <div className="profile-img-wrap">
                         <div className="profile-img">
                           <a href="#">
-                            <img alt="" src={profilePic} />
+                            {imageCondition ? (
+                              <img alt="" src={profilePic} />
+                            ) : (
+                              <p
+                                style={{
+                                  color: "black",
+                                  fontWeight: "400",
+                                  fontSize: "12px",
+                                  display: "block",
+                                  border: "2px solid green",
+                                }}
+                              >
+                                If You want to upload Your Profile Picture
+                                Kindly Go to edit Profile and Upload it
+                              </p>
+                            )}
                           </a>
                         </div>
                       </div>
@@ -335,11 +534,6 @@ const EmployeeProfile = () => {
                               </small>
                               <div className="small doj text-muted">
                                 {userProfileData.dob}
-                              </div>
-                              <div className="account-logo">
-                                <a href="/login">
-                                  <img src={getImage(userBadge)} alt="Dreamguy's Technologies" />
-                                </a>
                               </div>
                             </div>
                           </div>
@@ -428,7 +622,9 @@ const EmployeeProfile = () => {
                           </li>
                           <li>
                             <div className="title">Country:</div>
-                            <div className="text">{userProfileData.country}</div>
+                            <div className="text">
+                              {userProfileData.country}
+                            </div>
                           </li>
                           <li>
                             <div className="title">Phone Number:</div>
@@ -446,17 +642,20 @@ const EmployeeProfile = () => {
                           </li>
                           <li>
                             <div className="title">Postal Code:</div>
-                            <div className="text">{userProfileData.postal_code}</div>
+                            <div className="text">
+                              {userProfileData.postal_code}
+                            </div>
                           </li>
                           <li>
-                            <div className="title">Employee Type</div>
+                            <div className="title">Type</div>
                             <div className="text">{userProfileData.type}</div>
                           </li>
                           <li>
                             <div className="title">Address:</div>
-                            <div className="text">{userProfileData.address}</div>
+                            <div className="text">
+                              {userProfileData.address}
+                            </div>
                           </li>
-
                         </ul>
                       </div>
                     </div>
@@ -479,7 +678,7 @@ const EmployeeProfile = () => {
             >
               <div className="modal-content">
                 <div className="modal-header">
-                  <h5 className="modal-title">Profile Information</h5>
+                  <h5 className="modal-title">Edit Profile Information</h5>
                   <button
                     type="button"
                     className="close"
@@ -493,9 +692,9 @@ const EmployeeProfile = () => {
                   <form>
                     <div className="row">
                       <div className="col-md-12">
-                        <div className="profile-img-wrap edit-img">                          
+                        <div className="profile-img-wrap edit-img">
                           <img
-                            className="inline-block"                            
+                            className="inline-block"
                             src={profilePic}
                             alt="user"
                           />
@@ -516,9 +715,7 @@ const EmployeeProfile = () => {
                                 type="text"
                                 className="form-control"
                                 value={first_name}
-                                onChange={(e) =>
-                                  setFirst_name(e.target.value)
-                                }
+                                onChange={(e) => setFirst_name(e.target.value)}
                               />
                             </div>
                           </div>
@@ -535,13 +732,16 @@ const EmployeeProfile = () => {
                           </div>
                           <div className="col-md-6">
                             <div className="form-group">
-                              <label>Birth Date</label>
+                              <label>
+                                Birth Date{" "}
+                                <span className="text-danger">*no change</span>
+                              </label>
                               <div className="cal-icon">
                                 <input
                                   className="form-control datetimepicker"
                                   type="text"
                                   value={dob}
-                                  onChange={(e) => setDob(e.target.value)}
+                                  // onChange={(e) => setDob(e.target.value)}
                                 />
                               </div>
                             </div>
@@ -598,6 +798,18 @@ const EmployeeProfile = () => {
                       </div>
                       <div className="col-md-6">
                         <div className="form-group">
+                          <label>Cnic</label>
+                          <input
+                            type="text"
+                            className="form-control"
+                            value={cnic}
+                            onChange={(e) => setCnic(e.target.value)}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="col-md-6">
+                        <div className="form-group">
                           <label>Phone Number</label>
                           <input
                             type="text"
@@ -610,40 +822,49 @@ const EmployeeProfile = () => {
                       <div className="col-md-6">
                         <div className="form-group">
                           <label>
-                            Designation <span className="text-danger">*</span>
+                            Designation{" "}
+                            <span className="text-danger">*no change</span>
                           </label>
                           <input
                             type="text"
                             className="form-control"
                             value={post}
-                            onChange={(e) => setPost(e.target.value)}
+                            // onChange={(e) => setPost(e.target.value)}
                           />
                         </div>
                       </div>
                     </div>
                     <div className="submit-section">
-                      <div className="form-group text-center" style={{ display: 'flex', justifyContent: 'space-around' }}>
+                      <div
+                        className="form-group text-center"
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-around",
+                        }}
+                      >
                         <a
                           className="btn btn-primary account-btn"
-                          style={{ flexDirection: 'space-between' }}
-                        // onClick={() => ManagerProfileCreateApi()}
+                          style={{ flexDirection: "space-between" }}
+                          type="button"
+                          data-dismiss="modal"
+                          aria-label="Close"
                         >
                           Cancel
                         </a>
 
                         <a
                           className="btn btn-primary account-btn"
-                        // onClick={() => ManagerProfileCreateApi()}
+                          onClick={() => ProfileEditHandle()}
                         >
                           Update
                         </a>
                       </div>
                       {/*<a
-                           className="btn btn-primary account-btn"
-                           onClick={ManagerProfileCreateApi}
-                         >
-                         Submit
-                                 </a>*/}
+                            className="btn btn-primary account-btn"
+                            onClick={ManagerProfileCreateApi}
+                          >
+                          Submit
+                                  </a>*/}
                     </div>
                   </form>
                 </div>
@@ -669,7 +890,7 @@ const EmployeeProfile = () => {
                       <a href="/app/main/dashboard">Dashboard</a>
                     </li>
                     <li className="breadcrumb-item active">
-                      Profile is Incomplete
+                      You don't have profile yet
                     </li>
                   </ul>
                 </div>
@@ -686,7 +907,7 @@ const EmployeeProfile = () => {
                       <div className="row">
                         <div className="col-md-12">
                           <h3 className="user-name m-t-0 mb-0">
-                            Please Complete your Profile
+                            Please Create Your Profile
                           </h3>
                           <button
                             data-target="#profile_info"
@@ -727,31 +948,23 @@ const EmployeeProfile = () => {
                     </button>
                   </div>
                   <div className="modal-body">
-                    <form>
+                    <form onSubmit={formik.handleSubmit}>
                       <div className="row">
                         <div className="col-md-12">
-                          <div className="profile-img-wrap edit-img">
-                            <img
-                              className="inline-block"
-                              src={Avatar_02}
-                              alt="user"
-                            />
-                            <div className="fileupload btn">
-                              <span className="btn-text">Upload</span>
-                              <input className="upload" type="file" />
-                            </div>
-                          </div>
                           <div className="row">
                             <div className="col-md-6">
                               <div className="form-group">
                                 <label>First Name</label>
                                 <input
                                   type="text"
+                                  id="fname"
+                                  name="fname"
+                                  type="text"
                                   className="form-control"
-                                  value={first_name}
-                                  onChange={(e) =>
-                                    setFirst_name(e.target.value)
-                                  }
+                                  // onChange={formik.handleChange}
+                                  // onBlur={formik.handleBlur}
+                                  value={nameCeo}
+                                  required
                                 />
                               </div>
                             </div>
@@ -760,23 +973,44 @@ const EmployeeProfile = () => {
                                 <label>Last Name</label>
                                 <input
                                   type="text"
+                                  id="lname"
+                                  name="lname"
+                                  type="text"
                                   className="form-control"
-                                  value={last_name}
-                                  onChange={(e) => setLast_name(e.target.value)}
+                                  onChange={formik.handleChange}
+                                  onBlur={formik.handleBlur}
+                                  value={formik.values.lname}
+                                  required
                                 />
+                                {formik.touched.lname && formik.errors.lname ? (
+                                  <div
+                                    style={{ color: "red", marginTop: "4px" }}
+                                  >
+                                    {formik.errors.lname}
+                                  </div>
+                                ) : null}
                               </div>
                             </div>
                             <div className="col-md-6">
                               <div className="form-group">
                                 <label>Birth Date</label>
-                                <div className="cal-icon">
-                                  <input
-                                    className="form-control datetimepicker"
-                                    type="text"
-                                    value={dob}
-                                    onChange={(e) => setDob(e.target.value)}
-                                  />
-                                </div>
+                                <Input
+                                  className="form-control"
+                                  type="date"
+                                  name="birthDate"
+                                  id="select-basic"
+                                  onChange={formik.handleChange}
+                                  onBlur={formik.handleBlur}
+                                  value={formik.values.birthDate}
+                                ></Input>
+                                {formik.touched.birthDate &&
+                                formik.errors.birthDate ? (
+                                  <div
+                                    style={{ color: "red", marginTop: "4px" }}
+                                  >
+                                    {formik.errors.fname}
+                                  </div>
+                                ) : null}
                               </div>
                             </div>
                             <div className="col-md-6">
@@ -784,8 +1018,12 @@ const EmployeeProfile = () => {
                                 <label>Gender</label>
                                 <select
                                   className="form-control"
-                                  value={gender}
-                                  onChange={(e) => setGender(e.target.value)}
+                                  type="select"
+                                  id="gender"
+                                  name="gender"
+                                  onChange={formik.handleChange}
+                                  onBlur={formik.handleBlur}
+                                  value={formik.values.gender}
                                 >
                                   <option value="male">Male</option>
                                   <option value="female">Female</option>
@@ -802,9 +1040,17 @@ const EmployeeProfile = () => {
                             <input
                               type="text"
                               className="form-control"
-                              value={address}
-                              onChange={(e) => setAddress(e.target.value)}
+                              id="address"
+                              name="address"
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              value={formik.values.address}
                             />
+                            {formik.touched.address && formik.errors.address ? (
+                              <div style={{ color: "red", marginTop: "4px" }}>
+                                {formik.errors.address}
+                              </div>
+                            ) : null}
                           </div>
                         </div>
                         <div className="col-md-6">
@@ -813,62 +1059,99 @@ const EmployeeProfile = () => {
                             <input
                               type="text"
                               className="form-control"
-                              value={country}
-                              onChange={(e) => setCountry(e.target.value)}
+                              id="country"
+                              name="country"
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              value={formik.values.country}
                             />
+                            {formik.touched.country && formik.errors.country ? (
+                              <div style={{ color: "red", marginTop: "4px" }}>
+                                {formik.errors.country}
+                              </div>
+                            ) : null}
                           </div>
                         </div>
                         <div className="col-md-6">
                           <div className="form-group">
                             <label>Postal Code</label>
                             <input
+                              type="number"
+                              className="form-control"
+                              id="postal"
+                              name="postal"
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              value={formik.values.postal}
+                            />
+                            {formik.touched.postal && formik.errors.postal ? (
+                              <div style={{ color: "red", marginTop: "4px" }}>
+                                {formik.errors.postal}
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label>Cnic</label>
+                            <input
                               type="text"
                               className="form-control"
-                              value={postalCode}
-                              onChange={(e) => setPostalCode(e.target.value)}
+                              id="cnic"
+                              name="cnic"
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              value={formik.values.cnic}
                             />
+                            {formik.touched.cnic && formik.errors.cnic ? (
+                              <div
+                                style={{
+                                  color: "red",
+                                  fontSize: "12px",
+                                  marginTop: "4px",
+                                }}
+                              >
+                                {formik.errors.cnic}
+                              </div>
+                            ) : null}
                           </div>
                         </div>
                         <div className="col-md-6">
                           <div className="form-group">
                             <label>Phone Number</label>
                             <input
-                              type="text"
+                              type="number"
                               className="form-control"
-                              value={phoneNumber}
-                              onChange={(e) => setPhoneNumber(e.target.value)}
+                              id="phone"
+                              name="phone"
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              value={formik.values.phone}
                             />
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <label>
-                              Designation <span className="text-danger">*</span>
-                            </label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              value={post}
-                              onChange={(e) => setPost(e.target.value)}
-                            />
+                            {formik.touched.phone && formik.errors.phone ? (
+                              <div style={{ color: "red", marginTop: "4px" }}>
+                                {formik.errors.phone}
+                              </div>
+                            ) : null}
                           </div>
                         </div>
                       </div>
                       <div className="submit-section">
-                        <div className="form-group text-center">
-                          <a
+                        <div className="text-center">
+                          <button
+                            disabled={conditions}
                             className="btn btn-primary account-btn"
                             onClick={() => ManagerProfileCreateApi()}
                           >
                             Submit
-                          </a>
+                          </button>
                         </div>
                         {/*<a
-                           className="btn btn-primary account-btn"
-                           onClick={ManagerProfileCreateApi}
-                         >
-                         Submit
-                                 </a>*/}
+                            className="btn btn-primary account-btn"
+                            onClick={ManagerProfileCreateApi}
+                          >
+                          Submit
+                                  </a>*/}
                       </div>
                     </form>
                   </div>
@@ -884,4 +1167,3 @@ const EmployeeProfile = () => {
 };
 
 export default EmployeeProfile;
-// export default withStyles(styles, { withTheme: true })(EmployeeProfile);

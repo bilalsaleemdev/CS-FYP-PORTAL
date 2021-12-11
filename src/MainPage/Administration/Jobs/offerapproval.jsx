@@ -102,7 +102,7 @@
          {/* Page Wrapper */}
          <div className="page-wrapper">
             <Helmet>
-                  <title>Offer Approvals - HRMS Admin Template</title>
+                  <title>Offer Approvals - Gamified Employee Portal</title>
                   <meta name="description" content="Login page"/>					
             </Helmet>
            {/* Page Content */}

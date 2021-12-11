@@ -91,7 +91,7 @@ class AppliedCandidate extends Component {
             
       <div className="page-wrapper">
       <Helmet>
-         <title>Jobs Applicants - HRMS Admin Template</title>
+         <title>Jobs Applicants - Gamified Employee Portal</title>
          <meta name="description" content="Login page"/>					
       </Helmet>
       {/* Page Content */}

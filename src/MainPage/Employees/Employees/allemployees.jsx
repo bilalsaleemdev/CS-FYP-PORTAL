@@ -10,7 +10,7 @@ class Employee extends Component {
         
       <div className="page-wrapper">
         <Helmet>
-            <title>Employee - HRMS Admin Template</title>
+            <title>Employee - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
       {/* Page Content */}

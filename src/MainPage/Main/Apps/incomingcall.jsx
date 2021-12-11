@@ -12,7 +12,7 @@ class IncomingCall extends Component {
       return (
       <div className="page-wrapper">
           <Helmet>
-            <title>Incoming Call - HRMS Admin Template</title>
+            <title>Incoming Call - Gamified Employee Portal</title>
             <meta name="description" content="Incoming Call"/>					
         </Helmet>
       {/* Incoming Call */}

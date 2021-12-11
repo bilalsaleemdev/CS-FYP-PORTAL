@@ -9,7 +9,7 @@ class AttendanceReport extends Component {
         {/* Page Wrapper */}
         <div className="page-wrapper">
             <Helmet>
-                <title>Attendance Reports - HRMS Admin Template</title>
+                <title>Attendance Reports - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
           {/* Page Content */}

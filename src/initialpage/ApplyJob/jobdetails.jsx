@@ -78,7 +78,7 @@ class Jobdetails extends Component
         return (
           <div className="main-wrapper" >
           <Helmet>
-                <title>Jobs - HRMS Admin Template</title>
+                <title>Jobs - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
           </Helmet>
           {/* Header */}

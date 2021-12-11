@@ -60,7 +60,7 @@ class PayslipReport extends Component {
           {/* Page Wrapper */}
           <div className="page-wrapper">
             <Helmet>
-                <title>Payslip Reports - HRMS Admin Template</title>
+                <title>Payslip Reports - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
             {/* Page Content */}

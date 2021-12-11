@@ -12,7 +12,7 @@ class Settings extends Component {
       return ( 
        <div className="page-wrapper">
        <Helmet>
-           <title>Settings - HRMS Admin Template</title>
+           <title>Settings - Gamified Employee Portal</title>
            <meta name="description" content="Login page"/>					
        </Helmet>
        {/* Page Content */}

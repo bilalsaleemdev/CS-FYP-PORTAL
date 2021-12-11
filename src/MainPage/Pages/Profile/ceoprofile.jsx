@@ -76,7 +76,7 @@ const CeoProfile = () => {
   const [first_name, setFirst_name] = useState("");
   const [last_name, setLast_name] = useState("");
   const [dob, setDob] = useState("2019-01-01");
-  const [gender, setGender] = useState("");
+  const [gender, setGender] = useState("male");
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState();
   const [country, setCountry] = useState("");
@@ -589,10 +589,10 @@ const CeoProfile = () => {
                           <img
                             className="inline-block"
                             src={profilePic}
-                            alt="user"
+                           
                           />
                           <div className="fileupload btn">
-                            <span className="btn-text">upload</span>
+                           
                             <input
                               className="btn-text"
                               id="contained-button-file"
@@ -809,7 +809,7 @@ const CeoProfile = () => {
                             className="btn btn-secondary"
                             href="#"
                           >
-                            create Profile
+                            Create Profile
                           </button>
                         </div>
                       </div>

@@ -8,7 +8,7 @@ class LeaveSettings extends Component {
       return (         
       <div className="page-wrapper">
         <Helmet>
-            <title>Leave Settings - HRMS Admin Template</title>
+            <title>Leave Settings - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
       {/* Page Content */}
