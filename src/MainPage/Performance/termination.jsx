@@ -85,7 +85,7 @@ class Termination extends Component {
       return ( 
              <div className="page-wrapper">
              <Helmet>
-                 <title>Termination - HRMS Admin Template</title>
+                 <title>Termination - Gamified Employee Portal</title>
                  <meta name="description" content="Login page"/>					
              </Helmet>
              {/* Page Content */}

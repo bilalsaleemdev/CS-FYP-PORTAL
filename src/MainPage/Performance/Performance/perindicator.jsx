@@ -93,7 +93,7 @@ class PerformanceIndicator extends Component {
       return (
       <div className="page-wrapper">
         <Helmet>
-            <title>Performance Indicator - HRMS Admin Template</title>
+            <title>Performance Indicator - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
       {/* Page Content */}

@@ -11,7 +11,7 @@ class rolepermission extends Component {
       return ( 
          <div className="page-wrapper">
             <Helmet>
-                <title>Roles & Permissions - HRMS Admin Template</title>
+                <title>Roles & Permissions - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
          {/* Page Content */}

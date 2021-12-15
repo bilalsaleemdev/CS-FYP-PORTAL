@@ -12,7 +12,7 @@ class Contacts extends Component {
       return (
       <div className="page-wrapper">
         <Helmet>
-                <title>Contacts - HRMS Admin Template</title>
+                <title>Contacts - Gamified Employee Portal</title>
                 <meta name="description" content="Chat"/>					
         </Helmet>
       {/* Contact Main Row */}

@@ -12,7 +12,7 @@ class SalarySettings extends Component {
       return ( 
         <div className="page-wrapper">
         <Helmet>
-            <title>Salary Settings - HRMS Admin Template</title>
+            <title>Salary Settings - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
         {/* Page Content */}

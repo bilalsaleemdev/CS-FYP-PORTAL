@@ -12,7 +12,7 @@ class Error500 extends Component {
       return (
         <div className="main-wrapper">
             <Helmet>
-                <title>Error 500 - HRMS Admin Template</title>
+                <title>Error 500 - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
         <div className="error-box">

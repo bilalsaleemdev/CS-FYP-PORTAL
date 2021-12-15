@@ -12,7 +12,7 @@ class VoiceCall extends Component {
       return (        
       <div className="page-wrapper">
         <Helmet>
-            <title>Voice Call - HRMS Admin Template</title>
+            <title>Voice Call - Gamified Employee Portal</title>
             <meta name="description" content="Chat"/>					
         </Helmet>
       {/* Main Row */}

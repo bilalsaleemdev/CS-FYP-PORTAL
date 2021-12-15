@@ -75,7 +75,7 @@
          {/* Page Wrapper */}
          <div className="page-wrapper">
             <Helmet>
-                  <title>Shortlist Candidates - HRMS Admin Template</title>
+                  <title>Shortlist Candidates - Gamified Employee Portal</title>
                   <meta name="description" content="Login page"/>					
             </Helmet>
            {/* Page Content */}

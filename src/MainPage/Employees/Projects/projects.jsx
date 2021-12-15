@@ -24,7 +24,7 @@ class Projects extends Component {
         
       <div className="page-wrapper">
         <Helmet>
-            <title>Projects - HRMS Admin Template</title>
+            <title>Projects - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
       {/* Page Content */}

@@ -12,7 +12,7 @@ class UserReport extends Component {
           {/* Page Wrapper */}
           <div className="page-wrapper">
             <Helmet>
-                <title>User Reports - HRMS Admin Template</title>
+                <title>User Reports - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
             {/* Page Content */}

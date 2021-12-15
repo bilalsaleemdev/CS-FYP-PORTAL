@@ -15,7 +15,7 @@ import { Avatar_02,Avatar_09,Avatar_10  } from "../../../Entryfile/imagepath";
          {/* Page Wrapper */}
          <div className="page-wrapper">
               <Helmet>
-                  <title>Job Dashboard - HRMS Admin Template</title>
+                  <title>Job Dashboard - Gamified Employee Portal</title>
                   <meta name="description" content="Login page"/>					
               </Helmet>
            {/* Page Content */}

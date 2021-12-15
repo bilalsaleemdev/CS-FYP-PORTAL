@@ -231,13 +231,16 @@ export const createProjectAPI = async (data,cancelToken) => {
     }
 };
 
-export const getEmployeeUserAPI = async (user_id,cancelToken) => {    
+export const getEmployeeUserAPI = async (cancelToken) => {  
+    console.log('from all employee user');  
     const url = `employees-users`    
     const request = { type: 'GET', urlString: url };
     try {
+        console.log('from all employee user in try');  
          const response = await processRequest(request, cancelToken); 
         return response.data;
     } catch (error) { 
+        console.log('from all employee user in error')
         return {error:error};
     }
 };
@@ -333,7 +336,8 @@ export const putTaskApi = async (id, data,cancelToken) => {
     }
 };
 export const updateProjectAPI = async (id ,data, cancelToken) => {    
-    const url = `project/${id}`;    
+    const url = `project/${id}`;
+    console.log('awais bhai checking api',data);    
     const request = { type: 'PUT', urlString: url, params: data };
     try {
          const response = await processRequest(request, cancelToken); 
@@ -443,7 +447,18 @@ export const getAllBadgesEmployees = async (cancelToken) => {
     }
 };
 
+export const getAllTaskManager = async (emloyee_Id,cancelToken) => {   
 
+    const url = `task/${emloyee_Id}`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All Employee request', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
 //Put user profile pic api
 
 // export const ProfilePicPutApi = async (user_id, profile_pic,cancelToken) => {    
@@ -564,6 +579,20 @@ export const projectConferenceUpdate = async (projectId,data,cancelToken) => {
         return response.data;
     } catch (error) { 
         console.log('task  error', error)
+        return {error:error};
+    }
+};
+
+
+//delete Project by id
+
+export const deleteProjectById = async (project_id,cancelToken) => {    
+    const url = `delete-project/${project_id}`;    
+    const request = { type: 'DELETE', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
         return {error:error};
     }
 };

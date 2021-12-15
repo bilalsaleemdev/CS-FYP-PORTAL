@@ -64,7 +64,7 @@ class Policies extends Component {
       return ( 
       <div className="page-wrapper">
         <Helmet>
-            <title>Policies - HRMS Admin Template</title>
+            <title>Policies - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
         {/* Page Content */}

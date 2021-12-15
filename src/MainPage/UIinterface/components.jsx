@@ -19,7 +19,7 @@ class UIComponents extends Component {
     return (
          <div >
             <Helmet>
-               <title>Components - HRMS Admin Template</title>
+               <title>Components - Gamified Employee Portal</title>
                <meta name="description" content="Login page"/>					
             </Helmet>
           {/* Header */}

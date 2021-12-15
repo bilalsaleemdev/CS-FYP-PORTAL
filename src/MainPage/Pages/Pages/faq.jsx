@@ -11,7 +11,7 @@ class Faq extends Component {
 		return (
 			<div className="page-wrapper">
 			<Helmet>
-				<title>FAQ - HRMS admin Template</title>
+				<title>FAQ - Gamified Employee Portal</title>
 				<meta name="description" content="Subscriptions" />
 			</Helmet>
 			{/* Page Content */}

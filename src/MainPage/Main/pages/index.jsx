@@ -23,6 +23,7 @@ import allProject from './Employee/Projects/allProject';
 import badges from './Employee/Badges/topEmployees';
 import myProject from './Employee/Projects/myProject';
 import CompletedTasks from './Employee/Tasks/completedTask';
+import SubmitTask from './Employee/submitTask/submitTask';
 
 // const userType = localStorasssge.getItem('u')
 
@@ -50,6 +51,7 @@ const DashboardRoute = ({ match }) => (
       <Route  path={`${match.url}/feedbacks`} component={Feedback} />
 
       <Route  path={`${match.url}/completedTaskEmployee`} component={CompletedTasks} />
+      <Route  path={`${match.url}/submit-task`} component={SubmitTask} />
 
        
    </Switch>

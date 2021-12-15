@@ -133,7 +133,7 @@ class EmployeeReport extends Component {
         {/* Page Wrapper */}
         <div className="page-wrapper">
             <Helmet>
-                <title>Employee Reports - HRMS Admin Template</title>
+                <title>Employee Reports - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
           {/* Page Content */}

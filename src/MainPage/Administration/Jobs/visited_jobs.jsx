@@ -89,7 +89,7 @@
          {/* Page Wrapper */}
          <div className="page-wrapper">
               <Helmet>
-                  <title>Visitied Jobs - HRMS Admin Template</title>
+                  <title>Visitied Jobs - Gamified Employee Portal</title>
                   <meta name="description" content="Login page"/>					
               </Helmet>
            {/* Page Content */}

@@ -90,7 +90,7 @@
          {/* Page Wrapper */}
          <div className="page-wrapper">
             <Helmet>
-                  <title>Interview Questions - HRMS Admin Template</title>
+                  <title>Interview Questions - Gamified Employee Portal</title>
                   <meta name="description" content="Login page"/>					
             </Helmet>
            {/* Page Content */}

@@ -36,7 +36,7 @@ const TaskBoard = () => {
   return (
     <div className="page-wrapper">
       <Helmet>
-        <title>awais Task Board our</title>
+        <title>Task Board</title>
         <meta name="description" content="Login page" />
       </Helmet>
       {/* Page Content */}

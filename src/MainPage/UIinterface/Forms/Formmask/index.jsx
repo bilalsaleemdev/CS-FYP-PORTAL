@@ -11,7 +11,7 @@ export default class FormElements extends Component {
 		return (
             <div className="page-wrapper">
 			<Helmet>
-				  <title>Form Mask - HRMS Admin Template</title>
+				  <title>Form Mask - Gamified Employee Portal</title>
 				  <meta name="description" content="Login page"/>					
 			</Helmet>
             <div className="content container-fluid">

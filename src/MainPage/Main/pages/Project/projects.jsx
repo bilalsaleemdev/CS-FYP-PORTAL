@@ -22,6 +22,7 @@ import {
   getEmployeeUserAPI,
   updateProjectAPI,
   getUserProjectAPI,
+  deleteProjectById
 } from "../../../../api/network/customer/EmployeeApi";
 
 import MenuItem from "@mui/material/MenuItem";
@@ -43,6 +44,7 @@ const MenuProps = {
 };
 
 const Projects = (props) => {
+  const [selectedWorkShopId, setSelectedWorkShopId] = useState();
   const cancelTokenSource = axios.CancelToken.source();
   const [employeelUser, setEmployeeUser] = useState([]);
   const [userProjectList, setUserProjectList] = useState([]);
@@ -78,6 +80,8 @@ const Projects = (props) => {
     };
     const response = await createProjectAPI(data, cancelTokenSource.token);
     if (response.success == true) {
+      $("#create_project").modal("hide");
+      window.location.reload();
     }
   };
 
@@ -86,12 +90,16 @@ const Projects = (props) => {
     getUserProject();
   }, []);
 
+  useEffect(() => {
+   
+  }, [userProjectList])
   const getUserProject = async () => {
     const response = await getUserProjectAPI(
       localStorage.getItem("user_id"),
       cancelTokenSource.token
     );
     if (response.success == true) {
+      console.log('ahtasham', response.data)
       setUserProjectList(response.data);
     }
   };
@@ -100,6 +108,21 @@ const Projects = (props) => {
     if (response.success == true) {
       setEmployeeUser(response.data);
       getEnployeeName(response.data)
+    }
+  };
+
+  const deleteSerVal = (id) => {
+    console.log('ahtasham',id)
+    setSelectedWorkShopId(id);
+  };
+  const deleteProjectApi = async () => {
+    const response = await deleteProjectById(
+      selectedWorkShopId,
+      cancelTokenSource.token
+    );
+    if (response.success == true) {
+      console.log("Data::", response.data.id);
+      // getUserWorkshopes();
     }
   };
 
@@ -163,10 +186,18 @@ const Projects = (props) => {
     );
   };
 
+  const isSelected = (name)=>{
+
+    console.log(
+      
+      "test1",name);
+    return (name == "testing")  ;
+  }
+
   return (
     <div className="page-wrapper">
       <Helmet>
-        <title>1Projects - HRMS Admin Template</title>
+        <title>1Projects - Gamified Employee Portal</title>
         <meta name="description" content="Login page" />
       </Helmet>
       {/* Page Content */}
@@ -212,6 +243,7 @@ const Projects = (props) => {
         {/* /Page Header */}
         {/* Search Filter */}
         <div className="row">
+        
           {userProjectList.map((item, index) => {
             return (
               <div
@@ -230,7 +262,8 @@ const Projects = (props) => {
                         <i className="material-icons">more_vert</i>
                       </a>
                       <div className="dropdown-menu dropdown-menu-right">
-                        <a
+                      
+                        {/*   <a
                           className="dropdown-item"
                           onClick={() => setEditModal(item)}
                           href="#"
@@ -238,9 +271,10 @@ const Projects = (props) => {
                           data-target="#edit_project"
                         >
                           <i className="fa fa-pencil m-r-5" /> Edit
-                        </a>
+                        </a>*/}
                         <a
                           className="dropdown-item"
+                          onClick={() => deleteSerVal(item.project.id)}
                           href="#"
                           data-toggle="modal"
                           data-target="#delete_project"
@@ -255,9 +289,11 @@ const Projects = (props) => {
                           history.push({
                             pathname: "/app/projects/projects-view",
                             state: item,
+                        
                           })
                         }
                       >
+                      {console.log('awaisitem',item)}
                         {item.project.name}
                       </a>
                     </h4>
@@ -391,7 +427,8 @@ const Projects = (props) => {
                     </div>
                   </div>
                   <div className="col-sm-6">
-                    <FormControl sx={{ m: 1, width: 300 }}>
+                    <FormControl sx={{ m: 1, width: 300  }}>
+                    
                       <InputLabel id="demo-multiple-checkbox-label">
                         Employees
                       </InputLabel>
@@ -440,7 +477,7 @@ const Projects = (props) => {
                     }
                     className="btn-primary "
                   >
-                    Submit
+                    Create Project
                   </Button>
                 </div>
               </form>
@@ -510,8 +547,50 @@ const Projects = (props) => {
                     </div>
                   </div>
                   <div className="col-sm-6">
+                  <FormControl sx={{ m: 1, width: 300  }}>
+                  {
+                    console.log('personname',personName)
+                  }
+                    <InputLabel id="demo-multiple-checkbox-label">
+                      Employees
+                    </InputLabel>
+                    <Select
+                      labelId="demo-multiple-checkbox-label"
+                      id="demo-multiple-checkbox"
+                      multiple
+                      value={editListOfNames}
+                      selected={editListOfNames}
+                      onChange={(e) => {
+                        const employee = e.target.value;
+                        if (employee) {
+                          let name = [];
+                          let id = [];
+                          employee.map((item, index) => {
+                            name.push(item.name);
+                            id.push(item.id);
+                          });
+                          setEditListOfIds(id);
+                          setEditListOfNames(name);
+                        }
+                      }}
+                      input={<OutlinedInput label="Tag" />}
+                      renderValue={(selected) => selected.join(", ")}
+                      MenuProps={MenuProps}
+                    >
+                      {names.map((name) => (
+                        <MenuItem key={name} value={name}>
+                          <Checkbox checked={isSelected(name)}   />
+                          <ListItemText primary={name} />
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                  
+                </div>
+                  <div className="col-sm-6">
                     <div className="form-group">
                       <label>Employee</label>
+                      {console.log('ssasasa', editListOfNames)}
                       <div>
                         <Select
                           labelId="demo-multiple-checkbox-label"
@@ -599,7 +678,7 @@ const Projects = (props) => {
               <div className="modal-btn delete-action">
                 <div className="row">
                   <div className="col-6">
-                    <a href="" className="btn btn-primary continue-btn">
+                    <a href="" className="btn btn-primary continue-btn" onClick={() => deleteProjectApi()}>
                       Delete
                     </a>
                   </div>

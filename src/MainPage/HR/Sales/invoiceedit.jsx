@@ -7,7 +7,7 @@ class EditInvoice extends Component {
       return ( 
         <div className="page-wrapper">
               <Helmet>
-                  <title>Edit Invoice - HRMS Admin Template</title>
+                  <title>Edit Invoice - Gamified Employee Portal</title>
                   <meta name="description" content="Login page"/>					
               </Helmet>
               {/* Page Content */}

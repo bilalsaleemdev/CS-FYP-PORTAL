@@ -9,7 +9,7 @@ export default class TermsCondition extends Component {
     return (
         <div className="page-wrapper">
             <Helmet>
-              <title>Terms - HRMS admin Template</title>
+              <title>Terms - Gamified Employee Portal</title>
               <meta name="description" content="Reactify Blank Page" />
             </Helmet>
               {/* Page Content */}

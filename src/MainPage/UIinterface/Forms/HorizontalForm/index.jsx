@@ -10,7 +10,7 @@ export default class FormElements extends Component {
 		return (
             <div className="page-wrapper">
 			<Helmet>
-				  <title>Horizontal Form - HRMS Admin Template</title>
+				  <title>Horizontal Form - Gamified Employee Portal</title>
 				  <meta name="description" content="Login page"/>					
 			</Helmet>
         <div className="content container-fluid">

@@ -92,7 +92,7 @@ class Trainers extends Component {
       return (             
       <div className="page-wrapper">
         <Helmet>
-            <title>Trainers - HRMS Admin Template</title>
+            <title>Trainers - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
       {/* Page Content */}

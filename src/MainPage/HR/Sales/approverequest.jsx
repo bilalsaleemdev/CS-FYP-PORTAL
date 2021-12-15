@@ -7,23 +7,41 @@ import { Table } from 'antd';
 import 'antd/dist/antd.css';
 import {itemRender,onShowSizeChange} from "../../paginationfunction"
 import "../../antdstyle.css"
-import { getUserProfileAPI, getUsersPendingRequestAPI,approveUsersPendingRequestAPI,deleteUsersPendingRequestAPI } from "../../../api/network/customer/EmployeeApi";
-
+import {getUserById, getUserProfileAPI, getUsersPendingRequestAPI,approveUsersPendingRequestAPI,deleteUsersPendingRequestAPI } from "../../../api/network/customer/EmployeeApi";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 const ApproveRequest = () => {
+  const[declineOpen, setDeclineOpen]=useState(false);
+  const[error, setError]=useState(false);
+  const[messageName, setMessageName]= useState();
+  const[userIdApi,setUserIdApi] = useState();
+  const [open, setOpen]= useState(false);
   const[wrongPassword, setWeongPassword] = useState(false);
   // var  data = [];
   const [data, setdata] = useState([]);
   const [transition, setTransition] = useState(undefined);
   const history = useHistory();
   const [userType, setUsertype] = useState('');    
+  const handleErrorCloseSubmitResponseDecline = () => {
+    setError(false);
+    window.location.reload();
+  };
 
+  const handleCloseSubmitResponseDecline = () => {
+    setDeclineOpen(false);
+    window.location.reload();
+  };
+  const handleCloseSubmitResponse = () => {
+    setOpen(false);
+    window.location.reload();
+  };
   const cancelTokenSource = axios.CancelToken.source();
   const columns = [                 
-    {
-      title: 'Id',
-      dataIndex: 'id',
-      // sorter: (a, b) => a.client.length - b.client.length,
-    },
+   
     {
       title: 'Name',
       dataIndex: 'name', 
@@ -45,11 +63,11 @@ const ApproveRequest = () => {
     {
       title: 'Action',            
       render: (text, record) => (
-      <span  onClick = { ()=>{ 
+      <button  onClick = { ()=>{ 
         ApproveRequest(record)
       } }
-      style={{cursor: "-webkit-grabbing", cursor: 'grabbing'}}
-       className={"badge bg-inverse-primary"}>Acceped</span>
+      style={{fontWeight:'900'}}
+       className={"btn btn-primary bg-inverse-primary"}> Approve </button>
         ),
         
       // sorter: (a, b) => a.status.length - b.status.length,
@@ -58,11 +76,11 @@ const ApproveRequest = () => {
     {
       title: 'Action',            
       render: (text, record) => (
-      <span  onClick = { ()=>{ 
+      <button  onClick = { ()=>{ 
         cancleRequest(record)
       } }
-      style={{cursor: "-webkit-grabbing", cursor: 'grabbing'}}
-       className={"badge bg-inverse-danger"}>Cancle</span>
+      style={{fontWeight:'900'}}
+       className={"btn bg-inverse-danger"}>Decline</button>
         ),
         
       // sorter: (a, b) => a.status.length - b.status.length,
@@ -80,6 +98,11 @@ const ApproveRequest = () => {
     }
 
   },[userType])
+
+  useEffect(() => {
+    getUserName(userIdApi);
+  }, [userIdApi])
+
   // function TransitionLeft(props) {
   //   return <Slide {...props} direction="left" />;
   // }
@@ -94,9 +117,17 @@ const ApproveRequest = () => {
     }
   };
 
+  const getUserName = async (userIdApi) => {
+    const response = await getUserById(userIdApi, cancelTokenSource.token);  
+    console.log('naaame',response.user.name);
+    setMessageName(response.user.name);
+    
+  };
+
   const getUsersPendingRequest = async () => {
     
     const response = await getUsersPendingRequestAPI(cancelTokenSource.token);
+  
     if (response.success == true) {
       // const awais = response.PromiseResult;
       let localData = []
@@ -120,31 +151,41 @@ const ApproveRequest = () => {
       }
             
       setdata(localData);
-      console.log("  data awaiss ", data);
+      console.log("  data awaiss ", localData);
       setWeongPassword(true);
     } else {
       console.log("Failed Response", wrongPassword);
     }
   };
   const ApproveRequest = async (item) => {
+
     
     const response = await approveUsersPendingRequestAPI(item.id,cancelTokenSource.token);
     if (response.success == true) {
       // const awais = response.PromiseResult;
+      setUserIdApi(item.id)
+      setOpen(true);
       getUsersPendingRequest()
       console.log("  data awaiss ", response);
       // setWeongPassword(true);
     } else {
+      setError(true);
       console.log("Failed Response", response);
     }
   }
    
   const cancleRequest = async (item) => {
+    setUserIdApi(item.id);
     const response = await deleteUsersPendingRequestAPI (item.id,cancelTokenSource.token);
+    
     if (response.success == true) {
+      // setUserIdApi(item.id);
+      setDeclineOpen(true);
+
       getUsersPendingRequest()
       console.log("Success Response ", response.message);      
     } else {
+      setError(true);
       console.log("Failed Response", response.success);
     }
   }
@@ -153,6 +194,90 @@ const ApproveRequest = () => {
 
   return (
     <React.Fragment>
+    {error && (
+      <Dialog
+        open={declineOpen}
+        onClose={handleErrorCloseSubmitResponseDecline}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Confirmation message"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+           Something Went Wrong!
+           Please Try Again
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+         
+          <Button
+            onClick={handleErrorCloseSubmitResponseDecline}
+            color="primary"
+            autoFocus
+          >
+            ok
+          </Button>
+        </DialogActions>
+      </Dialog>
+    )}
+    {open && (
+      <Dialog
+        open={open}
+        onClose={handleCloseSubmitResponse}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Confirmation message"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+           {`  ${messageName}'s Account Approved Successfully`}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+         
+          <Button
+            onClick={handleCloseSubmitResponse}
+            color="primary"
+            autoFocus
+          >
+            ok
+          </Button>
+        </DialogActions>
+      </Dialog>
+    )}
+
+    {declineOpen && (
+      <Dialog
+        open={declineOpen}
+        onClose={handleCloseSubmitResponseDecline}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Confirmation message"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+           {` ${messageName}'s
+              accont has been declined`}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+         
+          <Button
+            onClick={handleCloseSubmitResponseDecline}
+            color="primary"
+            autoFocus
+          >
+            ok
+          </Button>
+        </DialogActions>
+      </Dialog>
+    )}
     <div className="page-wrapper">
         <Helmet>
             <title>Approve Requests</title>

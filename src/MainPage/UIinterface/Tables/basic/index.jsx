@@ -11,7 +11,7 @@ class BasicTable extends Component {
 		return (
 			<div className="page-wrapper">
 			<Helmet>
-				  <title>Basic Tables - HRMS Admin Template</title>
+				  <title>Basic Tables - Gamified Employee Portal</title>
 				  <meta name="description" content="Login page"/>					
 			</Helmet>
 			<div className="content container-fluid">

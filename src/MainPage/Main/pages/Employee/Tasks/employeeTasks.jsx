@@ -128,7 +128,7 @@
      return(
         <div className="page-wrapper">
         <Helmet>
-              <title>Data Tables - HRMS Admin Template</title>
+              <title>Data Tables - Gamified Employee Portal</title>
               <meta name="description" content="Data Tables"/>					
         </Helmet>
         

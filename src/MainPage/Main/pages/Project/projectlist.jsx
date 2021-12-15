@@ -117,7 +117,6 @@ const ProjectList = () => {
               </ul>
             </div>
             <div className="col-auto float-right ml-auto">
-              <a href="#" className="btn add-btn" data-toggle="modal" data-target="#create_project"><i className="fa fa-plus" /> Create Project</a>
               <div className="view-icons">
                 <a href="/app/main/Projects" className="grid-view btn btn-link"><i className="fa fa-th" /></a>
                 <a href="/app/projects/projects-list" className="list-view btn btn-link active"><i className="fa fa-bars" /></a>
@@ -139,7 +138,7 @@ const ProjectList = () => {
                     <th>Open Task</th>
                     <th>Completed Task</th>
 
-                    <th className="text-right">Action</th>
+                    
                   </tr>
                 </thead>
 
@@ -161,16 +160,7 @@ const ProjectList = () => {
                     {item.task.filter(x => x.task_status === 1 ).length}
                     </td>
                  
-                    <td className="text-right">
-                      <div className="dropdown dropdown-action">
-                      <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="material-icons">more_vert</i></a>
-
-                        <div className="dropdown-menu dropdown-menu-right">
-                          <a className="dropdown-item" href="#" data-toggle="modal" onClick = {() => setEditModal(item)} data-target="#edit_project"><i className="fa fa-pencil m-r-5" /> Edit</a>
-                          <a className="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i className="fa fa-trash-o m-r-5" /> Delete</a>
-                        </div>
-                      </div>
-                    </td>
+                   
                   </tr>
 
                   )

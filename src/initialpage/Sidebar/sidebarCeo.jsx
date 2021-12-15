@@ -36,7 +36,6 @@
                    <span> Approve Request</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
                    <li><a className={pathname.includes('/main/approve-request') ?"active" :""} href="/app/main/approve-request">Approve Requests</a></li>
-                   <li><a className={pathname.includes('main/employee-') ?"active" :""} href="/app/main/employee-dashboard">Approve Request</a></li>
                  </ul>
                </li>
 
@@ -84,7 +83,7 @@
                {/* <li className={pathname.includes('clients') ?"active" :""}> 
                  <a href="/app/employees/clients"><i className="la la-users" /> <span>Clients</span></a>
                </li> */}
-               <li className="submenu">
+            {/*   <li className="submenu">
                  <a href="#"><i className="la la-rocket" /> <span> Projects</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
                    <li><a className={pathname.includes('t_dashboard' ) ?"active" : pathname.includes('projects-list' ) ?
@@ -93,8 +92,8 @@
                    <li><a href="/tasks/tasks">Tasks</a></li>
                    <li><a className={pathname.includes('task-board') ?"active" :""} href="/app/projects/task-board">Task Board</a></li>
                  </ul>
-               </li>
-               <li className="submenu">
+              </li> */}
+              {/* <li className="submenu">
                  <a href="#"><i className="la la-rocket" /> <span> Tasks</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
                    <li><a className={pathname.includes('t_dashboard' ) ?"active" : pathname.includes('projects-list' ) ?
@@ -103,7 +102,7 @@
                    <li><a href="/tasks/tasks">Tasks</a></li>
                    <li><a className={pathname.includes('task-board') ?"active" :""} href="/app/projects/task-board">Task Board</a></li>
                  </ul>
-               </li>
+              </li> */}
                {/* <li className={pathname.includes('leads') ?"active" :""}> 
                  <a href="/app/employees/leads"><i className="la la-user-secret" /> <span>Leads</span></a>
                </li>
@@ -189,9 +188,10 @@
                <li className={pathname.includes('promotion') ?"active" :""}><a href="/app/performance/promotion"><i className="la la-bullhorn" /> <span>Promotion</span></a></li>
                <li className={pathname.includes('resignation') ?"active" :""}><a href="/app/performance/resignation"><i className="la la-external-link-square" /> <span>Resignation</span></a></li>
                <li className={pathname.includes('termination') ?"active" :""}><a href="/app/performance/termination"><i className="la la-times-circle" /> <span>Termination</span></a></li> */}
-               <li className="menu-title"> 
+               
+             { /* <li className="menu-title"> 
                  <span>Administration</span>
-               </li>
+              </li> */}
                {/* <li className={pathname.includes('assets') ?"active" :""}> 
                  <a href="/app/administrator/assets"><i className="la la-object-ungroup" /> <span>Assets</span></a>
                </li>
@@ -219,7 +219,7 @@
                <li className={pathname.includes('knowledgebase') ?"active" :""}> 
                  <a href="/app/administrator/knowledgebase"><i className="la la-question" /> <span>Knowledgebase</span></a>
                </li> */}
-               <li className="submenu">
+              {/* <li className="submenu">
                  <a href="#"><i className="la la-user" /> <span> Profile </span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
                    <li><a className={pathname.includes('profile/employee-') ?"active" :""} href="/app/profile/employee-profile"> Employee Profile </a></li>
@@ -234,7 +234,7 @@
                </li>
                <li> 
                  <a href="/settings/companysetting"><i className="la la-cog" /> <span>Settings</span></a>
-               </li>
+              </li> */}
                {/* <li className="menu-title"> 
                  <span>Pages</span>
                </li> */}

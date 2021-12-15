@@ -12,7 +12,7 @@ class InboxPage extends Component {
       return (
       <div className="page-wrapper">
           <Helmet>
-                <title>Inbox - HRMS Admin Template</title>
+                <title>Inbox - Gamified Employee Portal</title>
                 <meta name="description" content="Inbox"/>					
         </Helmet>
       {/* Page Content */}

@@ -23,7 +23,7 @@ class Compose extends Component {
       return (            
       <div className="page-wrapper">
         <Helmet>
-                <title>Compose - HRMS Admin Template</title>
+                <title>Compose - Gamified Employee Portal</title>
                 <meta name="description" content="Compose"/>					
         </Helmet>
       {/* Page Content */}

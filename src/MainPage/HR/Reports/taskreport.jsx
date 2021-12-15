@@ -11,7 +11,7 @@ class TaskReport extends Component {
         {/* Page Wrapper */}
         <div className="page-wrapper">
             <Helmet>
-                <title>Task Reports - HRMS Admin Template</title>
+                <title>Task Reports - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
           {/* Page Content */}

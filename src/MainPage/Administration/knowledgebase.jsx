@@ -12,7 +12,7 @@ class Knowledgebase extends Component {
       return ( 
              <div className="page-wrapper">
              <Helmet>
-                <title>Knowledgebase - HRMS Admin Template</title>
+                <title>Knowledgebase - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
              </Helmet>
              {/* Page Content */}

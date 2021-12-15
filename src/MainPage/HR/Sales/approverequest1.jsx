@@ -83,7 +83,7 @@ const ApproveRequest1 = () => {
     <React.Fragment>
     <div className="page-wrapper">
         <Helmet>
-            <title>Estimates - HRMS Admin Template</title>
+            <title>Estimates - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
     <div className="content container-fluid">

@@ -67,7 +67,7 @@
          {/* Page Wrapper */}
          <div className="page-wrapper">
             <Helmet>
-                  <title>Experience Level - HRMS Admin Template</title>
+                  <title>Experience Level - Gamified Employee Portal</title>
                   <meta name="description" content="Login page"/>					
             </Helmet>
            {/* Page Content */}

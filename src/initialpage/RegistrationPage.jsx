@@ -107,6 +107,10 @@ const Registrationpage = () => {
       setOpenSuccess(true);
       console.log("awais api");
       console.log("awais res", response);
+      formik.values.name='';
+      formik.values.email='';
+      formik.values.type='employee';
+      formik.values.password='';
       // history.push("/login");
     } else {
       setDuplicateMessage(true)
@@ -143,7 +147,7 @@ const Registrationpage = () => {
       )}
       <div className="main-wrapper">
         <Helmet>
-          <title>Register - HRMS Admin Template</title>
+          <title>Gamified Employee Portal</title>
           <meta name="description" content="Login page" />
         </Helmet>
         <div>
@@ -170,14 +174,14 @@ const Registrationpage = () => {
             <div className="account-box">
               <div className="account-wrapper">
                 <h3 className="account-title">Register</h3>
-                <p className="account-subtitle">Access to our dashboard</p>
+                <p className="account-subtitle">Create your Company Account</p>
                 {/* Account Form */}
                 <form onSubmit={formik.handleSubmit}>
                   <div className="form-group">
                     <label>Name</label>
                     <input
                       className="form-control"
-                      placeholder="name"
+                      placeholder="Enter Name"
                       type="text"
                       id="name"
                       name="name"
@@ -196,7 +200,7 @@ const Registrationpage = () => {
                     <label>Email</label>
                     <input
                       className="form-control"
-                      placeholder="email"
+                      placeholder="Email Address"
                       type="email"
                       id="email"
                       name="email"
@@ -211,10 +215,10 @@ const Registrationpage = () => {
                     ) : null}
                   </div>
                   <div className="form-group">
-                    <label>TYPE</label>
+                    <label>Account Type</label>
                     <select
                       className="form-control"
-                      type="type"
+                      type="Select Type"
                       id="type"
                       name="type"
                       onChange={formik.handleChange}
@@ -236,7 +240,7 @@ const Registrationpage = () => {
                     <label>Password</label>
                     <input
                       className="form-control"
-                      placeholder="Password"
+                      placeholder="Enter Password"
                       type="password"
                       name="password"
                       id="password"

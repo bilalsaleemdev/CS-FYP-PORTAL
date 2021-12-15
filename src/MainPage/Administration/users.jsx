@@ -84,7 +84,7 @@ class Users extends Component {
       return ( 
             <div className="page-wrapper">
               <Helmet>
-                 <title>Users - HRMS Admin Template</title>
+                 <title>Users - Gamified Employee Portal</title>
                  <meta name="description" content="Login page"/>					
               </Helmet>
               {/* Page Content */}

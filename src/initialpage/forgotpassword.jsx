@@ -12,7 +12,7 @@ class ForgotPassword extends Component {
       return (
           <div className="main-wrapper">
             <Helmet>
-                    <title>Forgot Password - HRMS Admin Template</title>
+                    <title>Forgot Password - Gamified Employee Portal</title>
                     <meta name="description" content="Login page"/>					
             </Helmet>
           <div className="account-content">

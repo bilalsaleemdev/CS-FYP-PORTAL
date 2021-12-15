@@ -15,7 +15,7 @@
             {/* Page Wrapper */}
             <div className="page-wrapper">
               <Helmet>
-                  <title>Aptitude - HRMS Admin Template</title>
+                  <title>Aptitude - Gamified Employee Portal</title>
                   <meta name="description" content="Login page"/>					
               </Helmet>
             {/* Page Content */}

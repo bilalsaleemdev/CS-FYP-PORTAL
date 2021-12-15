@@ -10,7 +10,7 @@ export default class SubscribedCompany extends Component {
     return (
         <div className="page-wrapper">
             <Helmet>
-              <title>Subscription - HRMS admin Template</title>
+              <title>Subscription - Gamified Employee Portal</title>
               <meta name="description" content="Reactify Blank Page" />
             </Helmet>
              {/* Page Content */}

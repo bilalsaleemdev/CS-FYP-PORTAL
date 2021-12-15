@@ -33,7 +33,7 @@
                  
                  <a href="#">
                    <i className="la la-key" /> 
-                   <span>Requests</span> <span className="menu-arrow" /></a>
+                   <span>Requests</span> </a>
                  <ul style={{display: 'none'}}>
                    <li><a className={pathname.includes('/main/approve-request') ?"active" :""} href="/app/main/approve-request">Approve Requests</a></li>
                  </ul>

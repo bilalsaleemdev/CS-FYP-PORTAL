@@ -58,7 +58,7 @@ class DailyReport extends Component {
           {/* Page Wrapper */}
           <div className="page-wrapper">
             <Helmet>
-                <title>Daily Report - HRMS Admin Template</title>
+                <title>Daily Report - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
             {/* Page Content */}

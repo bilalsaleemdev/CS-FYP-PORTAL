@@ -22,7 +22,7 @@ class Tasks extends Component {
       return (  
      <div className="page-wrapper">       
         <Helmet>
-            <title>Tasks - HRMS Admin Template</title>
+            <title>Tasks - Gamified Employee Portal</title>
             <meta name="description" content="Login page"/>					
         </Helmet>  
      <div className="chat-main-row">

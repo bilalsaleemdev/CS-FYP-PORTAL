@@ -71,7 +71,7 @@ class PaymentReport extends Component {
           {/* Page Wrapper */}
           <div className="page-wrapper">
             <Helmet>
-                <title>Payments Reports - HRMS Admin Template</title>
+                <title>Payments Reports - Gamified Employee Portal</title>
                 <meta name="description" content="Login page"/>					
             </Helmet>
             {/* Page Content */}
