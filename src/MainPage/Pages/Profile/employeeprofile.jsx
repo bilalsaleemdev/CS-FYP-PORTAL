@@ -35,6 +35,7 @@ import {
   getUserProfileAPI,
   ProfileEdit,
   getUserById,
+  getAllTaskEmployee,
 } from "../../../api/network/customer/EmployeeApi";
 
 import Dialog from "@material-ui/core/Dialog";
@@ -87,41 +88,176 @@ const EmployeeProfile = () => {
     "http://localhost:5002/images/profile_pic_1636013308784.png"
   );
 
+  const [employeeTaskData, setEmployeeTaskData] = useState([]);
+  const [completedCount, setCompletedCount] = useState();
+  const [fiveStarCount, setFiveStarCount] = useState();
+  const [countData, setCountData] = useState(false);
   const user_id_local = localStorage.getItem("user_id");
 
-  const cancelTokenSource = axios.CancelToken.source();
-  const bull = (
-    <Box
-      component="span"
-      sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-    >
-      •
-    </Box>
-  );
+  const [cardOneCondition, setCardOneCondition] = useState(false);
+  const [cardTwoCondition, setCardTwoCondition] = useState(false);
+  const [cardThreeCondition, setCardThreeCondition] = useState(false);
 
-  const card = (
-    <React.Fragment>
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
-        </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </React.Fragment>
-  );
+  const [starCardOneCondition, setStarCardOneCondition] = useState(false);
+  const [starCardTwoCondition, setStarCardTwoCondition] = useState(false);
+  const [starCardThreeCondition, setStarCardThreeCondition] = useState(false);
+
+  const [starWidthCardOne, setStarWidthCardOne] = useState();
+  const [WidthCardOne, setWidthCardOne] = useState();
+
+  const [starWidthCardTwo, setStarWidthCardTwo] = useState();
+  const [WidthCardTwo, setWidthCardTwo] = useState();
+
+  const [starWidthCardThree, setStarWidthCardThree] = useState();
+  const [WidthCardThree, setWidthCardThree] = useState();
+
+  //for css classes style apply
+  const [forSilver, setForSilver]= useState("");
+
+  useEffect(() => {
+    if (completedCount) {
+      let cardOne = Math.round((completedCount / 10) * 100);
+      let CardTwo = Math.round((completedCount / 15) * 100);
+      let CardThree = Math.round((completedCount / 20) * 100);
+
+      console.log("awais checking cardOne Value 1", cardOne);
+      console.log("awais checking cardOne Value 2", CardTwo);
+      console.log("awais checking cardOne Value 3", CardThree);
+
+      let widthCardOn, widthCardTw, widthCardThre, starWidthCardOne;
+
+      widthCardOn = Math.round((completedCount / 10) * 100);
+      widthCardOn > 100 ? setWidthCardOne(100) : setWidthCardOne(widthCardOn);
+
+      widthCardTw = Math.round((completedCount / 15) * 100);
+      widthCardTw > 100 ? setWidthCardTwo(100) : setWidthCardTwo(widthCardTw);
+
+      widthCardThre = Math.round((completedCount / 20) * 100);
+      widthCardThre > 100
+        ? setWidthCardThree(100)
+        : setWidthCardThree(widthCardThre);
+
+      starWidthCardOne = Math.round((fiveStarCount / 5) * 100);
+      starWidthCardOne > 100
+        ? setStarWidthCardOne(100)
+        : setStarWidthCardOne(starWidthCardOne);
+
+      let starsCardTwo = Math.round((fiveStarCount / 10) * 100);
+      starsCardTwo > 100
+        ? setStarWidthCardTwo(100)
+        : setStarWidthCardTwo(starsCardTwo);
+
+      let starsCardThree = Math.round((fiveStarCount / 15) * 100);
+      starsCardThree > 100
+        ? setStarWidthCardThree(100)
+        : setStarWidthCardThree(starsCardThree);
+
+      if (cardOne > 99) {
+        setForSilver("silvercurrentLevel");
+        setCardOneCondition(true);
+      }
+      if (CardTwo > 99) {
+        // setCardOneCondition(true);
+        setCardTwoCondition(true);
+      }
+      if (CardThree > 99) {
+        setCardThreeCondition(true);
+      }
+      // console.log("awais checking starWidthCardOne Value 1", starWidthCardOne);
+      // console.log("awais checking widthCardOne Value 2", WidthCardOn);
+      // console.log("awais checking cardOne Value 3", CardThree);
+    }
+  }, [completedCount, fiveStarCount]);
+
+  useEffect(() => {
+    if (fiveStarCount) {
+      let cardOne = Math.round((fiveStarCount / 5) * 100);
+      let CardTwo = Math.round((fiveStarCount / 10) * 100);
+      let CardThree = Math.round((fiveStarCount / 15) * 100);
+      // console.log("awais checking star cardOne Value 1", starsCardOne);
+      // console.log("awais checking star cardOne Value 2", starsCardTwo);
+      // console.log("awais checking star cardOne Value 3", starsCardThree);
+
+      if (cardOne > 99) {
+        setStarCardOneCondition(true);
+      }
+      if (CardTwo > 99) {
+        setStarCardTwoCondition(true);
+      }
+      if (CardThree >= 100) {
+        setStarCardThreeCondition(true);
+      }
+    }
+  }, [fiveStarCount]);
+
+  useEffect(() => {
+    console.log("awais checking setCardThreeCondition 1", cardOneCondition);
+    console.log("awais checking setCardThreeCondition 2", cardTwoCondition);
+    console.log("awais checking setCardThreeCondition 3", cardThreeCondition);
+
+    console.log(
+      "awais checking setCardThreeCondition star 1",
+      starCardOneCondition
+    );
+    console.log(
+      "awais checking setCardThreeCondition star2",
+      starCardTwoCondition
+    );
+    console.log(
+      "awais checking setCardThreeConditionstar  3",
+      starCardThreeCondition
+    );
+  }, [cardThreeCondition, cardTwoCondition, cardOneCondition, WidthCardOne]);
+
+  useEffect(() => {
+    // ManagerProfileCreateApi();
+    getAllTaskOFEmployee(user_id_local);
+    // UserProfilePic();
+  }, []);
+
+  useEffect(() => {
+    // ManagerProfileCreateApi();
+    getTotalCompletedTask();
+    // UserProfilePic();
+  }, [employeeTaskData]);
+
+  const cancelTokenSource = axios.CancelToken.source();
+
+  const getAllTaskOFEmployee = async (id) => {
+    const response = await getAllTaskEmployee(
+      user_id_local,
+      cancelTokenSource.token
+    );
+
+    if (response.success == true) {
+      console.log("awais checking 0", response.data);
+
+      setEmployeeTaskData(response.data.completed_task);
+
+      // console.log(taskData, "awais data for all task");
+    }
+    // console.log(taskData, "awais data for all task");
+  };
+  const getTotalCompletedTask = () => {
+    let countTotalCompletedTask = 0;
+    let countFiveStarTask = 0;
+
+    employeeTaskData.map((item) => {
+      countTotalCompletedTask++;
+      if (item.rating == 5) {
+        countFiveStarTask++;
+      }
+    });
+    console.log("awais checking 2 fivestar", countFiveStarTask);
+    console.log("awais checking 2 completed", countTotalCompletedTask);
+    if (countFiveStarTask && countTotalCompletedTask) {
+      console.log("awais checking 2 111");
+      setFiveStarCount(countFiveStarTask);
+      setCompletedCount(countTotalCompletedTask);
+      setCountData(true);
+    }
+  };
+
   useEffect(() => {
     // ManagerProfileCreateApi();
     if (userProfileData) {
@@ -350,6 +486,8 @@ const EmployeeProfile = () => {
     setIsEditOpen(true);
   };
 
+  // const [testing, setTesting] = useState("currentLevel");
+
   return (
     <React.Fragment>
       {isEditOpen && (
@@ -427,70 +565,1010 @@ const EmployeeProfile = () => {
               </div>
             </div>
             {/* /Page Header */}
-            <div className="card mb-0">
-              <div className="card-body">
-                <div className="row">
-                  <div className="col-md-12">
-                    <div>
-                      <div class="container">
-                        <div style={{ position: "relative" }}>
-                          <div class="d-flex lineParent">
-                            <div class="connecting-line"></div>
-                          </div>
-                          <div class="d-flex">
-                            <div class="stepTab">
-                              <div class="square-tab">
-                                <div>
-                                  <i
-                                    style={{ color: "silver" }}
-                                    class="fas fa-medal"
-                                  ></i>
+            {countData ? (
+              <div className="row">
+                <div className="col-md-9">
+                  <div className="card mb-0">
+                    <div className="card-body currentLevel">
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div>
+                            <div class="container">
+                              <div style={{ position: "relative" }}>
+                                <div class="d-flex lineParent">
+                                  <div class="connecting-line"></div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="stepTab">
+                                    <div class="square-tab">
+                                      <div>
+                                        <i
+                                          style={{ color: "gold" }}
+                                          class="fas fa-user-clock"
+                                        ></i>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className={`stepTab`}>
+                                    <div className={`square-tab ${forSilver}`}>
+                                      <div>
+                                        <i
+                                          style={{ color: "Silver" }}
+                                          class="fas fa-medal"
+                                        ></i>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="stepTab">
+                                    <div class="square-tab">
+                                      <i
+                                        style={{ color: "yellow" }}
+                                        class="fas fa-medal"
+                                      ></i>
+                                    </div>
+                                  </div>
+                                  <div class="stepTab">
+                                    <div class="square-tab">
+                                      <i
+                                        style={{ color: "black" }}
+                                        class="fas fa-medal"
+                                      ></i>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="stepTab">
-                              <div class="square-tab">
-                                <div>
-                                  <i
-                                    style={{ color: "yellow" }}
-                                    class="fas fa-medal"
-                                  ></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="stepTab">
-                              <div class="square-tab">
-                                <i
-                                  style={{ color: "brown" }}
-                                  class="fas fa-medal"
-                                ></i>
-                              </div>
-                            </div>
-                            <div class="stepTab">
-                              <div class="square-tab">
-                                <i
-                                  style={{ color: "black" }}
-                                  class="fas fa-medal"
-                                ></i>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
 
-                        <div class="d-flex">
-                          <div class="stepTab text-break">
-                          <div class="stepTab text-break">Silver</div>
+                              <div class="d-flex">
+                                <div class="stepTab text-break">No Level</div>
+                                <div class="stepTab text-break">Silver</div>
+                                <div class="stepTab text-break">Gold</div>
+                                <div class="stepTab text-break">Platinum</div>
+                                
+
+                              </div>
+                            
+                              <div class="d-flex">
+                                <div class="stepTab-card text-break">
+                                  {" "}
+                                  {
+                                    <div
+                                      className="card border-secondary mb-3"
+                                      style={{ maxWidth: "19rem" }}
+                                    >
+                                      <div className="card-header">
+                                        <div>
+                                          {starCardOneCondition ? (
+                                            <i
+                                              style={{ color: "brown" }}
+                                              class="far fa-star"
+                                            ></i>
+                                          ) : (
+                                            <i
+                                              style={{ color: "brown" }}
+                                              class="fas fa-star"
+                                            ></i>
+                                          )}
+
+                                          <span> Silver </span>
+
+                                          <i
+                                            style={{ color: "green" }}
+                                            class="fas fa-check-circle"
+                                          ></i>
+                                        </div>
+                                      </div>
+                                      <div className="card-body text-secondary">
+                                        <p
+                                          style={{
+                                            fontSize: "11px",
+                                            fontWeight: "900",
+                                            marginLeft: "-11px",
+                                            marginRight: "-18px",
+                                          }}
+                                          className="card-title"
+                                        >
+                                          To Achieve Silver Level You Complete
+                                          Following Tasks:
+                                        </p>
+                                        <p
+                                          className="card-text"
+                                          style={{
+                                            color: "black",
+                                            fontSize: "9px",
+                                            fontWeight: "500",
+                                            marginLeft: "-10px",
+                                            marginRight: "-18px",
+                                          }}
+                                        >
+                                          <i
+                                            style={{ color: "green" }}
+                                            class="fas fa-check-circle"
+                                          ></i>{" "}
+                                          No Of Completed Tasks:10
+                                        </p>
+
+                                        <p
+                                          className="card-text"
+                                          style={{
+                                            color: "black",
+                                            fontSize: "9px",
+                                            fontWeight: "500",
+                                            marginLeft: "-10px",
+                                            marginRight: "-18px",
+                                          }}
+                                        >
+                                          <i
+                                            style={{ color: "green" }}
+                                            class="fas fa-star"
+                                          ></i>{" "}
+                                          No Of FiveStar Tasks:5
+                                        </p>
+                                        <hr></hr>
+                                        <p
+                                          className="card-text"
+                                          style={{
+                                            color: "black",
+                                            fontSize: "10px",
+                                            fontWeight: "600",
+                                            marginLeft: "-11px",
+                                            marginRight: "-17px",
+                                          }}
+                                        >
+                                          <i
+                                            style={{ color: "green" }}
+                                            class="fas fa-gift"
+                                          ></i>{" "}
+                                          Following Rewards You get:
+                                        </p>
+
+                                        <p
+                                          className="card-text"
+                                          style={{
+                                            color: "black",
+                                            fontSize: "9px",
+                                            fontWeight: "600",
+                                            marginLeft: "-8px",
+                                            marginRight: "-17px",
+                                          }}
+                                        >
+                                          {" "}
+                                          Two Paid Leaves
+                                        </p>
+
+                                        <hr></hr>
+                                        <p
+                                          className="card-text"
+                                          style={{
+                                            color: "black",
+                                            fontSize: "11px",
+                                            fontWeight: "600",
+                                            marginLeft: "-11px",
+                                            marginRight: "-17px",
+                                          }}
+                                        >
+                                          {" "}
+                                          Progress Of Silver Card
+                                        </p>
+                                        <p
+                                          style={{
+                                            color: "black",
+                                            fontSize: "8px",
+                                            fontWeight: "500",
+                                            marginLeft: "-11px",
+                                            marginRight: "-17px",
+                                          }}
+                                          className="m-b-2"
+                                        >
+                                          Progress Completed Task{" "}
+                                          <i
+                                            style={{ color: "green" }}
+                                            class="fas fa-check-circle"
+                                          ></i>
+                                          <span className="text-success float-right">
+                                            {WidthCardOne}%{" "}
+                                          </span>
+                                        </p>
+
+                                        <div
+                                          style={{
+                                            width: "100%",
+                                            marginLeft: "-11px",
+                                            marginRight: "-17px",
+                                          }}
+                                          className="progress progress-xs mb-0"
+                                        >
+                                          <div
+                                            className="progress-bar bg-success"
+                                            role="progressbar"
+                                            data-toggle="tooltip"
+                                            title="40%"
+                                            style={{
+                                              width: `${WidthCardOne}%`,
+                                            }}
+                                          />
+                                        </div>
+                                        <p
+                                          style={{
+                                            color: "black",
+                                            fontSize: "8px",
+                                            fontWeight: "500",
+                                            marginLeft: "-11px",
+                                            marginRight: "-17px",
+                                            marginTop: "5px",
+                                          }}
+                                          className="m-b-2"
+                                        >
+                                          Progress FiveStar Task{" "}
+                                          <i
+                                            style={{ color: "green" }}
+                                            class="fas fa-star"
+                                          ></i>
+                                          <span className="text-success float-right">
+                                            {" "}
+                                            {starWidthCardOne}%{" "}
+                                          </span>
+                                        </p>
+                                        <div
+                                          style={{
+                                            width: "100%",
+                                            marginLeft: "-11px",
+                                            marginRight: "-17px",
+                                          }}
+                                          className="progress progress-xs mb-0"
+                                        >
+                                          <div
+                                            className="progress-bar bg-success"
+                                            role="progressbar"
+                                            data-toggle="tooltip"
+                                            title="40%"
+                                            style={{
+                                              width: `${starWidthCardOne}%`,
+                                            }}
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  }
+                                </div>
+                                <div class="stepTab-card text-break">
+                                  {" "}
+                                  <div
+                                    className="card border-secondary mb-3"
+                                    style={{ maxWidth: "19rem" }}
+                                  >
+                                    <div className="card-header">
+                                      <div>
+                                        {starCardOneCondition ? (
+                                          <i
+                                            style={{ color: "brown" }}
+                                            class="far fa-star"
+                                          ></i>
+                                        ) : (
+                                          <i
+                                            style={{ color: "brown" }}
+                                            class="fas fa-star"
+                                          ></i>
+                                        )}
+
+                                        <span> Gold </span>
+
+                                        <i
+                                          style={{ color: "green" }}
+                                          class="fas fa-check-circle"
+                                        ></i>
+                                      </div>
+                                    </div>
+                                    <div className="card-body text-secondary">
+                                      <p
+                                        style={{
+                                          fontSize: "11px",
+                                          fontWeight: "900",
+                                          marginLeft: "-11px",
+                                          marginRight: "-18px",
+                                        }}
+                                        className="card-title"
+                                      >
+                                        To Achieve Gold Level You Complete
+                                        Following Tasks:
+                                      </p>
+                                      <p
+                                        className="card-text"
+                                        style={{
+                                          color: "black",
+                                          fontSize: "9px",
+                                          fontWeight: "500",
+                                          marginLeft: "-10px",
+                                          marginRight: "-18px",
+                                        }}
+                                      >
+                                        <i
+                                          style={{ color: "green" }}
+                                          class="fas fa-check-circle"
+                                        ></i>{" "}
+                                        No Of Completed Tasks:15
+                                      </p>
+
+                                      <p
+                                        className="card-text"
+                                        style={{
+                                          color: "black",
+                                          fontSize: "9px",
+                                          fontWeight: "500",
+                                          marginLeft: "-10px",
+                                          marginRight: "-18px",
+                                        }}
+                                      >
+                                        <i
+                                          style={{ color: "green" }}
+                                          class="fas fa-star"
+                                        ></i>{" "}
+                                        No Of FiveStar Tasks:10
+                                      </p>
+                                      <hr></hr>
+                                      <p
+                                        className="card-text"
+                                        style={{
+                                          color: "black",
+                                          fontSize: "10px",
+                                          fontWeight: "600",
+                                          marginLeft: "-11px",
+                                          marginRight: "-17px",
+                                        }}
+                                      >
+                                        <i
+                                          style={{ color: "green" }}
+                                          class="fas fa-gift"
+                                        ></i>{" "}
+                                        Following Rewards You get:
+                                      </p>
+
+                                      <p
+                                        className="card-text"
+                                        style={{
+                                          color: "black",
+                                          fontSize: "9px",
+                                          fontWeight: "600",
+                                          marginLeft: "-8px",
+                                          marginRight: "-17px",
+                                        }}
+                                      >
+                                        {" "}
+                                        20% Bonus Salary this month
+                                      </p>
+
+                                      <hr></hr>
+                                      <p
+                                        className="card-text"
+                                        style={{
+                                          color: "black",
+                                          fontSize: "11px",
+                                          fontWeight: "600",
+                                          marginLeft: "-11px",
+                                          marginRight: "-17px",
+                                        }}
+                                      >
+                                        {" "}
+                                        Progress Of Gold Card
+                                      </p>
+                                      <p
+                                        style={{
+                                          color: "black",
+                                          fontSize: "8px",
+                                          fontWeight: "500",
+                                          marginLeft: "-11px",
+                                          marginRight: "-17px",
+                                        }}
+                                        className="m-b-2"
+                                      >
+                                        Progress Completed Task{" "}
+                                        <i
+                                          style={{ color: "green" }}
+                                          class="fas fa-check-circle"
+                                        ></i>
+                                        <span className="text-success float-right">
+                                          {" "}
+                                          {WidthCardTwo}%
+                                        </span>
+                                      </p>
+
+                                      <div
+                                        style={{
+                                          width: "100%",
+                                          marginLeft: "-11px",
+                                          marginRight: "-17px",
+                                        }}
+                                        className="progress progress-xs mb-0"
+                                      >
+                                        <div
+                                          className="progress-bar bg-success"
+                                          role="progressbar"
+                                          data-toggle="tooltip"
+                                          title="40%"
+                                          style={{
+                                            width: `${WidthCardTwo}%`,
+                                          }}
+                                        />
+                                      </div>
+                                      <p
+                                        style={{
+                                          color: "black",
+                                          fontSize: "8px",
+                                          fontWeight: "500",
+                                          marginLeft: "-11px",
+                                          marginRight: "-17px",
+                                          marginTop: "5px",
+                                        }}
+                                        className="m-b-2"
+                                      >
+                                        Progress FiveStar Task{" "}
+                                        <i
+                                          style={{ color: "green" }}
+                                          class="fas fa-star"
+                                        ></i>
+                                        <span className="text-success float-right">
+                                          {" "}
+                                          {starWidthCardTwo}%
+                                        </span>
+                                      </p>
+                                      <div
+                                        style={{
+                                          width: "100%",
+                                          marginLeft: "-11px",
+                                          marginRight: "-17px",
+                                        }}
+                                        className="progress progress-xs mb-0"
+                                      >
+                                        <div
+                                          className="progress-bar bg-success"
+                                          role="progressbar"
+                                          data-toggle="tooltip"
+                                          title="40%"
+                                          style={{
+                                            width: `${starWidthCardTwo}%`,
+                                          }}
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="stepTab-card text-break">
+                                  {" "}
+                                  <div
+                                    className="card border-secondary mb-3"
+                                    style={{ maxWidth: "19rem" }}
+                                  >
+                                    <div className="card-header">
+                                      <div>
+                                        {starCardOneCondition ? (
+                                          <i
+                                            style={{ color: "brown" }}
+                                            class="far fa-star"
+                                          ></i>
+                                        ) : (
+                                          <i
+                                            style={{ color: "brown" }}
+                                            class="fas fa-star"
+                                          ></i>
+                                        )}
+
+                                        <span style={{ fontSize: ".8375rem" }}>
+                                          {" "}
+                                          Platinum{" "}
+                                        </span>
+
+                                        <i
+                                          style={{ color: "green" }}
+                                          class="fas fa-check-circle"
+                                        ></i>
+                                      </div>
+                                    </div>
+                                    <div className="card-body text-secondary">
+                                      <p
+                                        style={{
+                                          fontSize: "11px",
+                                          fontWeight: "900",
+                                          marginLeft: "-11px",
+                                          marginRight: "-18px",
+                                        }}
+                                        className="card-title"
+                                      >
+                                        To Achieve Platinum Level You Complete
+                                        Following Tasks:
+                                      </p>
+                                      <p
+                                        className="card-text"
+                                        style={{
+                                          color: "black",
+                                          fontSize: "9px",
+                                          fontWeight: "500",
+                                          marginLeft: "-10px",
+                                          marginRight: "-18px",
+                                        }}
+                                      >
+                                        <i
+                                          style={{ color: "green" }}
+                                          class="fas fa-check-circle"
+                                        ></i>{" "}
+                                        No Of Completed Tasks:20
+                                      </p>
+
+                                      <p
+                                        className="card-text"
+                                        style={{
+                                          color: "black",
+                                          fontSize: "9px",
+                                          fontWeight: "500",
+                                          marginLeft: "-10px",
+                                          marginRight: "-18px",
+                                        }}
+                                      >
+                                        <i
+                                          style={{ color: "green" }}
+                                          class="fas fa-star"
+                                        ></i>{" "}
+                                        No Of FiveStar Tasks:15
+                                      </p>
+                                      <hr></hr>
+                                      <p
+                                        className="card-text"
+                                        style={{
+                                          color: "black",
+                                          fontSize: "10px",
+                                          fontWeight: "600",
+                                          marginLeft: "-11px",
+                                          marginRight: "-17px",
+                                        }}
+                                      >
+                                        <i
+                                          style={{ color: "green" }}
+                                          class="fas fa-gift"
+                                        ></i>{" "}
+                                        Following Rewards You get:
+                                      </p>
+
+                                      <p
+                                        className="card-text"
+                                        style={{
+                                          color: "black",
+                                          fontSize: "9px",
+                                          fontWeight: "600",
+                                          marginLeft: "-8px",
+                                          marginRight: "-17px",
+                                        }}
+                                      >
+                                        {" "}
+                                        4 days Trip To Bangkok
+                                      </p>
+
+                                      <hr></hr>
+                                      <p
+                                        className="card-text"
+                                        style={{
+                                          color: "black",
+                                          fontSize: "11px",
+                                          fontWeight: "600",
+                                          marginLeft: "-11px",
+                                          marginRight: "-17px",
+                                        }}
+                                      >
+                                        {" "}
+                                        Progress Of Platinum Card
+                                      </p>
+                                      <p
+                                        style={{
+                                          color: "black",
+                                          fontSize: "8px",
+                                          fontWeight: "500",
+                                          marginLeft: "-11px",
+                                          marginRight: "-17px",
+                                        }}
+                                        className="m-b-2"
+                                      >
+                                        Progress Completed Task{" "}
+                                        <i
+                                          style={{ color: "green" }}
+                                          class="fas fa-check-circle"
+                                        ></i>
+                                        <span className="text-success float-right">
+                                          {" "}
+                                          {WidthCardThree}%
+                                        </span>
+                                      </p>
+
+                                      <div
+                                        style={{
+                                          width: "100%",
+                                          marginLeft: "-11px",
+                                          marginRight: "-17px",
+                                        }}
+                                        className="progress progress-xs mb-0"
+                                      >
+                                        <div
+                                          className="progress-bar bg-success"
+                                          role="progressbar"
+                                          data-toggle="tooltip"
+                                          title="40%"
+                                          style={{
+                                            width: `${WidthCardThree}%`,
+                                          }}
+                                        />
+                                      </div>
+                                      <p
+                                        style={{
+                                          color: "black",
+                                          fontSize: "8px",
+                                          fontWeight: "500",
+                                          marginLeft: "-11px",
+                                          marginRight: "-17px",
+                                          marginTop: "5px",
+                                        }}
+                                        className="m-b-2"
+                                      >
+                                        Progress FiveStar Task{" "}
+                                        <i
+                                          style={{ color: "green" }}
+                                          class="fas fa-star"
+                                        ></i>
+                                        <span className="text-success float-right">
+                                          {" "}
+                                          {starWidthCardThree}%
+                                        </span>
+                                      </p>
+                                      <div
+                                        style={{
+                                          width: "100%",
+                                          marginLeft: "-11px",
+                                          marginRight: "-17px",
+                                        }}
+                                        className="progress progress-xs mb-0"
+                                      >
+                                        <div
+                                          className="progress-bar bg-success"
+                                          role="progressbar"
+                                          data-toggle="tooltip"
+                                          title="40%"
+                                          style={{
+                                            width: `${starWidthCardThree}%`,
+                                          }}
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                          <div class="stepTab text-break">Gold</div>
-                          <div class="stepTab text-break">Diamond</div>
-                          <div class="stepTab text-break">Platinum</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div className="col-md-3">
+                  <div className="card mb-0">
+                    <div
+                      className="card border-secondary mb-3"
+                      style={{ maxWidth: "19rem" }}
+                    >
+                      <div className="card-header">
+                        <div>
+                          {starCardOneCondition ? (
+                            <i
+                              style={{ color: "brown" }}
+                              class="far fa-star"
+                            ></i>
+                          ) : (
+                            <i
+                              style={{ color: "brown" }}
+                              class="fas fa-star"
+                            ></i>
+                          )}
+
+                          <span style={{ fontSize: ".8375rem" }}>
+                            {" "}
+                            {starCardThreeCondition &&
+                            starCardTwoCondition &&
+                            starCardOneCondition &&
+                            cardOneCondition &&
+                            cardTwoCondition &&
+                            cardThreeCondition
+                              ? "Platinum"
+                              : starCardTwoCondition &&
+                                starCardOneCondition &&
+                                cardOneCondition &&
+                                cardTwoCondition
+                              ? "Gold"
+                              : starCardOneCondition && cardOneCondition
+                              ? "Silver"
+                              : "No Level"}{" "}
+                          </span>
+
+                          <i
+                            style={{ color: "green" }}
+                            class="fas fa-check-circle"
+                          ></i>
+                        </div>
+                      </div>
+                      <div className="card-body text-secondary">
+                        <p
+                          className="card-text"
+                          style={{
+                            color: "black",
+                            fontSize: "9px",
+                            fontWeight: "500",
+                            marginLeft: "-10px",
+                            marginRight: "-18px",
+                          }}
+                        >
+                          <i
+                            style={{ color: "green" }}
+                            class="fas fa-check-circle"
+                          ></i>{" "}
+                          Your Completed Tasks:{completedCount}
+                        </p>
+
+                        <p
+                          className="card-text"
+                          style={{
+                            color: "black",
+                            fontSize: "9px",
+                            fontWeight: "500",
+                            marginLeft: "-10px",
+                            marginRight: "-18px",
+                          }}
+                        >
+                          <i style={{ color: "green" }} class="fas fa-star"></i>{" "}
+                          Your Five Star Tasks: {fiveStarCount}
+                        </p>
+                        <hr></hr>
+                        <p
+                          className="card-text"
+                          style={{
+                            color: "black",
+                            fontSize: "10px",
+                            fontWeight: "600",
+                            marginLeft: "-11px",
+                            marginRight: "-17px",
+                          }}
+                        >
+                          <i style={{ color: "green" }} class="fas fa-gift"></i>{" "}
+                          Following Rewards You win:
+                        </p>
+
+                        {
+                        starCardThreeCondition &&
+                        starCardTwoCondition &&
+                        starCardOneCondition &&
+                        cardOneCondition &&
+                        cardTwoCondition &&
+                        cardThreeCondition ? (
+                          <p
+                            className="card-text"
+                            style={{
+                              color: "black",
+                              fontSize: "9px",
+                              fontWeight: "600",
+                              marginLeft: "-8px",
+                              marginRight: "-17px",
+                            }}
+                          >
+                            {" "}
+                            Two Paid Leaves <hr/> 20% Bonus Salary this
+                            month <hr/>4 days Trip To Murree
+                          </p>
+                        ) : starCardTwoCondition &&
+                          starCardOneCondition &&
+                          cardOneCondition &&
+                          cardTwoCondition ? (
+                          <p
+                            className="card-text"
+                            style={{
+                              color: "black",
+                              fontSize: "9px",
+                              fontWeight: "600",
+                              marginLeft: "-8px",
+                              marginRight: "-17px",
+                            }}
+                          >
+                            {" "}
+                            Two Paid Leaves <hr/> 20% Bonus Salary this
+                            month
+                          </p>
+                        ) : starCardOneCondition && cardOneCondition ? (
+                          <p
+                            className="card-text"
+                            style={{
+                              color: "black",
+                              fontSize: "9px",
+                              fontWeight: "600",
+                              marginLeft: "-8px",
+                              marginRight: "-17px",
+                            }}
+                          >
+                            {" "}
+                            Two Paid Leaves
+                          </p>
+                        ) : (
+                          <p
+                            className="card-text"
+                            style={{
+                              color: "black",
+                              fontSize: "9px",
+                              fontWeight: "600",
+                              marginLeft: "-8px",
+                              marginRight: "-17px",
+                            }}
+                          >
+                            {" "}
+                            Sorry You Win Nothing
+                          </p>
+                        )
+                      }
+
+                        <hr></hr>
+                        <p
+                          className="card-text"
+                          style={{
+                            color: "black",
+                            fontSize: "11px",
+                            fontWeight: "600",
+                            marginLeft: "-11px",
+                            marginRight: "-17px",
+                          }}
+                        >
+                          {" "}
+                          Progress To Achieve Platinum Level
+                          {/* 
+                            starCardThreeCondition &&
+                          starCardTwoCondition &&
+                          starCardOneCondition &&
+                          cardOneCondition &&
+                          cardTwoCondition &&
+                          cardThreeCondition ? (
+                            <p
+                              className="card-text"
+                              style={{
+                                color: "black",
+                                fontSize: "9px",
+                                fontWeight: "600",
+                                marginLeft: "-8px",
+                                marginRight: "-17px",
+                              }}
+                            >
+                              {" "}
+                              Congrats You achieved The Platinum Level
+                            </p>
+                          ) : starCardTwoCondition &&
+                            starCardOneCondition &&
+                            cardOneCondition &&
+                            cardTwoCondition ? (
+                            <p
+                              className="card-text"
+                              style={{
+                                color: "black",
+                                fontSize: "9px",
+                                fontWeight: "600",
+                                marginLeft: "-8px",
+                                marginRight: "-17px",
+                              }}
+                            >
+                              {" "}
+                              Progress Of Platinum Card
+                            </p>
+                          ) : starCardOneCondition && cardOneCondition ? (
+                            <p
+                              className="card-text"
+                              style={{
+                                color: "black",
+                                fontSize: "9px",
+                                fontWeight: "600",
+                                marginLeft: "-8px",
+                                marginRight: "-17px",
+                              }}
+                            >
+                              {" "}
+                              Progress Of Gold Card
+                            </p>
+                          ) : (
+                            <p
+                              className="card-text"
+                              style={{
+                                color: "black",
+                                fontSize: "9px",
+                                fontWeight: "600",
+                                marginLeft: "-8px",
+                                marginRight: "-17px",
+                              }}
+                            >
+                              {" "}
+                              Progress Of Silver Card
+                            </p>
+                            ) */}
+                        </p>
+                        <p
+                        style={{
+                          color: "black",
+                          fontSize: "8px",
+                          fontWeight: "500",
+                          marginLeft: "-11px",
+                          marginRight: "-17px",
+                        }}
+                        className="m-b-2"
+                      >
+                        Progress Completed Task{" "}
+                        <i
+                          style={{ color: "green" }}
+                          class="fas fa-check-circle"
+                        ></i>
+                        <span className="text-success float-right">
+                          {" "}
+                          {WidthCardThree}%
+                        </span>
+                      </p>
+
+                      <div
+                        style={{
+                          width: "100%",
+                          marginLeft: "-11px",
+                          marginRight: "-17px",
+                        }}
+                        className="progress progress-xs mb-0"
+                      >
+                        <div
+                          className="progress-bar bg-success"
+                          role="progressbar"
+                          data-toggle="tooltip"
+                          title="40%"
+                          style={{
+                            width: `${WidthCardThree}%`,
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: "black",
+                          fontSize: "8px",
+                          fontWeight: "500",
+                          marginLeft: "-11px",
+                          marginRight: "-17px",
+                          marginTop: "5px",
+                        }}
+                        className="m-b-2"
+                      >
+                        Progress FiveStar Task{" "}
+                        <i
+                          style={{ color: "green" }}
+                          class="fas fa-star"
+                        ></i>
+                        <span className="text-success float-right">
+                          {" "}
+                          {starWidthCardThree}%
+                        </span>
+                      </p>
+                      <div
+                        style={{
+                          width: "100%",
+                          marginLeft: "-11px",
+                          marginRight: "-17px",
+                        }}
+                        className="progress progress-xs mb-0"
+                      >
+                        <div
+                          className="progress-bar bg-success"
+                          role="progressbar"
+                          data-toggle="tooltip"
+                          title="40%"
+                          style={{
+                            width: `${starWidthCardThree}%`,
+                          }}
+                        />
+                      </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            ) : null}
 
             <div className="card mb-0">
               <div className="card-body">
@@ -860,11 +1938,11 @@ const EmployeeProfile = () => {
                         </a>
                       </div>
                       {/*<a
-                            className="btn btn-primary account-btn"
-                            onClick={ManagerProfileCreateApi}
-                          >
-                          Submit
-                                  </a>*/}
+                             className="btn btn-primary account-btn"
+                             onClick={ManagerProfileCreateApi}
+                           >
+                           Submit
+                                   </a>*/}
                     </div>
                   </form>
                 </div>
@@ -1147,11 +2225,11 @@ const EmployeeProfile = () => {
                           </button>
                         </div>
                         {/*<a
-                            className="btn btn-primary account-btn"
-                            onClick={ManagerProfileCreateApi}
-                          >
-                          Submit
-                                  </a>*/}
+                             className="btn btn-primary account-btn"
+                             onClick={ManagerProfileCreateApi}
+                           >
+                           Submit
+                                   </a>*/}
                       </div>
                     </form>
                   </div>
