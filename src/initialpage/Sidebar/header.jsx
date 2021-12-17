@@ -254,10 +254,28 @@
                 <span className="notification-title">Employee Of The Month</span>
                 {/* <a href="" className="clear-noti"> Clear All </a> */}
               </div>
-            <ul className="notification-list">
-              
-           
+              <ul className="notification-list">
+               
+              {topEmployee && topEmployee.map(item =>(
+                <li className="notification-message" key = {item.id}>
+                    <a>
+                      <div className="media">
+                        <span className="avatar">
+                          <img alt="" src={item.url} />
+                        </span>
+                        <div className="media-body">
+                          <p className="noti-details"><span className="noti-title">Name</span> {item.employ_name}</p>
+                          {/* <p className="noti-time"><span className="notification-time">Days {item.day}</span></p> */}
+                          <p className="noti-details"><span onClick={(e)=>notificationCancle(item,e)} className="noti-title" >Email {item.employ_email}</span></p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+              ))
+              }
               </ul>
+
+          
 
 
               {

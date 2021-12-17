@@ -112,13 +112,29 @@ const EmployeeProfile = () => {
   const [WidthCardThree, setWidthCardThree] = useState();
 
   //for css classes style apply
-  const [forSilver, setForSilver]= useState("");
+  const [cardClass, setCardClass] = useState("");
 
   useEffect(() => {
     if (completedCount) {
       let cardOne = Math.round((completedCount / 10) * 100);
       let CardTwo = Math.round((completedCount / 15) * 100);
       let CardThree = Math.round((completedCount / 20) * 100);
+
+      let starOne = Math.round((fiveStarCount / 5) * 100);
+      let starTwo = Math.round((fiveStarCount / 10) * 100);
+      let starThree = Math.round((fiveStarCount / 15) * 100);
+
+      if (cardOne > 99 && starOne > 99) {
+        setCardClass("changeSilver");
+      }
+
+      if (CardTwo > 99 && starTwo > 99) {
+        setCardClass("changeGold");
+      }
+
+      if (CardThree > 99 && starThree > 99) {
+        setCardClass("changePlatinum");
+      }
 
       console.log("awais checking cardOne Value 1", cardOne);
       console.log("awais checking cardOne Value 2", CardTwo);
@@ -153,7 +169,7 @@ const EmployeeProfile = () => {
         : setStarWidthCardThree(starsCardThree);
 
       if (cardOne > 99) {
-        setForSilver("silvercurrentLevel");
+        // setForSilver("silvercurrentLevel");
         setCardOneCondition(true);
       }
       if (CardTwo > 99) {
@@ -579,38 +595,46 @@ const EmployeeProfile = () => {
                                   <div class="connecting-line"></div>
                                 </div>
                                 <div class="d-flex">
-                                  <div class="stepTab">
-                                    <div class="square-tab">
-                                      <div>
+                                  <div class="stepTab ">
+                                    <div
+                                      className={`square-tab square-tab-nolevel `}
+                                    >
+                                      <div classsName="">
                                         <i
-                                          style={{ color: "gold" }}
-                                          class="fas fa-user-clock"
+                                          style={{ color: "black" }}
+                                          className={`fas fa-user-clock `}
                                         ></i>
                                       </div>
                                     </div>
                                   </div>
                                   <div className={`stepTab`}>
-                                    <div className={`square-tab ${forSilver}`}>
+                                    <div
+                                      className={`square-tab square-tab-silver`}
+                                    >
                                       <div>
                                         <i
-                                          style={{ color: "Silver" }}
+                                          style={{ color: "#404040" }}
                                           class="fas fa-medal"
                                         ></i>
                                       </div>
                                     </div>
                                   </div>
                                   <div class="stepTab">
-                                    <div class="square-tab">
+                                    <div
+                                      className={`square-tab square-tab-gold`}
+                                    >
                                       <i
-                                        style={{ color: "yellow" }}
+                                        style={{ color: "#daa520" }}
                                         class="fas fa-medal"
                                       ></i>
                                     </div>
                                   </div>
                                   <div class="stepTab">
-                                    <div class="square-tab">
+                                    <div
+                                      className={`square-tab square-tab-platinum`}
+                                    >
                                       <i
-                                        style={{ color: "black" }}
+                                        style={{ color: "#6d9bc3" }}
                                         class="fas fa-medal"
                                       ></i>
                                     </div>
@@ -619,14 +643,44 @@ const EmployeeProfile = () => {
                               </div>
 
                               <div class="d-flex">
-                                <div class="stepTab text-break">No Level</div>
-                                <div class="stepTab text-break">Silver</div>
-                                <div class="stepTab text-break">Gold</div>
-                                <div class="stepTab text-break">Platinum</div>
-                                
-
+                                <div
+                                  style={{
+                                    color: "#fff",
+                                    fontSize: ".6375rem",
+                                  }}
+                                  class="stepTab text-break"
+                                >
+                                  No Level
+                                </div>
+                                <div
+                                  style={{
+                                    color: "#fff",
+                                    fontSize: ".7375rem",
+                                  }}
+                                  class="stepTab text-break"
+                                >
+                                  Silver
+                                </div>
+                                <div
+                                  style={{
+                                    color: "#fff",
+                                    fontSize: ".7375rem",
+                                  }}
+                                  class="stepTab text-break"
+                                >
+                                  Gold
+                                </div>
+                                <div
+                                  style={{
+                                    color: "#fff",
+                                    fontSize: ".7375rem",
+                                  }}
+                                  class="stepTab text-break"
+                                >
+                                  Platinum
+                                </div>
                               </div>
-                            
+
                               <div class="d-flex">
                                 <div class="stepTab-card text-break">
                                   {" "}
@@ -1137,7 +1191,7 @@ const EmployeeProfile = () => {
                                         }}
                                       >
                                         {" "}
-                                        4 days Trip To Bangkok
+                                        4 days Trip To Murree
                                       </p>
 
                                       <hr></hr>
@@ -1246,23 +1300,11 @@ const EmployeeProfile = () => {
                 <div className="col-md-3">
                   <div className="card mb-0">
                     <div
-                      className="card border-secondary mb-3"
+                      className={`${cardClass} card border-secondary mb-3 `}
                       style={{ maxWidth: "19rem" }}
                     >
                       <div className="card-header">
                         <div>
-                          {starCardOneCondition ? (
-                            <i
-                              style={{ color: "brown" }}
-                              class="far fa-star"
-                            ></i>
-                          ) : (
-                            <i
-                              style={{ color: "brown" }}
-                              class="fas fa-star"
-                            ></i>
-                          )}
-
                           <span style={{ fontSize: ".8375rem" }}>
                             {" "}
                             {starCardThreeCondition &&
@@ -1281,11 +1323,35 @@ const EmployeeProfile = () => {
                               ? "Silver"
                               : "No Level"}{" "}
                           </span>
-
-                          <i
-                            style={{ color: "green" }}
-                            class="fas fa-check-circle"
-                          ></i>
+                          {starCardThreeCondition &&
+                          starCardTwoCondition &&
+                          starCardOneCondition &&
+                          cardOneCondition &&
+                          cardTwoCondition &&
+                          cardThreeCondition ? (
+                            <i
+                              style={{ color: "#6087aa" }}
+                              class="fas fa-medal"
+                            ></i>
+                          ) : starCardTwoCondition &&
+                            starCardOneCondition &&
+                            cardOneCondition &&
+                            cardTwoCondition ? (
+                            <i
+                              style={{ color: "#f1b92a" }}
+                              class="fas fa-medal"
+                            ></i>
+                          ) : starCardOneCondition && cardOneCondition ? (
+                            <i
+                              style={{ color: "#404040" }}
+                              class="fas fa-medal"
+                            ></i>
+                          ) : (
+                            <i
+                              style={{ color: "black" }}
+                              className={`fas fa-user-clock `}
+                            ></i>
+                          )}
                         </div>
                       </div>
                       <div className="card-body text-secondary">
@@ -1334,8 +1400,7 @@ const EmployeeProfile = () => {
                           Following Rewards You win:
                         </p>
 
-                        {
-                        starCardThreeCondition &&
+                        {starCardThreeCondition &&
                         starCardTwoCondition &&
                         starCardOneCondition &&
                         cardOneCondition &&
@@ -1352,8 +1417,8 @@ const EmployeeProfile = () => {
                             }}
                           >
                             {" "}
-                            Two Paid Leaves <hr/> 20% Bonus Salary this
-                            month <hr/>4 days Trip To Murree
+                            Two Paid Leaves <hr /> 20% Bonus Salary this month{" "}
+                            <hr />4 days Trip To Murree
                           </p>
                         ) : starCardTwoCondition &&
                           starCardOneCondition &&
@@ -1370,8 +1435,7 @@ const EmployeeProfile = () => {
                             }}
                           >
                             {" "}
-                            Two Paid Leaves <hr/> 20% Bonus Salary this
-                            month
+                            Two Paid Leaves <hr /> 20% Bonus Salary this month
                           </p>
                         ) : starCardOneCondition && cardOneCondition ? (
                           <p
@@ -1401,8 +1465,7 @@ const EmployeeProfile = () => {
                             {" "}
                             Sorry You Win Nothing
                           </p>
-                        )
-                      }
+                        )}
 
                         <hr></hr>
                         <p
@@ -1485,84 +1548,80 @@ const EmployeeProfile = () => {
                             ) */}
                         </p>
                         <p
-                        style={{
-                          color: "black",
-                          fontSize: "8px",
-                          fontWeight: "500",
-                          marginLeft: "-11px",
-                          marginRight: "-17px",
-                        }}
-                        className="m-b-2"
-                      >
-                        Progress Completed Task{" "}
-                        <i
-                          style={{ color: "green" }}
-                          class="fas fa-check-circle"
-                        ></i>
-                        <span className="text-success float-right">
-                          {" "}
-                          {WidthCardThree}%
-                        </span>
-                      </p>
-
-                      <div
-                        style={{
-                          width: "100%",
-                          marginLeft: "-11px",
-                          marginRight: "-17px",
-                        }}
-                        className="progress progress-xs mb-0"
-                      >
-                        <div
-                          className="progress-bar bg-success"
-                          role="progressbar"
-                          data-toggle="tooltip"
-                          title="40%"
                           style={{
-                            width: `${WidthCardThree}%`,
+                            color: "black",
+                            fontSize: "8px",
+                            fontWeight: "500",
+                            marginLeft: "-11px",
+                            marginRight: "-17px",
                           }}
-                        />
-                      </div>
-                      <p
-                        style={{
-                          color: "black",
-                          fontSize: "8px",
-                          fontWeight: "500",
-                          marginLeft: "-11px",
-                          marginRight: "-17px",
-                          marginTop: "5px",
-                        }}
-                        className="m-b-2"
-                      >
-                        Progress FiveStar Task{" "}
-                        <i
-                          style={{ color: "green" }}
-                          class="fas fa-star"
-                        ></i>
-                        <span className="text-success float-right">
-                          {" "}
-                          {starWidthCardThree}%
-                        </span>
-                      </p>
-                      <div
-                        style={{
-                          width: "100%",
-                          marginLeft: "-11px",
-                          marginRight: "-17px",
-                        }}
-                        className="progress progress-xs mb-0"
-                      >
-                        <div
-                          className="progress-bar bg-success"
-                          role="progressbar"
-                          data-toggle="tooltip"
-                          title="40%"
-                          style={{
-                            width: `${starWidthCardThree}%`,
-                          }}
-                        />
-                      </div>
+                          className="m-b-2"
+                        >
+                          Progress Completed Task{" "}
+                          <i
+                            style={{ color: "green" }}
+                            class="fas fa-check-circle"
+                          ></i>
+                          <span className="text-success float-right">
+                            {" "}
+                            {WidthCardThree}%
+                          </span>
+                        </p>
 
+                        <div
+                          style={{
+                            width: "100%",
+                            marginLeft: "-11px",
+                            marginRight: "-17px",
+                          }}
+                          className="progress progress-xs mb-0"
+                        >
+                          <div
+                            className="progress-bar bg-success"
+                            role="progressbar"
+                            data-toggle="tooltip"
+                            title="40%"
+                            style={{
+                              width: `${WidthCardThree}%`,
+                            }}
+                          />
+                        </div>
+                        <p
+                          style={{
+                            color: "black",
+                            fontSize: "8px",
+                            fontWeight: "500",
+                            marginLeft: "-11px",
+                            marginRight: "-17px",
+                            marginTop: "5px",
+                          }}
+                          className="m-b-2"
+                        >
+                          Progress FiveStar Task{" "}
+                          <i style={{ color: "green" }} class="fas fa-star"></i>
+                          <span className="text-success float-right">
+                            {" "}
+                            {starWidthCardThree}%
+                          </span>
+                        </p>
+                        <div
+                          style={{
+                            width: "100%",
+                            marginLeft: "-11px",
+                            marginRight: "-17px",
+                          }}
+                          className="progress progress-xs mb-0"
+                        >
+                          <div
+                            className="progress-bar bg-success"
+                            role="progressbar"
+                            data-toggle="tooltip"
+                            title="40%"
+                            style={{
+                              width: `${starWidthCardThree}%`,
+                            }}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>

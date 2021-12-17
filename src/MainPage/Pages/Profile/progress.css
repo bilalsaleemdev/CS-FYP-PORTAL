@@ -35,6 +35,7 @@
     height: 50px;
     /*line-height: 45px;*/
     border-radius: 10px;
+  
     background: #fff;
     border: 2px solid #e0e0e0;
     font-size: 25px;
@@ -49,9 +50,34 @@
     background-color: lightblue;
   }
 }
-
+.square-tab-nolevel{
+  box-shadow: 0px 24px rgb(26, 25, 25);
+}
+.square-tab-silver{
+  box-shadow: 0px 24px grey;
+}
+.square-tab-gold{
+  box-shadow: 0px 24px #f1b92a;
+}
+.square-tab-platinum{
+  box-shadow: 0px 24px #6087aa;
+}
 .silvercurrentLevel{
-  background-color: black;
+  box-shadow: 0px 24px grey;
   
 
 }
+
+.changeSilver{
+  background: #8d8c8c!important;
+}
+.changeGold{
+  background: #f8c648!important;
+}
+.changePlatinum{
+  background: #6d9bc3!important;
+}
+
+
+
+
