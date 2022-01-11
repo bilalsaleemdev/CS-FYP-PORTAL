@@ -582,7 +582,7 @@ const EmployeeProfile = () => {
             </div>
             {/* /Page Header */}
             {countData ? (
-              <div className="row">
+              <div style={{ marginBottom: "20px" }} className="row">
                 <div className="col-md-9">
                   <div className="card mb-0">
                     <div className="card-body currentLevel">
@@ -1298,11 +1298,12 @@ const EmployeeProfile = () => {
                   </div>
                 </div>
                 <div className="col-md-3">
-                  <div className="card mb-0">
-                    <div
-                      className={`${cardClass} card border-secondary mb-3 `}
-                      style={{ maxWidth: "19rem" }}
-                    >
+                <div style={{ maxWidth: "19rem", height:'83%' }} className="card mb-0">
+                  <div
+                    className={`${cardClass} card border-secondary mb-3 `}
+                    style={{ maxWidth: "19rem", height:'100%' }}
+                  >
+                    
                       <div className="card-header">
                         <div>
                           <span style={{ fontSize: ".8375rem" }}>
@@ -1550,7 +1551,7 @@ const EmployeeProfile = () => {
                         <p
                           style={{
                             color: "black",
-                            fontSize: "8px",
+                            fontSize: "14px",
                             fontWeight: "500",
                             marginLeft: "-11px",
                             marginRight: "-17px",
@@ -1562,7 +1563,7 @@ const EmployeeProfile = () => {
                             style={{ color: "green" }}
                             class="fas fa-check-circle"
                           ></i>
-                          <span className="text-success float-right">
+                          <span style={{fontSize:'12px'}} className="text-success float-right">
                             {" "}
                             {WidthCardThree}%
                           </span>
@@ -1589,7 +1590,7 @@ const EmployeeProfile = () => {
                         <p
                           style={{
                             color: "black",
-                            fontSize: "8px",
+                            fontSize: "14px",
                             fontWeight: "500",
                             marginLeft: "-11px",
                             marginRight: "-17px",
@@ -1599,7 +1600,7 @@ const EmployeeProfile = () => {
                         >
                           Progress FiveStar Task{" "}
                           <i style={{ color: "green" }} class="fas fa-star"></i>
-                          <span className="text-success float-right">
+                          <span style={{fontSize:'12px'}}  className="text-success float-right">
                             {" "}
                             {starWidthCardThree}%
                           </span>

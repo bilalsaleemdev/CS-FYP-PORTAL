@@ -191,6 +191,17 @@ export const createUserWorkShopeAPI = async (data,cancelToken) => {
     }
 };
 
+//find all manager user
+export const getManagerUser= async (cancelToken) => {    
+    const url = `manager-users`;    
+    const request = { type: 'GET', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
 export const getUserWorkshopesAPI = async (user_id,cancelToken) => {    
     const url = `user-conference/${user_id}`;    
     const request = { type: 'GET', urlString: url };
@@ -201,6 +212,7 @@ export const getUserWorkshopesAPI = async (user_id,cancelToken) => {
         return {error:error};
     }
 };
+
 
 //find all conference
 
@@ -370,6 +382,23 @@ export const getAllTaskEmployee = async (emloyee_Id,cancelToken) => {
 export const getProjectEmployee = async (emloyee_Id,cancelToken) => {   
 
     const url = `employee-project/${emloyee_Id}`    
+    const request = { type: 'GET', urlString: url };
+    console.log('All Employee project request', request )
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log("awaaaaaa");
+        return response.data;
+    } catch (error) { 
+        console.log("awaaaaaa err");
+        return {error:error};
+    }
+};
+
+//for progress table
+
+export const getAllProgressOfEmployee = async (cancelToken) => {   
+
+    const url = `employee-all-progress`    
     const request = { type: 'GET', urlString: url };
     console.log('All Employee project request', request )
     try {
