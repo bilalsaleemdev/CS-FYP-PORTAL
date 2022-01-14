@@ -15,6 +15,7 @@ import {
   getAllProgressOfEmployee,
   getUsersPendingRequestAPI,
   getManagerUser,
+  getTaskApi,
 } from "../../../../api/network/customer/EmployeeApi";
 import {
   User,
@@ -60,6 +61,8 @@ const linechartdata = [
   { y: "2012", "Total Sales": 100, "Total Revenue": 50 },
 ];
 const CeoDashboard = () => {
+  const [allPendingTaskCount, setAllPendingTaskCount] = useState();
+  const [allTask, setAllTask] = useState();
   const [allProject, setAllProject] = useState();
   const [employeeName, setEmployeeName] = useState("");
   const [employeeUser, setEmployeeUser] = useState([]);
@@ -89,6 +92,7 @@ const CeoDashboard = () => {
     getAllProjectData();
     getAllPosition();
     getAllPendingRequests();
+    getAllSystemTask();
   }, [user_id_local]);
   useEffect(() => {
     if (progresUser) {
@@ -196,6 +200,29 @@ const CeoDashboard = () => {
     // console.log(taskData, "awais data for all task");
   };
 
+  const getAllSystemTask = async () => {
+    console.log("12121212");
+
+    const response = await getTaskApi(cancelTokenSource.token);
+    console.log("awais checking task in all", response.data);
+    if (response) {
+      setAllTask(response.data.length);
+
+      let pendTask = [];
+      if (response.data.length) {
+        response.data.forEach((item) => {
+          if (item.task_status == 0) {
+            pendTask.push(item);
+            console.log("awais checking task innnn", pendTask);
+          }
+        });
+      }
+      setAllPendingTaskCount(pendTask.length);
+    }
+
+    // console.log(taskData, "awais data for all task");
+  };
+
   const getAllManagerUser = async () => {
     const res = await getManagerUser(cancelTokenSource.token);
     if (res) {
@@ -224,17 +251,77 @@ const CeoDashboard = () => {
         </div>
         {/* /Page Header */}
 
-        {/**/}
         <div className="row">
-          <div className="col-md-3 col-sm-3 col-lg-3 col-xl-3">
+          <div className="col-md-4 col-sm-6 col-lg-4 col-xl-4">
+            <div className="card dash-widget">
+              <div className="card-body">
+                <span className="dash-widget-icon">
+                  <div
+                    className="profile-img-wrap"
+                    style={{
+                      position: "inherit",
+                      height: "83px",
+                      overflow: "none",
+                    }}
+                  >
+                    <img
+                      style={{ height: "86px", width: "120px" }}
+                      alt=""
+                      src={topUser.image_url}
+                    />
+                  </div>
+                </span>
+                <div className="dash-widget-info">
+                  <h4>{topUser.name}</h4>
+                  <h5>{topUser.email}</h5>
+                  <b>
+                    <span>{`Employee Of The Month`}</span>
+                  </b>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-4 col-sm-4 col-lg-4 col-xl-4">
+            <div className="card dash-widget">
+              <div className="card-body">
+                <span className="dash-widget-icon">
+                  <i className="fa fa-user" />
+                </span>
+                <div className="dash-widget-info">
+                  <h3>{allProject}</h3>
+                  <span>{`Projects`}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 col-sm-4 col-lg-4 col-xl-4">
             <div className="card dash-widget">
               <div className="card-body">
                 <span className="dash-widget-icon">
                   <i className="fa fa-cubes" />
                 </span>
                 <div className="dash-widget-info">
-                  <h3>{allProject}</h3>
-                  <span>{`Projects`}</span>
+                  <h3>{allTask}</h3>
+                  <span>Total Tasks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/**/}
+        <div className="row">
+          <div className="col-md-3 col-sm-3 col-lg-3 col-xl-3">
+            <div className="card dash-widget">
+              <div className="card-body">
+                <span className="dash-widget-icon">
+                  <i className="fa fa-user" />
+                </span>
+                <div className="dash-widget-info">
+                <h3>{employeeUserLength}</h3>
+                  <span>Employees</span>
+                  
                 </div>
               </div>
             </div>
@@ -247,8 +334,9 @@ const CeoDashboard = () => {
                   <i className="fa fa-user" />
                 </span>
                 <div className="dash-widget-info">
-                  <h3>{employeeUserLength}</h3>
-                  <span>Employees</span>
+                <h3>{allManagerUser}</h3>
+                <span>Managers</span>
+                
                 </div>
               </div>
             </div>
@@ -274,15 +362,15 @@ const CeoDashboard = () => {
                   <i className="fa fa-user" />
                 </span>
                 <div className="dash-widget-info">
-                  <h3>{allManagerUser}</h3>
-                  <span>Managers</span>
+                <h3>{allPendingTaskCount}</h3>
+                <span>Pending Tasks</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-       {}
+        {}
         {/*
          <div className="row">
           <div className="col-md-12 col-sm-12 col-lg-12 col-xl-12">
