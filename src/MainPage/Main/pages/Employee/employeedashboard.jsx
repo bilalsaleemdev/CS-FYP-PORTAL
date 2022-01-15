@@ -72,6 +72,7 @@ const EmployeeDashboard = () => {
   const [countAllTask, setCountAllTask] = useState();
   const [progresUser, setProgressUser] = useState([]);
   const [prgressUserAvail, setPrgressUserAvail] = useState(false);
+  const [forProfile, setForProfile] = useState(false);
 
   useEffect(() => {
     getUserIdFromApi(user_id_local);
@@ -130,8 +131,10 @@ const EmployeeDashboard = () => {
     if (res.success == true) {
       setProgressUser(res.data);
       setPrgressUserAvail(true);
-
-      setTopUser(res.data[0]);
+      if (setTopUser(res.data[0])) {
+        setTopUser(res.data[0]);
+        setForProfile(true);
+      }
     }
   };
 
@@ -193,62 +196,67 @@ const EmployeeDashboard = () => {
         </div>
         {/* /Page Header */}
 
-        <div className="row">
-          <div className="col-md-6 col-sm-6 col-lg-6 col-xl-4">
-            <div
-              style={{ backgroundColor: "rgb(169 ,167, 198)", color: "white" }}
-              className="card dash-widget"
-            >
-              <div className="card-body">
-                <span className="dash-widget-icon">
-                  <i style={{ color: "#6087aa" }} class="fas fa-medal"></i>
-                </span>
-                <div className="dash-widget-info">
-                  <img
-                    class="rounded-circle"
-                    width="85"
-                    height="55"
-                    src={topUser.image_url}
-                    alt="no image"
-                  />
-                  <h5 style={{ marginTop: "11px" }}>
-                    <span stle={{ color: "white" }}>
-                      {" "}
-                      {`Current Employee Of The Month is ${topUser.name}`}
-                    </span>
-                  </h5>
+        {forProfile && (
+          <div className="row">
+            <div className="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+              <div
+                style={{
+                  backgroundColor: "rgb(169 ,167, 198)",
+                  color: "white",
+                }}
+                className="card dash-widget"
+              >
+                <div className="card-body">
+                  <span className="dash-widget-icon">
+                    <i style={{ color: "#6087aa" }} class="fas fa-medal"></i>
+                  </span>
+                  <div className="dash-widget-info">
+                    <img
+                      class="rounded-circle"
+                      width="85"
+                      height="55"
+                      src={topUser.image_url}
+                      alt="no image"
+                    />
+                    <h5 style={{ marginTop: "11px" }}>
+                      <span stle={{ color: "white" }}>
+                        {" "}
+                        {`Current Employee Of The Month is ${topUser.name}`}
+                      </span>
+                    </h5>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="col-md-6 col-sm-6 col-lg-6 col-xl-4">
-            <div className="card dash-widget">
-              <div className="card-body">
-                <span className="dash-widget-icon">
-                  <i style={{ color: "#6087aa" }} class="fas fa-medal"></i>
-                </span>
-                <div className="dash-widget-info">
-                  <h3>Gold</h3>
-                  <span>Your Current Level</span>
+            <div className="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+              <div className="card dash-widget">
+                <div className="card-body">
+                  <span className="dash-widget-icon">
+                    <i style={{ color: "#6087aa" }} class="fas fa-medal"></i>
+                  </span>
+                  <div className="dash-widget-info">
+                    <h3>Gold</h3>
+                    <span>Your Current Level</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+              <div className="card dash-widget">
+                <div className="card-body">
+                  <span className="dash-widget-icon">
+                    <i className="fa fa-user" />
+                  </span>
+                  <div className="dash-widget-info">
+                    <h3>1</h3>
+                    <span>Your Position</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-sm-6 col-lg-6 col-xl-4">
-            <div className="card dash-widget">
-              <div className="card-body">
-                <span className="dash-widget-icon">
-                  <i className="fa fa-user" />
-                </span>
-                <div className="dash-widget-info">
-                  <h3>1</h3>
-                  <span>Your Position</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        )}
         {/**/}
         <div className="row">
           <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">

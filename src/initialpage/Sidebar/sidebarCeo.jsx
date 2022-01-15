@@ -65,8 +65,8 @@
                  <a href="#" className="noti-dot"><i className="la la-user" /> <span> Employees</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
                    <li><a className={pathname.includes('allemployees') ?"active" :pathname.includes('employees-list') ?"active" :""} 
-                         href="/app/employee/allemployees">All Employees</a></li>
-                   <li><a className={pathname.includes('holidays') ?"active" :""} href="/app/employee/holidays">Employees Progress</a></li>
+                   href="/app/main/ceo/allemployee">All Employees</a></li>
+                   
                    {/* <li><a className={pathname.includes('es-admin') ?"active" :""} href="/app/employee/leaves-admin">Leaves (Admin) <span className="badge badge-pill bg-primary float-right">1</span></a></li>
                    <li><a className={pathname.includes('ves-employee') ?"active" :""} href="/app/employee/leaves-employee">Leaves (Employee)</a></li>
                    <li><a className={pathname.includes('e-settings') ?"active" :""} href="/app/employee/leave-settings">Leave Settings</a></li>

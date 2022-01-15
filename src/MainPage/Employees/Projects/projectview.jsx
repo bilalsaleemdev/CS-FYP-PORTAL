@@ -104,7 +104,7 @@ const Projects = (props) => {
 
   useEffect(() => {
     if (editEmployee.length) {
-      let comma_seprated = editEmployee.join(", ");
+      let comma_seprated = editEmployee.join(",");
       console.log("awais bhai uddddd", comma_seprated);
       setStringEmployee(comma_seprated);
     }

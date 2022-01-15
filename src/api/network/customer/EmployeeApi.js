@@ -177,6 +177,20 @@ export const deleteWorkShopeAPI = async (selectedWorkShopId,cancelToken) => {
         return {error:error};
     }
 };
+//delete user by id
+
+export const deleteUserById = async (id,cancelToken) => {    
+    const url = `delete-user/${id}`;    
+    const request = { type: 'DELETE', urlString: url};
+    try {
+         const response = await processRequest(request, cancelToken); 
+         console.log('delete user', response)
+        return response.data;
+    } catch (error) { 
+        console.log('delete user error', error)
+        return {error:error};
+    }
+};
 
 export const createUserWorkShopeAPI = async (data,cancelToken) => {    
     const url = `user-conference`;    
@@ -618,6 +632,20 @@ export const projectConferenceUpdate = async (projectId,data,cancelToken) => {
 export const deleteProjectById = async (project_id,cancelToken) => {    
     const url = `delete-project/${project_id}`;    
     const request = { type: 'DELETE', urlString: url };
+    try {
+         const response = await processRequest(request, cancelToken); 
+        return response.data;
+    } catch (error) { 
+        return {error:error};
+    }
+};
+
+//get All Employee
+
+
+export const getAllEmployeeUser = async (cancelToken) => {    
+    const url = `employees-users`;    
+    const request = { type: 'GET', urlString: url };
     try {
          const response = await processRequest(request, cancelToken); 
         return response.data;
