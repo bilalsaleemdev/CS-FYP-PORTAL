@@ -46,7 +46,7 @@ const DashboardRoute = ({ match }) => (
       <Route  path={`${match.url}/employeeworkshop`} component={EmployeeWorkshop} />
       <Route  path={`${match.url}/employeetasks`} component={EmployeeTasks} />
 
-      <Route  path={`${match.url}/employeeprojects`} component={allProject} />
+      <Route  path={`${match.url}/company_projects`} component={allProject} />
       <Route  path={`${match.url}/top-employees`} component={badges} />
       <Route  path={`${match.url}/employeemyprojects`} component={myProject} />
 

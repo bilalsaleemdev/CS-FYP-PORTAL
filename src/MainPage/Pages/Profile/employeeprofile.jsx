@@ -1755,7 +1755,7 @@ const EmployeeProfile = () => {
                             <div className="text">{`${userProfileData.first_name} ${userProfileData.last_name}`}</div>
                           </li>
                           <li>
-                            <div className="title">Email:</div>
+                            <div className="title">Email Address:</div>
                             <div className="text">{userProfileData.email}</div>
                           </li>
                           <li>
@@ -1785,7 +1785,7 @@ const EmployeeProfile = () => {
                             </div>
                           </li>
                           <li>
-                            <div className="title">Type</div>
+                            <div className="title">Account Type:</div>
                             <div className="text">{userProfileData.type}</div>
                           </li>
                           <li>
@@ -1936,7 +1936,7 @@ const EmployeeProfile = () => {
                       </div>
                       <div className="col-md-6">
                         <div className="form-group">
-                          <label>Cnic</label>
+                          <label>CNIC</label>
                           <input
                             type="text"
                             className="form-control"

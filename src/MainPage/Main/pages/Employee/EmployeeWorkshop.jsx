@@ -51,7 +51,7 @@ const Workshopes = () => {
     <>
       <div className="page-wrapper">
         <Helmet>
-          <title>Employee - WorkShop</title>
+          <title>Employee - Workshop</title>
           <meta name="description" content="Login page" />
         </Helmet>
         {/* Page Content */}
@@ -65,7 +65,7 @@ const Workshopes = () => {
                   <li className="breadcrumb-item">
                     <a href="/app/main/dashboard">Employee Dashboard</a>
                   </li>
-                  <li className="breadcrumb-item active">workshop</li>
+                  <li className="breadcrumb-item active">Workshop</li>
                 </ul>
               </div>
             </div>
@@ -78,12 +78,12 @@ const Workshopes = () => {
                   <div className="card-body">
                     <h4 className="project-title">
                       <a href="/app/projects/projects-view">
-                        Manager WorkShope
+                        Manager Workshop
                       </a>
                     </h4>
                     <p className="text-muted">{key.purpose}</p>
                     <div className="pro-deadline m-b-15">
-                      <div className="sub-title">day:</div>
+                      <div className="sub-title">Day:</div>
                       <div className="text-muted">{key.day}</div>
                     </div>
                     <div className="project-members m-b-15">

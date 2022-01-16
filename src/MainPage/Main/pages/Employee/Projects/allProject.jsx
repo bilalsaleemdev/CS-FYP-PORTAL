@@ -113,7 +113,7 @@ const allProject = () => {
   return (
     <div className="page-wrapper">
       <Helmet>
-        <title>MyProjects </title>
+        <title>Company Projects</title>
         <meta name="description" content="Login page" />
       </Helmet>
       {/* Page Content */}
@@ -127,7 +127,7 @@ const allProject = () => {
                 <li className="breadcrumb-item">
                   <a href="/app/main/dashboard/employee">Dashboard</a>
                 </li>
-                <li className="breadcrumb-item active">Projects</li>
+                <li className="breadcrumb-item active">Company Projects</li>
               </ul>
             </div>
             <div className="col-auto float-right ml-auto">
@@ -151,7 +151,7 @@ const allProject = () => {
           }}
         >
           <div className="col-md-12" style={{}}>
-            Hey! {userData.name} here is all the Project in Your Company
+            Hey! {userData.name} Here is All the Projects in Your Company
           </div>
         </div>
 

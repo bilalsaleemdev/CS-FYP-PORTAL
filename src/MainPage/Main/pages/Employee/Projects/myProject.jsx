@@ -112,7 +112,7 @@ const myProject = () => {
   return (
     <div className="page-wrapper">
       <Helmet>
-        <title>MyProjects </title>
+        <title>Employee Projects</title>
         <meta name="description" content="Login page" />
       </Helmet>
       {/* Page Content */}
@@ -126,7 +126,7 @@ const myProject = () => {
                 <li className="breadcrumb-item">
                   <a href="/app/main/dashboard/employee">Dashboard</a>
                 </li>
-                <li className="breadcrumb-item active">Projects</li>
+                <li className="breadcrumb-item active">Your Projects</li>
               </ul>
             </div>
             <div className="col-auto float-right ml-auto">
@@ -150,7 +150,7 @@ const myProject = () => {
           }}
         >
           <div className="col-md-12" style={{}}>
-            Hey! {userData.name} here is the Project in Which You are registered
+            Hey! {userData.name} your Projects Details are Mentioned Below
           </div>
         </div>
 

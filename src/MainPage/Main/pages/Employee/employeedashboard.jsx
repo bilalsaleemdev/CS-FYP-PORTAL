@@ -179,7 +179,7 @@ const EmployeeDashboard = () => {
   return (
     <div className="page-wrapper">
       <Helmet>
-        <title>Dashboard- Employee</title>
+        <title>Employee Dashboard</title>
         <meta name="description" content="Dashboard" />
       </Helmet>
       <div className="content container-fluid">
@@ -263,7 +263,7 @@ const EmployeeDashboard = () => {
             <div className="card dash-widget">
               <div className="card-body">
                 <span className="dash-widget-icon">
-                  <i className="fa fa-cubes" />
+                  <i className="fas fa-project-diagram" />
                 </span>
                 <div className="dash-widget-info">
                   <h3>{employeeProjectLength}</h3>
@@ -276,7 +276,7 @@ const EmployeeDashboard = () => {
             <div className="card dash-widget">
               <div className="card-body">
                 <span className="dash-widget-icon">
-                  <i className="fa fa-diamond" />
+                  <i className="fas fa-code-branch" />
                 </span>
                 <div className="dash-widget-info">
                   <h3>{countPendingTask}</h3>
@@ -289,7 +289,7 @@ const EmployeeDashboard = () => {
             <div className="card dash-widget">
               <div className="card-body">
                 <span className="dash-widget-icon">
-                  <i className="fa fa-diamond" />
+                  <i className="fas fa-tasks" />
                 </span>
                 <div className="dash-widget-info">
                   <h3>{countCompletedTask}</h3>
@@ -302,7 +302,7 @@ const EmployeeDashboard = () => {
             <div className="card dash-widget">
               <div className="card-body">
                 <span className="dash-widget-icon">
-                  <i className="fa fa-user" />
+                  <i className="fas fa-user-friends" />
                 </span>
                 <div className="dash-widget-info">
                   <h3>{employeeUserLength}</h3>
@@ -380,7 +380,7 @@ const EmployeeDashboard = () => {
           <div className="col-md-12 col-lg-12 d-flex">
             <div className="card flex-fill">
               <div className="card-body">
-                <h4 className="card-title">Your Progress</h4>
+                <h4 className="card-title">Progress Rate</h4>
                 <p>
                   <span
                     style={{ fontSize: "13px" }}
@@ -419,7 +419,7 @@ const EmployeeDashboard = () => {
           <div className="col-md-12 d-flex">
             <div className="card card-table flex-fill">
               <div className="card-header">
-                <h3 className="card-title mb-0">Progress Leaderboard</h3>
+                <h3 className="card-title mb-0">Employees Leaderboard</h3>
               </div>
               <div className="card-body">
                 <div className="table-responsive">
@@ -428,9 +428,9 @@ const EmployeeDashboard = () => {
                       <tr>
                         <th>Position</th>
                         <th>Name</th>
-                        <th>Email</th>
+                        <th>Email Address</th>
                         <th>Completed Tasks</th>
-                        <th>Top Rated Tasks</th>
+                        <th>Five Star Tasks</th>
                       </tr>
                     </thead>
 

@@ -170,7 +170,7 @@ const CeoDashboard = () => {
             '<span style="font-size:10px">{point.key}</span><table>',
           pointFormat:
             '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+            '<td style="padding:0"><b>{point.y} </b></td></tr>',
           footerFormat: "</table>",
           shared: true,
           useHTML: true,
@@ -278,7 +278,7 @@ const CeoDashboard = () => {
   return (
     <div className="page-wrapper">
       <Helmet>
-        <title>Dashboard- Employee</title>
+        <title>CEO Dashboard</title>
         <meta name="description" content="Dashboard" />
       </Helmet>
       <div className="content container-fluid">
@@ -319,7 +319,7 @@ const CeoDashboard = () => {
                   <h4>{topUser.name}</h4>
                   <h5>{topUser.email}</h5>
                   <b>
-                    <span>{`Employee Of The Month`}</span>
+                    <span>{`Employee Of the Month`}</span>
                   </b>
                 </div>
               </div>
@@ -330,7 +330,7 @@ const CeoDashboard = () => {
             <div className="card dash-widget">
               <div className="card-body">
                 <span className="dash-widget-icon">
-                  <i className="fa fa-user" />
+                  <i className="fas fa-project-diagram" />
                 </span>
                 <div className="dash-widget-info">
                   <h3>{allProject}</h3>
@@ -343,7 +343,7 @@ const CeoDashboard = () => {
             <div className="card dash-widget">
               <div className="card-body">
                 <span className="dash-widget-icon">
-                  <i className="fa fa-cubes" />
+                  <i className="fas fa-tasks" />
                 </span>
                 <div className="dash-widget-info">
                   <h3>{allTask}</h3>
@@ -360,11 +360,11 @@ const CeoDashboard = () => {
             <div className="card dash-widget">
               <div className="card-body">
                 <span className="dash-widget-icon">
-                  <i className="fa fa-user" />
+                  <i className="fas fa-user-friends" />
                 </span>
                 <div className="dash-widget-info">
                   <h3>{employeeUserLength}</h3>
-                  <span>Employees</span>
+                  <span>Total Employees</span>
                 </div>
               </div>
             </div>
@@ -374,11 +374,11 @@ const CeoDashboard = () => {
             <div className="card dash-widget">
               <div className="card-body">
                 <span className="dash-widget-icon">
-                  <i className="fa fa-user" />
+                  <i className="fas fa-user-tie" />
                 </span>
                 <div className="dash-widget-info">
                   <h3>{allManagerUser}</h3>
-                  <span>Managers</span>
+                  <span>Company Managers</span>
                 </div>
               </div>
             </div>
@@ -388,11 +388,11 @@ const CeoDashboard = () => {
             <div className="card dash-widget">
               <div className="card-body">
                 <span className="dash-widget-icon">
-                  <i className="fa fa-user" />
+                  <i className="fas fa-user-plus" />
                 </span>
                 <div className="dash-widget-info">
                   <h3>{pendingsRequests}</h3>
-                  <span>Pending Requets</span>
+                  <span>Account Requests</span>
                 </div>
               </div>
             </div>
@@ -401,7 +401,7 @@ const CeoDashboard = () => {
             <div className="card dash-widget">
               <div className="card-body">
                 <span className="dash-widget-icon">
-                  <i className="fa fa-user" />
+                  <i className="fas fa-code-branch" />
                 </span>
                 <div className="dash-widget-info">
                   <h3>{allPendingTaskCount}</h3>
@@ -467,7 +467,7 @@ const CeoDashboard = () => {
           <div className="col-md-12 d-flex">
             <div className="card card-table flex-fill">
               <div className="card-header">
-                <h3 className="card-title mb-0">Progress Leaderboard</h3>
+                <h3 className="card-title mb-0">Employees Leaderboard</h3>
               </div>
               <div className="card-body">
                 <div className="table-responsive">
@@ -476,9 +476,9 @@ const CeoDashboard = () => {
                       <tr>
                         <th>Position</th>
                         <th>Name</th>
-                        <th>Email</th>
+                        <th>Email Address</th>
                         <th>Completed Tasks</th>
-                        <th>Top Rated Tasks</th>
+                        <th>Five Star Tasks</th>
                       </tr>
                     </thead>
 

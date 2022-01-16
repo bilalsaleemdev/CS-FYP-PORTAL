@@ -510,7 +510,7 @@ const CeoProfile = () => {
                             <div className="text">{`${userProfileData.first_name} ${userProfileData.last_name}`}</div>
                           </li>
                           <li>
-                            <div className="title">Email:</div>
+                            <div className="title">Email Address:</div>
                             <div className="text">{userProfileData.email}</div>
                           </li>
                           <li>
@@ -526,7 +526,7 @@ const CeoProfile = () => {
                             </div>
                           </li>
                           <li>
-                            <div className="title">CNIC</div>
+                            <div className="title">CNIC:</div>
                             <div className="text">{userProfileData.cnic}</div>
                           </li>
                           <li>
@@ -540,7 +540,7 @@ const CeoProfile = () => {
                             </div>
                           </li>
                           <li>
-                            <div className="title">CEO Type</div>
+                            <div className="title">Account Type:</div>
                             <div className="text">{userProfileData.type}</div>
                           </li>
                           <li>

@@ -365,7 +365,7 @@ const Employee = () => {
   return (
     <div className="page-wrapper" data-dismiss="modal">
       <Helmet>
-        <title>All Employee</title>
+        <title>Company Employees</title>
         <meta name="description" content="Login page" />
       </Helmet>
       {/* Page Content */}
@@ -374,9 +374,9 @@ const Employee = () => {
         <div className="page-header">
           <div className="row align-items-center">
             <div className="col">
-              <h3 className="page-title">All Employee</h3>
+              <h3 className="page-title">Company Employees</h3>
               <ul className="breadcrumb">
-                <li className="breadcrumb-item active">Ceo</li>
+                <li className="breadcrumb-item active">CEO</li>
               </ul>
             </div>
           </div>
@@ -385,7 +385,7 @@ const Employee = () => {
         {/* Search Filter */}
         <div className="row filter-row">
           <div style={{ marginBottom: "15px" }} className="col-sm-12 col-md-12">
-            <div className="btn btn-success btn-block"> All Employees </div>
+            <div className="btn btn-secondary btn-block"> All Employees </div>
           </div>
         </div>
         {/* Search Filter */}
@@ -500,60 +500,10 @@ const Employee = () => {
                         </div>
                         <div className="row">
                           <div className="col-md-6 col-6 text-center">
-                            <div className="stats-box mb-4">
-                              <p>
-                                Current Badge:{" "}
-                                {starCardThreeCondition &&
-                                starCardTwoCondition &&
-                                starCardOneCondition &&
-                                cardOneCondition &&
-                                cardTwoCondition &&
-                                cardThreeCondition ? (
-                                  <h7>Platinum</h7>
-                                ) : starCardTwoCondition &&
-                                  starCardOneCondition &&
-                                  cardOneCondition &&
-                                  cardTwoCondition ? (
-                                  <h7>Gold</h7>
-                                ) : starCardOneCondition && cardOneCondition ? (
-                                  <h7>Silver</h7>
-                                ) : (
-                                  <h7>No Level</h7>
-                                )}
-                              </p>
-                              <h1>
-                                {" "}
-                                {starCardThreeCondition &&
-                                starCardTwoCondition &&
-                                starCardOneCondition &&
-                                cardOneCondition &&
-                                cardTwoCondition &&
-                                cardThreeCondition ? (
-                                  <i
-                                    style={{ color: "#6087aa" }}
-                                    class="fas fa-medal"
-                                  ></i>
-                                ) : starCardTwoCondition &&
-                                  starCardOneCondition &&
-                                  cardOneCondition &&
-                                  cardTwoCondition ? (
-                                  <i
-                                    style={{ color: "#f1b92a" }}
-                                    class="fas fa-medal"
-                                  ></i>
-                                ) : starCardOneCondition && cardOneCondition ? (
-                                  <i
-                                    style={{ color: "#404040" }}
-                                    class="fas fa-medal"
-                                  ></i>
-                                ) : (
-                                  <i
-                                    style={{ color: "black" }}
-                                    className={`fas fa-user-clock `}
-                                  ></i>
-                                )}
-                              </h1>
-                            </div>
+                          <div className="stats-box mb-4">
+                          <p>OnGoing Projects</p>
+                          <h3>{numOfProoject}</h3>
+                        </div>
                           </div>
                           <div className="col-md-6 col-6 text-center">
                             <div className="stats-box mb-4">
@@ -642,27 +592,7 @@ const Employee = () => {
                           </span>
                         </p>
                       </div>
-                      <div className="row">
-                        <div className="col-md-12 col-lg-12 col-xl-12 d-flex">
-                          <div className="card flex-fill">
-                            <div className="card-body">
-                              <h4 className="card-title">
-                                Project Statistics{" "}
-                              </h4>
-                              <div className="statistics">
-                                <div className="row">
-                                  <div className="col-md-12 col-12 text-center">
-                                    <div className="stats-box mb-4">
-                                      <h3>OnGoing Projects</h3>
-                                      <h4>{numOfProoject}</h4>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -676,7 +606,7 @@ const Employee = () => {
                       data-dismiss="modal"
                       className="btn btn-primary cancel-btn"
                     >
-                      ok
+                      OK
                     </a>
                   </div>
                 </div>
@@ -697,7 +627,7 @@ const Employee = () => {
             <div className="modal-body">
               <div className="form-header">
                 <h3>Delete Employee</h3>
-                <p>Are you sure want to delete?</p>
+                <p>Are you sure you want to delete it?</p>
               </div>
               <div className="modal-btn delete-action">
                 <div className="row">

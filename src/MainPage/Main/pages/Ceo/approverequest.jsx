@@ -48,12 +48,12 @@ const ApproveRequest = () => {
       // sorter: (a, b) => a.createddate.length - b.createddate.length,
     },
     {
-      title: 'Email',
+      title: 'Email Address',
       dataIndex: 'email',
         // sorter: (a, b) => a.duedate.length - b.duedate.length,
     },    
     {
-      title: 'Employee Type',
+      title: 'Account Type',
       dataIndex: 'type',
       render: (text, record) => (
       <span>{text}</span>
@@ -206,8 +206,8 @@ const ApproveRequest = () => {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-           Something Went Wrong!
-           Please Try Again
+           Something Went Wrong
+           Please Try Again!
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -217,7 +217,7 @@ const ApproveRequest = () => {
             color="primary"
             autoFocus
           >
-            ok
+            OK
           </Button>
         </DialogActions>
       </Dialog>
@@ -244,7 +244,7 @@ const ApproveRequest = () => {
             color="primary"
             autoFocus
           >
-            ok
+            OK
           </Button>
         </DialogActions>
       </Dialog>
@@ -273,14 +273,14 @@ const ApproveRequest = () => {
             color="primary"
             autoFocus
           >
-            ok
+            OK
           </Button>
         </DialogActions>
       </Dialog>
     )}
     <div className="page-wrapper">
         <Helmet>
-            <title>Approve Requests</title>
+            <title>Account Requests</title>
             <meta name="description" content="Login page"/>					
         </Helmet>
     <div className="content container-fluid">

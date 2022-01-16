@@ -26,15 +26,15 @@
                  
                  <a href="#">
                    <i className="la la-key" /> 
-                   <span> Approve Request</span> <span className="menu-arrow" /></a>
+                   <span>Account Requests</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
-                   <li><a className={pathname.includes('/main/approve-request') ?"active" :""} href="/app/main/approve-request">Approve Requests</a></li>
+                   <li><a className={pathname.includes('/main/approve-request') ?"active" :""} href="/app/main/approve-request">Approve Request</a></li>
                  </ul>
                </li>
 
               
                <li className="submenu">
-                 <a href="#" className="noti-dot"><i className="la la-user" /> <span> Employees</span> <span className="menu-arrow" /></a>
+                 <a href="#" className="noti-dot"><i className="la la-user" /> <span>Employees</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
                    <li><a className={pathname.includes('allemployees') ?"active" :pathname.includes('employees-list') ?"active" :""} 
                    href="/app/main/ceo/allemployee">All Employees</a></li>
@@ -42,8 +42,8 @@
                    
                  </ul>
                </li>
-               <li className={pathname.includes('/app/main/dashboard/ceo') ?"active" :""}> 
-                 <a href="/app/main/dashboard/ceo"><i className="la la-dashboard" /> <span>Projects</span></a>
+               <li className={pathname.includes('app/main/company_projects') ?"active" :""}> 
+                 <a  href="/app/main/company_projects"><i className="la la-dashboard" /> <span>Projects</span></a>
                </li>   
            
               
