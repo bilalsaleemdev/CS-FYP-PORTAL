@@ -17,7 +17,7 @@ export const Dashboard = () => {
         <Hero />
       </div>
       <EmplyeesDisplay />
-      <TopEmployees />
+
       <AboutUs />
       <Team />
       <Footer />

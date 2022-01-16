@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 
 import MenuIcon from "@material-ui/icons/Menu";
+import { Applogo } from "../../../Entryfile/imagepath.jsx";
 
 import { Aside } from "./Aside";
 import styles from "../assets/css/header.module.css";
@@ -26,24 +27,25 @@ export const Header = () => {
           }}
         >
           <Toolbar variant="dense" className={styles.header_toolbar}>
-            <h1>Logo</h1>
+          <div className="account-logo">
+          
+            <img src={Applogo} alt="gamified" />
+          
+        </div>
             <nav>
               <li>
-                <a href="#team">Team</a>
+                <a style={{fontSize:'26px'}} href="#team">Team</a>
               </li>
               <li>
-                <a href="#about_us">About Us</a>
+                <a style={{fontSize:'26px'}} href="#about_us">About Us</a>
               </li>
               <li>
-                <a href="#contact_us">Contact Us</a>
-              </li>
-              <li>
-                <a  href={"http://localhost:8005/register"} className="button">
+                <a style={{fontSize:'26px'}} href={"http://localhost:8005/register"} className="button">
                   Sign Up
                 </a>
               </li>{" "}
               <li>
-                <a  href={"http://localhost:8005/login"} className="button">
+                <a style={{fontSize:'26px'}} href={"http://localhost:8005/login"} className="button">
                   Login
                 </a>
               </li>

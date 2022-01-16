@@ -22,7 +22,7 @@ import {
   getEmployeeUserAPI,
   updateProjectAPI,
   getUserProjectAPI,
-  deleteProjectById
+  deleteProjectById,
 } from "../../../../api/network/customer/EmployeeApi";
 
 import MenuItem from "@mui/material/MenuItem";
@@ -90,16 +90,14 @@ const Projects = (props) => {
     getUserProject();
   }, []);
 
-  useEffect(() => {
-   
-  }, [userProjectList])
+  useEffect(() => {}, [userProjectList]);
   const getUserProject = async () => {
     const response = await getUserProjectAPI(
       localStorage.getItem("user_id"),
       cancelTokenSource.token
     );
     if (response.success == true) {
-      console.log('ahtasham', response.data)
+      console.log("ahtasham", response.data);
       setUserProjectList(response.data);
     }
   };
@@ -107,12 +105,12 @@ const Projects = (props) => {
     const response = await getEmployeeUserAPI(cancelTokenSource.token);
     if (response.success == true) {
       setEmployeeUser(response.data);
-      getEnployeeName(response.data)
+      getEnployeeName(response.data);
     }
   };
 
   const deleteSerVal = (id) => {
-    console.log('ahtasham',id)
+    console.log("ahtasham", id);
     setSelectedWorkShopId(id);
   };
   const deleteProjectApi = async () => {
@@ -126,26 +124,24 @@ const Projects = (props) => {
     }
   };
 
-  function getEmployeeIds(employeesName){
-    
-    let ids = employeelUser.map((item)=>{
-      if(employeesName.indexOf(item.name) !== -1){
-        return item.employee_id
+  function getEmployeeIds(employeesName) {
+    let ids = employeelUser.map((item) => {
+      if (employeesName.indexOf(item.name) !== -1) {
+        return item.employee_id;
       }
-    })
+    });
     var filtered = ids.filter(function (el) {
       return el != null;
     });
-  
-    return filtered.toString()
+
+    return filtered.toString();
   }
 
-  function getEnployeeName(employees){
-    
-    let arryName = employees.map((item)=>{
-      return item.name
-    })
-    setNames(arryName)
+  function getEnployeeName(employees) {
+    let arryName = employees.map((item) => {
+      return item.name;
+    });
+    setNames(arryName);
   }
 
   const setEditModal = async (item) => {
@@ -186,13 +182,10 @@ const Projects = (props) => {
     );
   };
 
-  const isSelected = (name)=>{
-
-    console.log(
-      
-      "test1",name);
-    return (name == "testing")  ;
-  }
+  const isSelected = (name) => {
+    console.log("test1", name);
+    return name == "testing";
+  };
 
   return (
     <div className="page-wrapper">
@@ -243,7 +236,6 @@ const Projects = (props) => {
         {/* /Page Header */}
         {/* Search Filter */}
         <div className="row">
-        
           {userProjectList.map((item, index) => {
             return (
               <div
@@ -262,7 +254,6 @@ const Projects = (props) => {
                         <i className="material-icons">more_vert</i>
                       </a>
                       <div className="dropdown-menu dropdown-menu-right">
-                      
                         {/*   <a
                           className="dropdown-item"
                           onClick={() => setEditModal(item)}
@@ -289,11 +280,10 @@ const Projects = (props) => {
                           history.push({
                             pathname: "/app/projects/projects-view",
                             state: item,
-                        
                           })
                         }
                       >
-                      {console.log('awaisitem',item)}
+                        {console.log("awaisitem", item)}
                         {item.project.name}
                       </a>
                     </h4>
@@ -329,9 +319,14 @@ const Projects = (props) => {
                       Progress{" "}
                       <span className="text-success float-right">
                         {" "}
-                        {(item.task.filter((x) => x.task_status === 1).length /
-                          item.task.filter((x) => x.task_status === 0).length ||
-                          0) * 100}
+                        {item.task.length > 0
+                          ? Math.round(
+                              (item.task.filter((x) => x.task_status === 1)
+                                .length /
+                                item.task.length) *
+                                100
+                            )
+                          : "0"}
                         %
                       </span>
                     </p>
@@ -342,12 +337,12 @@ const Projects = (props) => {
                         data-toggle="tooltip"
                         title="40%"
                         style={{
-                          width: `${
+                          width: `${Math.round(
                             (item.task.filter((x) => x.task_status === 1)
                               .length /
-                              item.task.filter((x) => x.task_status === 0)
-                                .length || 0) * 100 || 0
-                          }%`,
+                              item.task.length) *
+                              100
+                          )}%`,
                         }}
                       />
                     </div>
@@ -427,8 +422,7 @@ const Projects = (props) => {
                     </div>
                   </div>
                   <div className="col-sm-6">
-                    <FormControl sx={{ m: 1, width: 300  }}>
-                    
+                    <FormControl sx={{ m: 1, width: 300 }}>
                       <InputLabel id="demo-multiple-checkbox-label">
                         Employees
                       </InputLabel>
@@ -450,7 +444,6 @@ const Projects = (props) => {
                         ))}
                       </Select>
                     </FormControl>
-                    
                   </div>
                 </div>
 
@@ -547,50 +540,47 @@ const Projects = (props) => {
                     </div>
                   </div>
                   <div className="col-sm-6">
-                  <FormControl sx={{ m: 1, width: 300  }}>
-                  {
-                    console.log('personname',personName)
-                  }
-                    <InputLabel id="demo-multiple-checkbox-label">
-                      Employees
-                    </InputLabel>
-                    <Select
-                      labelId="demo-multiple-checkbox-label"
-                      id="demo-multiple-checkbox"
-                      multiple
-                      value={editListOfNames}
-                      selected={editListOfNames}
-                      onChange={(e) => {
-                        const employee = e.target.value;
-                        if (employee) {
-                          let name = [];
-                          let id = [];
-                          employee.map((item, index) => {
-                            name.push(item.name);
-                            id.push(item.id);
-                          });
-                          setEditListOfIds(id);
-                          setEditListOfNames(name);
-                        }
-                      }}
-                      input={<OutlinedInput label="Tag" />}
-                      renderValue={(selected) => selected.join(", ")}
-                      MenuProps={MenuProps}
-                    >
-                      {names.map((name) => (
-                        <MenuItem key={name} value={name}>
-                          <Checkbox checked={isSelected(name)}   />
-                          <ListItemText primary={name} />
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                  
-                </div>
+                    <FormControl sx={{ m: 1, width: 300 }}>
+                      {console.log("personname", personName)}
+                      <InputLabel id="demo-multiple-checkbox-label">
+                        Employees
+                      </InputLabel>
+                      <Select
+                        labelId="demo-multiple-checkbox-label"
+                        id="demo-multiple-checkbox"
+                        multiple
+                        value={editListOfNames}
+                        selected={editListOfNames}
+                        onChange={(e) => {
+                          const employee = e.target.value;
+                          if (employee) {
+                            let name = [];
+                            let id = [];
+                            employee.map((item, index) => {
+                              name.push(item.name);
+                              id.push(item.id);
+                            });
+                            setEditListOfIds(id);
+                            setEditListOfNames(name);
+                          }
+                        }}
+                        input={<OutlinedInput label="Tag" />}
+                        renderValue={(selected) => selected.join(", ")}
+                        MenuProps={MenuProps}
+                      >
+                        {names.map((name) => (
+                          <MenuItem key={name} value={name}>
+                            <Checkbox checked={isSelected(name)} />
+                            <ListItemText primary={name} />
+                          </MenuItem>
+                        ))}
+                      </Select>
+                    </FormControl>
+                  </div>
                   <div className="col-sm-6">
                     <div className="form-group">
                       <label>Employee</label>
-                      {console.log('ssasasa', editListOfNames)}
+                      {console.log("ssasasa", editListOfNames)}
                       <div>
                         <Select
                           labelId="demo-multiple-checkbox-label"
@@ -678,7 +668,11 @@ const Projects = (props) => {
               <div className="modal-btn delete-action">
                 <div className="row">
                   <div className="col-6">
-                    <a href="" className="btn btn-primary continue-btn" onClick={() => deleteProjectApi()}>
+                    <a
+                      href=""
+                      className="btn btn-primary continue-btn"
+                      onClick={() => deleteProjectApi()}
+                    >
                       Delete
                     </a>
                   </div>

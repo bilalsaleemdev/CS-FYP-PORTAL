@@ -6,26 +6,12 @@ export const AboutUs = () => {
     <div className={styles.AboutUs} id="about_us">
       <div className={styles.content}>
         <div className={styles.presentation}>
-          <h1>About us</h1>
-
+          <h1>About Us</h1>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic
-            blanditiis exercitationem, tempore sit aut nesciunt magni
-            architecto. Tempore beatae commodi, expedita, hic laborum
-            perferendis voluptatibus vero aperiam quibusdam alias saepe. Sequi
-            sed culpa in consequuntur odio, perspiciatis, quisquam incidunt
-            consectetur dicta excepturi, maiores explicabo debitis aliquid? Aut
-            expedita officiis earum facere autem optio reprehenderit itaque
-            ipsum voluptates at, necessitatibus, voluptatibus quibusdam alias
-            quaerat, sed aliquid nisi non est officia iste dignissimos harum
-            error! Adipisci hic sequi tempora culpa accusantium facilis sint,
-            earum dicta repudiandae voluptas quam corporis nulla voluptates
-            ullam quod illum saepe mollitia suscipit possimus aspernatur?
-            Blanditiis, ex tenetur.
+          Gamification is an emerging field that plays an important role in setting up the motivation of the users. The idea of our project is to build a Gamified Employee Portal that would help increase user motivation and the overall performance factors. This portal is considered to be the most essential human resource performance management system.
+          One of the significant resources of a company is the people, their knowledge, and their skills. The purpose of implementing this system is to motivate employees to perform better by providing them the appropriate feedback along with monitoring everyone's performance in depth.</p>
+          <p>The CEO observes the details of his employees and projects they've completed. This portal will be the epitome of using gaming elements for motivating the employees to perform better. The employees will also have some levels such as Silver, Gold, and Platinum, which they can earn by completing tasks and earning five-star feedbacks from the Manager on the completed tasks. The employee can also see his position in the company through the Leaderboard, which will motivate him to work with more passion.
           </p>
-          <div className={styles.read_more_wrapper}>
-            <a href="#">Read More</a>
-          </div>
         </div>
         <img src={svg} alt="" />
       </div>

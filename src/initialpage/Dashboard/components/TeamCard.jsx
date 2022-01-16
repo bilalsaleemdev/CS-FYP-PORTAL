@@ -3,15 +3,13 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import styles from "../assets/css/home.module.css";
-export const TeamCard = ({ img, name }) => {
+export const TeamCard = ({ img, name, des }) => {
   return (
     <div className={styles.card}>
       <img src={img} alt="" />
       <h3>{name}</h3>
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa maiores
-        ducimus cupiditate nam velit nihil at voluptates facere veritatis
-        repellendus!
+      {des}
       </p>
       <div className={styles.icons_wrapper}>
         <a href="#">
@@ -19,9 +17,6 @@ export const TeamCard = ({ img, name }) => {
         </a>
         <a href="#">
           <LinkedInIcon />
-        </a>
-        <a href="#">
-          <TwitterIcon />
         </a>
       </div>
     </div>

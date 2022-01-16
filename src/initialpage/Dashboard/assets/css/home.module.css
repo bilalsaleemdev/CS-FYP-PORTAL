@@ -268,6 +268,10 @@ h3 {
   margin-top: 1rem;
   justify-content: space-between;
 }
+.events_wrapper_content > h {
+  font-weight: 900;
+
+}
 .events_list .body_events .header_body_events h3 {
   font-weight: 500;
 }
@@ -285,7 +289,7 @@ h3 {
   grid-template-columns: 1fr 250px;
   align-items: center;
   grid-gap: 2rem;
-  background-color: #fff;
+  background-color: rgba(255,255,255, 0.1);
 
   color: #333;
   border: 1px solid #333;
@@ -368,11 +372,7 @@ h3 {
   background: #32286c;
   color: #fff;
 }
-.footer > div {
-  width: 85%;
-  margin: 0rem auto;
-  padding: 5rem 0rem;
-}
+
 .footer ul {
   padding: 0px !important;
 }

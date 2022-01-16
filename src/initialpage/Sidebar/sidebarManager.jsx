@@ -18,7 +18,7 @@
                  <span>MANAGER</span>
                </li>
                <li className={pathname.includes('/app/main/dashboard/manager') ?"active" :""}> 
-                 <a href="/app/main/dashboard/manager"><i className="la la-dashboard" /> <span>Dashboards</span></a>
+                 <a href="/app/main/dashboard/manager"><i className="la la-dashboard" /> <span>Dashboard</span></a>
                </li>               
                {/* <li className="submenu">
                  
@@ -33,7 +33,7 @@
                  
                  <a href="#">
                    <i className="la la-key" /> 
-                   <span>Requests</span> </a>
+                   <span>Account Approval</span> </a>
                  <ul style={{display: 'none'}}>
                    <li><a className={pathname.includes('/main/approve-request') ?"active" :""} href="/app/main/approve-request">Approve Requests</a></li>
                  </ul>
@@ -65,8 +65,7 @@
                  <a href="#" className="noti-dot"><i className="la la-user" /> <span> Employees</span> <span className="menu-arrow" /></a>
                  <ul style={{display: 'none'}}>
                    <li><a className={pathname.includes('allemployees') ?"active" :pathname.includes('employees-list') ?"active" :""} 
-                         href="/app/employee/allemployees">All Employees</a></li>
-                   <li><a className={pathname.includes('holidays') ?"active" :""} href="/app/employee/holidays">Employees Progress</a></li>
+                         href="/app/main/manager/allemployee">All Employees</a></li>
                    {/* <li><a className={pathname.includes('es-admin') ?"active" :""} href="/app/employee/leaves-admin">Leaves (Admin) <span className="badge badge-pill bg-primary float-right">1</span></a></li>
                    <li><a className={pathname.includes('ves-employee') ?"active" :""} href="/app/employee/leaves-employee">Leaves (Employee)</a></li>
                    <li><a className={pathname.includes('e-settings') ?"active" :""} href="/app/employee/leave-settings">Leave Settings</a></li>

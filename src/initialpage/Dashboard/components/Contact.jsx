@@ -34,7 +34,7 @@ export const Contact = () => {
             ></textarea>
           </div>
           <div className="input-wrapper">
-            <label htmlFor="hire">Why we should hire you?</label>
+            <label htmlFor="hire">Why We Should Hire You?</label>
             <textarea
               name=""
               id="hire"

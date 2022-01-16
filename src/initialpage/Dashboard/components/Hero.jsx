@@ -6,9 +6,8 @@ export const Hero = () => {
     <div className={styles.Hero}>
       <img src={svg} alt="" />
       <div className={styles.presentation}>
-        <h1>Employees </h1>
-        <p>in our Zone</p>
-       
+        <h1>Gamified </h1>
+        <h1>Employee Portal</h1>
       </div>
     </div>
   );

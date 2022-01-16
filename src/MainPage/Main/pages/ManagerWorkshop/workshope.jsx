@@ -35,10 +35,10 @@ const Workshopes = () => {
   const [workShopeId, setWorkShopeId] = useState();
   const [create_update, setCreate_Update] = useState(true);
   const [purpose, setPurpose] = useState();
-  const [day, setDay] = useState(1);
+  const [day, setDay] = useState();
   const [start_at, setStart_at] = useState(new Date());
   const [last_at, setLast_at] = useState(new Date());
-  const [url, setUrl] = useState();
+  const [url, setUrl] = useState("");
   const [conferanceData, setConferanceData] = useState([]);
   const [ noData, setNoData] = useState(false);
 
@@ -59,12 +59,24 @@ const Workshopes = () => {
 
   useEffect(() => {
     getUserWorkshopes();
-  }, []);
+  }, [workShopeId]);
+
+  useEffect(() => {
+    
+  }, [day]);
 
   $("#empid").on("change", function (e) {
     setDay(e.target.value);
   });
   function createWprkshope() {
+    
+   
+    setPurpose('');
+    setDay(1);
+    setLast_at((new Date()));
+    setStart_at((new Date()));
+    
+
     setCreate_Update(true);
   }
   const createWorkShope = async () => {
@@ -136,13 +148,17 @@ const Workshopes = () => {
     }
   };
   const editWorkshope = (item) => {
+    console.log('editWorkshope')
     setCreate_Update(false);
     setWorkShopeId(item.id);
     setPurpose(item.purpose);
     setDay(item.day);
-    setLast_at(moment(item.last_at).format("YYYY-DD-MM"));
-    setStart_at(moment(item.start_at).format("YYYY-DD-MM"));
+    console.log('asdasdasdasd', item.day)
     setUrl(item.url);
+    setLast_at((item.last_at).format("YYYY-DD-MM"));
+    setStart_at((item.start_at).format("YYYY-DD-MM"));
+   
+    
   };
   const deleteSerVal = (id) => {
     setSelectedWorkShopId(id);
@@ -170,7 +186,7 @@ const Workshopes = () => {
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              Hey! Workshop created successfully..!
+              Workshop is Create Successfully!
             </DialogContentText>
           </DialogContent>
           <DialogActions>
@@ -179,14 +195,14 @@ const Workshopes = () => {
               color="primary"
               autoFocus
             >
-              Ok
+              OK
             </Button>
           </DialogActions>
         </Dialog>
       )}
       <div className="page-wrapper">
         <Helmet>
-          <title>Manager - WorkShop</title>
+          <title>Manager - Workshop</title>
           <meta name="description" content="Login page" />
         </Helmet>
         {/* Page Content */}
@@ -200,7 +216,7 @@ const Workshopes = () => {
                   <li className="breadcrumb-item">
                     <a href="/app/main/dashboard">Dashboard</a>
                   </li>
-                  <li className="breadcrumb-item active">workshop</li>
+                  <li className="breadcrumb-item active">Workshop</li>
                 </ul>
               </div>
               <div className="col-auto float-right ml-auto">
@@ -211,7 +227,7 @@ const Workshopes = () => {
                   data-toggle="modal"
                   data-target="#create_project"
                 >
-                  <i className="fa fa-plus" /> Create Workshope
+                  <i className="fa fa-plus" /> Create Workshop
                 </a>
               </div>
             </div>
@@ -253,13 +269,13 @@ const Workshopes = () => {
                       </div>
                     </div>
                     <h4 className="project-title">
-                      <a href="/app/projects/projects-view">
-                        Manager WorkShope
-                      </a>
+                     
+                        Manager Workshop
+                  
                     </h4>
                     <p className="text-muted">{key.purpose}</p>
                     <div className="pro-deadline m-b-15">
-                      <div className="sub-title">day:</div>
+                      <div className="sub-title">Day:</div>
                       <div className="text-muted">{key.day}</div>
                     </div>
                     <div className="project-members m-b-15">
@@ -280,7 +296,7 @@ const Workshopes = () => {
               </div>
             ))}
           </div>): (
-            <p>No WorkShop Available For this Account.!</p>
+            <p>No Workshop is Created</p>
           )
           }
         </div>
@@ -298,10 +314,10 @@ const Workshopes = () => {
             <div className="modal-content">
               <div className="modal-header">
                 {create_update && (
-                  <h5 className="modal-title">Create Workshope</h5>
+                  <h5 className="modal-title">Create Workshop</h5>
                 )}
                 {!create_update && (
-                  <h5 className="modal-title">Update Workshope</h5>
+                  <h5 className="modal-title">Update Workshop</h5>
                 )}
 
                 <button
@@ -331,7 +347,7 @@ const Workshopes = () => {
                     <div className="col-sm-6">
                       <div className="form-group">
                         <label>Days</label>
-                        <select id="empid" value={day} className="select">
+                        <select id="empid" defaultValue={day} value={day} className="select">
                           <option value="">---Select Days----</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -350,7 +366,7 @@ const Workshopes = () => {
                   <div className="row">
                     <div className="col-sm-6">
                       <div className="form-group">
-                      <label>Start Date (DD/MM/YY)</label>
+                      <label>Start Date</label>
                           <MuiPickersUtilsProvider utils={DateFnsUtils}>
                             <KeyboardDatePicker
                               variant="inline"
@@ -373,7 +389,7 @@ const Workshopes = () => {
                     </div>
                     <div className="col-sm-6">
                       <div className="form-group">
-                      <label>Last Date (DD/MM/YY)</label>
+                      <label>Last Date </label>
                         <MuiPickersUtilsProvider utils={DateFnsUtils}>
                             <KeyboardDatePicker
                               variant="inline"
@@ -402,6 +418,8 @@ const Workshopes = () => {
                           onChange={(e) => setUrl(e.target.value)}
                           className="form-control"
                           type="text"
+                        
+                          required
                         />
                       </div>
                     </div>
@@ -445,8 +463,8 @@ const Workshopes = () => {
             <div className="modal-content">
               <div className="modal-body">
                 <div className="form-header">
-                  <h3>Delete WorkShop</h3>
-                  <p>Are you sure want to delete?</p>
+                  <h3>Delete Workshop</h3>
+                  <p>Are you sure you want to delete it?</p>
                 </div>
                 <div className="modal-btn delete-action">
                   <div className="row">

@@ -148,7 +148,7 @@ const Feedback = () => {
                 <tbody>
                   {console.log("sssss", taskList)}
                   {taskList.map((item, index) => {
-                    if (item.task_status == 1) {
+                    if (item.task_status == 1 && item.rating == 0) {
                       return (
                         <tr key={item.id}>
                           <td>{item.project_name}</td>
@@ -235,7 +235,7 @@ const Feedback = () => {
                       <label
                         style={{ paddingTop: "8px", paddingRight: "19px" }}
                       >
-                        question 1:
+                        Work Quality:
                       </label>
                       <ReactStars
                         count={5}
@@ -264,7 +264,7 @@ const Feedback = () => {
                       <label
                         style={{ paddingTop: "8px", paddingRight: "19px" }}
                       >
-                        question 2:
+                        On Time Delivery:
                       </label>
                       <ReactStars
                         count={5}
