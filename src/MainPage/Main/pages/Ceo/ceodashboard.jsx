@@ -42,24 +42,6 @@ import axios, { CancelTokenSource } from "axios";
 
 import "../../../index.css";
 
-const barchartdata = [
-  { y: "2006", "Total Income": 100, "Total Outcome": 90 },
-  { y: "2007", "Total Income": 75, "Total Outcome": 65 },
-  { y: "2008", "Total Income": 50, "Total Outcome": 40 },
-  { y: "2009", "Total Income": 75, "Total Outcome": 65 },
-  { y: "2010", "Total Income": 50, "Total Outcome": 40 },
-  { y: "2011", "Total Income": 75, "Total Outcome": 65 },
-  { y: "2012", "Total Income": 100, "Total Outcome": 90 },
-];
-const linechartdata = [
-  { y: "2006", "Total Sales": 50, "Total Revenue": 90 },
-  { y: "2007", "Total Sales": 75, "Total Revenue": 65 },
-  { y: "2008", "Total Sales": 50, "Total Revenue": 40 },
-  { y: "2009", "Total Sales": 75, "Total Revenue": 65 },
-  { y: "2010", "Total Sales": 50, "Total Revenue": 40 },
-  { y: "2011", "Total Sales": 75, "Total Revenue": 65 },
-  { y: "2012", "Total Sales": 100, "Total Revenue": 50 },
-];
 const CeoDashboard = () => {
   const [allPendingTaskCount, setAllPendingTaskCount] = useState();
   const [allTask, setAllTask] = useState();
@@ -70,6 +52,7 @@ const CeoDashboard = () => {
   const [employeeProjectLength, setEmployeeProjectLength] = useState();
   const user_id_local = localStorage.getItem("user_id");
   const cancelTokenSource = axios.CancelToken.source();
+  const [allNameChart, setAllNameChart] = useState("");
   const [countCompletedTask, setCountCompletedTask] = useState();
   const [countCompletedTaskPercentage, setCountCompletedTaskPercentage] =
     useState();
@@ -146,8 +129,69 @@ const CeoDashboard = () => {
 
   const getAllPosition = async () => {
     const res = await getAllProgressOfEmployee(cancelTokenSource.token);
-    console.log("awais checking progress", res.data[0]);
+    console.log("awais checking progress for chart", res.data);
+    let nameChart = [];
+    let compChart = [];
+    let topRatedChart = [];
+
+    res.data.forEach((el) => {
+      nameChart.push(el.name);
+      compChart.push(el.CompletedTasks);
+      topRatedChart.push(el.FiveStars)
+
+    });
+
+    // setAllNameChart()
+    console.log("raaaaazzi bhai", nameChart,compChart,topRatedChart);
+
+    // let comma_seprated = editEmployee.join(",");
+
     if (res.success == true) {
+      Highcharts.chart("container", {
+        chart: {
+          type: "column",
+        },
+        title: {
+          text: "Progress Leaderboard",
+        },
+
+        xAxis: {
+          categories:nameChart,
+          crosshair: true,
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: "tasks",
+          },
+        },
+        tooltip: {
+          headerFormat:
+            '<span style="font-size:10px">{point.key}</span><table>',
+          pointFormat:
+            '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+          footerFormat: "</table>",
+          shared: true,
+          useHTML: true,
+        },
+        plotOptions: {
+          column: {
+            pointPadding: 0.2,
+            borderWidth: 0,
+          },
+        },
+        series: [
+          {
+            name: "Completed Tasks",
+            data: compChart,
+          },
+          {
+            name: "Top Rated Tasks",
+            data: topRatedChart,
+          },
+        ],
+      });
       setProgressUser(res.data);
       setPrgressUserAvail(true);
       setTopUser(res.data[0]);
@@ -319,9 +363,8 @@ const CeoDashboard = () => {
                   <i className="fa fa-user" />
                 </span>
                 <div className="dash-widget-info">
-                <h3>{employeeUserLength}</h3>
+                  <h3>{employeeUserLength}</h3>
                   <span>Employees</span>
-                  
                 </div>
               </div>
             </div>
@@ -334,9 +377,8 @@ const CeoDashboard = () => {
                   <i className="fa fa-user" />
                 </span>
                 <div className="dash-widget-info">
-                <h3>{allManagerUser}</h3>
-                <span>Managers</span>
-                
+                  <h3>{allManagerUser}</h3>
+                  <span>Managers</span>
                 </div>
               </div>
             </div>
@@ -362,8 +404,8 @@ const CeoDashboard = () => {
                   <i className="fa fa-user" />
                 </span>
                 <div className="dash-widget-info">
-                <h3>{allPendingTaskCount}</h3>
-                <span>Pending Tasks</span>
+                  <h3>{allPendingTaskCount}</h3>
+                  <span>Pending Tasks</span>
                 </div>
               </div>
             </div>
@@ -444,7 +486,7 @@ const CeoDashboard = () => {
                       ? progresUser.map((item) => {
                           return (
                             <tbody>
-                              <tr>
+                              <tr key={item.id}>
                                 {item.id == user_id_local ? (
                                   <td
                                     style={{
@@ -476,6 +518,17 @@ const CeoDashboard = () => {
         </div>
 
         {/* /Page Content */}
+        {/** chart*/}
+        <div className="row">
+          <div className="col-md-12 d-flex">
+            <div className="card card-table flex-fill">
+              <div className="card-header">
+                <h3 className="card-title mb-0">Progress Leaderboard</h3>
+              </div>
+              <div className="container" id="container"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

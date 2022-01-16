@@ -20,7 +20,7 @@ import {
   deleteUserById,
   getAllTaskEmployee,
   getAllProgressOfEmployee,
-  getAllProjectOfEmployee
+  getAllProjectOfEmployee,
 } from "../../../../api/network/customer/EmployeeApi";
 
 const Employee = () => {
@@ -56,14 +56,15 @@ const Employee = () => {
 
   const [starWidthCardThree, setStarWidthCardThree] = useState();
   const [WidthCardThree, setWidthCardThree] = useState();
-  const [numOfProoject,setNumOfProoject] = useState();
+  const [numOfProoject, setNumOfProoject] = useState();
 
+  console.log("aaaaa mira", cardOneCondition);
   //for css classes style apply
   const [cardClass, setCardClass] = useState("");
 
   useEffect(() => {
     getAllPosition(selectedUserId);
-  }, [selectedUserId]);
+  }, [selectedUserId, fiveStarCount, completedCount, cardOneCondition]);
   useEffect(() => {
     if (completedCount) {
       let cardOne = Math.round((completedCount / 10) * 100);
@@ -133,7 +134,7 @@ const Employee = () => {
       // console.log("awais checking widthCardOne Value 2", WidthCardOn);
       // console.log("awais checking cardOne Value 3", CardThree);
     }
-  }, [completedCount, fiveStarCount]);
+  }, [completedCount, fiveStarCount, selectedUserId]);
 
   useEffect(() => {
     if (fiveStarCount) {
@@ -154,7 +155,7 @@ const Employee = () => {
         setStarCardThreeCondition(true);
       }
     }
-  }, [fiveStarCount]);
+  }, [fiveStarCount, selectedUserId]);
 
   useEffect(() => {
     console.log("awais checking setCardThreeCondition 1", cardOneCondition);
@@ -166,6 +167,10 @@ const Employee = () => {
       starCardOneCondition
     );
     console.log(
+      "awais checking setCardThreeCondition star 1 select",
+      selectedUserId
+    );
+    console.log(
       "awais checking setCardThreeCondition star2",
       starCardTwoCondition
     );
@@ -173,31 +178,38 @@ const Employee = () => {
       "awais checking setCardThreeConditionstar  3",
       starCardThreeCondition
     );
-  }, [cardThreeCondition, cardTwoCondition, cardOneCondition, WidthCardOne]);
+  }, [
+    cardThreeCondition,
+    cardTwoCondition,
+    cardOneCondition,
+    WidthCardOne,
+    selectedUserId,
+  ]);
 
   useEffect(() => {
     // ManagerProfileCreateApi();
     if (selectedUserId) {
       getAllTaskOFEmployee(selectedUserId);
+      console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaa", selectedUserId);
     }
 
     // UserProfilePic();
-  }, [selectedUserId]);
+  }, [selectedUserId, cardOneCondition]);
 
   useEffect(() => {
     // ManagerProfileCreateApi();
     getTotalCompletedTask();
     // UserProfilePic();
-  }, [employeeTaskData, selectedUserId]);
+  }, [employeeTaskData, selectedUserId, cardOneCondition, selectedUserId]);
 
   const getAllTaskOFEmployee = async (id) => {
-    const response = await getAllTaskEmployee(
-      selectedUserId,
-      cancelTokenSource.token
-    );
+    const response = await getAllTaskEmployee(id, cancelTokenSource.token);
 
     if (response.success == true) {
-      console.log("awais checking 0", response.data);
+      console.log(
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaa awais checking 0",
+        response.data
+      );
 
       setEmployeeTaskData(response.data.completed_task);
 
@@ -259,6 +271,7 @@ const Employee = () => {
     setStarCardTwoCondition(false);
 
     setStarCardThreeCondition(false);
+    console.log("close");
   };
 
   useEffect(() => {
@@ -287,7 +300,6 @@ const Employee = () => {
     }
   };
   const deleteUser = async () => {
-   
     const response = await deleteUserById(
       selectedUserId,
       cancelTokenSource.token
@@ -299,7 +311,6 @@ const Employee = () => {
   };
 
   const deleteSerVal = (id) => {
-    $("#performance_employee").modal("hide");
     console.log("asdasdasdasdasdas", id);
     setSelectedUserId(id);
   };
@@ -323,12 +334,12 @@ const Employee = () => {
   };
   //for Position
   const getAllPosition = async (iid) => {
-    const res2 = await getAllProjectOfEmployee(iid ,cancelTokenSource.token)
+    const res2 = await getAllProjectOfEmployee(iid, cancelTokenSource.token);
     const res = await getAllProgressOfEmployee(cancelTokenSource.token);
     console.log("aaaaaaaaaaaaaaaaaaaaaa 1");
-    console.log("aaaaaaaaaaaaaaaaaaaaaa 1 2", res.data[0]);
+    console.log("aaaaaaaaaaaaaaaaaaaaaa 1 2", res.data);
     console.log("aaaaaaaaaaaaaaaaaaaaaa 1 3", res2.data);
-    setNumOfProoject(res2.data.length)
+    setNumOfProoject(res2.data.length);
     if (res.success == true) {
       setProgressUser(res.data);
       setPrgressUserAvail(true);
@@ -341,6 +352,7 @@ const Employee = () => {
         if (res.data[i].id == selectedUserId) {
           setTopUser(res.data[i]);
           setPositionOneEmployee(count);
+          console.log("aaaaaaaaaaa count", count);
           break;
         }
       }
@@ -379,68 +391,74 @@ const Employee = () => {
         {/* Search Filter */}
         {/* all employees */}
         <div className="row staff-grid-row">
-          {allEmployees.map((item, key) => (
-            <div
-              className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3"
-              onClick={() => {
-                deleteSerVal2(item.user_id);
-              }}
-              onMouseOver={() => deleteSerVal2(item.user_id)}
-            >
-              <div
-                className="dropdown-item"
-                href="#"
-                data-toggle="modal"
-                data-target="#performance_employee"
-                id=""
-                onClick={() => {
-                  getEmployeeAllTask();
-                }}
-                className="profile-widget"
-              >
-                <div className="profile-img">
-                  <div className="avatar">
-                    <img
-                      style={{ height: "100%" }}
-                      src={item.image_url}
-                      alt="No Image"
-                    />
-                  </div>
-                </div>
-                <div className="dropdown profile-action">
-                  <a
-                    href="#"
-                    className="action-icon dropdown-toggle"
-                    data-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i className="material-icons">more_vert</i>
-                  </a>
+          {allEmployees.map((item, key) => {
+            if (item.user_id != null) {
+              return (
+                <div
+                  className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3"
+                  onClick={() => {
+                    deleteSerVal2(item.user_id);
+                  }}
+                  onMouseOver={() => deleteSerVal2(item.user_id)}
+                >
                   <div
-                    style={{ marginTop: "-20px" }}
-                    className="dropdown-menu dropdown-menu-right"
+                    className="dropdown-item"
+                    href="#"
+                    id=""
+                    onClick={() => {
+                      getEmployeeAllTask();
+                    }}
+                    className="profile-widget"
                   >
-                    <a
-                      className="dropdown-item"
+                    <div
                       href="#"
                       data-toggle="modal"
-                      onClick={() => {
-                        deleteSerVal(item.user_id);
-                        
-                      }}
-                      data-target="#delete_employee"
+                      data-target="#performance_employee"
+                      className="profile-img"
                     >
-                      <i className="fa fa-trash-o m-r-5" /> Delete
-                    </a>
+                      <div className="avatar">
+                        <img
+                          style={{ height: "100%" }}
+                          src={item.image_url}
+                          alt="No Image"
+                        />
+                      </div>
+                    </div>
+                    <div className="dropdown profile-action">
+                      <a
+                        href="#"
+                        className="action-icon dropdown-toggle"
+                        data-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i className="material-icons">more_vert</i>
+                      </a>
+                      <div
+                        style={{ marginTop: "-20px" }}
+                        className="dropdown-menu dropdown-menu-right"
+                      >
+                        <a
+                          className="dropdown-item"
+                          href="#"
+                          data-toggle="modal"
+                          onClick={() => {
+                            deleteSerVal(item.user_id);
+                          }}
+                          data-target="#delete_employee"
+                        >
+                          <i className="fa fa-trash-o m-r-5" /> Delete
+                        </a>
+                      </div>
+                    </div>
+                    <h4 className="user-name m-t-10 mb-0 text-ellipsis">
+                      <div>{item.name}</div>
+                    </h4>
+                    <div className="small text-muted">{item.email}</div>
                   </div>
                 </div>
-                <h4 className="user-name m-t-10 mb-0 text-ellipsis">
-                  <div>{item.name}</div>
-                </h4>
-                <div className="small text-muted">{item.email}</div>
-              </div>
-            </div>
-          ))}
+              );
+            }
+          })}
         </div>
         {/* end of all employees*/}
       </div>
@@ -469,7 +487,7 @@ const Employee = () => {
                         <div className="row">
                           <div className="col-md-6 col-6 text-center">
                             <div className="stats-box mb-4">
-                              <p>Total Tasks</p>
+                              <p>Completed Tasks</p>
                               <h3>{countCompletedTask}</h3>
                             </div>
                           </div>
@@ -583,7 +601,6 @@ const Employee = () => {
                             </div>
                           </div>
                         </div>
-                     
                       </div>
                       <div className="progress mb-2">
                         <div
@@ -626,27 +643,26 @@ const Employee = () => {
                         </p>
                       </div>
                       <div className="row">
-                      <div className="col-md-12 col-lg-12 col-xl-12 d-flex">
-                        <div className="card flex-fill">
-                          <div className="card-body">
-                            <h4 className="card-title">
-                              Project Statistics {" "}
-                            </h4>
-                            <div className="statistics">
-                              <div className="row">
-                                <div className="col-md-12 col-12 text-center">
-                                  <div className="stats-box mb-4">
-                                    <h3>OnGoing Projects</h3>
-                                    <h4>{numOfProoject}</h4>
+                        <div className="col-md-12 col-lg-12 col-xl-12 d-flex">
+                          <div className="card flex-fill">
+                            <div className="card-body">
+                              <h4 className="card-title">
+                                Project Statistics{" "}
+                              </h4>
+                              <div className="statistics">
+                                <div className="row">
+                                  <div className="col-md-12 col-12 text-center">
+                                    <div className="stats-box mb-4">
+                                      <h3>OnGoing Projects</h3>
+                                      <h4>{numOfProoject}</h4>
+                                    </div>
                                   </div>
                                 </div>
-                              
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
                     </div>
                   </div>
                 </div>
@@ -689,7 +705,6 @@ const Employee = () => {
                     <a
                       onClick={() => {
                         deleteUser();
-                      
                       }}
                       href=""
                       className="btn btn-primary continue-btn"
