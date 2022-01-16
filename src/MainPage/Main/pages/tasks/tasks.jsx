@@ -92,7 +92,8 @@ const Projects = () => {
       task_type: taskType,
       priority: priority,
       task_status: 0,
-      description:descriptionTask
+      description:descriptionTask,
+      rating:0
     };
     console.log('121212', data)
     const response = await createTaskAPI(data, cancelTokenSource.token);

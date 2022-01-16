@@ -43,19 +43,26 @@ const Loginpage = () => {
           localStorage.setItem("isLogin", true);
           localStorage.setItem("user_id", id);
           history.push("/app/main/dashboard/ceo");
+          window.location.reload();
           break;
         case 'manager':
           localStorage.setItem("EmployeeType", type);
           localStorage.setItem("isLogin", true);
           localStorage.setItem("user_id", id);
           history.push("/app/main/dashboard/manager");
+          window.location.reload();
 
           break;
         case 'employee':
           localStorage.setItem("EmployeeType", type);
           localStorage.setItem("isLogin", true);
           localStorage.setItem("user_id", id);
+
           history.push("/app/main/dashboard/employee");
+          // window.location.href
+
+          window.location.reload();
+         
           break;
         default:
           history.push("/");

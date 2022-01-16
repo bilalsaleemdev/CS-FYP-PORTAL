@@ -110,7 +110,8 @@ const SubmitTask = (props) => {
       priority: editPriority,
       task_status: 1,
       description:editDescription,
-      justification: justification
+      justification: justification,
+      rating:0
 
     };
     const response = await updateTaskAPI(

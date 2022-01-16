@@ -43,62 +43,62 @@ export const EmplyeesDisplay = () => {
             </div>
           </div>
         </div>
-        <div style= {{backgroundColor:'rgba(255,255,255, 0.7)'}} className={styles.events_list}>
-          <div className="row"></div>
-          <div className={styles.head_events}>
-            <h2 style={{ color: "#000" }}>Employee Of The Month</h2>
-          </div>
-          <div className={styles.body_events}>
-            <div className={styles.events_wrapper}>
-              <div className={styles.events_wrapper_content}>
-                <h>{`Name:`}</h>
-                <h>{`${topUser.name}`}</h>
-              </div>
-            
-              <div className={styles.events_wrapper_content}>
-                <h>{`Email:`}</h>
-                <h>{`${topUser.email}`}</h>
-              </div>
+       { topUser &&  <div style= {{backgroundColor:'rgba(255,255,255, 0.7)'}} className={styles.events_list}>
+       <div className="row"></div>
+       <div className={styles.head_events}>
+         <h2 style={{ color: "#000" }}>Employee Of The Month</h2>
+       </div>
+       <div className={styles.body_events}>
+         <div className={styles.events_wrapper}>
+           <div className={styles.events_wrapper_content}>
+             <h>{`Name:`}</h>
+             <h>{`${topUser.name}`}</h>
+           </div>
+         
+           <div className={styles.events_wrapper_content}>
+             <h>{`Email:`}</h>
+             <h>{`${topUser.email}`}</h>
+           </div>
 
-              <div className={styles.events_wrapper_content}>
-                <h>{`Completed Task:`}</h>
-                <h>{`${topUser.CompletedTasks}`}</h>
-              </div>
-              <div className={styles.events_wrapper_content}>
-                <h>{`Top Rated Task:`}</h>
-                <h>{`${topUser.FiveStars}`}</h>
-              </div>
-              <div className={styles.events_wrapper_content}>
-              <h>{`Profile Picture:`}</h>
-           
-                <span  style={{ backgroundColor:'rgba(255,255,255, 0.4)!important'}} 
-                >
-                  <div
-                  
-                 
-                    style={{
-                      
-                      borderRadius:'5px',
-                      position: "inherit",
-                      height: "83px",
-                      overflow: "none",
-                      backgroundColor:'rgba(255,255,255, 0.4)!important'
-                    }}
-                  >
-                    <img
-                    class="rounded-circle"
-                      style={{ height: "86px", width: "120px" }}
-                      alt=""
-                      src={topUser.image_url}
-                    />
-                  </div>
-                </span>
+           <div className={styles.events_wrapper_content}>
+             <h>{`Completed Task:`}</h>
+             <h>{`${topUser.CompletedTasks}`}</h>
+           </div>
+           <div className={styles.events_wrapper_content}>
+             <h>{`Top Rated Task:`}</h>
+             <h>{`${topUser.FiveStars}`}</h>
+           </div>
+           <div className={styles.events_wrapper_content}>
+           <h>{`Profile Picture:`}</h>
+        
+             <span  style={{ backgroundColor:'rgba(255,255,255, 0.4)!important'}} 
+             >
+               <div
                
+              
+                 style={{
+                   
+                   borderRadius:'5px',
+                   position: "inherit",
+                   height: "83px",
+                   overflow: "none",
+                   backgroundColor:'rgba(255,255,255, 0.4)!important'
+                 }}
+               >
+                 <img
+                 class="rounded-circle"
+                   style={{ height: "86px", width: "120px" }}
+                   alt=""
+                   src={topUser.image_url}
+                 />
+               </div>
+             </span>
             
-            </div>
-            </div>
-          </div>
-        </div>
+         
+         </div>
+         </div>
+       </div>
+     </div>}
       </div>
     </div>
   );

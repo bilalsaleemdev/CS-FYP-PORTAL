@@ -74,7 +74,7 @@ function Header(props) {
       console.log("awais", response.user.type);
 
       // setImageCondition(response.user.image_url);
-      setNameCeo(response.user.type);
+      // setNameCeo(response.user.type);
       // console.log(taskData, "awais data for all task");
     }
     // console.log(taskData, "awais data for all task");

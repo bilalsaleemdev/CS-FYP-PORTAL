@@ -7,6 +7,7 @@ import {
   getProjectTaskAPI,
 } from "../../../../api/network/customer/EmployeeApi";
 import { Input, Button } from "reactstrap";
+import moment from "moment";
 const TaskBoard = () => {
   const cancelTokenSource = axios.CancelToken.source();
 
@@ -110,7 +111,7 @@ const TaskBoard = () => {
                                 <span className="task-info-cont">
                                   <span className="task-date">
                                     <i className="fa fa-clock-o" />{" "}
-                                    {item.deadline}{" "}
+                                    {moment(item.deadline).format("DD MM YYYY")}{" "}
                                   </span>
                                   <span className="task-priority badge bg-inverse-danger">
                                     {item.priority}

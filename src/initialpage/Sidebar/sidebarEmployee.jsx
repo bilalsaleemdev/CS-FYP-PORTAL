@@ -243,34 +243,7 @@ class Sidebar extends Component {
                <li className={pathname.includes('knowledgebase') ?"active" :""}> 
                  <a href="/app/administrator/knowledgebase"><i className="la la-question" /> <span>Knowledgebase</span></a>
                </li> */}
-              <li className="submenu">
-                <a href="#">
-                  <i className="la la-user" /> <span> Work History </span>{" "}
-                  <span className="menu-arrow" />
-                </a>
-                <ul style={{ display: "none" }}>
-                  <li>
-                    <a
-                      className={
-                        pathname.includes("profile/employee-") ? "active" : ""
-                      }
-                      href="/app/main/employeetasks"
-                    >
-                      {" "}
-                      All Tasks{" "}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className={pathname.includes("client-") ? "active" : ""}
-                      href="/app/main/company_projects"
-                    >
-                      {" "}
-                    All Projects{" "}
-                    </a>
-                  </li>
-                </ul>
-              </li>
+           
               <li className={pathname.includes("activities") ? "active" : ""}>
                 <a href="/app/administrator/activities">
                   <i className="la la-bell" /> <span>Feedbacks</span>

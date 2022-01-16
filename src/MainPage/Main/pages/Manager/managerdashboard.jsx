@@ -80,6 +80,10 @@
      getAllSystemTask();
      getUserProjectOnly();
    }, [user_id_local]);
+
+  //  useEffect(() => {
+    
+  //  }, [count])
    useEffect(() => {
      if (progresUser) {
        setPrgressUserAvail(true);
@@ -127,7 +131,7 @@
      })
      if (res) {
        
-       setPendingsRequests(res.data.length);
+       setPendingsRequests(count);
      }
    };
  
