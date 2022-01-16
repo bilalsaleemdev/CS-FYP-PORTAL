@@ -106,7 +106,7 @@ const Loginpage = () => {
                 {/* Account Form */}
                 <form>
                   <div className="form-group">
-                    <label for="email" >Email Address</label>
+                    <label>Email Address</label>
                     <input
                       placeholder="Enter Email"
                       type="email" 

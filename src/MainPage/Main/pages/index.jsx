@@ -8,8 +8,8 @@ import ManagerDashboard from './Manager/managerdashboard';
 import Workshope from './ManagerWorkshop/workshope';
 import EmployeeDashboard from './Employee/employeedashboard';
 import CeoDashboard from './Ceo/ceodashboard';
-import ApproveRequest from '../../HR/Sales/approverequest';
-//  import ApproveRequest1 from '../../HR/Sales/approverequest1';
+import ApproveRequest from './Ceo/approverequest';
+
 
 import { Divider } from 'material-ui';
 import Projects from './Project/projects';

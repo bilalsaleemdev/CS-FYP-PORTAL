@@ -8,7 +8,7 @@ export const Hero = () => {
       <div className={styles.presentation}>
         <h1>Employees </h1>
         <p>in our Zone</p>
-        <a href="#">Explore</a>
+       
       </div>
     </div>
   );

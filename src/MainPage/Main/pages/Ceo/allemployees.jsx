@@ -287,6 +287,7 @@ const Employee = () => {
     }
   };
   const deleteUser = async () => {
+   
     const response = await deleteUserById(
       selectedUserId,
       cancelTokenSource.token
@@ -298,11 +299,13 @@ const Employee = () => {
   };
 
   const deleteSerVal = (id) => {
+    $("#performance_employee").modal("hide");
     console.log("asdasdasdasdasdas", id);
     setSelectedUserId(id);
   };
 
   const deleteSerVal2 = (id) => {
+    deleteSerVal(id);
     console.log("asdasdasdasdasdas", id);
     setSelectedUserId(id);
     getEmployeeAllTask(id);
@@ -389,6 +392,7 @@ const Employee = () => {
                 href="#"
                 data-toggle="modal"
                 data-target="#performance_employee"
+                id=""
                 onClick={() => {
                   getEmployeeAllTask();
                 }}
@@ -420,7 +424,10 @@ const Employee = () => {
                       className="dropdown-item"
                       href="#"
                       data-toggle="modal"
-                      onClick={() => deleteSerVal(item.user_id)}
+                      onClick={() => {
+                        deleteSerVal(item.user_id);
+                        
+                      }}
                       data-target="#delete_employee"
                     >
                       <i className="fa fa-trash-o m-r-5" /> Delete
@@ -680,7 +687,10 @@ const Employee = () => {
                 <div className="row">
                   <div className="col-6">
                     <a
-                      onClick={() => deleteUser()}
+                      onClick={() => {
+                        deleteUser();
+                      
+                      }}
                       href=""
                       className="btn btn-primary continue-btn"
                     >

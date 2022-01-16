@@ -20,7 +20,6 @@ import Training from '../MainPage/Performance/Training';
 //HR
 import HR from '../MainPage/HR';
 import Reports from '../MainPage/HR/Reports';
-import Sales from '../MainPage/HR/Sales';
 import Accounts from '../MainPage/HR/accounts';
 import Payroll from '../MainPage/HR/Payroll';
 //Employees
@@ -98,10 +97,7 @@ export default [
       path: 'reports',
       component: Reports
    },
-   {
-      path: 'sales',
-      component: Sales
-   },
+ 
    {
       path: 'accounts',
       component: Accounts
