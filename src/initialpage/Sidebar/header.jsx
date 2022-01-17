@@ -53,6 +53,9 @@ function Header(props) {
       getNotificationTask(),
       getNotificationProject();
   }, []);
+  useEffect(() => {
+    
+  }, [projectNotification,taskNotification]);  
 
   useEffect(() => {
     getUserIdFromApi(user_id_local);
@@ -86,10 +89,12 @@ function Header(props) {
       localStorage.getItem("user_id"),
       cancelTokenSource.token
     );
-    if (response.success == true) {
+    console.log('aaaaaaaaaaaaaaaaaaaaa', response)
+
+ 
       setProjectNotification(response.data);
       // setCountNotification(response.data.length)
-    }
+   
   };
   const getNotificationTask = async () => {
     let response = await getEmployeeTaskNotification(
@@ -440,7 +445,8 @@ function Header(props) {
                   </div>
                 </>
               )}
-              {projectNotification > 0 && (
+              {
+                projectNotification > 0 && (
                 <>
                   <div
                     style={{ backgroundColor: "#bcc8ff" }}
