@@ -92,9 +92,12 @@ const Projects = () => {
       deadline: deadline,
       task_type: taskType,
       priority: priority,
+      rating:0,
       task_status: 0,
       description:descriptionTask,
-      rating:0
+      notifications: 1,
+      
+   
     };
     console.log('121212', data)
     const response = await createTaskAPI(data, cancelTokenSource.token);
@@ -113,7 +116,9 @@ const Projects = () => {
       task_type: editTaskType,
       priority: editPriority,
       task_status: 0,
-      description:editdescription
+      description:editdescription,
+      notifications: 1,
+    
 
     };
     const response = await updateTaskAPI(

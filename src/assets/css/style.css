@@ -3646,7 +3646,7 @@ table.dataTable thead > tr > td.sorting {
 	padding: 0;
 }
 .notifications .noti-content {
-	height: 290px;
+	/* height: 290px; */
 	width: 350px;
 	overflow-y: auto;
 	position: relative;

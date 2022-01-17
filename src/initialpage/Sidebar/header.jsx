@@ -3,6 +3,7 @@
  */
 import React, { Component, useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
+import moment from "moment";
 import {
   headerlogo,
   lnEnglish,
@@ -97,6 +98,7 @@ function Header(props) {
     );
     if (response.success == true) {
       setTaskNotification(response.data);
+      console.log('ending', response.data)
       // setCountNotification(response.data.length)
     }
   };
@@ -288,7 +290,7 @@ function Header(props) {
               <i className="fa fa-bell-o" />{" "}
               <span className="badge badge-pill">{countNotification}</span>
             </a>
-            <div className="dropdown-menu notifications">
+            <div style={{overflow:'scroll'}} className="dropdown-menu notifications">
               <div
                 style={{ backgroundColor: "#bcc8ff" }}
                 className="topnav-dropdown-header"
@@ -305,7 +307,7 @@ function Header(props) {
                       <a>
                         <div className="media">
                           <span className="avatar">
-                            <img alt="" src={item.url} />
+                            <img  style={{height:'100%'}} alt="" src={item.url} />
                           </span>
                           <div className="media-body">
                             <p className="noti-details">
@@ -352,9 +354,9 @@ function Header(props) {
                                     <span className="noti-title">
                                       {item.purpose}
                                     </span>{" "}
-                                    Start At {item.start_at}
+                                    
                                     <span className="noti-title">
-                                      Start At {item.last_at}
+                                      End At {moment(item.last_at).format("DD MM YYYY")}
                                     </span>
                                   </p>
                                   <p className="noti-time">
@@ -415,7 +417,7 @@ function Header(props) {
                                   </p>
                                   <p className="noti-time">
                                     <span className="notification-time">
-                                      Deadline {item.deadline}
+                                      Deadline {moment(item.deadline).format("DD MM YYYY")}
                                     </span>
                                   </p>
                                   <p className="noti-details">
