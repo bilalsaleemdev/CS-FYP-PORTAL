@@ -383,7 +383,7 @@ const EmployeeProfile = () => {
       last_name,
       dob,
       cnic,
-      "",
+      "a ",
       phoneNumber,
 
       gender,
@@ -411,7 +411,7 @@ const EmployeeProfile = () => {
       formik.values.lname,
       formik.values.birthDate,
       formik.values.cnic,
-      "",
+      " ",
       formik.values.phone,
 
       formik.values.gender,

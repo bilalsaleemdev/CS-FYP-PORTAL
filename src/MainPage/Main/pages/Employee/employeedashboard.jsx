@@ -38,7 +38,6 @@ import { useHistory } from "react-router-dom";
 
 import "../../../index.css";
 
-
 const EmployeeDashboard = () => {
   const history = useHistory();
   const [topUser, setTopUser] = useState({});
@@ -58,11 +57,15 @@ const EmployeeDashboard = () => {
   const [progresUser, setProgressUser] = useState([]);
   const [prgressUserAvail, setPrgressUserAvail] = useState(false);
   const [forProfile, setForProfile] = useState(false);
+  const [widthProgress, setWidthProgress] = useState();
   // useEffect(() => {
- 
-    
+
   //   history.push("/app/main/dashboard/manager");
   // }, [])
+  useEffect(() => {
+    let temp = Math.round((countCompletedTask / countAllTask) * 100);
+    setWidthProgress(temp);
+  }, [countAllTask, countPendingTask, countCompletedTask]);
 
   useEffect(() => {
     getUserIdFromApi(user_id_local);
@@ -115,8 +118,66 @@ const EmployeeDashboard = () => {
     }
   };
 
+  
   const getAllPosition = async () => {
     const res = await getAllProgressOfEmployee(cancelTokenSource.token);
+    let nameChart = [];
+    let compChart = [];
+    let topRatedChart = [];
+
+    res.data.forEach((el) => {
+      nameChart.push(el.name);
+      compChart.push(el.CompletedTasks);
+      topRatedChart.push(el.FiveStars)
+
+    });
+
+    Highcharts.chart("container", {
+      chart: {
+        type: "column",
+      },
+      title: {
+        text: "Progress Leaderboard",
+      },
+
+      xAxis: {
+        categories:nameChart,
+        crosshair: true,
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: "tasks",
+        },
+      },
+      tooltip: {
+        headerFormat:
+          '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat:
+          '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+          '<td style="padding:0"><b>{point.y} </b></td></tr>',
+        footerFormat: "</table>",
+        shared: true,
+        useHTML: true,
+      },
+      plotOptions: {
+        column: {
+          pointPadding: 0.2,
+          borderWidth: 0,
+        },
+      },
+      series: [
+        {
+          name: "Completed Tasks",
+          data: compChart,
+        },
+        {
+          name: "Top Rated Tasks",
+          data: topRatedChart,
+        },
+      ],
+    });
+
     console.log("awais checking progress", res.data[0]);
     if (res.success == true) {
       setProgressUser(res.data);
@@ -126,6 +187,9 @@ const EmployeeDashboard = () => {
         setForProfile(true);
       }
     }
+
+
+
   };
 
   const getUserIdFromApi = async (user_id_local) => {
@@ -167,9 +231,7 @@ const EmployeeDashboard = () => {
   };
 
   return (
-    <div 
-     className="page-wrapper"
-     style={{minHeight:'706px'}}>
+    <div className="page-wrapper" style={{ minHeight: "706px" }}>
       <Helmet>
         <title>Employee Dashboard</title>
         <meta name="description" content="Dashboard" />
@@ -373,18 +435,22 @@ const EmployeeDashboard = () => {
             <div className="card flex-fill">
               <div className="card-body">
                 <h4 className="card-title">Progress Rate</h4>
-                <p>
-                  <span
-                    style={{ fontSize: "13px" }}
+                <span>
+                <div
+                    style={{ fontSize: "16px" }}
                     className="text-success float-right"
                   >
                     {" "}
-                    60%
-                  </span>
-                </p>
+                    {countAllTask > 0
+                      ? Math.round((countCompletedTask / countAllTask) * 100)
+                      : "0"}
+                    %
+                  </div></span>
+                  
+                
                 <div
                   style={{
-                    width: "100%",
+                    width: `100%`,
                     marginLeft: "-11px",
                     marginRight: "-17px",
                   }}
@@ -394,9 +460,8 @@ const EmployeeDashboard = () => {
                     className="progress-bar bg-success"
                     role="progressbar"
                     data-toggle="tooltip"
-                    title="40%"
                     style={{
-                      width: `${60}%`,
+                      width: `${widthProgress}%`,
                     }}
                   />
                 </div>
@@ -430,26 +495,34 @@ const EmployeeDashboard = () => {
                       ? progresUser.map((item) => {
                           return (
                             <tbody>
-                              <tr>
-                                {item.id == user_id_local ? (
-                                  <td
-                                    style={{
-                                      backgroundColor: "#6699cc",
-                                      color: "white",
-                                    }}
-                                  >
-                                    ME {item.SerialNo}
-                                  </td>
-                                ) : (
-                                  <td>{item.SerialNo}</td>
-                                )}
+                              {item.id == user_id_local ? (
+                                <tr
+                                  style={{
+                                    backgroundColor: "#6699cc",
+                                    color: "white",
+                                  }}
+                                >
+                                <td>{item.SerialNo}</td>
+
                                 <td>
-                                  <h2>{item.name}</h2>
+                                  {item.name}
                                 </td>
                                 <td>{item.email}</td>
                                 <td>{item.CompletedTasks}</td>
                                 <td>{item.FiveStars}</td>
-                              </tr>
+                                </tr>
+                              ) : (
+                                <tr>
+                                  <td>{item.SerialNo}</td>
+
+                                  <td>
+                                    <h2>{item.name}</h2>
+                                  </td>
+                                  <td>{item.email}</td>
+                                  <td>{item.CompletedTasks}</td>
+                                  <td>{item.FiveStars}</td>
+                                </tr>
+                              )}
                             </tbody>
                           );
                         })
@@ -457,6 +530,17 @@ const EmployeeDashboard = () => {
                   </table>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+          {/** chart*/}
+          <div className="row">
+          <div className="col-md-12 d-flex">
+            <div className="card card-table flex-fill">
+              <div className="card-header">
+                <h3 className="card-title mb-0">Progress Leaderboard</h3>
+              </div>
+              <div className="container" id="container"></div>
             </div>
           </div>
         </div>
